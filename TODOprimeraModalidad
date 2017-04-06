@@ -1,0 +1,11 @@
+se trata de mostrar la partitura y marcar la duracion de las notas con el teclado, no necesito pensar en midi ni sonidos
+
+decode:
+	con division sin numero(3 x defecto)
+	faltan los <> etc...
+	las repeticiones
+	:G2 se abrevia como G2, cambiar el cofdigo para arreglar el bug
+	los tresillos
+
+tambien arreglar el init para q pille tresillos
+
