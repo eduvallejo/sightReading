@@ -17,25 +17,10 @@ function init(argument) {
 			// console.clear();
 			if (key != 27 && key != 81) {//not escape(stop) or q(play) 
 				timestampUp = new Date().getTime();
-				var interval = 125 + timestampUp - timestamp;
+				var interval = 50 + timestampUp - timestamp;
 				// console.log("posX : " + posX);  
-				if (interval > 1800 && interval < 2300) {
-					console.log("blanca!!!!!! : " + interval);
-					drawHalf();
-				}else if (interval > 800 && interval < 1200) {
-					console.log("NEGRA(4th)!!!!!! : " + interval);
-					drawQuarter();
-				}else if (interval >= 280 && interval < 700) {
-					console.log("corchea" + interval);
-					drawEight();
-				}else if (interval > 160 && interval < 280) {
-					console.log("semicorchea" + interval);
-					drawSixteenth();
-				}else if (interval > 100 && interval <= 160) {
-					// console.log("Fusa(32th)!!!!!! : " + interval);
-					console.log("FALLO interval : " + interval);
-				}else{
-				}
+				getNearestTime(interval);
+				//
 				this._time = timestamp;	
 			}else if (key == 27) {//esc
 				audio.pause();
@@ -45,5 +30,8 @@ function init(argument) {
 			}
 		}
 	}
+
 }
+
+
 

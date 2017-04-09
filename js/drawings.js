@@ -1,27 +1,44 @@
-function drawHalf(argument) {
-	// console.log("HALF");
-	// clearCanvas();
-	pushTiempoUsuario(2000);
+function getNearestTime(interval) {
+	if (interval > 800 && interval < 1200) {
+		console.log("NEGRA(4th)!!!!!! : " + interval);
+		pushTiempoUsuario(1000);
+	}else if (interval > 650 && interval < 800) {
+		console.log("corchea con punto!!!!!! : " + interval);
+		pushTiempoUsuario(750);
+	}else if (interval >= 360 && interval < 650) {
+		console.log("corchea" + interval);
+		pushTiempoUsuario(500);
+	}else if (interval >= 300 && interval < 360) {
+		console.log("tresillo corchea" + interval);
+		pushTiempoUsuario(333);
+	}else if (interval > 120 && interval < 300) {
+		console.log("semicorchea" + interval);
+		pushTiempoUsuario(250);
+	}else if (interval > 100 && interval <= 120) {
+		pushTiempoUsuario(125);
+		console.log("staccatto!!!!!! : " + interval);
+		// console.log("FALLO interval : " + interval);
+	}else if (interval > 1300 && interval < 1800) {
+		console.log("NEGRA con punto!!!!!! : " + interval);
+		pushTiempoUsuario(1500);
+	}else if (interval > 1800 && interval < 2300) {
+		console.log("blanca!!!!!! : " + interval);
+		pushTiempoUsuario(2000);
+	}else if (interval >= 2300 && interval < 2600) {
+		console.log("blanca punto!!!!!! : " + interval);
+		pushTiempoUsuario(3000);
+	}else if (interval > 3700 && interval < 4300) {
+		console.log("blanca!!!!!! : " + interval);
+		pushTiempoUsuario(4000);
+	}else if (interval > 3700 && interval < 4300) {
+		console.log("blanca!!!!!! : " + interval);
+		pushTiempoUsuario(4000);
+	}else if (interval > 3700 && interval < 4300) {
+		console.log("blanca!!!!!! : " + interval);
+		pushTiempoUsuario(4000);
+	}
 }
 
-function drawQuarter(argument) {
-	// console.log("4th");
-	// clearCanvas();
-	pushTiempoUsuario(1000);
-}
-
-function drawEight() {
-	// context.beginPath();
-	// pushTiempoUsuario(argument);
-	pushTiempoUsuario(500); 
-	// posX = posX + 200;
-}
-
-function drawSixteenth(argument) {
-	// clearCanvas();
-	// context.beginPath();
-	pushTiempoUsuario(250);
-}
 
 function pushTiempoUsuario(argument) {
 	tiemposUsuario[contadorUsuario]  = argument;
@@ -30,13 +47,13 @@ function pushTiempoUsuario(argument) {
 		console.clear();
 		console.log("FIN");
 		console.log("tiemposCorrectos : " + tiemposCorrectos);
-		console.log("tiemposUsuario : " + tiemposUsuario);
+		console.log("tiemposUsuario   : " + tiemposUsuario);
 		//checkeamos reslutados
 		checkResultados();
 		contadorUsuario = 0;
 		tiemposUsuario = [];
-		audio.pause();
-		audio.currentTime = 0;
+		// audio.pause();
+		// audio.currentTime = 0;
 	}
 }
 
@@ -47,9 +64,9 @@ function checkResultados(argument) {
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (tiemposCorrectos[i] != tiemposUsuario[i]) {
 			fallos++;
-			console.log("FALLOs");
-			console.log("tiemposCorrectos[" + i + "] : " + tiemposCorrectos[i]);
-			console.log("tiemposUsuario[" + i + "] : " + tiemposUsuario[i]);
+			// console.log("FALLOs");
+			// console.log("tiemposCorrectos[" + i + "] : " + tiemposCorrectos[i]);
+			// console.log("tiemposUsuario[" + i + "] : " + tiemposUsuario[i]);
 		}
 	}
 	alert("fallos : " + fallos);

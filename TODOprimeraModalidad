@@ -1,11 +1,29 @@
 se trata de mostrar la partitura y marcar la duracion de las notas con el teclado, no necesito pensar en midi ni sonidos
 
-decode:
-	con division sin numero(3 x defecto)
-	faltan los <> etc...
-	las repeticiones
-	:G2 se abrevia como G2, cambiar el cofdigo para arreglar el bug
-	los tresillos
+usar vexflow en vez de abcjs, tiene la opcion de solfeo ritmico y parece mas sencillo, aunq no se si hay muchos temas http://www.vexflow.com/vextab/tutorial.html. habria  qcrear una rama vexflow
 
+decode:
+parsear las repeticiones de 1ª 2ª...
 tambien arreglar el init para q pille tresillos
 
+
+pensar en hacer un str replace antes de parsear, para hacer el decoder mas facil
+
+ver q hago con las pausas, de momento el juego empieza cuando le das por primera vez al shift
+
+q pasa con el abcjs? porq sale todo en una linea? parece q tendre q almacenar las canciones en un texto plano y luego parsear los \?
+
+introdcir los tiempos de los tripletes en el init
+
+hacer q las notas no se redondeen si el fin de la nota le sigue un silencio, ya q al no tener q volver a apretar la tecla, la nota se acaba corectamente de forma manual
+
+hacer lo de diferentes tempos, cambiando variables de ms. 
+diferentes subdivisiones , pej: 6/8
+
+hacer las ligaduras para q se sumen los tiempos
+
+parece q no reconoce la tecla pretada despues de los 2.5s
+
+The KeyPress event is triggered when the user presses & releases a Key. (onKeyDown followed by onKeyUp) para notas muy cortas¿?? y q los intervalos cortos sean siempre considerados semicorcheas en el event Keydown-Keyup
+
+mirar q es eso del lotro starbound

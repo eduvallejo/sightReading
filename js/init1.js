@@ -1,9 +1,5 @@
 function init(argument) {
-	canvas = document.getElementById("myCanvas");
-	canvas.width = canvasWidth;
-	canvas.height = canvasHeight;
-	context = canvas.getContext("2d");
-	playSound();
+	audio.play();
 	//eventos asociados a teclas
 	// left arrow 	37
 	// up arrow 	38
@@ -18,45 +14,36 @@ function init(argument) {
 	  		var key = e.keyCode ? e.keyCode : e.which;
 			// console.log("keyup");
 			var time = this._time;
-			console.clear();
-			// console.log("time : " + time);
-			if (key == 17) {//"right ctrl" 
+			// console.clear();
+			if (key != 27 && key != 81) {//not escape(stop) or q(play) 
 				timestampUp = new Date().getTime();
-				var interval = 75 + timestampUp - timestamp;
-				console.log("interval : " + interval);
-				if (interval > 950 && interval < 1050) {
-					// console.log("NEGRA(4th)!!!!!! : " + interval);
+				var interval = 125 + timestampUp - timestamp;
+				// console.log("posX : " + posX);  
+				if (interval > 1800 && interval < 2300) {
+					console.log("blanca!!!!!! : " + interval);
+					drawHalf();
+				}else if (interval > 800 && interval < 1200) {
+					console.log("NEGRA(4th)!!!!!! : " + interval);
 					drawQuarter();
-				}else if (interval > 460 && interval < 540) {
-					// console.log("Corchea(8th)!!!!!! : " + interval);
+				}else if (interval >= 280 && interval < 700) {
+					console.log("corchea" + interval);
 					drawEight();
-				}else if (interval > 220 && interval < 280) {
-					// console.log("Semi-corchea(16th)!!!!!! : " + interval);
+				}else if (interval > 160 && interval < 280) {
+					console.log("semicorchea" + interval);
 					drawSixteenth();
-				}else if (interval > 100 && interval < 150) {
+				}else if (interval > 100 && interval <= 160) {
 					// console.log("Fusa(32th)!!!!!! : " + interval);
+					console.log("FALLO interval : " + interval);
+				}else{
 				}
 				this._time = timestamp;	
-			}else{//"right ctrl" 
-				console.log("ELSE");
-				timestampUp = new Date().getTime();
-				var interval = 75 + timestampUp - timestamp;
-				console.log("interval : " + interval);
-				if (interval > 950 && interval < 1050) {
-					// console.log("NEGRA(4th)!!!!!! : " + interval);
-					drawQuarter();
-				}else if (interval > 460 && interval < 540) {
-					// console.log("Corchea(8th)!!!!!! : " + interval);
-					drawEight();
-				}else if (interval > 220 && interval < 280) {
-					// console.log("Semi-corchea(16th)!!!!!! : " + interval);
-					drawSixteenth();
-				}else if (interval > 100 && interval < 150) {
-					// console.log("Fusa(32th)!!!!!! : " + interval);
-				}
-				this._time = timestamp;	
+			}else if (key == 27) {//esc
+				audio.pause();
+				audio.currentTime = 0;
+			}else if (key == 81) {
+				audio.play();
 			}
 		}
-
 	}
 }
+
