@@ -14,8 +14,13 @@ var song = '|: Aeed eAcd | eaaf gedg | Aeed eAcd | [1 egdB BAGB :| [2 egdB BAAf 
 var song = 'a>b f/d/ f/>d/|f/<d/ f/d/ a>b';
 var song = 'G |c>de dcB | c3 G3 | ABc GFE | D3- D2B |\\\l\nc>BA dcB | A3 D2D | E>^FG DG^F | G3- G2 :||: B |\\\l\nc>BA d>ef | ^G3 E2E | FED EA^G | A3- A2c |\\\l\nB>AG cde | d>cd G2f | edc Adc | B3- B2f |\\\l\nedc GcB | c3- c2 :|';
 var song = 'D-D d-d d2-d';
+var song = 'z4 [C4z/2] [c3/2z/2] g/2 [^d2z/2]';
+var song = 'z4 [C4e/2] [c3/2e/2] g/2 ';
+var song = '|(3a,b,c, G/>A /-G/G/|(3a,b,c, G/>A /-G/G/|(3a,b,c, G/>A /-G/G/|';
+var song = 'G/>A/ -G/G/ (3a,b,c,';
+var song = '(3a,b,c,';
 
-song += ""//appendo un ] al final para evitar errores pero parece q con | evita lo de acabar con :|
+// song += ""//appendo un ] al final para evitar errores pero parece q con | evita lo de acabar con :|
 //quito la nomenclatura de acordes tipo "Am", con el fin de facilitar decode
 for (var i = 0; i < song.length; i++) {//elimino simbolos innecesarios para el ritmo
 	song = song.replace(/".*?"/, "");
