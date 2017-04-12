@@ -43,8 +43,6 @@ function pushTiempoUsuario(argument) {
 	if (tiemposUsuario.length == tiemposCorrectos.length) {
 		// console.clear();
 		// console.log("FIN");
-		console.log("tiemposCorrectos : " + tiemposCorrectos);
-		console.log("tiemposUsuario   : " + tiemposUsuario);
 		//checkeamos reslutados
 		checkResultados();
 		contadorUsuario = 0;
@@ -67,4 +65,6 @@ function checkResultados(argument) {
 		}
 	}
 	console.log("fallos : " + fallos);
+	console.log("tiemposCorrectos : " + tiemposCorrectos);
+	console.log("tiemposUsuario   : " + tiemposUsuario);
 }

@@ -18,7 +18,8 @@ var song = 'z4 [C4z/2] [c3/2z/2] g/2 [^d2z/2]';
 var song = 'z4 [C4e/2] [c3/2e/2] g/2 ';
 var song = '|(3a,b,c, G/>A /-G/G/|(3a,b,c, G/>A /-G/G/|(3a,b,c, G/>A /-G/G/|';
 var song = 'G/>A/ -G/G/ (3a,b,c,';
-var song = '(3a,b,c,';
+var song = 'G/>A/ -G/G/ G/>A/ -G/G/ (3a,b,c, (3a,b,c,';
+// var song = 'a b';
 
 // song += ""//appendo un ] al final para evitar errores pero parece q con | evita lo de acabar con :|
 //quito la nomenclatura de acordes tipo "Am", con el fin de facilitar decode
