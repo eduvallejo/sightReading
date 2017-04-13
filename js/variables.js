@@ -8,7 +8,8 @@ var compensation = 0.200;
 var timestamp;
 var timestampUp;
 var keyPressed = false; //para q al apreter una tecla se acabe la tecla anterior
-
+var clickPressed = false;
+var rest = true;
 
 // var song = '(3Bdc (3f/e/2d/';
 var song = 'D|\\\l\n|G2B B>AB|';
@@ -21,13 +22,15 @@ var song = 'z4 [C4e/2] [c3/2e/2] g/2 ';
 var song = '|(3a,b,c, G/>A /-G/G/|(3a,b,c, G/>A /-G/G/|(3a,b,c, G/>A /-G/G/|';
 var song = 'g/>g/ -g/g/ (3 ggg';
 var song = 'g/>g/ z3/2 g/ -g/4d3/4';
-var song = 'g/>g/ g/>g/ g/>g/ g/>g/' ;
+var song = 'g/>g/' ;
 // var song = 'G/>A/ -G/G/ G/>A/ -G/G/ (3a,b,c, (3a,b,c,';
 // var song = 'G/>A/ -G/G/ G/>A/ -G/G/';
-var song = 'a/4a/4a/4a/4';
-var song = 'a/2a/2 a/2>a/2- a/2a/2';
-// var song = 'a/2a/2';
+var song = 'a/4'; //semicorcheas
+// var song = 'a/2a/2 a/2>a/2- a/2a/2';
+// var song = '(3a/a/a/';
 // var song = 'a3/4 a3/4 a3/4 a3/4';
+// var song = 'a/2a/2 a/2a/2';
+// var song = '(3a/a/a/'; //tresillo corcheas
 
 // song += ""//appendo un ] al final para evitar errores pero parece q con | evita lo de acabar con :|
 //quito la nomenclatura de acordes tipo "Am", con el fin de facilitar decode

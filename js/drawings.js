@@ -8,19 +8,18 @@ function getNearestTime(interval) {
 	}else if (interval >= 0.600 && interval < 0.700) {
 		// console.log("tresillo negra!! : " + interval);
 		pushTiempoUsuario(666);
-	}else if (interval >= 0.360 && interval < 0.600) {
+	}else if (interval >= 0.400 && interval < 0.600) {
 		// console.log("corchea!!!!      : " + interval);
 		pushTiempoUsuario(500);
-	}else if (interval >= 0.300 && interval < 0.360) {
+	}else if (interval >= 0.290 && interval < 0.400) {
 		// console.log("tresillo corchea : " + interval);
 		pushTiempoUsuario(333);
-	}else if (interval >= 0.120 && interval < 0.300) {
+	}else if (interval >= 0.190 && interval < 0.290) {
 		// console.log("semicorchea      : " + interval);
 		pushTiempoUsuario(250);
-	}else if (interval >= 0.100 && interval < 0.120) {
+	}else if (interval >= 0.100 && interval < 0.190) {
 		pushTiempoUsuario(125);
 		// console.log("staccatto!!!!!! : " + interval);
-		// console.log("FALLO interval : " + interval);
 	}else if (interval >= 1.300 && interval < 1.800) {
 		// console.log("NEGRA con punto!!!!!! : " + interval);
 		pushTiempoUsuario(1500);

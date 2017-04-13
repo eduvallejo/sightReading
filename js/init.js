@@ -22,9 +22,9 @@ function init(argument) {
   		}
   		clickPressed = false;
 	}
+
 }
-var clickPressed = false;
-var rest = true;
+
 function clickButton(argument) {
 	// console.log("clicked: " + clickPressed);
 	if (clickPressed == false) {
@@ -48,8 +48,7 @@ function clickButton(argument) {
 		// clickPressed = false;
 		// console.log("clickPressed : " + clickPressed);  
 	}
-	rest = false;
-	
+	rest = false;	
 }
 
 //vaciar los resultados y eliminar el objeto tiempo

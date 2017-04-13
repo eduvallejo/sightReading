@@ -11,8 +11,9 @@
 	<script src="js/variables.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+<!-- <body onmousemove='clickButton()' onload="init();"> -->
 <body onload="init();">
-<button id="button" onclick='reinitiate()' style="display: inline-block;width:100%; height:20px"></button>
+<button id="buttonReinitiate" onclick='reinitiate()' style="display: inline-block;width:100%; height:20px"></button>
 <p id="songVariable"></p>
 <!-- var song = ':A2 B ';
 			2000 5000
@@ -27,7 +28,7 @@ K: C
 </pre> 
 
 
-<button id="button" onclick='clickButton()' style="display: inline-block;width:100%; height:100px">touch</button>
+<button id="button"  onmousemove="clickButton()" style="display: inline-block;width:100%; height:70px">touch</button>
 </body>
 <script>
 	//parece q los abc usan una backslasjh para saltos de linea
