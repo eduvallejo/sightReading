@@ -4,7 +4,9 @@ var interval;
 var notasLigadas = [];
 // var ligarNota = false;
 var notSkipCharacters = /[a-gA-GzZ0-9/:<>]/;
-
+var compensation = 0.200;
+var timestamp;
+var timestampUp;
 var keyPressed = false; //para q al apreter una tecla se acabe la tecla anterior
 
 
@@ -17,9 +19,15 @@ var song = 'D-D d-d d2-d';
 var song = 'z4 [C4z/2] [c3/2z/2] g/2 [^d2z/2]';
 var song = 'z4 [C4e/2] [c3/2e/2] g/2 ';
 var song = '|(3a,b,c, G/>A /-G/G/|(3a,b,c, G/>A /-G/G/|(3a,b,c, G/>A /-G/G/|';
-var song = 'G/>A/ -G/G/ (3a,b,c,';
-var song = 'G/>A/ -G/G/ G/>A/ -G/G/ (3a,b,c, (3a,b,c,';
-// var song = 'a b';
+var song = 'g/>g/ -g/g/ (3 ggg';
+var song = 'g/>g/ z3/2 g/ -g/4d3/4';
+var song = 'g/>g/ g/>g/ g/>g/ g/>g/' ;
+// var song = 'G/>A/ -G/G/ G/>A/ -G/G/ (3a,b,c, (3a,b,c,';
+// var song = 'G/>A/ -G/G/ G/>A/ -G/G/';
+var song = 'a/4a/4a/4a/4';
+var song = 'a/2a/2 a/2>a/2- a/2a/2';
+// var song = 'a/2a/2';
+// var song = 'a3/4 a3/4 a3/4 a3/4';
 
 // song += ""//appendo un ] al final para evitar errores pero parece q con | evita lo de acabar con :|
 //quito la nomenclatura de acordes tipo "Am", con el fin de facilitar decode

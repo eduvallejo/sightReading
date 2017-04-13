@@ -1,82 +1,67 @@
 function init(argument) {
-	// audio.play();
-	//eventos asociados a teclas
-	// left arrow 	37
-	// up arrow 	38
-	// right arrow 	39
-	// down arrow 	40 
-	//
-	// window.onkeydown = function(e) {
-	// 	console.log("keyDown");
-	// 	// var timestamp = new Date().getTime();
-	// 	timestamp = new Date().getTime();
-	// 	// console.log("timestamp : " + timestamp);
-	//    	//13 enter, 8 backspace, 37left
-	//    	var keyPressed = true;
-	// }
-	// window.onkeyup = function(e){
- //  		var key = e.keyCode ? e.keyCode : e.which;
-	// 	console.log("keyup");
-	// 	var time = this._time;
-	// 	// console.clear();
-	// 	if (key != 27 && key != 81) {//not escape(stop) or q(play) 
-	// 		timestampUp = new Date().getTime();
-	// 		var interval = 75 + timestampUp - timestamp;//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-	// 		// console.log("posX : " + posX);  
-	// 		getNearestTime(interval);
-	// 		//
-	// 		this._time = timestamp;	
-	// 	}else if (key == 27) {//esc
-	// 		audio.pause();
-	// 		audio.currentTime = 0;
-	// 	}else if (key == 81) {
-	// 		audio.play();
-	// 	}
-	// }
+	audio.play();
+
 	//para clickbutton
 	window.onkeyup = function(e){
 		// console.log("clickPressed : " + clickPressed);
 		// console.log("rest : " + rest);
   		if (rest == false ) {
-		// console.log("e.keyCode" + e.keyCode);
-  			time = this._time;
+		console.log("e.keyCode" + e.keyCode);
+  			// time = this._time;
   			// console.clear();
   			
-  			timestampUp = new Date().getTime();
-  			var interval = 100 + timestampUp - timestamp;//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-  			// console.log("posX : " + posX);  
+  			timestampUp = audio.currentTime;
+  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+  			// console.log("posX : " + posX);
+  			console.log("interval : " + interval);  
   			getNearestTime(interval);
   			//
-  			this._time = timestamp;	
+  			// this._time = timestamp;	
   			
   			rest = true;
   		}
+  		clickPressed = false;
 	}
 }
 var clickPressed = false;
 var rest = true;
 function clickButton(argument) {
 	// console.log("clicked: " + clickPressed);
-	rest = false;
 	if (clickPressed == false) {
-		timestamp = new Date().getTime();
+		timestamp = audio.currentTime;
+		// console.log("audio.currentTime : " + audio.currentTime);
 		clickPressed = true;		
 		// console.log("clickPressed : " + clickPressed);  
 	}else if(clickPressed == true){
-		time = this._time;
+		// time = this._time;
+		// console.log("audio.currentTime : " + audio.currentTime);
 	
-		timestampUp = new Date().getTime();
+		timestampUp = audio.currentTime;
 		// console.log("timestamp : " + timestamp);
-		var interval = timestampUp - timestamp;//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+		var interval = (timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+		// console.log("interval : " + interval.toFixed(3));
 		getNearestTime(interval);
 		//
-		this._time = timestamp;	
-		timestamp = new Date().getTime();
+		// this._time = timestamp;	
+		timestamp = audio.currentTime;
 
 		// clickPressed = false;
 		// console.log("clickPressed : " + clickPressed);  
 	}
+	rest = false;
 	
+}
+
+//vaciar los resultados y eliminar el objeto tiempo
+function reinitiate(argument) {
+	console.clear();
+	contadorUsuario = 0;
+	tiemposUsuario = [];
+	clickPressed = false;
+	// rest = true;
+	// delete timestamp; delete timestamp;
+	console.log("timestamp : " + timestamp);
+	console.log("timestampUp : " + timestampUp);
 }
 
 

@@ -26,4 +26,12 @@ parece q no reconoce la tecla pretada despues de los 2.5s
 
 The KeyPress event is triggered when the user presses & releases a Key. (onKeyDown followed by onKeyUp) para notas muy cortas¿?? y q los intervalos cortos sean siempre considerados semicorcheas en el event Keydown-Keyup
 
-mirar q es eso del lotro starbound
+
+instalar musecore
+
+los ritmos se pueden memorizar al estilo: (recuerda las bulerias	)
+	no llores por mi argentina a>b-b a>b-b 12312312
+	quarter triplets 121212 
+
+http://stackoverflow.com/questions/8683694/reliable-timed-events-in-javascript
+	he HTML5 audio element is the master node, and all the data will be pulled from it during playback (i.e. audio.currentTime).

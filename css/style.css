@@ -1,0 +1,7 @@
+html {
+  touch-action: manipulation;
+}
+
+button{
+	/*pointer-events: none;*/
+}
