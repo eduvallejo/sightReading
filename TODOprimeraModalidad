@@ -35,3 +35,15 @@ los ritmos se pueden memorizar al estilo: (recuerda las bulerias	)
 
 http://stackoverflow.com/questions/8683694/reliable-timed-events-in-javascript
 	he HTML5 audio element is the master node, and all the data will be pulled from it during playback (i.e. audio.currentTime).
+
+crear variable dificultad para q mire si esta dentro de un rango , cuanto mas dificil menor es la variable y menor el intervalo de acierdo. quizas se podría quitar todos esos pushes con un valor prefijado 
+
+crear event press, para hacer staccatos
+
+parece q el onmousedown para llamar al onclik es el mejor evento sobre el button
+
+encontrar conversor midi a abc?
+
+leer los abc de un fichero aparte y no de una variable
+
+rehacer el index html con todo lo de versiones anteriores en carpeta cs , pero añadiendo lo del ajax

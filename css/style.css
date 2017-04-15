@@ -1,7 +1,13 @@
-html {
-  touch-action: manipulation;
-}
-
 button{
 	/*pointer-events: none;*/
+}
+
+pre{
+	/*height: 200px;*/
+	/*border: 1px solid #00		0;*/
+	/*border: 2px solid #000;*/
+}
+
+.abctext{
+	display: none;
 }

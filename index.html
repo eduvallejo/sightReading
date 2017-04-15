@@ -4,38 +4,92 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>abcjs plugin demo: after</title>
-	<script src="abcjs_plugin_2.3-min.js" type="text/javascript"></script>
 	<script src="js/decodeAbc.js" type="text/javascript"></script>
 	<script src="js/init.js" type="text/javascript"></script>
 	<script src="js/drawings.js" type="text/javascript"></script>
 	<script src="js/variables.js" type="text/javascript"></script>
+	<script src="js/populateSelect.js" type="text/javascript"></script>
+	<script src="js/ajax/ajax.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <script src="js/abcjs_basic_3.1.2-min.js" type="text/javascript"></script> -->
+	<!-- <script src="js/abcjs_basic_3.1.1-min.js" type="text/javascript"></script> -->
+	<!-- <script src="js/abcjs_editor_3.1.2-min.js" type="text/javascript"></script> -->
+	<!-- <script src="abcjs_basic_midi_3.1.1-min.js" type="text/javascript"></script> -->
+	<!-- <script src="js/abcjs_plugin_2.3-min.js" type="text/javascript"></script> -->
 </head>
-<!-- <body onmousemove='clickButton()' onload="init();"> -->
-<body onload="init();">
+<!-- <body onload="init();">
+ --> 
+ <body onload="populateAjax();init();">
+ 
+<!-- <body onload="init();"> -->
+
+<body>
 <button id="buttonReinitiate" onclick='reinitiate()' style="display: inline-block;width:100%; height:20px"></button>
-<p id="songVariable"></p>
-<!-- var song = ':A2 B ';
-			2000 5000
+<div id="primeraLinea">
+    <button id="populateSelect">select pattern--</button>
+    <select id="mySelect" onchange="drawOption()">
+        <option value="" ></option>
+        <!-- <option value="barbershop">barbershop</option> -->
+    </select>
+</div>
+
+<!-- <p id="songVariable"></p> -->
+<pre id="preId"></pre> 
+
+<!-- <button id="button"  onmousedown="clickButton()" style="display: inline-block;width:100%; height:90px;">touch</button>
  -->
-<pre id="preId">
-X: 1
-T: Balance the Straw
-R: jig
-M: 4/4
-L: 1/4
-K: C
-</pre> 
-
-
-<button id="button"  onmousemove="clickButton()" style="display: inline-block;width:100%; height:70px">touch</button>
+<!-- <input type="button" name="reloadjs" value="Reload JavaScript" onClick="loadMyJs('js/abcjs_plugin_2.3-min.js')"> -->
+ 
 </body>
-<script>
-	//parece q los abc usan una backslasjh para saltos de linea
-	// var song = 'zzz B/2A/2 | G/2F/2G/2A/2 GB,/2C/2 | D/2E/2D/2B,/2 DG/2A/2 | BB B/2A/2G/2A/2 | BA AB/2A/2 | G/2F/2G/2A/2 GB,/2C/2 | D/2E/2D/2B,/2 DG/2A/2 | B/2de/2 d/2B/2G/2A/2 | BA :G2|]';
+	<script>
+		// decodeAbc(song);
+		// ajax('0turkey.abc');
+		// console.log(document.getElementById("preId").innerHTML);
 
-	decodeAbc(song);
-	document.getElementById("songVariable").innerHTML = song;
-	document.getElementById("preId").innerHTML += songEscaped;
-</script>
+
+		// document.getElementById("songVariable").innerHTML = song;
+		// document.getElementById("preId").innerHTML += songEscaped;
+		// document.getElementById("preId").innerHTML = "ei";
+
+		function appendSong(argument) {
+			// pre.parentNode.removeChild(pre);
+
+			// pre = document.createElement("pre");                       
+			// var text = document.createTextNode(argument);       
+			// document.body.appendChild(pre);
+			// pre.innerHTML = argument;      
+			// decodeAbc(argument);
+			document.getElementById('preId').innerHTML = argument;		
+			// console.log("x : " + x.innerHTML);
+			// argument = "X: 1\nT: Cooley's\nM: 4/4\nL: 1/8\nb"
+			// document.createElement("pre");
+
+
+			// appendHtml = document.getElementsByClassName("abctext")[0].innerHTML += argument + "\n" ;
+			// console.log(document.getElementsByClassName("abctext")[0].innerHTML);
+			console.log(document.getElementsByTagName("pre"));
+			loadMyJs('js/abcjs_plugin_2.3-min.js');
+			// document.getElementsByClassName("abctext")[0].innerHTML = appendHtml;
+		}
+	</script>
+	<!-- para que el abcjs se aplique despues del ajax -->
+	<script type="text/javascript">
+		function loadMyJs(scriptName) {
+			// respuesta = ajax('0turkey.abc');
+			// ajax('0turkey.abc');
+			// console.log("respuesta : " + respuesta);
+			console.log("loadJs");
+			var docHeadObj = document.getElementsByTagName("head")[0];
+			var dynamicScript = document.createElement("script");
+			dynamicScript.type = "text/javascript";
+			dynamicScript.src = scriptName;
+			docHeadObj.appendChild(dynamicScript);
+			// docBodyObj = document.getElementsByTagName("body")[0];
+			// var p = document.createElement("p");
+			// // p.parentNode.removeChild(p);
+			// docBodyObj.appendChild(p);
+			// p.innerHTML = "parrafo";   
+			// console.log("p : " + p); 
+	}
+	</script>
 </html>
