@@ -1,36 +1,36 @@
 function getNearestTime(interval) {
 	if (interval > 0.800 && interval < 1.200) {
-		// console.log("NEGRA(4th)!!!!!! : " + interval);
+		console.log("NEGRA(4th)!!!!!! : " + interval);
 		pushTiempoUsuario(1000);
 	}else if (interval >= 0.700 && interval < 0.800) {
-		// console.log("corcheapuntillo! : " + interval);
+		console.log("corcheapuntillo! : " + interval);
 		pushTiempoUsuario(750);
 	}else if (interval >= 0.600 && interval < 0.700) {
-		// console.log("tresillo negra!! : " + interval);
+		console.log("tresillo negra!! : " + interval);
 		pushTiempoUsuario(666);
 	}else if (interval >= 0.400 && interval < 0.600) {
-		// console.log("corchea!!!!      : " + interval);
+		console.log("corchea!!!!      : " + interval);
 		pushTiempoUsuario(500);
 	}else if (interval >= 0.295 && interval < 0.400) {
-		// console.log("tresillo corchea : " + interval);
+		console.log("tresillo corchea : " + interval);
 		pushTiempoUsuario(333);
 	}else if (interval >= 0.180 && interval < 0.295) {
-		// console.log("semicorchea      : " + interval);
+		console.log("semicorchea      : " + interval);
 		pushTiempoUsuario(250);
 	}else if (interval >= 0.100 && interval < 0.180) {
 		pushTiempoUsuario(125);
-		// console.log("Fulsa    !!!!!!  : " + interval);
+		console.log("Fulsa    !!!!!!  : " + interval);
 	}else if (interval >= 1.300 && interval < 1.800) {
-		// console.log("NEGRA con punto! : " + interval);
+		console.log("NEGRA con punto! : " + interval);
 		pushTiempoUsuario(1500);
 	}else if (interval >= 1.800 && interval < 2.300) {
-		// console.log("blanca!!!!!!     : " + interval);
+		console.log("blanca!!!!!!     : " + interval);
 		pushTiempoUsuario(2000);
 	}else if (interval >= 0.2700 && interval < 3.300) {
-		// console.log("blanca punto!!!! : " + interval);
+		console.log("blanca punto!!!! : " + interval);
 		pushTiempoUsuario(3000);
 	}else if (interval >= 0.3600 && interval < 4.300) {
-		// console.log("redonda!!!!!!   : " + interval);
+		console.log("redonda!!!!!!   : " + interval);
 		pushTiempoUsuario(4000);
 	}
 }
@@ -38,8 +38,9 @@ function getNearestTime(interval) {
 
 function pushTiempoUsuario(argument) {
 	tiemposUsuario[contadorUsuario]  = argument;
+	console.log("contadorUsuario : " + contadorUsuario);
+	console.log("tiemposUsuario[" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
 	contadorUsuario++;
-	// console.log("contadorUsuario : " + contadorUsuario);
 	if (tiemposUsuario.length == tiemposCorrectos.length) {
 		// console.clear();
 		// console.log("FIN");
@@ -65,8 +66,8 @@ function checkResultados(argument) {
 		}
 	}
 	console.log("fallos : " + fallos);
-	// console.log("tiemposCorrectos : " + tiemposCorrectos);
-	// console.log("tiemposUsuario   : " + tiemposUsuario);
+	console.log("tiemposCorrectos : " + tiemposCorrectos);
+	console.log("tiemposUsuario   : " + tiemposUsuario);
 
 	if (fallos == 0) {
 		document.body.style.backgroundColor = "green";

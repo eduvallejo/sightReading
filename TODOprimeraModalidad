@@ -40,10 +40,14 @@ crear variable dificultad para q mire si esta dentro de un rango , cuanto mas di
 
 crear event press, para hacer staccatos
 
-parece q el onmousedown para llamar al onclik es el mejor evento sobre el button
-
 encontrar conversor midi a abc?
 
-leer los abc de un fichero aparte y no de una variable
+mirar de entrar las notas con keydown, q sea como el mouse down y q el keyup no sirva de nada, q los silencios se hagan con alguna tecla en concreto
 
-rehacer el index html con todo lo de versiones anteriores en carpeta cs , pero añadiendo lo del ajax
+parsear la ajax response para pasarla a la variable song y hacer el decode(song)
+
+abcjs pasa a la siguiente linea con el \n. y cuando se hace un line break en el archivo, por motivos de espacio, pero no se quiere q haya una linea en la partira, lo q se hace es poner un \
+
+mostrar cada fallo nada mas realizarlo
+
+

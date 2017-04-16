@@ -1,33 +1,53 @@
 function init(argument) {
 	audio.play();
 
-	//para clickbutton
-	window.onkeyup = function(e){
-		// console.log("clickPressed : " + clickPressed);
-		// console.log("rest : " + rest);
-  		if (rest == false ) {
-		console.log("e.keyCode" + e.keyCode);
-  			// time = this._time;
-  			// console.clear();
-  			
-  			timestampUp = audio.currentTime;
-  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-  			// console.log("posX : " + posX);
-  			console.log("interval : " + interval);  
-  			getNearestTime(interval);
-  			//
-  			// this._time = timestamp;	
-  			
-  			rest = true;
-  		}
-  		clickPressed = false;
+	//key down
+	// window.onkeydown = function(e){
+	window.onkeydown = function(e){
+		if (e.keyCode != 27){
+			// console.log("keyCode : " + e.keyCode);
+			clickButton();
+		}else if(e.keyCode == 27){
+	  		// console.clear();
+			if (rest == false ) {
+	  			timestampUp = audio.currentTime;
+	  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+	  			// console.log("posX : " + posX);
+	  			// console.log("interval : " + interval);  
+	  			getNearestTime(interval);
+	  			rest = true;
+	  		}
+	  		clickPressed = false;
+		}
 	}
+	//para clickbutton
+	// window.onkeyup = function(e){
+	// 	// console.log("clickPressed : " + clickPressed);
+	// 	// console.log("rest : " + rest);
+ //  		if (rest == false ) {
+	// 	console.log("e.keyCode" + e.keyCode);
+ //  			// time = this._time;
+ //  			// console.clear();
+  			
+ //  			timestampUp = audio.currentTime;
+ //  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+ //  			// console.log("posX : " + posX);
+ //  			console.log("interval : " + interval);  
+ //  			getNearestTime(interval);
+ //  			//
+ //  			// this._time = timestamp;	
+  			
+ //  			rest = true;
+ //  		}
+ //  		clickPressed = false;
+	// }
 
 }
 
 function clickButton(argument) {
-	// console.log("clicked: " + clickPressed);
+	// console.log("clicked a la entrada: " + clickPressed);
 	if (clickPressed == false) {
+		// console.log("clickPressed : " + clickPressed);
 		timestamp = audio.currentTime;
 		// console.log("audio.currentTime : " + audio.currentTime);
 		clickPressed = true;		
