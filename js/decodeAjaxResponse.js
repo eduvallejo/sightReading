@@ -7,6 +7,14 @@ function resetearAjax(argument) {
 	contadorUsuario = 0;
 	fallos = 0;
 	numErrores = 0;
+	//bug valores raros ajax
+	notasLigadas = [];
+	repeticion = false; //para saber si tenemos q repetir desde el principio
+	contadorRepeticion = 0; //saber desde donde repetir
+
+	tupleApply = [];
+	tupleType = 0; //3 para tresillos etc
+	dotApply = [];
 	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
 	console.log("reset");
 }
@@ -241,7 +249,7 @@ function decodeAjaxResponse(song) {
 	}
 	//ligar notas
 	console.log("notasLigadas : " + notasLigadas);
-			console.log("tiemposCorrectos : " + tiemposCorrectos);
+	console.log("tiemposCorrectos : " + tiemposCorrectos);
 	var temp = 0;
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (notasLigadas[i] == true){

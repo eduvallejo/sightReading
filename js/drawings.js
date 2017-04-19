@@ -107,7 +107,7 @@ var numErrores = 0;
 function pintarFallo(argument) {
 	// console.clear();
 	console.log("tiemposCorrectos[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
-	console.log("tiemposusuario[" + contadorUsuario +] ": " + tiemposUsuario[contadorUsuario]);
+	console.log("tiemposusuario[" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
 
 	numErrores++;
 	document.getElementById('fallos').innerHTML = "Fallos: " + numErrores; 
