@@ -48,6 +48,17 @@ parsear la ajax response para pasarla a la variable song y hacer el decode(song)
 
 abcjs pasa a la siguiente linea con el \n. y cuando se hace un line break en el archivo, por motivos de espacio, pero no se quiere q haya una linea en la partira, lo q se hace es poner un \
 
-mostrar cada fallo nada mas realizarlo
+cambair codigo para q pille bien los 1/8 etc, ahora solo va con 4/4
+tb hacer para poner un tempo mas rapido
+investigar el formato musicxml para modficarlo antes de convertirlo a abc y evitar 1l 1/8
+
+hay muchos fallos calculando los tiemposCorrectos, sobretodo al ir haciendo ajax
+
+hacer pop con los silencios paara q no se hayan de marcar? q sean como notas ligadas.
+
+quitar los pushtiempo manuales y poner algo con margen de error
+
+hay un bug cuando una nota esta ligada por delante y por detras, es decir 3 notas ligadas(este tipode ligadiuras se dan al pasar de un compas a otro). se pierde el valor de la nota mas a la derecha
+es en la linea 259 del decodeajax que se elimina el valor original de la nota ligada a la derecha ya q se le ha sumado previamente a la ligada a la izquierrda. esto es un bug cuando hay tres notas ligadas ya q 
 
 

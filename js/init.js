@@ -75,12 +75,13 @@ function clickButton(argument) {
 function reinitiate(argument) {
 	console.clear();
 	contadorUsuario = 0;
-	tiemposUsuario = [];
+	// tiemposUsuario = [];
 	clickPressed = false;
+	resetearMarcador();
 	// rest = true;
 	// delete timestamp; delete timestamp;
-	console.log("timestamp : " + timestamp);
-	console.log("timestampUp : " + timestampUp);
+	// console.log("timestamp : " + timestamp);
+	// console.log("timestampUp : " + timestampUp);
 }
 
 

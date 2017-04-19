@@ -1,24 +1,42 @@
 
-
-function decodeAjaxResponse(song) {
-	//lo mismo q el decodeAbc pero quitamos los headers
-	// console.log(JSON.stringify(song));
-	// console.log("song : " + song);
-	song = song + "]";//para evitar el bug del :| final
+function resetearAjax(argument) {
+	// console.clear();
 	pointer = 0;
 	tiemposCorrectos = [];
 	tiemposUsuario = [];
 	contadorUsuario = 0;
 	fallos = 0;
+	numErrores = 0;
+	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
+	console.log("reset");
+}
+
+function decodeAjaxResponse(song) {
+	resetearAjax();
+	// song = song.replace("<", "&lt");// "<" needs to be "&lt" in pre
+
+	song = song.replace(/".*?"/g, ""); //elimino las quotes de los acordes, asi descode mmas facil
+	//lo mismo q el decodeAbc pero quitamos los headers
+	// console.log(JSON.stringify(song));
+	// console.log("song : " + song);
+	song = song + "]";//para evitar el bug del :| final
+	// pointer = 0;
+	// tiemposCorrectos = [];
+	// tiemposUsuario = [];
+	// contadorUsuario = 0;
+	// fallos = 0;
+	// numErrores = 0;
 
 	var musicLines = false;
 	while(musicLines == false){
 			// console.log("header song[" + pointer + "]: " + song[pointer]);
 		// console.log("pointer : " + pointer);
-		if ((isNaN(song[pointer]) && (song[pointer + 1] == ":") || song[pointer] == "%")) {
-			// console.log("header song[" + pointer + "]: " + song[pointer]);
+		if ((isNaN(song[pointer]) && (song[pointer + 1] == ":")) || (song[pointer] == "%" ) || (song[pointer] == "\n")) {
 			// pointer++;
-		// console.log("song[" + pointer + "] : " + song[pointer]);
+			if (song[pointer] == "L" && song[pointer + 4] == "8") {
+				corcheasL = true;
+				// console.log("corcheasL : " + corcheasL);
+			}
 			while(song[pointer] != "\n"){
 				pointer++
 			}
@@ -38,10 +56,12 @@ function decodeAjaxResponse(song) {
 
 
 	// console.log("song : " + song);
+	console.log("body song[" + pointer + "]: " + song[pointer]);
 	// pointer = 0; volver a poner si no funciona lo de arriba
 	contadorTc = 0;
-	song = song.replace(/".*?"/g, ""); //elimino las quotes de los acordes, asi descode mmas facil
-	console.log("song : " + song);
+	// song = song.replace(/".*?"/g, ""); //elimino las quotes de los acordes, asi descode mmas facil
+		console.log("song[" + pointer + "] : " + song[pointer]);
+	// console.log("song : " + song);
 	while(song[pointer] != undefined){
 		//repeticiones
 		if (song[pointer] == '|' && song[pointer + 1] == ":") {
@@ -61,7 +81,7 @@ function decodeAjaxResponse(song) {
 				tiemposRepetir = contadorTc - contadorRepeticion;
 				for (var i = 0; i < tiemposRepetir; i++) {
 					tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorRepeticion + i];
-					console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+					// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
 					contadorTc++;
 					// console.log("contadorTc : " + contadorTc);
 					// console.log("song[" + pointer + "] : " + song[pointer]);
@@ -73,7 +93,7 @@ function decodeAjaxResponse(song) {
 				console.log("tiemposRepetir : " + tiemposRepetir);
 				for (var i = 0; i < tiemposRepetir; i++) {
 					tiemposCorrectos[contadorTc] = tiemposCorrectos[i];
-					console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+					// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
 					contadorTc++;
 					// console.log("contadorTc : " + contadorTc);
 					// console.log("song[" + pointer + "] : " + song[pointer]);
@@ -121,7 +141,7 @@ function decodeAjaxResponse(song) {
 		}
 
 		//ligar duraciones
-		// puntillos <
+		//  C-C-D/
 		if (song[pointer] == "-") {
 			notasLigadas[contadorTc - 1] = true;
 			// dotApply[contadorTc - 1] = 0.5;
@@ -143,7 +163,7 @@ function decodeAjaxResponse(song) {
 		if (song[pointer].match(lettersTime) ) {
 			tiemposCorrectos[contadorTc]  = msPerBeat;//letra a secas 
 			// console.log("song[" + pointer + "]) : " + song[pointer]);
-			console.log("tiemposCorrectos[" + contadorTc + "]: " + tiemposCorrectos[contadorTc]);
+			// console.log("tiemposCorrectos[" + contadorTc + "]: " + tiemposCorrectos[contadorTc]);
 			// contadorTc++;
 			// console.log("contadorTc : " + contadorTc);
 			// console.log("song[" + pointer + "] : " + song[pointer]);
@@ -157,14 +177,14 @@ function decodeAjaxResponse(song) {
 			if (!isNaN(song[pointer + 1]) && song[pointer + 1] != " ") {
 				// console.log("3/2" );
 				tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorTc] / song[pointer+1];
-				console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
-				console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+				// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+				// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
 				pointer++;
 			// console.log("song[" + pointer + "] : " + song[pointer]);
 			}else{
 				tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorTc] / 2;
-				console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
-				console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+				// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+				// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
 			}
 			// pointer++;
 		// console.log("song[" + pointer + "] : " + song[pointer]);
@@ -175,12 +195,12 @@ function decodeAjaxResponse(song) {
 			// console.log("song[" + pointer + "] : " + song[pointer]);
 			if (song[pointer] == " ") {
 				tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorTc] ;
-				console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
-				console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+				// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+				// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
 			}else if (song[pointer] != "\n"){//evitar bug fin de linea \
-				console.log("song[pointer] : " + escape(song[pointer]));
+				// console.log("song[" + pointer + "] : " + (song[pointer]));
 				tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorTc] * song[pointer];
-				console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+				// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
 			}else{
 				contadorTc++;
 			}
@@ -220,24 +240,48 @@ function decodeAjaxResponse(song) {
 		}
 	}
 	//ligar notas
+	console.log("notasLigadas : " + notasLigadas);
+			console.log("tiemposCorrectos : " + tiemposCorrectos);
+	var temp = 0;
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (notasLigadas[i] == true){
+			// console.log("notasLigadas[" + i + "] : " + notasLigadas[i]);
 			tiemposCorrectos[i] = tiemposCorrectos[i] + tiemposCorrectos[i + 1];
+			temp = tiemposCorrectos[i + 1];
+			if (notasLigadas[i + 1] == true) {
+				// console.log("temp : " + temp);
+				tiemposCorrectos[i] = tiemposCorrectos[i] + tiemposCorrectos[i + 2];
+				tiemposCorrectos[i + 2] = 0;
+			}
 			tiemposCorrectos[i + 1] = 0;
 			// tiemposCorrectos.splice([i+1], 1);
 			// delete tiemposCorrectos[i+1];
 		}
+		// console.log("LIGtiemposCorrectos : " + tiemposCorrectos);
+		temp = 0;
 	}
 	//expulsar(pop) las notas ligadas
 	var contadorPop = 0;
-	for (var i = 0; i <= tiemposCorrectos.length; i++) {
+	var tiemposCorrectosLenghtAntesDelPop = tiemposCorrectos.length; //para evitar el bug de las notas ligadas cuando hay muchas
+	for (var i = 0; i <= tiemposCorrectosLenghtAntesDelPop ; i++) {
 		if (notasLigadas[i] == true){
-			// console.log("contadorPop : " + contadorPop);
+			// console.log("tiemposCorrectos : " + tiemposCorrectos);
+			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			tiemposCorrectos.splice([i + 1 - contadorPop], 1);
-			// console.log("i + 1: " + (i + 1 - contadorPop));
+			// console.log("tiemposCorrectos.length : " + tiemposCorrectos.length);
+			// console.log("tiemposCorrectos : " + tiemposCorrectos);
+			// console.log(i + " + 1 - " + contadorPop +": " + (i + 1 - contadorPop));
+			// console.log("__");
 			contadorPop++;
 		}
 	}
+
+	//dividimos entre dos si L:8
+	// if (corcheasL == true) {
+	// 	for (var i = 0; i < tiemposCorrectos.length; i++) {
+	// 		tiemposCorrectos[i] = tiemposCorrectos[i] / 2;
+	// 	}
+	// }
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
 
 }
@@ -263,4 +307,4 @@ function saltarCaracter(pointer) {
 		}
 	}
 }
-
+// C-C-D/

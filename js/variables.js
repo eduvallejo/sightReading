@@ -68,3 +68,5 @@ var msPerBeat = 1000;//para 60bpm
 var tiemposUsuario = [];//las respuetas q pulsamos
 var contadorUsuario = 0;
 var audio = new Audio('pulseLargo.wav');
+
+var corcheasL = false; //cuando L:1/8 hay bug que una negra vale 2000 aunque sea compas 4/4
