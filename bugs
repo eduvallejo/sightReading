@@ -5,3 +5,6 @@ bug 1-tres notas ligadas-
 
 bug2 valores raros despues de hacer ajax
 	solucion: reseetear todas las variables despues de hacer ajax, incluidas los dot apply, notaLigada etc...
+
+bug3
+	el bug1 se arregló para tres notas ligadas, pero no arregla cuando hay mas de 3 npotas ligadas(Es un caso poco frecuente pero hay q mirarlo)

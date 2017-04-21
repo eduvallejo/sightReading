@@ -15,8 +15,10 @@ function resetearAjax(argument) {
 	tupleApply = [];
 	tupleType = 0; //3 para tresillos etc
 	dotApply = [];
+	corcheasL = false;
 	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
 	console.log("reset");
+	console.log("corcheasL : " + corcheasL);
 }
 
 function decodeAjaxResponse(song) {
@@ -43,7 +45,7 @@ function decodeAjaxResponse(song) {
 			// pointer++;
 			if (song[pointer] == "L" && song[pointer + 4] == "8") {
 				corcheasL = true;
-				// console.log("corcheasL : " + corcheasL);
+				console.log("corcheasL : " + corcheasL);
 			}
 			while(song[pointer] != "\n"){
 				pointer++
@@ -248,8 +250,8 @@ function decodeAjaxResponse(song) {
 		}
 	}
 	//ligar notas
-	console.log("notasLigadas : " + notasLigadas);
-	console.log("tiemposCorrectos : " + tiemposCorrectos);
+	// console.log("notasLigadas : " + notasLigadas);
+	// console.log("tiemposCorrectos : " + tiemposCorrectos);
 	var temp = 0;
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (notasLigadas[i] == true){
@@ -285,11 +287,13 @@ function decodeAjaxResponse(song) {
 	}
 
 	//dividimos entre dos si L:8
-	// if (corcheasL == true) {
-	// 	for (var i = 0; i < tiemposCorrectos.length; i++) {
-	// 		tiemposCorrectos[i] = tiemposCorrectos[i] / 2;
-	// 	}
-	// }
+	if (corcheasL == true) {
+		for (var i = 0; i < tiemposCorrectos.length; i++) {
+			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
+			tiemposCorrectos[i] = parseInt(tiemposCorrectos[i] / 2);
+			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
+		}
+	}
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
 
 }

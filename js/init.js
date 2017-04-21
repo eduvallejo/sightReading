@@ -14,7 +14,9 @@ function init(argument) {
 	  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
 	  			// console.log("posX : " + posX);
 	  			// console.log("interval : " + interval);  
-	  			getNearestTime(interval);
+	  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
+				pushTiempoUsuario(interval*1000);
+
 	  			rest = true;
 	  		}
 	  		clickPressed = false;
@@ -60,7 +62,9 @@ function clickButton(argument) {
 		// console.log("timestamp : " + timestamp);
 		var interval = (timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
 		// console.log("interval : " + interval.toFixed(3));
-		getNearestTime(interval);
+		// getNearestTime(interval);
+		pushTiempoUsuario(interval*1000);
+
 		//
 		// this._time = timestamp;	
 		timestamp = audio.currentTime;

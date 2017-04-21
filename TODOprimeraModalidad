@@ -1,3 +1,6 @@
+			weight	drop	fore	heel
+gobi 	 	262g	6mm		20mm	26mm  
+cumulus		315g	10mm	13mm	23mm
 se trata de mostrar la partitura y marcar la duracion de las notas con el teclado, no necesito pensar en midi ni sonidos
 
 usar vexflow en vez de abcjs, tiene la opcion de solfeo ritmico y parece mas sencillo, aunq no se si hay muchos temas http://www.vexflow.com/vextab/tutorial.html. habria  qcrear una rama vexflow
@@ -52,13 +55,28 @@ cambair codigo para q pille bien los 1/8 etc, ahora solo va con 4/4
 tb hacer para poner un tempo mas rapido
 investigar el formato musicxml para modficarlo antes de convertirlo a abc y evitar 1l 1/8
 
-hay muchos fallos calculando los tiemposCorrectos, sobretodo al ir haciendo ajax
-
 hacer pop con los silencios paara q no se hayan de marcar? q sean como notas ligadas.
 
 quitar los pushtiempo manuales y poner algo con margen de error
 
-hay un bug cuando una nota esta ligada por delante y por detras, es decir 3 notas ligadas(este tipode ligadiuras se dan al pasar de un compas a otro). se pierde el valor de la nota mas a la derecha
-es en la linea 259 del decodeajax que se elimina el valor original de la nota ligada a la derecha ya q se le ha sumado previamente a la ligada a la izquierrda. esto es un bug cuando hay tres notas ligadas ya q 
+y si cuento las notas desde atras¿? tal como en bodypump, en vez de contar la duracion de una negra como 1, 2, 3, 4, contARLO como 4,3,2,1 
+
+para 60bpm buscar adagios como concierto de aranjuez
+
+hacer lo de quitar todos los else if del pushTime y mandar el intervalo sin mas. luego, para checkear, miraremos si esta dentro del rANGO de error(crearemos otra variable Dificultad para ampliar o reducir este rango)
 
 
+pensar en q hacer con los staccatos
+
+implementar la notacion "E3/2 E (3:2:6GzEzDz | C4 B4 |" white stripes 7nationArmy, 
+
+pantalla amarilla si te quedas por debajo y roja si te quedas por encima? cambiar color en funcion de si vas mas lento o mas rapido de lo q deberias 
+
+"tresillo" de knopfler L:8
+z4 z2 A2 | f2- ff (3a-aa- aa |
+
+eliminar cariable fallos y dejar solo numErrores?
+
+pasar a xml?
+
+usar regexp para q no se lean los cambios de compas p ej: [M:4/4]
