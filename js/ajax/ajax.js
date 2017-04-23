@@ -3,7 +3,7 @@ function ajax(fileName) {
 	// document.getElementById("preId").innerHTML = '';		
 	
 	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);
-	console.log("AJAXfileNameencoded : " + encodeURIComponent(fileName));
+	// console.log("AJAXfileNameencoded : " + encodeURIComponent(fileName));
 
 	//ajax
 	var http = new XMLHttpRequest();

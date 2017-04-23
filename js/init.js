@@ -1,6 +1,5 @@
 function init(argument) {
-	audio.play();
-
+	comenzarMetronomo();
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
@@ -86,6 +85,10 @@ function reinitiate(argument) {
 	// delete timestamp; delete timestamp;
 	// console.log("timestamp : " + timestamp);
 	// console.log("timestampUp : " + timestampUp);
+}
+
+function comenzarMetronomo(argument) {
+	audio.play();
 }
 
 

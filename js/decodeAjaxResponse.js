@@ -17,8 +17,8 @@ function resetearAjax(argument) {
 	dotApply = [];
 	corcheasL = false;
 	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
-	console.log("reset");
-	console.log("corcheasL : " + corcheasL);
+	// console.log("reset");
+	// console.log("corcheasL : " + corcheasL);
 }
 
 function decodeAjaxResponse(song) {
@@ -45,7 +45,7 @@ function decodeAjaxResponse(song) {
 			// pointer++;
 			if (song[pointer] == "L" && song[pointer + 4] == "8") {
 				corcheasL = true;
-				console.log("corcheasL : " + corcheasL);
+				// console.log("corcheasL : " + corcheasL);
 			}
 			while(song[pointer] != "\n"){
 				pointer++
@@ -66,11 +66,11 @@ function decodeAjaxResponse(song) {
 
 
 	// console.log("song : " + song);
-	console.log("body song[" + pointer + "]: " + song[pointer]);
+	// console.log("body song[" + pointer + "]: " + song[pointer]);
 	// pointer = 0; volver a poner si no funciona lo de arriba
 	contadorTc = 0;
 	// song = song.replace(/".*?"/g, ""); //elimino las quotes de los acordes, asi descode mmas facil
-		console.log("song[" + pointer + "] : " + song[pointer]);
+		// console.log("song[" + pointer + "] : " + song[pointer]);
 	// console.log("song : " + song);
 	while(song[pointer] != undefined){
 		//repeticiones
@@ -99,8 +99,8 @@ function decodeAjaxResponse(song) {
 				repeticion = false;
 			}else if(repeticion == false){//repetir desde principio si no hay |:
 				tiemposRepetir = contadorTc - 0;
-				console.log("contadorTc : " + contadorTc);
-				console.log("tiemposRepetir : " + tiemposRepetir);
+				// console.log("contadorTc : " + contadorTc);
+				// console.log("tiemposRepetir : " + tiemposRepetir);
 				for (var i = 0; i < tiemposRepetir; i++) {
 					tiemposCorrectos[contadorTc] = tiemposCorrectos[i];
 					// console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
@@ -255,8 +255,10 @@ function decodeAjaxResponse(song) {
 	var temp = 0;
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (notasLigadas[i] == true){
+			console.log("tiemposCorrectos : " + tiemposCorrectos);
 			// console.log("notasLigadas[" + i + "] : " + notasLigadas[i]);
-			tiemposCorrectos[i] = tiemposCorrectos[i] + tiemposCorrectos[i + 1];
+			tiemposCorrectos[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i + 1]);
+			console.log("tiemposCorrectos : " + tiemposCorrectos);
 			temp = tiemposCorrectos[i + 1];
 			if (notasLigadas[i + 1] == true) {
 				// console.log("temp : " + temp);
@@ -275,7 +277,6 @@ function decodeAjaxResponse(song) {
 	var tiemposCorrectosLenghtAntesDelPop = tiemposCorrectos.length; //para evitar el bug de las notas ligadas cuando hay muchas
 	for (var i = 0; i <= tiemposCorrectosLenghtAntesDelPop ; i++) {
 		if (notasLigadas[i] == true){
-			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			tiemposCorrectos.splice([i + 1 - contadorPop], 1);
 			// console.log("tiemposCorrectos.length : " + tiemposCorrectos.length);

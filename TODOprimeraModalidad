@@ -80,3 +80,9 @@ eliminar cariable fallos y dejar solo numErrores?
 pasar a xml?
 
 usar regexp para q no se lean los cambios de compas p ej: [M:4/4]
+
+poder elgeir tempo
+
+parsear las w: para q se muestren en pantalla, seran utiles
+
+a tempo de 120 lo mas rapido q computa bien son corcheas, mas alla no es fiable

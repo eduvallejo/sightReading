@@ -26,7 +26,7 @@ function populateAjax(fileName) {
 	        // console.log("http.response: " + http.response);
 			response = JSON.parse(http.response);
 			// console.log("response : " + response);
-			console.log("numero de patterns disponibles : " + response.length);
+			// console.log("numero de patterns disponibles : " + response.length);
 			// console.log("response : " + response);
 			for (var i = 0; i < response.length; i++) {
 				var option = document.createElement("option");

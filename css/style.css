@@ -2,7 +2,15 @@
 	border: 1px solid #000;
 	display: inline-block;
 	position: fixed;
-	top :5%;
+	top :1%;
+	right: 10%;
+	font-size: 40px;
+}
+#mediaError{
+	border: 1px solid #000;
+	display: inline-block;
+	position: fixed;
+	top :10%;
 	right: 10%;
 	font-size: 40px;
 }

@@ -1,0 +1,29 @@
+X:1
+T:Title
+L:1/8
+Q:1/4=110
+M:4/4
+I:linebreak $
+K:none
+V:1 treble transpose=-14 nm="Saxof�n tenor, Acoustic Guitar" snm="Sax. T."
+%%MIDI program 66
+V:1
+[K:Dmaj] z4 z2 A2 | f2- ff (3:2:2a2 a- a2- |[M:6/4] a4 f2 a2 b>c'ba |[M:4/4] f4 z4 | %4
+ z3 f/e/ f2 a2 | e2- ed e4- |$[M:6/4] e2 z2 (3:2:2A2 d- de (3:2:2f2 d-dA |[M:4/4] B B2 B/A/ B4 | %8
+ B3 c d2 e2 | f f2 f a a3- |$[M:6/4] a2 z d/e/fa d'c'b>c'(3b/c'/b/a |[M:4/4] f8 | z3 f/e/ f2 a2 | %13
+ e>e- ee/d/ e4- | e2 z2 A2 de |$[M:6/4] f2 dA (3:2:2B2 d- df e3 d |[M:4/4] d4 z d/e/ fa | %17
+ (3:2:2d'2 d'- d'd' d'c'- c'/af/ | b3 a/g/ a3 g/f/ |$ (3:2:2g2 a- ag (3:2:2f2 d- dA | Bd-df e2 z2 | %21
+ d'e'-e'd' (3c'2 a2 f2 | b3 a/g/ a3 g/f/ |[M:6/4] g a2 gfd- dA B2 z2 |$[M:4/4] dAde- ef a/ z/ a- | %25
+ a-[a-b]/>[ac']/ ba- a2 z A/>e/ | f2 ^^ff/>g/ (3:2:2a2 a- a2- |$[M:6/4] a4 f2 a3/2-a/4a/4b>c'ba | %28
+[M:4/4] f8 | z2 z d/e/ fede | f e2 e/d/ e4- |$[M:6/4] e2 z2 Ad- de/>e/ (3f2- f/d/-dA/>A/ | %32
+[M:4/4] B3 B/A/ B4 | B3 c d3/2-d/4d/4 e2 | f ^^f2 f a a3 |$ %35
+[M:6/4] a2 z d/e/fa d'c'b>^^c'(3b/c'/b/a |[M:4/4] f8- | f3 f/e/ ^^f3/2-f/4g/4 a3/2-a/4d/4 | %38
+ e>e ee/d/ e4- |$ e4 A2 de |[M:6/4] f2 dA/>A/Bd- d/^^fg3/16 z/16 f/4 e3 d | %41
+[M:4/4] d4 z d/e/ fa/>c'/ | d' d'2 d'/>c'/ d'^^c'- c'/af3/8 z/8 |$ b3 a/g/ a3 g/f/ | %44
+ (5:4:3g3/2g/a/- ag fd- d/G/8 z/8 A/4-A | Bd- d/>f/-f/4g/4-[^^f-g]/4<f/4 e2 z z/ z/4 c'/4 |$ %46
+ d'e'- e'/>d'/ z/8 [d'e']3/8d'/ (3c'2 a2 f2 | %47
+ (7:8:4b3/4[ab-]/4b31/63-b- x0(7:8:3[ba]/4a15/61g/ a3 g/f/ |[M:6/4] g a2 gfd- dA B2 z2 |$ %49
+[M:4/4] dAde- ef a/ z/ a- | a-[a-b]/>[ac']/ ba- a2 z A/>e/ | f2 ^^ff/>g/ (3:2:2a2 a- a2- |$ %52
+[M:6/4] a4 f2 a3/2-a/4a/4b>c'ba |[M:4/4] f8 | z2 z d/e/ fede | f e2 e/d/ e4- | e4 A2 de |$ %57
+ f3/2 z/ dA/>A/ (3:2:2B2 d- d(3^^f/g/f/ | e6 z a | b b2 d'/>a/ b3 a/>c'/ | %60
+ d'bba ba (3:2:2f3/2a3/2- | a4 z4 | %62
