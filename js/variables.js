@@ -5,8 +5,8 @@ var notasLigadas = [];
 // var ligarNota = false;
 var notSkipCharacters = /[a-gA-GzZ0-9/:<>]/;
 var compensation = 0.00;
-var timestamp;
-var timestampUp;
+var tiempoInicioNota;
+var tiempoFinalNota;
 var keyPressed = false; //para q al apreter una tecla se acabe la tecla anterior
 var clickPressed = false;
 var rest = true;
@@ -41,6 +41,8 @@ var tiemposCorrectos = []; // las respuestas del usuario se compararn con este a
 var contadorTc = 0; //contador del array de los tiempos correctos
 var tiemposUsuario = [];//las respuetas q pulsamos
 var contadorUsuario = 0;
+var tiemposCorrectosAbsolutos = [];//FEATURE 10
+
 var audio = new Audio('pulseLargo60.wav');
 var bpm = 60;
 // var audio = new Audio('pulseLargo80.wav');
@@ -53,7 +55,7 @@ var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunqu
 
 //dificultad, margen para aceptar acierto
 var numErrores = 0;
-var dificultad = 17; //20=20% de margen
+var dificultad = 15; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
 // console.log("limiteSuperior : " + limiteSuperior);

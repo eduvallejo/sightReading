@@ -1,13 +1,17 @@
-
 function pushTiempoUsuario(argument) {
-	// console.log("intervalo : " + argument);
+	// console.log("____________________");
 	tiemposUsuario[contadorUsuario]  = argument;
 	// console.log("tiemposCorrectos[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
-	// console.log("tiemposUsuario[" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
+	console.log("tiemposUsuario[" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
 	// console.log("errorPorcentualAcumulado : " + errorPorcentualAcumulado);
 	// console.log("limiteSuperior : " + tiemposCorrectos[contadorUsuario] * limiteSuperior);
 	// console.log("limiteInferior : " + tiemposCorrectos[contadorUsuario] * limiteInferior);
-	if (tiemposUsuario[contadorUsuario] >= (tiemposCorrectos[contadorUsuario] * limiteInferior) && tiemposUsuario[contadorUsuario] <= (tiemposCorrectos[contadorUsuario] * limiteSuperior)) {
+	// console.log("tiemposCorrectosAbsolutos[" + contadorUsuario + "] : " + tiemposCorrectosAbsolutos[contadorUsuario]);
+	var margenInferior = tiemposCorrectosAbsolutos[contadorUsuario] - (tiemposCorrectos[contadorUsuario] * dificultad) / 100;
+	var margenSuperior =  tiemposCorrectosAbsolutos[contadorUsuario] + (tiemposCorrectos[contadorUsuario] * dificultad) / 100;
+	// console.log("margenInferior : " + margenInferior);
+	// console.log("margenSuperior : " + margenSuperior);
+	if (tiemposUsuario[contadorUsuario] >= margenInferior && tiemposUsuario[contadorUsuario] <= margenSuperior) {
 		pintarAcierto();
 	}else{
 		pintarFallo();
@@ -20,8 +24,8 @@ function pushTiempoUsuario(argument) {
 		mediaError = errorPorcentualAcumulado / tiemposCorrectos.length;
 		checkResultados();
 		
-		contadorUsuario = 0;
-		tiemposUsuario = [];
+		// contadorUsuario = 0;
+		// tiemposUsuario = [];
 		
 	}
 }
@@ -56,7 +60,7 @@ function pintarAcierto(argument) {
 function pintarFallo(argument) {
 	// console.clear();
 	acumularError();
-	console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
+	console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectosAbsolutos[contadorUsuario]);
 	// console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
 	// console.log("--------------");
 
@@ -68,23 +72,31 @@ function pintarFallo(argument) {
 
 //pone el marcador a cero despues de cada vuelta
 function resetearMarcador(argument) {
-	console.log("parseFloat(mediaError) : " + parseFloat(mediaError).toFixed(2));
+	// console.clear();
+	console.log("parseFloat(mediaError) : %" + parseFloat(mediaError).toFixed(2));
 	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(mediaError).toFixed(2);
 	console.log("--------- : ");
 	errorPorcentualAcumulado = 0;
 	mediaError = 0;
 	numErrores = 0;
+	contadorUsuario = 0;
+	tiemposUsuario = [];
 	// console.log("numErrores : " + numErrores);
 	document.getElementById('fallos').innerHTML = "Fallos: " + numErrores;
-	// console.clear();
+	tiempoAbsolutoInicial = audio.currentTime;
+
 }
 
 function acumularError(argument) {
-	errorPorcentual = Math.abs(((tiemposUsuario[contadorUsuario] * 100)/tiemposCorrectos[contadorUsuario]) - 100);
+	// console.log("errorPorcentualAcumulado : " + errorPorcentualAcumulado);
+	// console.log("tiemposUsuario[" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
+	// console.log("tiemposCorrectosAbsolutos[" + contadorUsuario + "] : " + tiemposCorrectosAbsolutos[contadorUsuario]);
+	errorPorcentual = Math.abs(((tiemposUsuario[contadorUsuario] * 100)/tiemposCorrectosAbsolutos[contadorUsuario]) - 100);
 	// errorPorcentual = ((tiemposUsuario[contadorUsuario] * 100)/tiemposCorrectos[contadorUsuario]) - 100; //el 100% seria 0% error
 	// console.log("errorPorcentual : " + errorPorcentual + " %");
 	errorPorcentualAcumulado = errorPorcentualAcumulado + errorPorcentual;
-	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/contadorTc).toFixed(2);
+	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/(contadorUsuario+1)).toFixed(2);
+	// document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/contadorTc).toFixed(2);
 }
 
 

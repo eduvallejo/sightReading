@@ -1,6 +1,6 @@
 
 function resetearAjax(argument) {
-	// console.clear();
+	console.clear();
 	pointer = 0;
 	tiemposCorrectos = [];
 	tiemposUsuario = [];
@@ -304,7 +304,15 @@ function decodeAjaxResponse(song) {
 			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
 		}
 	}
+
+	//FEATURE 10
+	var tiemposCorrectosTemporal = 0;
+	for (var i = 0; i < tiemposCorrectos.length; i++) {
+		tiemposCorrectosAbsolutos[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectosTemporal);
+		tiemposCorrectosTemporal = tiemposCorrectosAbsolutos[i];
+	}
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
+	console.log("tiemposCorrectosAbsolutos : " + tiemposCorrectosAbsolutos);
 
 }
 

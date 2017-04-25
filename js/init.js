@@ -1,19 +1,34 @@
-function init(argument) {
+var tiempoAbsolutoInicial = 0;
+function inicioPrimerClick(argument) {
+	resetearMarcador();
 	comenzarMetronomo();
+	window.onkeydown = function(e){
+		if (clickPressed == true) {
+			clickButton();
+		}else{
+			tiempoAbsolutoInicial = audio.currentTime;
+			console.log("tiempoAbsolutoInicial : " + tiempoAbsolutoInicial);
+			clickPressed = true;//feature10
+			init();
+		}
+	}
+}
+
+
+
+function init(argument) {
+	// console.log("init? l16 " );
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
 		if (e.keyCode != 27){
 			// console.log("keyCode : " + e.keyCode);
 			clickButton();
-		}else if(e.keyCode == 27){
+		}else if(e.keyCode == 27){  //Escape key
 	  		// console.clear();
 			if (rest == false ) {
-	  			timestampUp = audio.currentTime;
-	  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-	  			// console.log("posX : " + posX);
-	  			// console.log("interval : " + interval);  
-	  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
+	  			tiempoFinalNota = audio.currentTime;
+	  			var interval = (compensation + tiempoFinalNota -tiempoAbsolutoInicial).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
 				pushTiempoUsuario(interval*1000);
 
 	  			rest = true;
@@ -21,55 +36,37 @@ function init(argument) {
 	  		clickPressed = false;
 		}
 	}
-	//para clickbutton
-	// window.onkeyup = function(e){
-	// 	// console.log("clickPressed : " + clickPressed);
-	// 	// console.log("rest : " + rest);
- //  		if (rest == false ) {
-	// 	console.log("e.keyCode" + e.keyCode);
- //  			// time = this._time;
- //  			// console.clear();
-  			
- //  			timestampUp = audio.currentTime;
- //  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
- //  			// console.log("posX : " + posX);
- //  			console.log("interval : " + interval);  
- //  			getNearestTime(interval);
- //  			//
- //  			// this._time = timestamp;	
-  			
- //  			rest = true;
- //  		}
- //  		clickPressed = false;
-	// }
-
 }
 
 function clickButton(argument) {
 	// console.log("clicked a la entrada: " + clickPressed);
-	if (clickPressed == false) {
-		// console.log("clickPressed : " + clickPressed);
-		timestamp = audio.currentTime;
-		// console.log("audio.currentTime : " + audio.currentTime);
-		clickPressed = true;		
-		// console.log("clickPressed : " + clickPressed);  
-	}else if(clickPressed == true){
+	if(clickPressed == true){
 		// time = this._time;
 		// console.log("audio.currentTime : " + audio.currentTime);
 	
-		timestampUp = audio.currentTime;
-		// console.log("timestamp : " + timestamp);
-		var interval = (timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+		tiempoFinalNota = audio.currentTime;
+		// console.log("tiempoInicioNota : " +tiempoAbsolutoInicial);
+		var interval = (tiempoFinalNota -tiempoAbsolutoInicial).toFixed(3);
 		// console.log("interval : " + interval.toFixed(3));
+		// console.log("interval  : " + interval*1000 );
 		// getNearestTime(interval);
 		pushTiempoUsuario(interval*1000);
 
 		//
-		// this._time = timestamp;	
-		timestamp = audio.currentTime;
+		// this._time =tiempoAbsolutoInicial;	
+		tiempoInicioNota = audio.currentTime;
 
 		// clickPressed = false;
 		// console.log("clickPressed : " + clickPressed);  
+	}else if (clickPressed == false) {
+		comenzarMetronomo();
+		// tiempoInicioNota = audio.currentTime; //previo al feature10
+		tiempoAbsolutoInicial = audio.currentTime; //al feature10
+		console.log("tiempoAbsolutoInicial : " + tiempoAbsolutoInicial);
+
+		comenzarMetronomo();
+
+		clickPressed = true;		
 	}
 	rest = false;	
 }
@@ -82,9 +79,16 @@ function reinitiate(argument) {
 	clickPressed = false;
 	resetearMarcador();
 	// rest = true;
-	// delete timestamp; delete timestamp;
-	// console.log("timestamp : " + timestamp);
-	// console.log("timestampUp : " + timestampUp);
+	// deletetiempoAbsolutoInicial; deletetiempoAbsolutoInicial;
+	// console.log("tiempoInicioNota : " +tiempoAbsolutoInicial);
+	// console.log("tiempoFinalNota : " + tiempoFinalNota);
+}
+
+//FIX bug7
+function clickPressedFalse(argument) {
+	console.clear();
+	clickPressed = false;
+	inicioPrimerClick();
 }
 
 function comenzarMetronomo(argument) {

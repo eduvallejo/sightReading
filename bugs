@@ -15,4 +15,8 @@ bug4
 
 bug5
 	a/>a- a/a da Infinity como ultimo tiempo correcto
+bug6
+	no lee bien las notas cuando se multiplican por dos o mas digitos, por ejemplo z12 = z2
+bug7
+	el click en el boton no funciona bien como primer evento, automaticamente dispara el primer varlor en vez de poner en marcha el reloj
 	

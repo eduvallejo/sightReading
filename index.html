@@ -18,9 +18,8 @@
 	<!-- <script src="abcjs_basic_midi_3.1.1-min.js" type="text/javascript"></script> -->
 	<!-- <script src="js/abcjs_plugin_2.3-min.js" type="text/javascript"></script> -->
 </head>
-<!-- <body onload="init();"> --> 
-<!-- <body> -->
-<body onload="populateAjax();init();">
+<!-- <body onload="populateAjax();init();"> -->
+<body onload="populateAjax();inicioPrimerClick();">
 <div id="fallos">Fallos:</div>
 <div id="mediaError">M(%):</div>
 <div id="primeraLinea">
@@ -30,7 +29,7 @@
         <!-- <option value="barbershop">barbershop</option> -->
     </select>
 </div>
-<button id="buttonReinitiate" onclick='reinitiate();' style="display: inline-block;width:12%; height:40px; left:50%; position: relative;">reiniciarPrueba</button>
+<button id="buttonReinitiate" onclick='clickPressedFalse();' style="display: inline-block;width:12%; height:40px; left:50%; position: relative;">iniciar</button>
 
 
 <!-- <p id="songVariable"></p> -->

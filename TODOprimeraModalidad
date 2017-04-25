@@ -93,6 +93,10 @@ añadir teclas q valgan por adornos, es decir q apretando una sola tecla se maru
 
 crear BBDD para guardar records
 
-comparar la nota , no con el tiempo con respecto a la nota anterior, sino con la primera nota. la prueba seria mas dificil ya que si te pierdes estas perdido. pero seria mucho mas realista, si consigues pasar la prueba habrias tocado cada nota en su lugar
+FEATURE 10:comparar la nota , no con el tiempo con respecto a la nota anterior, sino con la primera nota. la prueba seria mas dificil ya que si te pierdes estas perdido. pero seria mucho mas realista, si consigues pasar la prueba habrias tocado cada nota en su lugar
 
 hacer q suene la nota midi con cada pulsacion, esto seria la leche!!
+
+pensar en que el fin de la nota y comienzo de la siguiente sea con key up
+
+hacer q el primer click sirva para poner el marhca el tiempo, en vez de mandar un resultado
