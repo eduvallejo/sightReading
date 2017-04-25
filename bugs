@@ -8,3 +8,11 @@ bug2 valores raros despues de hacer ajax
 
 bug3
 	el bug1 se arregló para tres notas ligadas, pero no arregla cuando hay mas de 3 npotas ligadas(Es un caso poco frecuente pero hay q mirarlo)
+
+bug4
+	a veces, en las ligaduras, los numeros se concatenan en vez de sumarse
+		258 a 262 del decode, se arregla forzando parseInt antes de sumar
+
+bug5
+	a/>a- a/a da Infinity como ultimo tiempo correcto
+	

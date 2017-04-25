@@ -86,3 +86,13 @@ poder elgeir tempo
 parsear las w: para q se muestren en pantalla, seran utiles
 
 a tempo de 120 lo mas rapido q computa bien son corcheas, mas alla no es fiable
+
+compensar el margen de error en funcion del tempo, hacer que cambie de .wav automaticamente
+
+añadir teclas q valgan por adornos, es decir q apretando una sola tecla se maruqen varios micro tiempos a la vez
+
+crear BBDD para guardar records
+
+comparar la nota , no con el tiempo con respecto a la nota anterior, sino con la primera nota. la prueba seria mas dificil ya que si te pierdes estas perdido. pero seria mucho mas realista, si consigues pasar la prueba habrias tocado cada nota en su lugar
+
+hacer q suene la nota midi con cada pulsacion, esto seria la leche!!

@@ -17,6 +17,8 @@ function ajax(fileName) {
 	        // console.log("numero de patrones: " + http.response.length);
 	        // console.log("http.response : " + http.response);
 	        response = JSON.parse(http.response);
+	        // response = response.replace(/\n([^\n]*)$/, ']'); //bug5 NO funciona
+	        // console.log("response : " + response);
 		    appendSong(response);
       		// document.getElementById("loading").innerHTML = ''; // Hide the image after the response from the server
       		// document.getElementById("preId").innerHTML += response; // Hide the image after the response from the server

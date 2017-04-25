@@ -29,7 +29,8 @@ function decodeAjaxResponse(song) {
 	//lo mismo q el decodeAbc pero quitamos los headers
 	// console.log(JSON.stringify(song));
 	// console.log("song : " + song);
-	song = song + "]";//para evitar el bug del :| final
+	// song = song + "]";//para evitar el bug del :| final
+	// console.log("song : " + song);
 	// pointer = 0;
 	// tiemposCorrectos = [];
 	// tiemposUsuario = [];
@@ -45,6 +46,9 @@ function decodeAjaxResponse(song) {
 			// pointer++;
 			if (song[pointer] == "L" && song[pointer + 4] == "8") {
 				corcheasL = true;
+				// console.log("corcheasL : " + corcheasL);
+			}else if (song[pointer] == "L" && song[pointer + 5] == "6") {//1/16
+				semiCorcheasL = true;
 				// console.log("corcheasL : " + corcheasL);
 			}
 			while(song[pointer] != "\n"){
@@ -250,19 +254,16 @@ function decodeAjaxResponse(song) {
 		}
 	}
 	//ligar notas
-	// console.log("notasLigadas : " + notasLigadas);
-	// console.log("tiemposCorrectos : " + tiemposCorrectos);
 	var temp = 0;
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (notasLigadas[i] == true){
-			console.log("tiemposCorrectos : " + tiemposCorrectos);
-			// console.log("notasLigadas[" + i + "] : " + notasLigadas[i]);
+			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			tiemposCorrectos[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i + 1]);
-			console.log("tiemposCorrectos : " + tiemposCorrectos);
+			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			temp = tiemposCorrectos[i + 1];
 			if (notasLigadas[i + 1] == true) {
 				// console.log("temp : " + temp);
-				tiemposCorrectos[i] = tiemposCorrectos[i] + tiemposCorrectos[i + 2];
+				tiemposCorrectos[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i + 2]);
 				tiemposCorrectos[i + 2] = 0;
 			}
 			tiemposCorrectos[i + 1] = 0;
@@ -289,9 +290,17 @@ function decodeAjaxResponse(song) {
 
 	//dividimos entre dos si L:8
 	if (corcheasL == true) {
+		console.log("1/8->la negra vale : " + (msPerBeat/2) + "ms");
 		for (var i = 0; i < tiemposCorrectos.length; i++) {
 			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
 			tiemposCorrectos[i] = parseInt(tiemposCorrectos[i] / 2);
+			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
+		}
+	}else if (semiCorcheasL == true) {
+		console.log("1/16->la negra vale : " + (msPerBeat/4) + "ms");
+		for (var i = 0; i < tiemposCorrectos.length; i++) {
+			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
+			tiemposCorrectos[i] = parseInt(tiemposCorrectos[i] / 4);
 			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
 		}
 	}

@@ -4,25 +4,12 @@ L:1/8
 Q:1/4=140
 M:4/4
 K:F
-| D3 .D D3 .D | C3 .C B,3 .B, | A,4 A,3 A, | 
- A,4 A,3 A, | D4 D3 C |C3 C B,3 B, | A,4 A,3 A, | 
- A,3 A, A,3 C | F2 .FF- F2 CD | F2 .FF- F2 CD | 
- C3 C- CG,A,G, |C3 C- CG,A,G, | B,3 B,- B,FG,F | 
- B,3 B,- B,FG,F | D3 D D3 D | D2 z B, z B, z B, | 
- C3 C C3 C |C2 z C CEG,A, | D D2 D D2 z D | 
- C3 .C B,3 .B, | A,4 A,3 A, | A,4 A,3 A, | D4 D3 C | 
- C3 C B,3 B, |A,4 A,3 A, | A,3 A, A,3 C | F2 .FF- F2 CD | 
- F2 .FF- F2 CD | C3 C- CG,A,G, | C3 C- CG,A,G, |
- B,3 B,- B,FG,F | B,3 B,- B,FG,F | D3 D D3 D | 
- D2 z B, z B, z B, | C3 C C3 C | C2 z B, z B, z B, |C3 C C3 C | 
- C2 z C CEG,A, | D3 .D DC z B,- | B,3 B, FG, .B,2 | 
- C3 C- C2 A,G, | C3 C- C2 A,C |D3 .D DC z B,- | 
- B,3 B, FG, .B,2 | C3 C- C2 A,G, | C3 C- C2 A,C | 
- D D2 D D2 z D | C3 .C B,3 .B, |A,4 A,3 A, | A,4 A,3 A, | 
- D4 D3 C | C3 C B,3 B, | A,4 A,3 A, | A,3 A, A,3 C | 
- F2 .FF- F2 CD |F2 .FF- F2 CD | C3 C- CG,A,G, | 
- C3 C- CG,A,G, | B,3 B,- B,FG,F | B,3 B,- B,FG,F | 
- D3 D D3 D |D2 z B, z B, z B, | C3 C C3 C | C3 C- C2 A,C | 
- D D2 D D2 z D | C3 .C B,3 .B, | A,4 A,3 A, | A,4 A,3 A, |
- D4 D3 C | C3 C B,3 B, | A,4 A,3 A, | A,3 A, A,3 C | 
- F2 .FF- F2 CD | F2 .FF- F2 CD | C3 C- CG,A,G, |
+| D3 D D3 D | C3 C B,3 B, | A,3 A, A,3 A, | A,3 A, A,3 A, | 
+D3 D D3 C |C3 C B,3 B, | A,3 A, A,3 A, | A,3 A, A,3 C | 
+F2 FF- F2 CD | F2 FF- F2 CD |  C3 C- CG,A,G, |C3 C- CG,A,G, |
+ B,3 B,- B,F,G,F, |  B,3 B,- B,F,G,F, | D3 D D3 D | D2 z B,2 B,2 B, | 
+ C3 C C3 C |C2 z C CEG,A, | D D2 D D2 z D | C3 C B,3 B, | 
+ A,3 A, A,3 A, | A,3 A, A,3 A, | D3 D D3 C | C3 C B,3 B, |
+ A,3 A, A,3 A, | A,3 A, A,3 C | F2 FF- F2 CD | F2 FF- F2 CD |
+  C3 C- CG,A,G, | C3 C- CG,A,G, | B,3 B,- B,F,G,F, | B,3 B,- B,F,G,F, |
+   D3 D D3 D | D2 z B,2 B,2 B, | C3 C C3 C | C2 z B,2 B,2 B, |
