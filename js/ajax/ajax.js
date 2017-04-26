@@ -51,9 +51,7 @@ function ajax(fileName) {
 			      //   console.log("pequeño");
 			      //   drawPattern(response[2]);
 		       // 	}
-	    	}else{
-	      // console.log("http.readyState: " + http.readyState);
-	    }
+	    	}
 	// console.log("ajax: " + fileName);
 	}     
 

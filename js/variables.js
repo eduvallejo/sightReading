@@ -49,6 +49,7 @@ var bpm = 60;
 // var bpm = 80;
 // var audio = new Audio('pulseLargo100.wav');
 // var bpm = 100;
+var doblarVelocidad = false;
 
 var corcheasL = false; //cuando L:1/8 hay bug que una negra vale 2000 aunque sea compas 4/4
 var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunque sea compas 4/4

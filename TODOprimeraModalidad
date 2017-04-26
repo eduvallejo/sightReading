@@ -100,3 +100,11 @@ hacer q suene la nota midi con cada pulsacion, esto seria la leche!!
 pensar en que el fin de la nota y comienzo de la siguiente sea con key up
 
 hacer q el primer click sirva para poner el marhca el tiempo, en vez de mandar un resultado
+
+hacer automatismo para poder cambiar el mecanismo de introduccion , a veces conviene mas solo keydown(como al practicar con el metronomo marcando el tercer corchea de cada uno de los tiemposde unblues)
+
+tambien , en estes entido, estaria bien hacer ejercicios con metronomo a contra tiempo, forzar que los tiempos hayan de coincidir justo despues del metronomo. q no se pueda empezar en cualquier lado mas q ahi detras y q los correctos esten ahi detras
+
+la feature 12 hay q revisarla , creo q hay bugs.
+
+crear un array de antemano con los margenes de cada nota, para q no se tenga q calcular en cada push

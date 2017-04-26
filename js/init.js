@@ -12,6 +12,10 @@ function inicioPrimerClick(argument) {
 			init();
 		}
 	}
+	//feature11
+	window.onkeyup = function(e){
+		clickButton();
+	}
 }
 
 
@@ -21,19 +25,21 @@ function init(argument) {
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
-		if (e.keyCode != 27){
+		if (e.keyCode != 13){
 			// console.log("keyCode : " + e.keyCode);
 			clickButton();
-		}else if(e.keyCode == 27){  //Escape key
+		}else if(e.keyCode == 13){  //enter key
+			console.log("e.keyCode : " + e.keyCode);
+			inicioPrimerClick();
 	  		// console.clear();
-			if (rest == false ) {
-	  			tiempoFinalNota = audio.currentTime;
-	  			var interval = (compensation + tiempoFinalNota -tiempoAbsolutoInicial).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-				pushTiempoUsuario(interval*1000);
+			// if (rest == false ) {
+	  // 			tiempoFinalNota = audio.currentTime;
+	  // 			var interval = (compensation + tiempoFinalNota -tiempoAbsolutoInicial).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+			// 	pushTiempoUsuario(interval*1000);
 
-	  			rest = true;
-	  		}
-	  		clickPressed = false;
+	  // 			rest = true;
+	  // 		}
+	  // 		clickPressed = false;
 		}
 	}
 }

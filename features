@@ -1,3 +1,5 @@
 FEATURE 10:comparar la nota , no con el tiempo con respecto a la nota anterior, sino con la primera nota. la prueba seria mas dificil ya que si te pierdes estas perdido. pero seria mucho mas realista, si consigues pasar la prueba habrias tocado cada nota en su lugar
 
 FEATURE 11: al levantar la tecla se termina la nota y comienza la siguiente
+
+FEATURE 12hacer boton para que los tiempos se dividan por dos, asi con un mp3 podemos hacer dos tempos difrentes(incluso más si hacemos ejericicios complicados)
