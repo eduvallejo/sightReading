@@ -21,27 +21,27 @@ function init(argument) {
 	  		clickPressed = false;
 		}
 	}
-	//para clickbutton
-	// window.onkeyup = function(e){
-	// 	// console.log("clickPressed : " + clickPressed);
-	// 	// console.log("rest : " + rest);
- //  		if (rest == false ) {
-	// 	console.log("e.keyCode" + e.keyCode);
- //  			// time = this._time;
- //  			// console.clear();
-  			
- //  			timestampUp = audio.currentTime;
- //  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
- //  			// console.log("posX : " + posX);
- //  			console.log("interval : " + interval);  
- //  			getNearestTime(interval);
- //  			//
- //  			// this._time = timestamp;	
-  			
- //  			rest = true;
- //  		}
- //  		clickPressed = false;
-	// }
+
+	window.onkeyup = function(e){
+		if (e.keyCode != 27){
+			// console.log("keyCode : " + e.keyCode);
+			clickButton();
+		}else if(e.keyCode == 27){
+	  		// console.clear();
+			if (rest == false ) {
+	  			timestampUp = audio.currentTime;
+	  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+	  			// console.log("posX : " + posX);
+	  			// console.log("interval : " + interval);  
+	  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
+				pushTiempoUsuario(interval*1000);
+
+	  			rest = true;
+	  		}
+	  		clickPressed = false;
+		}
+	}
+
 
 }
 
