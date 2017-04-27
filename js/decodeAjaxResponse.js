@@ -290,14 +290,14 @@ function decodeAjaxResponse(song) {
 
 	//dividimos entre dos si L:8
 	if (corcheasL == true) {
-		console.log("1/8->la negra vale : " + (msPerBeat/2) + "ms");
+		console.log("1/8->msPerBeat/2 : " + (msPerBeat/2) + "ms");
 		for (var i = 0; i < tiemposCorrectos.length; i++) {
 			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
 			tiemposCorrectos[i] = parseInt(tiemposCorrectos[i] / 2);
 			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
 		}
 	}else if (semiCorcheasL == true) {
-		console.log("1/16->la negra vale : " + (msPerBeat/4) + "ms");
+		console.log("1/16->msPerBeat/4 : " + (msPerBeat/4) + "ms");
 		for (var i = 0; i < tiemposCorrectos.length; i++) {
 			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
 			tiemposCorrectos[i] = parseInt(tiemposCorrectos[i] / 4);

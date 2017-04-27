@@ -1,11 +1,9 @@
 X:1
-T:Title
-C:Composer
 L:1/8
 M:4/4
-I:linebreak $
-K:Amaj
-V:1 treble nm="Piano" snm="Pno."
-%%MIDI program 0
+I:linebreak 
+K:Gmaj
+N:Bond theme
 V:1
- FEF z2 F z B, | z CEF ABEF | 
+AG AG AG/A/- A/G/A/G/|AG AG AG/A/- A/G/A/G/|AG AG AG/A/- A/G/A/G/|AG AG AG/A/- A/G/A/G/|
+ AG A/G/A/G/ AG A/G/A/G/ |AG A/G/A/G/ AG A/G/A/G/ |AG A/G/A/G/ AG A/G/A/G/ |AG A/G/A/G/ AG A/G/A/G/ |

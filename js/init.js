@@ -92,7 +92,7 @@ function reinitiate(argument) {
 
 //FIX bug7
 function clickPressedFalse(argument) {
-	console.clear();
+	// console.clear();
 	clickPressed = false;
 	inicioPrimerClick();
 }

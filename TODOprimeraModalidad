@@ -108,3 +108,5 @@ tambien , en estes entido, estaria bien hacer ejercicios con metronomo a contra 
 la feature 12 hay q revisarla , creo q hay bugs.
 
 crear un array de antemano con los margenes de cada nota, para q no se tenga q calcular en cada push
+
+con los error medio absoultos el tanto por ciento es demasiado bajo ya q compara el porcentaje con respecto a la nota actual y a la suma de todas las notas anteriores.

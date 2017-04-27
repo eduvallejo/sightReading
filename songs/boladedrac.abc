@@ -1,0 +1,12 @@
+X:1
+T:Title
+C:Composer
+L:1/8
+M:4/4
+I:linebreak $
+K:Amaj
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:1
+ FEF z2 F z B, | z CEF ABEF | A z3 G3 F | z8 |
+ FEF z2 F z B, | z CEF ABEF | z A G2 F z EF- |F8 | 

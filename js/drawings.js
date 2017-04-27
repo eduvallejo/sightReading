@@ -95,8 +95,7 @@ function acumularError(argument) {
 	// errorPorcentual = ((tiemposUsuario[contadorUsuario] * 100)/tiemposCorrectos[contadorUsuario]) - 100; //el 100% seria 0% error
 	errorPorcentualAcumulado = errorPorcentualAcumulado + errorPorcentual;
 	// console.log("errorPorcentual: " + errorPorcentual + " %");
-	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/(contadorUsuario+1)).toFixed(2);
-	// document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/contadorTc).toFixed(2);
+	// document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/(contadorUsuario+1)).toFixed(2);
 }
 
 
