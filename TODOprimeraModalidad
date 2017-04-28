@@ -99,4 +99,5 @@ hacer q suene la nota midi con cada pulsacion, esto seria la leche!!
 
 en la rama tiemposabsolutos hay un error en la funcion de erro promedio, uso el contadorTc cuadno deberia usar el contadorUsuario
 	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/ (contadorUsuario + 1)).toFixed(2);
-	
+
+juntar ebn una sola funcion doblar tempo y cambiar tempo

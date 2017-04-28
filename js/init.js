@@ -80,6 +80,9 @@ function reinitiate(argument) {
 	contadorUsuario = 0;
 	tiemposUsuario = [];
 	clickPressed = false;
+	document.getElementById('doblarTempo').style.backgroundColor = defaultColor;
+	document.getElementById('tempo').innerHTML = bpm ;
+
 	resetearMarcador();
 	console.log("tiemposUsuario : " + tiemposUsuario);
 	

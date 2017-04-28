@@ -308,9 +308,9 @@ function decodeAjaxResponse(song) {
 	//determinar margenes
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		margenesCorrectosSuperior[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i] * (dificultad / 100));
-		console.log("margenesCorrectosSuperior[" + i + "] : " + margenesCorrectosSuperior[i]);
+		// console.log("margenesCorrectosSuperior[" + i + "] : " + margenesCorrectosSuperior[i]);
 		margenesCorrectosInferior[i] = parseInt(tiemposCorrectos[i]) - parseInt(tiemposCorrectos[i] * (dificultad / 100));
-		console.log("margenesCorrectosInferior[" + i + "] : " + margenesCorrectosInferior[i]);
+		// console.log("margenesCorrectosInferior[" + i + "] : " + margenesCorrectosInferior[i]);
 	}
 
 }

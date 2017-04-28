@@ -81,7 +81,7 @@ function resetearMarcador(argument) {
 function acumularError(argument) {
 	errorPorcentual = Math.abs(((tiemposUsuario[contadorUsuario] * 100) / tiemposCorrectos[contadorUsuario]) - 100);
 	// errorPorcentual = ((tiemposUsuario[contadorUsuario] * 100)/tiemposCorrectos[contadorUsuario]) - 100; //el 100% seria 0% error
-	console.log("errorPorcentual : " + errorPorcentual + " %");
+	// console.log("errorPorcentual : " + errorPorcentual + " %");
 	errorPorcentualAcumulado = errorPorcentualAcumulado + errorPorcentual;
 	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/ (contadorUsuario + 1)).toFixed(2);
 }

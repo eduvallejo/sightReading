@@ -30,8 +30,14 @@
         <option value="" ></option>
         <!-- <option value="barbershop">barbershop</option> -->
     </select>
-    <button id="doblarTempo" onclick="doblarTempo();">doblarTempo</button>
+    <button id="tempoDoble" onclick="doblarTempo();">doblarTempo</button>
     <button id="tempo"></button>
+    <!-- <button id="cambiarBpm" onclick="cambiarBpm();">cambiarBpm</button> -->
+    <select id="cambiarBpm" onchange="cambiarBpm(value)">
+        <option value="60" >60</option>
+        <option value="80" >80</option>
+        <option value="100" >100</option>
+    </select>
 </div>
 <button id="buttonReinitiate" onclick='reinitiate();' style="display: inline-block;width:12%; height:40px; left:50%; position: relative;">reiniciarPrueba</button>
 
@@ -44,29 +50,14 @@
 <!-- <button id="buttonReinitiate" onclick='reinitiate();' style="display: inline-block;width:25%; height:40px; left:70%; position: relative;">reiniciarPrueba</button> -->
 </body>
 	<script>
-		// ajax('0turkey.abc');
-
-		// decodeAbc(song);
-		// decodeAbc(song);
-		// ajax('0turkey.abc');
-		// ajax('0_tresillo_negras.abc');
-		// ajax('0_tresillonegras_corcheassincopa.abc');
-		// ajax('0_corcheassincopa.abc');
-		// ajax('1turkey.abc');
-		// ajax('up-jumped-the-devil.abc');
-		// ajax('longtrainrunning.abc');
-		// ajax('longtrainrunning.abc');
-		// ajax('mariobros.abc');
-		// ajax('popRhytm.abc');
-		// ajax('anotherbrick.abc');
-		// ajax('flordeluna.abc');
-		// ajax('oyecomova.abc');
-		// ajax('salsaClave.abc');
-		// ajax('0_sincopasNegras.abc');
-		// ajax('0_fusas.abc');
-		// ajax('0_tresillo_semicorcheas.abc');
-		ajax('000.abc');/**/
+		//cuando se cambia el tempo, se vuelve automaticament a un bpm No doblado
+		velocidadDoblada = false;
+		song = '000.abc';
+		ajax(song);/**/
+		//damos valor a los botones
 		document.getElementById('tempo').innerHTML = bpm;
+		document.getElementById('cambiarBpm').value = bpm;
+
 
 		function appendSong(argument) {
 			//para evitar el bug "<""
@@ -83,6 +74,7 @@
 	</script>
 	<!-- para que el abcjs se aplique despues del ajax -->
 	<script type="text/javascript">
+
 		function loadMyJs(scriptName) {
 			// console.log("loadJs");
 			var docHeadObj = document.getElementsByTagName("head")[0];

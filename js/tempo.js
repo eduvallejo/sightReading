@@ -1,38 +1,51 @@
 function doblarTempo(argument) {
 	console.log("doblarTempo");
-	if (doblarVelocidad == false) {	
+	if (velocidadDoblada == false) {	
 		for (var i = 0; i < tiemposCorrectos.length; i++) {
 			tiemposCorrectos[i] = tiemposCorrectos[i] / 2; 
 			// tiemposCorrectosAbsolutos[i] = tiemposCorrectosAbsolutos[i] / 2; 
 		}
-		doblarVelocidad = true;
+		velocidadDoblada = true;
 		cambiarMargenes(0.5);
-		defaultColor = document.getElementById('doblarTempo').style.backgroundColor;
-		console.log("defaultColor : " + defaultColor);
-		document.getElementById('doblarTempo').style.backgroundColor = 'green';
+		defaultColor = document.getElementById('tempoDoble').style.backgroundColor;
+		console.log("defaultColor: " + defaultColor);
+		document.getElementById('tempoDoble').style.backgroundColor = 'green';
 		document.getElementById('tempo').innerHTML = bpm * 2;
 
-	}else if(doblarVelocidad == true){
+	}else if(velocidadDoblada == true){
 		for (var i = 0; i < tiemposCorrectos.length; i++) {
 			tiemposCorrectos[i] = tiemposCorrectos[i] * 2; 
 			// tiemposCorrectosAbsolutos[i] = tiemposCorrectosAbsolutos[i] * 2; 
 		}
-		doblarVelocidad = false;
+		velocidadDoblada = false;
 		cambiarMargenes(2);
-		document.getElementById('doblarTempo').style.backgroundColor = defaultColor;
+		document.getElementById('tempoDoble').style.backgroundColor = defaultColor;
 		document.getElementById('tempo').innerHTML = bpm ;
 	}
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
-	// console.log("tiemposCorrectosAbsolutos : " + tiemposCorrectosAbsolutos);
-	// clickPressedFalse();//reinicar despues de cambiar valores
 	reinitiate();
 }
 
 function cambiarMargenes(argument) {
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		margenesCorrectosSuperior[i] = margenesCorrectosSuperior[i] * argument;
-		console.log("margenesCorrectosSuperior[" + i + "] : " + margenesCorrectosSuperior[i]);
+		// console.log("margenesCorrectosSuperior[" + i + "] : " + margenesCorrectosSuperior[i]);
 		margenesCorrectosInferior[i] = margenesCorrectosInferior[i] * argument;
-		console.log("margenesCorrectosInferior[" + i + "] : " + margenesCorrectosInferior[i]);
+		// console.log("margenesCorrectosInferior[" + i + "] : " + margenesCorrectosInferior[i]);
 	}
+}
+
+function cambiarBpm(argument) {
+	audio.pause();
+	audio = new Audio('pulseLargo' + argument + '.wav');
+	bpm = argument;
+	msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
+
+	decodeAjaxResponse(song);
+	
+	console.log("cghangeBpm : " + bpm);	
+	console.log("audio : " + audio);	
+
+	reinitiate();
+	init();
 }

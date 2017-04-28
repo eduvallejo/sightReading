@@ -67,6 +67,8 @@ var errorPorcentualAcumulado = 0;
 //cambiar tempo
 var msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
 // parseFloat(mediaError).toFixed(2);
-var doblarVelocidad = false;
+var velocidadDoblada = false;
 
 console.log("msPerBeat(valor negra) : " + msPerBeat + "ms");
+
+var defaultColor;
