@@ -7,7 +7,9 @@ function pushTiempoUsuario(argument) {
 	// console.log("errorPorcentualAcumulado : " + errorPorcentualAcumulado);
 	// console.log("limiteSuperior : " + tiemposCorrectos[contadorUsuario] * limiteSuperior);
 	// console.log("limiteInferior : " + tiemposCorrectos[contadorUsuario] * limiteInferior);
-	if (tiemposUsuario[contadorUsuario] >= (tiemposCorrectos[contadorUsuario] * limiteInferior) && tiemposUsuario[contadorUsuario] <= (tiemposCorrectos[contadorUsuario] * limiteSuperior)) {
+
+	// if (tiemposUsuario[contadorUsuario] >= (tiemposCorrectos[contadorUsuario] * limiteInferior) && tiemposUsuario[contadorUsuario] <= (tiemposCorrectos[contadorUsuario] * limiteSuperior)) {
+	if ((tiemposUsuario[contadorUsuario] >= (margenesCorrectosInferior[contadorUsuario]))  && (tiemposUsuario[contadorUsuario] <= margenesCorrectosSuperior[contadorUsuario])) {
 		pintarAcierto();
 	}else{
 		pintarFallo();
@@ -48,15 +50,12 @@ function pintarAcierto(argument) {
 	// console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
 	// console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
 	// console.log("--------------");
-	// console.log("OKtiemposUsuario[" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
-	// console.log("OKtiemposCorrectos[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
-	// console.log("numErrores : " + numErrores);
 }
 
 function pintarFallo(argument) {
 	// console.clear();
 	acumularError();
-	console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
+	// console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
 	// console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
 	// console.log("--------------");
 
@@ -80,11 +79,11 @@ function resetearMarcador(argument) {
 }
 
 function acumularError(argument) {
-	errorPorcentual = Math.abs(((tiemposUsuario[contadorUsuario] * 100)/tiemposCorrectos[contadorUsuario]) - 100);
+	errorPorcentual = Math.abs(((tiemposUsuario[contadorUsuario] * 100) / tiemposCorrectos[contadorUsuario]) - 100);
 	// errorPorcentual = ((tiemposUsuario[contadorUsuario] * 100)/tiemposCorrectos[contadorUsuario]) - 100; //el 100% seria 0% error
-	// console.log("errorPorcentual : " + errorPorcentual + " %");
+	console.log("errorPorcentual : " + errorPorcentual + " %");
 	errorPorcentualAcumulado = errorPorcentualAcumulado + errorPorcentual;
-	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/contadorTc).toFixed(2);
+	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/ (contadorUsuario + 1)).toFixed(2);
 }
 
 

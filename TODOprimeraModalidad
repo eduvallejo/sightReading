@@ -96,3 +96,7 @@ crear BBDD para guardar records
 comparar la nota , no con el tiempo con respecto a la nota anterior, sino con la primera nota. la prueba seria mas dificil ya que si te pierdes estas perdido. pero seria mucho mas realista, si consigues pasar la prueba habrias tocado cada nota en su lugar
 
 hacer q suene la nota midi con cada pulsacion, esto seria la leche!!
+
+en la rama tiemposabsolutos hay un error en la funcion de erro promedio, uso el contadorTc cuadno deberia usar el contadorUsuario
+	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/ (contadorUsuario + 1)).toFixed(2);
+	

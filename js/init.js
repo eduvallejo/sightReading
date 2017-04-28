@@ -76,11 +76,13 @@ function clickButton(argument) {
 
 //vaciar los resultados y eliminar el objeto tiempo
 function reinitiate(argument) {
-	console.clear();
+	// console.clear();
 	contadorUsuario = 0;
-	// tiemposUsuario = [];
+	tiemposUsuario = [];
 	clickPressed = false;
 	resetearMarcador();
+	console.log("tiemposUsuario : " + tiemposUsuario);
+	
 	// rest = true;
 	// delete timestamp; delete timestamp;
 	// console.log("timestamp : " + timestamp);

@@ -40,6 +40,8 @@ var dotApply = [];
 var tiemposCorrectos = []; // las respuestas del usuario se compararn con este array
 var contadorTc = 0; //contador del array de los tiempos correctos
 var tiemposUsuario = [];//las respuetas q pulsamos
+var margenesCorrectosSuperior = [];
+var margenesCorrectosInferior = [];
 var contadorUsuario = 0;
 var audio = new Audio('pulseLargo60.wav');
 var bpm = 60;
@@ -48,12 +50,13 @@ var bpm = 60;
 // var audio = new Audio('pulseLargo100.wav');
 // var bpm = 100;
 
+
 var corcheasL = false; //cuando L:1/8 hay bug que una negra vale 2000 aunque sea compas 4/4
 var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunque sea compas 4/4
 
 //dificultad, margen para aceptar acierto
 var numErrores = 0;
-var dificultad = 17; //20=20% de margen
+var dificultad = 10; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
 // console.log("limiteSuperior : " + limiteSuperior);
@@ -64,5 +67,6 @@ var errorPorcentualAcumulado = 0;
 //cambiar tempo
 var msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
 // parseFloat(mediaError).toFixed(2);
+var doblarVelocidad = false;
 
 console.log("msPerBeat(valor negra) : " + msPerBeat + "ms");

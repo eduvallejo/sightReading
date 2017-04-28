@@ -1,27 +1,10 @@
 X:1
 T:Bolero de Ravel 
 C:Maurice Ravel
-L:1/16
+L:1/4
 Q:1/4=60
 M:3/4
 I:linebreak 
 K:Cmaj
 V:1 
-c4- c2Bc dcBA | c2cA c4- c2Bc | AGEF G8- | GFED EFGA G4- | 
-G4- GABA GFED | EDC2- C2CD E2F2 | D4 G8- | G8- G4 | 
-d4- d2>c2 BABc | dcB2- BcBA cBAF- | F2FF F2A2 cABG | F2FF F2A2 BGAF |
- D2DC D4- D2DD | D2F2 AFGE D2DC | D4- D2DC D2EF | G8- GFED | 
- C12 || z12 | c4- c2Bc dcBA | c2cA c4- c2Bc | 
- AGEF G8- | GFED EFGA G4- | G4- GABA GFED | EDC2- C2CD E2F2 | 
- D4 G8- | G8- G4 |d4- d2>c2 BABc | dcB2- BcBA cBAF- | 
- F2FF F2A2 cABG | F2FF F2A2 BGAF | D2DC D4- D2DD |D2F2 AFGE D2DC |
-  D4- D2DC D2EF | G8- GFED | C12 |z12| _B4- BAGF BcAG | _B2AG B4 ABAG- |
- G4- GFED E4- | E4 z2 _B2 c2_d2- | d2 _d4 d2 d2d2 | (3_d2d2d2 d2c_B d2cB | 
- _dc_B_A GFE2- E4- |E8- E2 z2 | D6 E2 DEF2- | F4 G2_A2 (3F2G2E2 | 
- DEDC- C2_B,2- B,4- | B,C_B,C DEDC DCB,_A, |_B,_A,G,2- G,2F2- F4- | F4- FGF_E- E4- |
-  E4 F_EF_D- D4- | D4- D_D_ED FEDC- | C4 z8 | z12|
-  _b4- bagf bc'ag | _b2ag b4 abag- | g4- gfed e4- | e4 z2 _b2 c'2_d'2- | 
-  d'2 _d'4 d'2 d'2d'2 |(3_d'2d'2d'2 d'2c'_b d'2c'b | _d'c'_b_a gfe2- e4- | e8- e2 z2 |
-   d6 e2 def2- | f4 g2_a2 (3f2g2e2 |dedc- c2_B2- B4- | Bc_Bc dedc dcB_A | 
-   _B_AG2- G2F2- F4- | F4- FGF_E- E4- | E4 F_EF_D- D4- |D4- D_D_ED FEDC- | C4 z8 |]
-
+c c
