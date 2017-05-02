@@ -39,6 +39,7 @@ var dotApply = [];
 
 var tiemposCorrectos = []; // las respuestas del usuario se compararn con este array
 var contadorTc = 0; //contador del array de los tiempos correctos
+var tiemposRepetir = 0;
 var tiemposUsuario = [];//las respuetas q pulsamos
 var margenesCorrectosSuperior = [];
 var margenesCorrectosInferior = [];
@@ -56,7 +57,7 @@ var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunqu
 
 //dificultad, margen para aceptar acierto
 var numErrores = 0;
-var dificultad = 10; //20=20% de margen
+var dificultad = 15; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
 // console.log("limiteSuperior : " + limiteSuperior);

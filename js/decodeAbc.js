@@ -13,8 +13,9 @@ function decodeAbc(song) {
 	
 	while(song[pointer] != undefined){
 		// saltarCaracter(pointer);
-		// console.log("INICIO song[" + pointer + "]: " + song[pointer]);
+		console.log("INICIO song[" + pointer + "]: " + song[pointer]);
 		// console.log("contadorTc : " + contadorTc);
+					console.log("tiemposCorrectos[" + contadorTc + "]: " + tiemposCorrectos[contadorTc]);
 		if (song[pointer] == '|' && song[pointer + 1] == ":") {
 			repeticion = true;
 			// console.log("repeticion : " + repeticion);
@@ -30,7 +31,9 @@ function decodeAbc(song) {
 				tiemposRepetir = contadorTc - contadorRepeticion;
 				for (var i = 0; i < tiemposRepetir; i++) {
 					tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorRepeticion + i];
+					console.log("tiemposCorrectos[" + contadorTc + "]: " + tiemposCorrectos[contadorTc]);
 					contadorTc++;
+					console.log();
 					// console.log("contadorTc : " + contadorTc);
 				}
 				repeticion = false;
@@ -38,6 +41,7 @@ function decodeAbc(song) {
 				tiemposRepetir = contadorTc - 0;
 				for (var i = 0; i < tiemposRepetir; i++) {
 					tiemposCorrectos[contadorTc] = tiemposCorrectos[i];
+					console.log("tiemposCorrectos[" + contadorTc + "]: " + tiemposCorrectos[contadorTc]);
 					contadorTc++;
 					// console.log("contadorTc : " + contadorTc);
 				}

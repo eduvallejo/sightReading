@@ -16,7 +16,6 @@ function resetearAjax(argument) {
 	tupleType = 0; //3 para tresillos etc
 	dotApply = [];
 	corcheasL = false;
-	// tiemposRepetir = 0;
 	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
 	// console.log("reset");
 	// console.log("corcheasL : " + corcheasL);
@@ -87,33 +86,34 @@ function decodeAjaxResponse(song) {
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 			pointer++;
 		// console.log("song[" + pointer + "] : " + song[pointer]);
+		console.log("arrayCorrectos: " + tiemposCorrectos);
 		}
 		//
 		if (song[pointer] == ':' && song[pointer + 1] == "|") {
 			if(repeticion == true){;
+				// console.log("repeticion : " + repeticion);
 				// console.log("contadorTc -contadorRepeticion : " + (contadorTc - contadorRepeticion));
 				tiemposRepetir = contadorTc - contadorRepeticion;
-				console.log("tiemposRepetir : " + tiemposRepetir);
-				// for (var i = 0; i < tiemposRepetir; i++) {
-				// 	tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorRepeticion + i];
-				// 	console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
-				// 	contadorTc++;
-				// 	// console.log("contadorTc : " + contadorTc);
-				// 	// console.log("song[" + pointer + "] : " + song[pointer]);
-				// console.log("arrayCorrectos: " + tiemposCorrectos);
-				// }
+				for (var i = 0; i < tiemposRepetir; i++) {
+					tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorRepeticion + i];
+					console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+					contadorTc++;
+					// console.log("contadorTc : " + contadorTc);
+					// console.log("song[" + pointer + "] : " + song[pointer]);
+				console.log("arrayCorrectos: " + tiemposCorrectos);
+				}
 				repeticion = false;
 			}else if(repeticion == false){//repetir desde principio si no hay |:
 				tiemposRepetir = contadorTc - 0;
 				// console.log("contadorTc : " + contadorTc);
 				// console.log("tiemposRepetir : " + tiemposRepetir);
-				// for (var i = 0; i < tiemposRepetir; i++) {
-				// 	tiemposCorrectos[contadorTc] = tiemposCorrectos[i];
-				// 	console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
-				// 	contadorTc++;
-				// 	// console.log("contadorTc : " + contadorTc);
-				// 	// console.log("song[" + pointer + "] : " + song[pointer]);
-				// }
+				for (var i = 0; i < tiemposRepetir; i++) {
+					tiemposCorrectos[contadorTc] = tiemposCorrectos[i];
+					console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+					contadorTc++;
+					// console.log("contadorTc : " + contadorTc);
+					// console.log("song[" + pointer + "] : " + song[pointer]);
+				}
 			}
 			pointer++;
 		// console.log("song[" + pointer + "] : " + song[pointer]);
@@ -141,7 +141,7 @@ function decodeAjaxResponse(song) {
 			dotApply[contadorTc - 1] = 1.5;
 			dotApply[contadorTc] = 0.5;
 			// console.log("contadorTc : " + contadorTc);
-			// console.log("song[" + pointer + "] : " + song[pointer]);
+			console.log("song[" + pointer + "] : " + song[pointer]);
 			pointer++;
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 		}
@@ -160,6 +160,11 @@ function decodeAjaxResponse(song) {
 		//  C-C-D/
 		if (song[pointer] == "-") {
 			notasLigadas[contadorTc - 1] = true;
+			// dotApply[contadorTc - 1] = 0.5;
+			// dotApply[contadorTc] = 1.5;
+			// console.log("contador ligado : " + (contadorTc - 1));
+			// pointer++;
+		// console.log("song[" + pointer + "] : " + song[pointer]);
 		}
 	
 		saltarCaracter(pointer); //posicion original de la funcion salyar
@@ -282,9 +287,6 @@ function decodeAjaxResponse(song) {
 			// console.log(i + " + 1 - " + contadorPop +": " + (i + 1 - contadorPop));
 			// console.log("__");
 			contadorPop++;
-			//bug de las repeticiones q no se aplican ligaduras etc...
-			tiemposRepetir--;
-			console.log("tiemposRepetir: " + tiemposRepetir);
 		}
 	}
 
@@ -304,15 +306,6 @@ function decodeAjaxResponse(song) {
 			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
 		}
 	}
-
-	console.log("contREpeticion: " + contadorRepeticion);
-	console.log("tiempos a repetir: " + tiemposRepetir);
-	//BUG en las repeticiones no se replican los > ni las ligaduras etc...	
-	for (var i = contadorRepeticion; i < tiemposRepetir+contadorRepeticion; i++) {
-		// console.log(tiemposCorrectos[i]);
-		tiemposCorrectos.splice(i + tiemposRepetir, 0, tiemposCorrectos[i]);
-	}
-
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
 	//determinar margenes
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
