@@ -80,8 +80,12 @@ function reinitiate(argument) {
 	contadorUsuario = 0;
 	tiemposUsuario = [];
 	clickPressed = false;
-	document.getElementById('tempoDoble').style.backgroundColor = "";
-	document.getElementById('tempo').innerHTML = bpm ;
+	if (velocidadDoblada == true) {
+		document.getElementById('tempoDoble').style.backgroundColor = "green";
+		document.getElementById('tempo').innerHTML = bpm * 2;
+
+	}
+	// document.getElementById('tempo').innerHTML = bpm ;
 
 	resetearMarcador();
 	console.log("tiemposUsuario : " + tiemposUsuario);
