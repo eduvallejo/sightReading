@@ -22,7 +22,7 @@ for (var i = 0; i < song.length; i++) {//elimino simbolos innecesarios para el r
 	song = song.replace(/".*?"/, "");
 	// song = song.replace("|", "");
 }
-
+var songResponse;
 // console.log("song : " + song);
 // var song = ' :G2 Ac | :E2 FE| :D2 FB, | :C2 EF| :G2 Ac | :E2 FE| :D2 FB | :C2 :G2 | :C4 | :e2 ed | :c2 GG | :A2 BA | :G2 :E2| :E2 ED | :E2 GE| :D2 FB | :C4|';
 var songEscaped = song.replace("<", "&lt");// "<" needs to be "&lt" in pre
@@ -44,6 +44,8 @@ var tiemposUsuario = [];//las respuetas q pulsamos
 var margenesCorrectosSuperior = [];
 var margenesCorrectosInferior = [];
 var contadorUsuario = 0;
+var audio = new Audio('pulseLargo40.wav');
+var bpm = 40;
 var audio = new Audio('pulseLargo60.wav');
 var bpm = 60;
 // var audio = new Audio('pulseLargo80.wav');

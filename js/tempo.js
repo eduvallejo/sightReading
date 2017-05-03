@@ -38,18 +38,20 @@ function cambiarMargenes(argument) {
 function cambiarBpm(argument) {
 	audio.pause();
 	audio = new Audio('pulseLargo' + argument + '.wav');
-	for (var i = 0; i < tiemposCorrectos.length; i++) {
-		tiemposCorrectos[i] = (tiemposCorrectos[i] * argument)/ bpm; 
-	} 
+	// for (var i = 0; i < tiemposCorrectos.length; i++) {
+	// 	tiemposCorrectos[i] = (tiemposCorrectos[i] * argument)/ bpm; 
+	// } 
 	bpm = argument;
 	msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
 
-	// decodeAjaxResponse(song);
+	ajax(song);
 	
 	console.log("cghangeBpm : " + bpm);	
 	console.log("audio : " + audio);	
 	console.log("tiemposCorrectos: " + tiemposCorrectos);
+	document.getElementById('tempo').innerHTML = bpm;
+	console.log("song : " + song);
 
-	reinitiate();
+	// reinitiate();
 	init();
 }

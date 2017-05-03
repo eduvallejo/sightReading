@@ -34,6 +34,8 @@
     <button id="tempo"></button>
     <!-- <button id="cambiarBpm" onclick="cambiarBpm();">cambiarBpm</button> -->
     <select id="cambiarBpm" onchange="cambiarBpm(value)">
+        <option ></option>
+        <option value="40" >40</option>
         <option value="60" >60</option>
         <option value="80" >80</option>
         <option value="100" >100</option>
@@ -44,10 +46,12 @@
 
 <!-- <p id="songVariable"></p> -->
 <pre id="preId"></pre> 
+<div id="midi"></div>
 
 <button id="button"  onmousedown="clickButton()" style="display: inline-block;width:20%; height:590px;margin-left: 0; position: fixed; right:0; top: 150px">touch</button>
  <br><hr>
 <!-- <button id="buttonReinitiate" onclick='reinitiate();' style="display: inline-block;width:25%; height:40px; left:70%; position: relative;">reiniciarPrueba</button> -->
+ <a href="#" onClick="MIDIjs.play('011628922695.23.24.63.mid');">Play hinematov.mid</a>
 </body>
 	<script>
 		//cuando se cambia el tempo, se vuelve automaticament a un bpm No doblado
@@ -57,7 +61,7 @@
 		//damos valor a los botones
 		document.getElementById('tempo').innerHTML = bpm;
 		document.getElementById('cambiarBpm').value = bpm;
-
+		console.log("bpm : " + bpm);
 
 		function appendSong(argument) {
 			//para evitar el bug "<""
@@ -68,7 +72,9 @@
 
 			document.getElementById('preId').innerHTML = argument;		
 			// console.log(document.getElementsByTagName("pre"));
+
 			loadMyJs('js/abcjs_plugin_2.3-min.js');
+			
 			// document.getElementsByClassName("abctext")[0].innerHTML = appendHtml;
 		}
 	</script>
@@ -82,6 +88,15 @@
 			dynamicScript.type = "text/javascript";
 			dynamicScript.src = scriptName;
 			docHeadObj.appendChild(dynamicScript);
-	}
+		}
+
 	</script>
+	
+
+<script type='text/javascript' src='//www.midijs.net/lib/midi.js'></script>
+
+
+
+
+
 </html>

@@ -282,9 +282,9 @@ function decodeAjaxResponse(song) {
 			// console.log(i + " + 1 - " + contadorPop +": " + (i + 1 - contadorPop));
 			// console.log("__");
 			contadorPop++;
-			//bug de las repeticiones q no se aplican ligaduras etc...
+			//bug6 de las repeticiones q no se aplican ligaduras etc...
 			tiemposRepetir--;
-			console.log("tiemposRepetir: " + tiemposRepetir);
+			// console.log("tiemposRepetir: " + tiemposRepetir);
 		}
 	}
 

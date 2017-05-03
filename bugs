@@ -15,4 +15,7 @@ bug4
 
 bug5
 	a/>a- a/a da Infinity como ultimo tiempo correcto
+
+bug6
+	repeticiones dan errores, lo solucione en el lenovoKeyup pero veo q solo se arregla cuando hay una unica repeticion, si hay mas repes se va a la mierda
 	

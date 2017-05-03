@@ -76,7 +76,7 @@ function clickButton(argument) {
 
 //vaciar los resultados y eliminar el objeto tiempo
 function reinitiate(argument) {
-	// console.clear();
+	console.clear();
 	contadorUsuario = 0;
 	tiemposUsuario = [];
 	clickPressed = false;
