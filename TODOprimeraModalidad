@@ -101,3 +101,5 @@ en la rama tiemposabsolutos hay un error en la funcion de erro promedio, uso el 
 	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/ (contadorUsuario + 1)).toFixed(2);
 
 juntar ebn una sola funcion doblar tempo y cambiar tempo
+
+midi, quizas podria optar por tener una version midi descargada de cada abc y ver si puedo reporducirla. asi no tendria q proeucparme de lo de reproducir midi desde abc en el browser

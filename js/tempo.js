@@ -43,15 +43,16 @@ function cambiarBpm(argument) {
 	// } 
 	bpm = argument;
 	msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
-
+	console.log("songResponse : " + songResponse);
+	console.log("song : " + song);
 	ajax(song);
 	
 	console.log("cghangeBpm : " + bpm);	
 	console.log("audio : " + audio);	
-	console.log("tiemposCorrectos: " + tiemposCorrectos);
+	// console.log("tiemposCorrectos: " + tiemposCorrectos);
 	document.getElementById('tempo').innerHTML = bpm;
 	console.log("song : " + song);
 
-	// reinitiate();
+	reinitiate();
 	init();
 }

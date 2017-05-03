@@ -22,6 +22,8 @@ for (var i = 0; i < song.length; i++) {//elimino simbolos innecesarios para el r
 	song = song.replace(/".*?"/, "");
 	// song = song.replace("|", "");
 }
+		
+var song = '0_negras.abc';
 var songResponse;
 // console.log("song : " + song);
 // var song = ' :G2 Ac | :E2 FE| :D2 FB, | :C2 EF| :G2 Ac | :E2 FE| :D2 FB | :C2 :G2 | :C4 | :e2 ed | :c2 GG | :A2 BA | :G2 :E2| :E2 ED | :E2 GE| :D2 FB | :C4|';

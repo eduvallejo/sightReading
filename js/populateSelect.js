@@ -53,6 +53,8 @@ function populateAjax(fileName) {
 
 function drawOption(argument) {
 	var value = document.getElementById("mySelect").value;
+	song = value;
+	console.log("song : " + song);
 	console.log("value : " + value);
 	ajax(value);
 	// console.log("response : " + response);
