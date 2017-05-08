@@ -1,5 +1,6 @@
 //ajax.js
 function ajax(fileName) {
+	console.log("fileName : " + fileName);
 	// document.getElementById("preId").innerHTML = '';		
 	
 	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);

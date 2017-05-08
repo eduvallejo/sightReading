@@ -103,3 +103,12 @@ en la rama tiemposabsolutos hay un error en la funcion de erro promedio, uso el 
 juntar ebn una sola funcion doblar tempo y cambiar tempo
 
 midi, quizas podria optar por tener una version midi descargada de cada abc y ver si puedo reporducirla. asi no tendria q proeucparme de lo de reproducir midi desde abc en el browser
+ahora probando con jasmid, en localhost
+
+parece q los silencios no se marcan como noteoff ni el principio como note on, se podria quizas reproducir los silencios con un volumen inaudible para q tambien sean notes on
+
+lo de acelerar la nota siguiente no es practico, suena horrible y tampoco va suficientemente rapido. intentar parando el flujo y simplemente disparando la nota al apretar el boton
+
+usar editor midi?
+
+hacer con los silencios lo mismo q con las notas ligadas? o quizas q los silencios hayan de tener un nivel de volumen maximo para estar bien
