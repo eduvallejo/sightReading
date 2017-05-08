@@ -112,3 +112,7 @@ lo de acelerar la nota siguiente no es practico, suena horrible y tampoco va suf
 usar editor midi?
 
 hacer con los silencios lo mismo q con las notas ligadas? o quizas q los silencios hayan de tener un nivel de volumen maximo para estar bien
+
+hacer q cuadno acabe una cancion automaticamente pase a la siguiente cancion, en plan de menor a mayor dificultad. tab la posibildiad de pasar a la siguiente cancion si no se han cometido un nivel de errores minimo
+
+mirar si se puede captar la frecuencia del sonido para asi comparar si tambien la nota es correcta a nivel melodico
