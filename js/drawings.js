@@ -55,8 +55,8 @@ function pintarAcierto(argument) {
 function pintarFallo(argument) {
 	// console.clear();
 	acumularError();
-	// console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
-	// console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
+	console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
+	console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
 	// console.log("--------------");
 
 	numErrores++;

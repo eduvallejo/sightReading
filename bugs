@@ -18,4 +18,6 @@ bug5
 
 bug6
 	repeticiones dan errores, lo solucione en el lenovoKeyup pero veo q solo se arregla cuando hay una unica repeticion, si hay mas repes se va a la mierda
-	
+
+bug7 
+	al doblar el tempo , una de cada dos veces la primera nota [0] se lanza ya desde el primer golpe y por tanto da un valor muy alto

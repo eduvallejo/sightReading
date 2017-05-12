@@ -23,8 +23,16 @@ for (var i = 0; i < song.length; i++) {//elimino simbolos innecesarios para el r
 	// song = song.replace("|", "");
 }
 		
-var song = '0_negras.abc';
+// var song = '0_negras.abc';
 // var song = 'wild.abc';
+// var song = 'goinghome';
+// var song = 'oyecomova.abc';
+// var song = '0_tresillo_corcheas.abc';
+var song = '0_semicorcheas.abc';
+var song = '0_corcheas.abc';
+var song = '0_tresillo_corcheas.abc';
+var song = 'goinghome';
+var song = '000.abc';
 var songResponse;
 // console.log("song : " + song);
 // var song = ' :G2 Ac | :E2 FE| :D2 FB, | :C2 EF| :G2 Ac | :E2 FE| :D2 FB | :C2 :G2 | :C4 | :e2 ed | :c2 GG | :A2 BA | :G2 :E2| :E2 ED | :E2 GE| :D2 FB | :C4|';
@@ -63,6 +71,7 @@ var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunqu
 //dificultad, margen para aceptar acierto
 var numErrores = 0;
 var dificultad = 15; //20=20% de margen
+var dificultad = 20; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
 // console.log("limiteSuperior : " + limiteSuperior);

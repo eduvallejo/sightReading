@@ -34,11 +34,11 @@
 
 		function draw(argument) {
 			var vol = mic.getLevel();
-			if (vol > 0.01) {
+			if (vol > 0.1) {
 				var time2 = new Date();
-				if ((time2 - time1) > 170) {
+				if ((time2 - time1) > 100) {
+					// console.log("vol : " + vol);
 					// console.clear();
-					console.log("vol : " + vol);
 					clickButton();
 					// console.log("time2 -time1 : " + (time2 -time1));
 					// console.log("time1 : " + time1);
