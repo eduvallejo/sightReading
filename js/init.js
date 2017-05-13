@@ -1,5 +1,11 @@
 function init(argument) {
 	comenzarMetronomo();
+	//parece q la animacion se sincroniza mejor con el metronomo si se pone aqui el render
+	// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
+	// ABCJS.stopAnimation();
+
+		//colores
+	
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
@@ -48,6 +54,8 @@ function init(argument) {
 function clickButton(argument) {
 	// console.log("clicked a la entrada: " + clickPressed);
 	if (clickPressed == false) {
+		console.log("startAnimation");
+		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
 		// console.log("clickPressed : " + clickPressed);
 		timestamp = audio.currentTime;
 		// console.log("audio.currentTime : " + audio.currentTime);
@@ -77,6 +85,8 @@ function clickButton(argument) {
 //vaciar los resultados y eliminar el objeto tiempo
 function reinitiate(argument) {
 	// console.clear();
+	// ABCJS.stopAnimation();
+
 	contadorUsuario = 0;
 	tiemposUsuario = [];
 	clickPressed = false;

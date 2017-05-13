@@ -27,3 +27,14 @@ pre{
 .abctext{
 	display: none;
 }
+
+/*.cursor { 
+	background-color: #ffffc0;
+}
+*/
+.cursor { 
+	opacity: 0.5;
+	border: 3px solid black !important; 
+	background-color: #ffffc0;
+	/*background-color: green;*/
+}
