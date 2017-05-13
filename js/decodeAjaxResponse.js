@@ -160,6 +160,8 @@ function decodeAjaxResponse(song) {
 		//  C-C-D/
 		if (song[pointer] == "-") {
 			notasLigadas[contadorTc - 1] = true;
+		}else{//hack para colorear ligaduras bug8
+			notasLigadas[contadorTc] = false;
 		}
 	
 		saltarCaracter(pointer); //posicion original de la funcion salyar
@@ -253,6 +255,7 @@ function decodeAjaxResponse(song) {
 	//ligar notas
 	var temp = 0;
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
+		// console.log("notasLigadas[" + i + "] : " + notasLigadas[i]);
 		if (notasLigadas[i] == true){
 			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			tiemposCorrectos[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i + 1]);

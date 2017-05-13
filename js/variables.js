@@ -23,7 +23,7 @@ for (var i = 0; i < song.length; i++) {//elimino simbolos innecesarios para el r
 	// song = song.replace("|", "");
 }
 		
-var tunebookString = 'X:1\nT: Cooley\'s\nM: 4/4\nL: 1/4\nQ: 1/4=60\nK: C\nD/ D/ z/ D/ D2 E2 D2 E2 D2 E2 D2 E2 D2 E2 D2 E2 D2 E2 D2 E2 D2 E2 D2 E2\n';
+var tunebookString;
 // var song = '0_negras.abc';
 // var song = 'wild.abc';
 // var song = 'goinghome';
@@ -33,8 +33,13 @@ var song = '0_semicorcheas.abc';
 var song = '0_corcheas.abc';
 var song = '0_tresillo_corcheas.abc';
 var song = 'goinghome';
-// var song = '000.abc';
+var song = '000.abc';
 var songResponse;
+
+//colorear 
+var notes = [];
+var contadorColor = 0;
+
 // console.log("song : " + song);
 // var song = ' :G2 Ac | :E2 FE| :D2 FB, | :C2 EF| :G2 Ac | :E2 FE| :D2 FB | :C2 :G2 | :C4 | :e2 ed | :c2 GG | :A2 BA | :G2 :E2| :E2 ED | :E2 GE| :D2 FB | :C4|';
 var songEscaped = song.replace("<", "&lt");// "<" needs to be "&lt" in pre

@@ -35,6 +35,6 @@ pre{
 .cursor { 
 	opacity: 0.5;
 	border: 3px solid black !important; 
-	background-color: #ffffc0;
+	/*background-color: #ffffc0;*/
 	/*background-color: green;*/
 }

@@ -21,3 +21,6 @@ bug6
 
 bug7 
 	al doblar el tempo , una de cada dos veces la primera nota [0] se lanza ya desde el primer golpe y por tanto da un valor muy alto
+
+bug8
+	las notas ligadas no se colorean bien

@@ -20,7 +20,10 @@ function pushTiempoUsuario(argument) {
 		// console.log("FIN");
 		//checkeamos reslutados
 		mediaError = errorPorcentualAcumulado / tiemposCorrectos.length;
+	
+		resetearColores();
 		checkResultados();
+
 		
 		contadorUsuario = 0;
 		tiemposUsuario = [];
@@ -44,7 +47,9 @@ function checkResultados(argument) {
 
 }
 function pintarAcierto(argument) {
-	document.body.style.backgroundColor = "green";
+	colorear("green");
+
+	// document.body.style.backgroundColor = "green";
 	acumularError();
 	// document.getElementById('mediaError').innerHTML = "M(%): " + errorPorcentualAcumulado;
 	// console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
@@ -61,14 +66,15 @@ function pintarFallo(argument) {
 
 	numErrores++;
 	document.getElementById('fallos').innerHTML = "Fallos: " + numErrores; 
-	document.body.style.backgroundColor = "yellow";
-	// document.getElementById('mediaError').innerHTML = "M(%): " + errorPorcentualAcumulado;
+	console.log("contadorColor : " + contadorColor);
+	colorear("red");
+	// notes[contadorColor - 2].setAttribute("fill", "red");
 }
 
 //pone el marcador a cero despues de cada vuelta
 function resetearMarcador(argument) {
 	console.log("parseFloat(mediaError) : " + parseFloat(mediaError).toFixed(2));
-	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(mediaError).toFixed(2);
+	document.getElementById('mediaError').innerHTML = "Err(%): " + parseFloat(mediaError).toFixed(2);
 	console.log("--------- : ");
 	errorPorcentualAcumulado = 0;
 	mediaError = 0;

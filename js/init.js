@@ -1,4 +1,12 @@
 function init(argument) {
+	notes = document.getElementsByClassName('note');
+	console.log("notes.length : " + notes.length);
+	console.clear();
+	// notes[contadorColor].style.backgroundColor = "red";
+	// notes[contadorColor].className += "note_selected";
+	// console.log("notes[contadorColor] : " + notes[contadorColor]);
+	// console.log("contadorColor : " + contadorColor);
+	// contadorColor++;
 	comenzarMetronomo();
 	//parece q la animacion se sincroniza mejor con el metronomo si se pone aqui el render
 	// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
@@ -52,6 +60,7 @@ function init(argument) {
 }
 
 function clickButton(argument) {
+	// console.clear();
 	// console.log("clicked a la entrada: " + clickPressed);
 	if (clickPressed == false) {
 		console.log("startAnimation");
@@ -60,9 +69,10 @@ function clickButton(argument) {
 		timestamp = audio.currentTime;
 		// console.log("audio.currentTime : " + audio.currentTime);
 		clickPressed = true;		
+		colorear("green");
 		// console.log("clickPressed : " + clickPressed);  
 	}else if(clickPressed == true){
-		// time = this._time;
+				// time = this._time;
 		// console.log("audio.currentTime : " + audio.currentTime);
 	
 		timestampUp = audio.currentTime;
@@ -70,26 +80,25 @@ function clickButton(argument) {
 		var interval = (timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
 		// console.log("interval : " + interval.toFixed(3));
 		// getNearestTime(interval);
+		// colorear("green");
 		pushTiempoUsuario(interval*1000);
 
 		//
 		// this._time = timestamp;	
 		timestamp = audio.currentTime;
 
-		// clickPressed = false;
-		// console.log("clickPressed : " + clickPressed);  
 	}
 	rest = false;	
-}
+}	
 
 //vaciar los resultados y eliminar el objeto tiempo
 function reinitiate(argument) {
-	// console.clear();
-	// ABCJS.stopAnimation();
+	resetearColores();
 
 	contadorUsuario = 0;
 	tiemposUsuario = [];
 	clickPressed = false;
+
 	if (velocidadDoblada == true) {
 		document.getElementById('tempoDoble').style.backgroundColor = "green";
 		document.getElementById('tempo').innerHTML = bpm * 2;
@@ -100,14 +109,48 @@ function reinitiate(argument) {
 	resetearMarcador();
 	console.log("tiemposUsuario : " + tiemposUsuario);
 	
-	// rest = true;
-	// delete timestamp; delete timestamp;
-	// console.log("timestamp : " + timestamp);
-	// console.log("timestampUp : " + timestampUp);
+	// //colores
+	// for (var i = 0; i < notes.length; i++) {
+	// 	notes[i].setAttribute("fill", "black");
+	// // 			notes[contadorColor].setAttribute("class", "note note_selected");
+	// // notes[contadorColor].setAttribute("fill", "grey");
+	// }
+	// contadorColor = 0;
 }
 
 function comenzarMetronomo(argument) {
 	audio.play();
+}
+
+function colorear(argument) {
+	console.log("colorear");
+	// bug8
+	notes[contadorColor].setAttribute("fill", argument);
+	if (notasLigadas[contadorColor] == true) {
+		contadorColor++;
+		notes[contadorColor].setAttribute("fill", argument);
+	}
+	if (notasLigadas[contadorColor] == true) {
+		contadorColor++;
+		notes[contadorColor].setAttribute("fill", argument);
+	}
+	// element.setAttribute("class", "oldclass newclass");
+	contadorColor++;
+}
+
+function resetearColores(argument) {
+	// console.clear();
+	console.log("resetearColores");
+	ABCJS.stopAnimation();
+	//colores
+	for (var i = 0; i < notes.length; i++) {
+		notes[i].setAttribute("fill", "black");
+	// 			notes[contadorColor].setAttribute("class", "note note_selected");
+	// notes[contadorColor].setAttribute("fill", "grey");
+	}
+	contadorColor = 0;
+	notes = document.getElementsByClassName('note');
+	// console.log("notes.length : " + notes.length);
 }
 
 
