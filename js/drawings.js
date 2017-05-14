@@ -14,17 +14,20 @@ function pushTiempoUsuario(argument) {
 	}else{
 		pintarFallo();
 	}
+	// console.log("contadorUsuario : " + contadorUsuario);
 	contadorUsuario++;
+	// element.setAttribute("class", "oldclass newclass");
+	// console.log("contadorColor : " + contadorColor);
+	contadorColor++;
+
 	if (tiemposUsuario.length == tiemposCorrectos.length) {
 		// console.clear();
-		// console.log("FIN");
+		console.log("FIN");
 		//checkeamos reslutados
 		mediaError = errorPorcentualAcumulado / tiemposCorrectos.length;
 	
 		resetearColores();
 		checkResultados();
-
-		
 		contadorUsuario = 0;
 		tiemposUsuario = [];
 		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
@@ -60,13 +63,13 @@ function pintarAcierto(argument) {
 function pintarFallo(argument) {
 	// console.clear();
 	acumularError();
-	// console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
-	// console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
-	// console.log("--------------");
+	console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
+	console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
+	console.log("--------------");
 
 	numErrores++;
 	document.getElementById('fallos').innerHTML = "Fallos: " + numErrores; 
-	console.log("contadorColor : " + contadorColor);
+	// console.log("contadorColor : " + contadorColor);
 	colorear("red");
 	// notes[contadorColor - 2].setAttribute("fill", "red");
 }

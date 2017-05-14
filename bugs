@@ -24,3 +24,6 @@ bug7
 
 bug8
 	las notas ligadas no se colorean bien
+
+bug9
+	la animation no se hace en la ultima nota

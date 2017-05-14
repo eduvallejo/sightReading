@@ -40,7 +40,7 @@ function init(argument) {
 		if (e.keyCode != 27){
 			// console.log("keyCode : " + e.keyCode);
 			clickButton();
-		}else if(e.keyCode == 27){
+		}else if(e.keyCode == 27){//lo de abajo era para cuando hacia Esc para silencios
 	  		// console.clear();
 			if (rest == false ) {
 	  			timestampUp = audio.currentTime;
@@ -67,11 +67,14 @@ function clickButton(argument) {
 		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
 		// console.log("clickPressed : " + clickPressed);
 		timestamp = audio.currentTime;
+		console.log("tiemposCorrectos.length: " +  tiemposCorrectos.length);
 		// console.log("audio.currentTime : " + audio.currentTime);
 		clickPressed = true;		
-		colorear("green");
+		notes[contadorColor].setAttribute("fill", "green");
+		// colorear("green");
 		// console.log("clickPressed : " + clickPressed);  
 	}else if(clickPressed == true){
+		// console.log("ClickcontadorColor : " + contadorColor);
 				// time = this._time;
 		// console.log("audio.currentTime : " + audio.currentTime);
 	
@@ -82,6 +85,7 @@ function clickButton(argument) {
 		// getNearestTime(interval);
 		// colorear("green");
 		pushTiempoUsuario(interval*1000);
+		notes[contadorColor].setAttribute("fill", "green");
 
 		//
 		// this._time = timestamp;	
@@ -93,7 +97,9 @@ function clickButton(argument) {
 
 //vaciar los resultados y eliminar el objeto tiempo
 function reinitiate(argument) {
+	console.clear();
 	resetearColores();
+	// ABCJS.stopAnimation();
 
 	contadorUsuario = 0;
 	tiemposUsuario = [];
@@ -123,7 +129,7 @@ function comenzarMetronomo(argument) {
 }
 
 function colorear(argument) {
-	console.log("colorear");
+	// console.log("colorear");
 	// bug8
 	notes[contadorColor].setAttribute("fill", argument);
 	if (notasLigadas[contadorColor] == true) {
@@ -134,15 +140,13 @@ function colorear(argument) {
 		contadorColor++;
 		notes[contadorColor].setAttribute("fill", argument);
 	}
-	// element.setAttribute("class", "oldclass newclass");
-	contadorColor++;
+	
 }
 
 function resetearColores(argument) {
 	// console.clear();
-	console.log("resetearColores");
-	ABCJS.stopAnimation();
 	//colores
+	// console.log("resetearColores");
 	for (var i = 0; i < notes.length; i++) {
 		notes[i].setAttribute("fill", "black");
 	// 			notes[contadorColor].setAttribute("class", "note note_selected");
@@ -150,6 +154,7 @@ function resetearColores(argument) {
 	}
 	contadorColor = 0;
 	notes = document.getElementsByClassName('note');
+	// ABCJS.stopAnimation();
 	// console.log("notes.length : " + notes.length);
 }
 
