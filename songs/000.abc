@@ -1,6 +1,11 @@
 X:1
-T:000 
-L:1/4
-M:4/4
+T:Bolero de Ravel 
+C:Maurice Ravel
+L:1/16
+Q:1/4=60
+M:3/4
+I:linebreak 
 K:Cmaj
-(3CCC C/>C/- C/C/
+V:1 
+F4- FGF_E- E4- | E4 F_EF_D- D4- |D4 z_D_ED FEDC- | C8 z4 |
+

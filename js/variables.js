@@ -25,7 +25,6 @@ for (var i = 0; i < song.length; i++) {//elimino simbolos innecesarios para el r
 		
 var tunebookString;
 // var song = '0_negras.abc';
-// var song = 'wild.abc';
 // var song = 'goinghome';
 // var song = 'oyecomova.abc';
 // var song = '0_tresillo_corcheas.abc';
@@ -34,6 +33,11 @@ var song = '0_corcheas.abc';
 var song = '0_tresillo_corcheas.abc';
 var song = 'goinghome';
 var song = '000.abc';
+// var song = 'albinoni.abc';
+var song = 'ravelB.abc';
+var song = 'aranjuez';
+var song = 'wild.abc';
+var song = 'ravelA.abc';
 var song = 'albinoni.abc';
 var songResponse;
 

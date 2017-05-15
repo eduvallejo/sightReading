@@ -64,7 +64,7 @@ function clickButton(argument) {
 	// console.log("clicked a la entrada: " + clickPressed);
 	if (clickPressed == false) {
 		console.log("startAnimation");
-		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
+		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
 		// console.log("clickPressed : " + clickPressed);
 		timestamp = audio.currentTime;
 		console.log("tiemposCorrectos.length: " +  tiemposCorrectos.length);

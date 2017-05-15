@@ -27,3 +27,6 @@ bug8
 
 bug9
 	la animation no se hace en la ultima nota
+
+bug10
+	cuando hay 4 notas ligadas, de momento solo chuta hasta 3 notas ligadas

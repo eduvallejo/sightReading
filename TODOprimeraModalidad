@@ -120,10 +120,4 @@ mirar si se puede captar la frecuencia del sonido para asi comparar si tambien l
 poner volumen minimo como forma de equivocxarse? q tambien se controle la intensidad estable de las notas
 mirar q el nicro este siempre on
 
-aparte de la animacion, necesito q se coloreen , por ej, las notas q voy tocando para saber donde estoy con respecto a la animacion
-
-pasar la variable bpm al startanimation
-
-en vez de pintar la pantalla de verde, pintemos las notas ya q tenemos la clase
-
-hay un bug con las notas q se pintan cuando estan ligadas, cuentan como si fuesen notas diferentes. ARREGLARLO para q se pinten todas como una sola nota
+mirar alguna forma de hacer sonar la melodia, quizas algo mas sencillo q el midi?

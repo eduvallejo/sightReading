@@ -14,11 +14,11 @@ function pushTiempoUsuario(argument) {
 	}else{
 		pintarFallo();
 	}
-	// console.log("contadorUsuario : " + contadorUsuario);
 	contadorUsuario++;
+	// console.log("contadorUsuario++ : " + contadorUsuario);
 	// element.setAttribute("class", "oldclass newclass");
-	// console.log("contadorColor : " + contadorColor);
 	contadorColor++;
+	// console.log("contadorColor++ : " + contadorColor);
 
 	if (tiemposUsuario.length == tiemposCorrectos.length) {
 		// console.clear();
@@ -30,7 +30,7 @@ function pushTiempoUsuario(argument) {
 		checkResultados();
 		contadorUsuario = 0;
 		tiemposUsuario = [];
-		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
+		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
 	}
 }
 

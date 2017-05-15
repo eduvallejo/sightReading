@@ -1,22 +1,21 @@
 X:1
 T:Adagio from Concierto de Aranjuez
 L:1/8
-M:4/4
-I:linebreak $
+M:4/4 
 K:Fmaj
 V:1
- A/G/ A3- A4- | A2 AB c2 B2 | A/G/ A3- A4- | A2 Bc d2 e2 | cBBA (3AGF G2- |$ GAFE FGED | %6
- E/D/ E3- E4- | E2 EF G2 FE | E4 D4- | D8 || A/G/ A3- A4- |$ AAAB c>d cB | A/4B/4A/4G/4A- A6- | %13
- AA (3ABc ddde |$ c/B/B/A/ A/G/G/F/ G(3A/G/F/ G2- | GAFE FGED | E8- | EEEF G2 FE | E2 D6 |$ %19
- z2 z E/F/ GABc || d/c/ d3- d4- | ddde f>g fe | c/4d/4c/4=B/4c- c6- |$ ceed d/c/c/_B/ B/A/B/c/ | %24
- d/B/B/A/ A/G/G/F/ G4- | G4- GGAB |$ A/G/F/G/ A2 e(3d/c/B/ A/D/(3D/D/D/ | E/F/ G3- G2 FE | %28
- E3 D- D4- | D2 EF GABc |$ d/c/ d3 d4 | d2 de f3 e | c/B/ c3 c4 | c2 z2 z4 | %34
- z2 ed d/c/c/B/ c/d/d/e/ |$ (6:4:6e/f/e/d/e/d/ (6:4:6c/d/c/B/c/B/ (3A/B/A/ G3 | GAGF G>G AB | %37
- A/B/A/G/ A2 AD (3DDD |$ E/F/G G/A/4B/4c/4d/4e/4f/4 g2 fe | eA a4 a/g/f/e/ | d8 || %41
-e/d/ e3 e4 | e2 ef g3 f |$ e/d/ e3 e4 | e2 fg a2 b2 | gffe (3edc d2 | decB cdBA | %47
- B/A/ B3 B4 |$ B2 Bc d2 cB | B3 A A4 | z2 E2 F2 G2 | A/G/ A3 A4 | AAAB c>d cB | G/F/ G3 G4 |$ %54
- GBBA AGGA | AGFE (3EDC D2 | D2 D/E/4F/4G/4A/4B/4c/4 d2 ef | e/d/c/d/ e4 (3AAA |$ B/c/ d3 d2 cB | %59
- B3 A A4 | A2 AB cdef | a/g/ a3 a4 | a2 AB c3 B |$ G/F/ G3 G4 | G2 BA AGGA | AFFE DC D2 | %66
- DE/F/ G/A/B/c/ d2 ef |$ e/d/c/d/ e2 e/d/(3c/B/B/ (3AAA | B/c/ d3 d2 cB | B3 A A4 | %70
- z2 (3A_Bc d>c d2 |$ z2 (3D_EF G>F G2 | z4 (3A_Bc d>_e | d2 c2 d/4_e/4d/4c/4d d2 | d8 | d8 |] %76
+ A/G/ A3- A4- | A2 AB c2 B2 | A/G/ A3- A4- | A2 Bc d2 e2 | cBBA (3AGF G2- | GAFE FGED | 
+ E/D/ E3- E4- | E2 EF G2 FE | E4 D4- | D8 || A/G/ A3- A4- | AAAB c>d cB | A/4B/4A/4G/4A- A6- | 
+ AA (3ABc ddde | c/B/B/A/ A/G/G/F/ G(3A/G/F/ G2- | GAFE FGED | E8- | EEEF G2 FE | E2 D6 | 
+ z2 z E/F/ GABc || d/c/ d3- d4- | ddde f>g fe | c/4d/4c/4=B/4c- c6- | ceed d/c/c/_B/ B/A/B/c/ | 
+ d/B/B/A/ A/G/G/F/ G4- | G4- GGAB | A/G/F/G/ A2 e(3d/c/B/ A/D/(3D/D/D/ | E/F/ G3- G2 FE | 
+ E3 D- D4- | D2 EF GABc | d/c/ d3 d4 | d2 de f3 e | c/B/ c3 c4 | c2 z2 z4 | 
+ z2 ed d/c/c/B/ c/d/d/e/ | (6:4:6e/f/e/d/e/d/ (6:4:6c/d/c/B/c/B/ (3A/B/A/ G3 | GAGF G>G AB | 
+ A/B/A/G/ A2 AD (3DDD | E/F/G G/A/4B/4c/4d/4e/4f/4 g2 fe | eA a4 a/g/f/e/ | d8 || 
+e/d/ e3 e4 | e2 ef g3 f | e/d/ e3 e4 | e2 fg a2 b2 | gffe (3edc d2 | decB cdBA | 
+ B/A/ B3 B4 | B2 Bc d2 cB | B3 A A4 | z2 E2 F2 G2 | A/G/ A3 A4 | AAAB c>d cB | G/F/ G3 G4 | 
+ GBBA AGGA | AGFE (3EDC D2 | D2 D/E/4F/4G/4A/4B/4c/4 d2 ef | e/d/c/d/ e4 (3AAA | B/c/ d3 d2 cB | 
+ B3 A A4 | A2 AB cdef | a/g/ a3 a4 | a2 AB c3 B | G/F/ G3 G4 | G2 BA AGGA | AFFE DC D2 | 
+ DE/F/ G/A/B/c/ d2 ef | e/d/c/d/ e2 e/d/(3c/B/B/ (3AAA | B/c/ d3 d2 cB | B3 A A4 | 
+ z2 (3A_Bc d>c d2 | z2 (3D_EF G>F G2 | z4 (3A_Bc d>_e | d2 c2 d/4_e/4d/4c/4d d2 | d8 | d8 |] 
 
