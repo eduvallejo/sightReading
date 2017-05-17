@@ -27,19 +27,18 @@ var tunebookString;
 // var song = 'goinghome';
 // var song = 'oyecomova.abc';
 var song = '0_tresillo_corcheas.abc';
-var song = 'goinghome';
-// var song = 'albinoni.abc';
-// var song = 'ravelB.abc';
-// var song = 'aranjuez';
-// var song = 'wild.abc';
 // var song = 'albinoni.abc';
 // var song = '0_negras.abc';
 var song = '0_semicorcheas.abc';
-var song = '0_corcheas.abc';
 var song = '0_tresillo_corcheas.abc';
 var song = '0_semicorcheas.abc';
 var song = '000.abc';
+var song = 'ravelB.abc';
+var song = 'goinghome';
+var song = 'albinoni.abc';
+var song = 'aranjuez1a.abc';
 var song = 'ravelA.abc';
+var song = 'wild.abc';
 var songResponse;
 
 //colorear 
@@ -75,6 +74,7 @@ var bpm = 60;
 // var bpm = 80;
 // var audio = new Audio('pulseLargo100.wav');
 // var bpm = 100;
+var key; //para aplicar sostenidos o bemoles
 
 
 var corcheasL = false; //cuando L:1/8 hay bug que una negra vale 2000 aunque sea compas 4/4

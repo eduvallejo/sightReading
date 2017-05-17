@@ -27,25 +27,25 @@ function init(argument) {
 		}
 	}
 
-	window.onkeyup = function(e){
-		if (e.keyCode != 27){
-			// console.log("keyCode : " + e.keyCode);
-			clickButton();
-		}else if(e.keyCode == 27){//lo de abajo era para cuando hacia Esc para silencios
-	  		// console.clear();
-			if (rest == false ) {
-	  			timestampUp = audio.currentTime;
-	  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-	  			// console.log("posX : " + posX);
-	  			// console.log("interval : " + interval);  
-	  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
-				pushTiempoUsuario(interval*1000);
+	// window.onkeyup = function(e){
+	// 	if (e.keyCode != 27){
+	// 		// console.log("keyCode : " + e.keyCode);
+	// 		clickButton();
+	// 	}else if(e.keyCode == 27){//lo de abajo era para cuando hacia Esc para silencios
+	//   		// console.clear();
+	// 		if (rest == false ) {
+	//   			timestampUp = audio.currentTime;
+	//   			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+	//   			// console.log("posX : " + posX);
+	//   			// console.log("interval : " + interval);  
+	//   			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
+	// 			pushTiempoUsuario(interval*1000);
 
-	  			rest = true;
-	  		}
-	  		clickPressed = false;
-		}
-	}
+	//   			rest = true;
+	//   		}
+	//   		clickPressed = false;
+	// 	}
+	// }
 
 }
 

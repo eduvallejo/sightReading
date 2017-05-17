@@ -120,4 +120,4 @@ mirar si se puede captar la frecuencia del sonido para asi comparar si tambien l
 poner volumen minimo como forma de equivocxarse? q tambien se controle la intensidad estable de las notas
 mirar q el nicro este siempre on
 
-mirar alguna forma de hacer sonar la melodia, quizas algo mas sencillo q el midi?
+para la guitarra por jack, quizas controlar q la nota mantiene un volumen minimo. es decir no solo controlar el columen de inicio y luego el volumen de inicio de la siguiente. estaria bien para mejorar el sustain de la guitarra y tener mas ataque
