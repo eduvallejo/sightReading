@@ -174,12 +174,9 @@ function decodeAjaxResponse(song) {
 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
+			noteLetter.push(song[pointer]);
+			// console.log("noteLetter : " + noteLetter);
 			tiemposCorrectos[contadorTc]  = msPerBeat;//letra a secas 
-			// console.log("song[" + pointer + "]) : " + song[pointer]);
-			// console.log("tiemposCorrectos[" + contadorTc + "]: " + tiemposCorrectos[contadorTc]);
-			// contadorTc++;
-			// console.log("contadorTc : " + contadorTc);
-			// console.log("song[" + pointer + "] : " + song[pointer]);
 		}
 
 		//mirar si hay division
@@ -308,8 +305,8 @@ function decodeAjaxResponse(song) {
 		}
 	}
 
-	console.log("contREpeticion: " + contadorRepeticion);
-	console.log("tiempos a repetir: " + tiemposRepetir);
+	// console.log("contREpeticion: " + contadorRepeticion);
+	// console.log("tiempos a repetir: " + tiemposRepetir);
 	//BUG en las repeticiones no se replican los > ni las ligaduras etc...	
 	for (var i = contadorRepeticion; i < tiemposRepetir+contadorRepeticion; i++) {
 		// console.log(tiemposCorrectos[i]);

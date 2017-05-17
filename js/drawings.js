@@ -25,12 +25,12 @@ function pushTiempoUsuario(argument) {
 		console.log("FIN");
 		//checkeamos reslutados
 		mediaError = errorPorcentualAcumulado / tiemposCorrectos.length;
-	
 		resetearColores();
 		checkResultados();
 		contadorUsuario = 0;
 		tiemposUsuario = [];
 		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
+		// comenzarMetronomo();
 	}
 }
 
@@ -63,9 +63,9 @@ function pintarAcierto(argument) {
 function pintarFallo(argument) {
 	// console.clear();
 	acumularError();
-	console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
-	console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
-	console.log("--------------");
+	// console.log("Debería ser[" + contadorUsuario + "] : " + tiemposCorrectos[contadorUsuario]);
+	// console.log("Pusiste    [" + contadorUsuario + "] : " + tiemposUsuario[contadorUsuario]);
+	// console.log("--------------");
 
 	numErrores++;
 	document.getElementById('fallos').innerHTML = "Fallos: " + numErrores; 
@@ -76,9 +76,9 @@ function pintarFallo(argument) {
 
 //pone el marcador a cero despues de cada vuelta
 function resetearMarcador(argument) {
-	console.log("parseFloat(mediaError) : " + parseFloat(mediaError).toFixed(2));
+	// console.log("parseFloat(mediaError) : " + parseFloat(mediaError).toFixed(2));
 	document.getElementById('mediaError').innerHTML = "Err(%): " + parseFloat(mediaError).toFixed(2);
-	console.log("--------- : ");
+	// console.log("--------- : ");
 	errorPorcentualAcumulado = 0;
 	mediaError = 0;
 	numErrores = 0;
@@ -92,7 +92,7 @@ function acumularError(argument) {
 	// errorPorcentual = ((tiemposUsuario[contadorUsuario] * 100)/tiemposCorrectos[contadorUsuario]) - 100; //el 100% seria 0% error
 	// console.log("errorPorcentual : " + errorPorcentual + " %");
 	errorPorcentualAcumulado = errorPorcentualAcumulado + errorPorcentual;
-	document.getElementById('mediaError').innerHTML = "M(%): " + parseFloat(errorPorcentualAcumulado/ (contadorUsuario + 1)).toFixed(2);
+	document.getElementById('mediaError').innerHTML = "Err(%): " + parseFloat(errorPorcentualAcumulado/ (contadorUsuario + 1)).toFixed(2);
 }
 
 

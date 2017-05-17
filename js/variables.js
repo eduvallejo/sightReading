@@ -24,21 +24,22 @@ for (var i = 0; i < song.length; i++) {//elimino simbolos innecesarios para el r
 }
 		
 var tunebookString;
-// var song = '0_negras.abc';
 // var song = 'goinghome';
 // var song = 'oyecomova.abc';
-// var song = '0_tresillo_corcheas.abc';
+var song = '0_tresillo_corcheas.abc';
+var song = 'goinghome';
+// var song = 'albinoni.abc';
+// var song = 'ravelB.abc';
+// var song = 'aranjuez';
+// var song = 'wild.abc';
+// var song = 'albinoni.abc';
+// var song = '0_negras.abc';
 var song = '0_semicorcheas.abc';
 var song = '0_corcheas.abc';
 var song = '0_tresillo_corcheas.abc';
-var song = 'goinghome';
+var song = '0_semicorcheas.abc';
 var song = '000.abc';
-// var song = 'albinoni.abc';
-var song = 'ravelB.abc';
-var song = 'aranjuez';
-var song = 'wild.abc';
 var song = 'ravelA.abc';
-var song = 'albinoni.abc';
 var songResponse;
 
 //colorear 
@@ -66,8 +67,8 @@ var tiemposUsuario = [];//las respuetas q pulsamos
 var margenesCorrectosSuperior = [];
 var margenesCorrectosInferior = [];
 var contadorUsuario = 0;
-var audio = new Audio('pulseLargo40.wav');
-var bpm = 40;
+// var audio = new Audio('pulseLargo40.wav');
+// var bpm = 40;
 var audio = new Audio('pulseLargo60.wav');
 var bpm = 60;
 // var audio = new Audio('pulseLargo80.wav');
@@ -82,7 +83,7 @@ var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunqu
 //dificultad, margen para aceptar acierto
 var numErrores = 0;
 var dificultad = 15; //20=20% de margen
-var dificultad = 20; //20=20% de margen
+// var dificultad = 20; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
 // console.log("limiteSuperior : " + limiteSuperior);
@@ -95,6 +96,6 @@ var msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundo
 // parseFloat(mediaError).toFixed(2);
 var velocidadDoblada = false;
 
-console.log("msPerBeat(valor negra) : " + msPerBeat + "ms");
+// console.log("msPerBeat(valor negra) : " + msPerBeat + "ms");
 
 var defaultColor;

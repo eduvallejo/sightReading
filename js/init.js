@@ -1,19 +1,10 @@
 function init(argument) {
-	notes = document.getElementsByClassName('note');
-	console.log("notes.length : " + notes.length);
-	console.clear();
-	// notes[contadorColor].style.backgroundColor = "red";
-	// notes[contadorColor].className += "note_selected";
-	// console.log("notes[contadorColor] : " + notes[contadorColor]);
-	// console.log("contadorColor : " + contadorColor);
-	// contadorColor++;
 	comenzarMetronomo();
-	//parece q la animacion se sincroniza mejor con el metronomo si se pone aqui el render
-	// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
-	// ABCJS.stopAnimation();
-
-		//colores
+	notes = document.getElementsByClassName('note');
+	// console.log("notes.length : " + notes.length);
+	// console.clear();
 	
+
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
@@ -56,28 +47,42 @@ function init(argument) {
 		}
 	}
 
-
 }
 
-function clickButton(argument) {
-	// console.clear();
-	// console.log("clicked a la entrada: " + clickPressed);
-	if (clickPressed == false) {
-		console.log("startAnimation");
-		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
-		// console.log("clickPressed : " + clickPressed);
-		timestamp = audio.currentTime;
-		console.log("tiemposCorrectos.length: " +  tiemposCorrectos.length);
-		// console.log("audio.currentTime : " + audio.currentTime);
-		clickPressed = true;		
-		notes[contadorColor].setAttribute("fill", "green");
-		// colorear("green");
-		// console.log("clickPressed : " + clickPressed);  
-	}else if(clickPressed == true){
-		// console.log("ClickcontadorColor : " + contadorColor);
-				// time = this._time;
-		// console.log("audio.currentTime : " + audio.currentTime);
+    var freq = 25;
+    var time = 0;
+	var context, oscillator;
+	context = new AudioContext;
+	oscillator = context.createOscillator();
+	freq = 100;
+	// console.log("freq : " + freq);
+	var noteLetter = [];
+	var gainNode = context.createGainNode();
+
 	
+function clickButton(argument) {
+	if (clickPressed == false) {
+		timestamp = audio.currentTime;
+		console.log("audio.currentTime : " + audio.currentTime);
+
+		//sound webaudio
+		// oscillator.stop(time );
+		// oscillator = context.createOscillator();
+		oscillator.frequency.value = frecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
+		// oscillator.connect(context.destination);    
+		// oscillator.connect(context.destination);    
+		// Connect the source to the gain node.
+		oscillator.connect(gainNode);
+		// Connect the gain node to the destination.
+		gainNode.connect(context.destination);
+		// Reduce the gainNode.
+		gainNode.gain.value = volumen;		
+		oscillator.start(timestamp);
+		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
+		notes[contadorColor].setAttribute("fill", "green");
+		// console.log("clickPressed : " + clickPressed);  
+		clickPressed = true;		
+	}else if(clickPressed == true){
 		timestampUp = audio.currentTime;
 		// console.log("timestamp : " + timestamp);
 		var interval = (timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
@@ -90,6 +95,19 @@ function clickButton(argument) {
 		//
 		// this._time = timestamp;	
 		timestamp = audio.currentTime;
+		//sound webaudio
+		oscillator.stop(timestamp );
+		oscillator = context.createOscillator();
+		oscillator.frequency.value = frecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
+		// oscillator.connect(context.destination);    
+		// oscillator.connect(context.destination);    
+		// Connect the source to the gain node.
+		oscillator.connect(gainNode);
+		// Connect the gain node to the destination.
+		gainNode.connect(context.destination);
+		// Reduce the gainNode.
+		gainNode.gain.value = volumen;
+		oscillator.start(timestamp);
 
 	}
 	rest = false;	
@@ -113,7 +131,7 @@ function reinitiate(argument) {
 	// document.getElementById('tempo').innerHTML = bpm ;
 
 	resetearMarcador();
-	console.log("tiemposUsuario : " + tiemposUsuario);
+	// console.log("tiemposUsuario : " + tiemposUsuario);
 	
 	// //colores
 	// for (var i = 0; i < notes.length; i++) {
@@ -124,8 +142,17 @@ function reinitiate(argument) {
 	// contadorColor = 0;
 }
 
+function reloadMetronomo(argument) {
+	audio.load();
+}
 function comenzarMetronomo(argument) {
+	console.log("audio.play : " );
+	console.log("audio.currentTime : " + audio.currentTime);
 	audio.play();
+	
+	// p5
+	setup();
+	draw();
 }
 
 function colorear(argument) {
