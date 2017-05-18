@@ -51,6 +51,17 @@ function decodeAjaxResponse(song) {
 			}else if (song[pointer] == "L" && song[pointer + 5] == "6") {//1/16
 				semiCorcheasL = true;
 				// console.log("corcheasL : " + corcheasL);
+			}else if(song[pointer] == "K"){
+				pointer++;
+				pointer++;
+				key = song[pointer];
+				while(song[pointer] != "\n"){
+					// console.log("song[pointer]: " + song[pointer]);
+					pointer++;
+					key = key + song[pointer];
+				}
+				key = key.replace("\n", "");
+				console.log("key : " + key);
 			}
 			while(song[pointer] != "\n"){
 				pointer++
@@ -174,7 +185,13 @@ function decodeAjaxResponse(song) {
 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
-			noteLetter.push(song[pointer]);
+			if (song[pointer + 1] == ",") {
+				noteLetter.push(song[pointer] + ",");
+			}else if(song[pointer + 1] == "'"){
+				noteLetter.push(song[pointer] + "'");
+			}else{
+				noteLetter.push(song[pointer]);
+			}
 			// console.log("noteLetter : " + noteLetter);
 			tiemposCorrectos[contadorTc]  = msPerBeat;//letra a secas 
 		}
@@ -314,6 +331,7 @@ function decodeAjaxResponse(song) {
 	}
 
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
+	console.log("noteLetter: " + noteLetter );
 	//determinar margenes
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		margenesCorrectosSuperior[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i] * (dificultad / 100));

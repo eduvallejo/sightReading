@@ -1,4 +1,5 @@
 function init(argument) {
+	getAlteraciones();
 	comenzarMetronomo();
 	notes = document.getElementsByClassName('note');
 	// console.log("notes.length : " + notes.length);
@@ -53,7 +54,6 @@ function init(argument) {
     var time = 0;
 	var context, oscillator;
 	context = new AudioContext;
-	oscillator = context.createOscillator();
 	freq = 100;
 	// console.log("freq : " + freq);
 	var noteLetter = [];
@@ -68,6 +68,7 @@ function clickButton(argument) {
 		//sound webaudio
 		// oscillator.stop(time );
 		// oscillator = context.createOscillator();
+		oscillator = context.createOscillator();
 		oscillator.frequency.value = frecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
 		// oscillator.connect(context.destination);    
 		// oscillator.connect(context.destination);    
@@ -98,6 +99,7 @@ function clickButton(argument) {
 		//sound webaudio
 		oscillator.stop(timestamp );
 		oscillator = context.createOscillator();
+		// console.log("frecuenciaNota("+ indiceNota[noteLetter[contadorColor]] + ",4) : " + frecuenciaNota(indiceNota[noteLetter[contadorColor]],4));
 		oscillator.frequency.value = frecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
 		// oscillator.connect(context.destination);    
 		// oscillator.connect(context.destination);    
@@ -115,6 +117,8 @@ function clickButton(argument) {
 
 //vaciar los resultados y eliminar el objeto tiempo
 function reinitiate(argument) {
+	oscillator.stop(timestamp );
+
 	console.clear();
 	resetearColores();
 	// ABCJS.stopAnimation();

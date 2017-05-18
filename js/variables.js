@@ -32,13 +32,13 @@ var song = '0_tresillo_corcheas.abc';
 var song = '0_semicorcheas.abc';
 var song = '0_tresillo_corcheas.abc';
 var song = '0_semicorcheas.abc';
-var song = '000.abc';
 var song = 'ravelB.abc';
 var song = 'goinghome';
-var song = 'albinoni.abc';
 var song = 'aranjuez1a.abc';
-var song = 'ravelA.abc';
 var song = 'wild.abc';
+var song = 'ravelA.abc';
+var song = 'albinoni.abc';
+var song = '000.abc';
 var songResponse;
 
 //colorear 
@@ -68,12 +68,14 @@ var margenesCorrectosInferior = [];
 var contadorUsuario = 0;
 // var audio = new Audio('pulseLargo40.wav');
 // var bpm = 40;
-var audio = new Audio('pulseLargo60.wav');
-var bpm = 60;
+// var audio = new Audio('pulseLargo60.wav');
+// var bpm = 60;
 // var audio = new Audio('pulseLargo80.wav');
 // var bpm = 80;
 // var audio = new Audio('pulseLargo100.wav');
 // var bpm = 100;
+var audio = new Audio('silence.wav');
+var bpm = 60;
 var key; //para aplicar sostenidos o bemoles
 
 
@@ -82,7 +84,7 @@ var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunqu
 
 //dificultad, margen para aceptar acierto
 var numErrores = 0;
-var dificultad = 15; //20=20% de margen
+var dificultad = 20; //20=20% de margen
 // var dificultad = 20; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
