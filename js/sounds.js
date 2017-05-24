@@ -33,17 +33,27 @@ function getAlteraciones() {
     case "Gmaj":
       indiceNota["F"]++;
       indiceNota["f"]++;
+      indiceNota["F,"]++;
+      indiceNota["f'"]++;
       break;
     case "Dmaj":
       indiceNota["F"]++;
       indiceNota["f"]++;
+      indiceNota["F,"]++;
+      indiceNota["f'"]++;
       indiceNota["C"]++;
       indiceNota["c"]++;
+      indiceNota["C,"]++;
+      indiceNota["c'"]++;
       console.log("indiceNota[C] : " + indiceNota["C"]);
       break;
-    case "Bmaj":
+    case "Fmaj":
+      console.log("indiceNota['B'] : " + indiceNota['B']);
+      indiceNota["B,"]--;
       indiceNota["B"]--;
       indiceNota["b"]--;
+      indiceNota["b'"]--;
+      console.log("indiceNota['B'] : " + indiceNota['B']);
       break;    
     break;
     // default:

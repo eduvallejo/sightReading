@@ -1,5 +1,4 @@
 function init(argument) {
-	getAlteraciones();
 	comenzarMetronomo();
 	notes = document.getElementsByClassName('note');
 	// console.log("notes.length : " + notes.length);
@@ -62,6 +61,11 @@ function init(argument) {
 	
 function clickButton(argument) {
 	if (clickPressed == false) {
+		if (audioSong.paused == true) {
+			audioSong.play();
+		}
+		// console.log("audioSong: " + audioSong.paused);
+
 		timestamp = audio.currentTime;
 		console.log("audio.currentTime : " + audio.currentTime);
 
@@ -79,7 +83,8 @@ function clickButton(argument) {
 		// Reduce the gainNode.
 		gainNode.gain.value = volumen;		
 		oscillator.start(timestamp);
-		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
+		//no se si poner la animacion
+		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
 		notes[contadorColor].setAttribute("fill", "green");
 		// console.log("clickPressed : " + clickPressed);  
 		clickPressed = true;		
@@ -118,6 +123,8 @@ function clickButton(argument) {
 //vaciar los resultados y eliminar el objeto tiempo
 function reinitiate(argument) {
 	oscillator.stop(timestamp );
+	audioSong.pause();
+	audioSong.load();
 
 	console.clear();
 	resetearColores();
@@ -126,6 +133,7 @@ function reinitiate(argument) {
 	contadorUsuario = 0;
 	tiemposUsuario = [];
 	clickPressed = false;
+
 
 	if (velocidadDoblada == true) {
 		document.getElementById('tempoDoble').style.backgroundColor = "green";
@@ -150,6 +158,7 @@ function reloadMetronomo(argument) {
 	audio.load();
 }
 function comenzarMetronomo(argument) {
+
 	console.log("audio.play : " );
 	console.log("audio.currentTime : " + audio.currentTime);
 	audio.play();

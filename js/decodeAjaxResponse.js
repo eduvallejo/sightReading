@@ -332,6 +332,10 @@ function decodeAjaxResponse(song) {
 
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
 	console.log("noteLetter: " + noteLetter );
+	getAlteraciones();//ponemos los bemoles y sostrenidos esegun la armadura
+
+	// clickButton();
+
 	//determinar margenes
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		margenesCorrectosSuperior[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i] * (dificultad / 100));

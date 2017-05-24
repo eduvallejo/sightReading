@@ -26,17 +26,24 @@ function pushTiempoUsuario(argument) {
 		//checkeamos reslutados
 		mediaError = errorPorcentualAcumulado / tiemposCorrectos.length;
 		resetearColores();
+		audioSong.pause();
+		audioSong.load();
+		console.log("audioSong.paused : " + audioSong.paused);//paramos la cancion ghost
 		checkResultados();
 		contadorUsuario = 0;
 		tiemposUsuario = [];
-		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
-		// comenzarMetronomo();
+		//no se si poner la animacion
+		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
 	}
 }
 
 
 function checkResultados(argument) {
 	console.log("numErrores : " + numErrores);
+	if (audioSong.paused == true) {
+		console.log("audioSong.paused : " + audioSong.paused);//paramos la cancion ghost
+		audioSong.play();
+	}
 	// console.log("mediaError : " + mediaError + "%");
 	// console.log("FIN_______________________________");
 	// console.log("tiemposUsuario   : " + tiemposUsuario);

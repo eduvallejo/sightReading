@@ -31,14 +31,15 @@ var song = '0_tresillo_corcheas.abc';
 // var song = '0_negras.abc';
 var song = '0_semicorcheas.abc';
 var song = '0_tresillo_corcheas.abc';
-var song = '0_semicorcheas.abc';
-var song = 'ravelB.abc';
-var song = 'goinghome';
 var song = 'aranjuez1a.abc';
-var song = 'wild.abc';
-var song = 'ravelA.abc';
+var song = '0_semicorcheas.abc';
 var song = 'albinoni.abc';
 var song = '000.abc';
+var song = 'escalaDo.abc';
+var song = 'ravelA.abc';
+var song = 'goinghome';
+var song = 'wild.abc';
+var song = 'ravelB.abc';
 var songResponse;
 
 //colorear 
@@ -68,14 +69,23 @@ var margenesCorrectosInferior = [];
 var contadorUsuario = 0;
 // var audio = new Audio('pulseLargo40.wav');
 // var bpm = 40;
-// var audio = new Audio('pulseLargo60.wav');
+var audio = new Audio('pulseLargo60.wav');
 // var bpm = 60;
 // var audio = new Audio('pulseLargo80.wav');
 // var bpm = 80;
 // var audio = new Audio('pulseLargo100.wav');
 // var bpm = 100;
-var audio = new Audio('silence.wav');
+// var audio = new Audio('pulseLargo120.wav');
+// var bpm = 120;
+// var audio = new Audio('silence.wav');
 var bpm = 60;
+
+// var audioSong = new Audio('ravelA60.wav');
+// var audioSong = new Audio('wild100.wav');
+var audioSong = new Audio('ravelB60.wav');
+// var audioSong = new Audio('escalaDo.wav');
+// var bpm = 60;
+
 var key; //para aplicar sostenidos o bemoles
 
 

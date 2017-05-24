@@ -1,9 +1,9 @@
 X:1
-T:Himno a la alegría
-C:Ludwig van Beethoven
+T:escala de Do
+C:
 L:1/4
+Q:1/4=60
 M:4/4
 K:Cmaj
-"C" E2 F G |"G7" G F E D |"C" C C D E |"G" E2 D2 |"C" E2 F G | G"G7" F E D | C"C" C D E | "G" D2"C" C2 |
-"G" D2"C" E C |"G7" D E/F/"C" E C |"G7" D E/F/ E D | C"C" D"G7" G,2 |"C" E2 F G |"G7" G F E D |"C" C C D E |"G" D2"C" C2 |] 
-
+V:1 
+C D E F G A B c
