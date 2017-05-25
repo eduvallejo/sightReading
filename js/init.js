@@ -61,9 +61,6 @@ function init(argument) {
 	
 function clickButton(argument) {
 	if (clickPressed == false) {
-		if (audioSong.paused == true) {
-			audioSong.play();
-		}
 		// console.log("audioSong: " + audioSong.paused);
 
 		timestamp = audio.currentTime;
@@ -82,6 +79,10 @@ function clickButton(argument) {
 		gainNode.connect(context.destination);
 		// Reduce the gainNode.
 		gainNode.gain.value = volumen;		
+		if (audioSong.paused == true) {
+			audioSong.volume = 0.5;
+			audioSong.play(timestamp);
+		}
 		oscillator.start(timestamp);
 		//no se si poner la animacion
 		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
@@ -161,6 +162,7 @@ function comenzarMetronomo(argument) {
 
 	console.log("audio.play : " );
 	console.log("audio.currentTime : " + audio.currentTime);
+	audio.volume = 0;
 	audio.play();
 	
 	// p5

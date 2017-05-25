@@ -28,6 +28,8 @@ function pushTiempoUsuario(argument) {
 		resetearColores();
 		audioSong.pause();
 		audioSong.load();
+		// audio.pause();
+		// audio.load();
 		console.log("audioSong.paused : " + audioSong.paused);//paramos la cancion ghost
 		checkResultados();
 		contadorUsuario = 0;

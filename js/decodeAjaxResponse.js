@@ -183,6 +183,7 @@ function decodeAjaxResponse(song) {
 		// console.log("contadorTc : " + contadorTc);
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 
+		// (3^AcA 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
 			if (song[pointer + 1] == ",") {
@@ -361,7 +362,7 @@ function saltarCaracter(pointer) {
 		// }
 								// [a-gA-GzZ0-9/:<>]
 		while(!song[pointer].match(notSkipCharacters)){
-			// console.log("Saltados : " + song[pointer]);
+			console.log("Saltados : " + song[pointer]);
 			pointer++;
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 		}

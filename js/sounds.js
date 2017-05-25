@@ -1,4 +1,4 @@
-var volumen = 0.1;
+var volumen = 0.2;
 function playSound(argument) {
 	audio.play();
 	// console.log("play any??");
@@ -22,7 +22,7 @@ var indiceNota = {
   "C": 1, "D": 3, "E": 5, "F" : 6, "G": 8, "A": 10, "B": 12, 
   "c": 13, "d": 15, "e": 17, "f": 18, "g": 20, "a": 22, "b": 24, 
 	"c'": 25, "d'": 27, "e'": 29, "f'": 30, "g'": 32, "a'": 34, "b'": 36, 
-	"z": 150
+	"z": 100
 };
 
 console.log("frecuenciaNota(-6, 4) : " + frecuenciaNota(-6, 4));
@@ -46,6 +46,25 @@ function getAlteraciones() {
       indiceNota["C,"]++;
       indiceNota["c'"]++;
       console.log("indiceNota[C] : " + indiceNota["C"]);
+      break;
+     case "Emaj":
+      indiceNota["F"]++;
+      indiceNota["f"]++;
+      indiceNota["F,"]++;
+      indiceNota["f'"]++;
+      indiceNota["C"]++;
+      indiceNota["C,"]++;
+      indiceNota["c"]++;
+      indiceNota["c'"]++;
+      indiceNota["G"]++;
+      indiceNota["G,"]++;
+      indiceNota["g"]++;
+      indiceNota["g'"]++;
+      indiceNota["D"]++;
+      indiceNota["D,"]++;
+      indiceNota["d"]++;
+      indiceNota["d'"]++;
+      console.log("indiceNota[D] : " + indiceNota["D"]);
       break;
     case "Fmaj":
       console.log("indiceNota['B'] : " + indiceNota['B']);
