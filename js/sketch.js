@@ -1,9 +1,9 @@
-var time1 = audio.currentTime;
+var time1 = audioSong.currentTime;
 console.log("time1 : " + time1);
 var mic;
 function setup(argument) {
 	console.log("SETUP");
-	// //time1 = audio.currentTime;
+	// //time1 = audioSong.currentTime;
 	// console.log("SKETCH time1 : " + this.currentTime);
 	// mic = new p5.AudioIn();
 	// console.log("mic : " + mic);
@@ -16,7 +16,7 @@ function draw(argument) {
 	// var vol = mic.getLevel();
 	// if (vol > 0.03) {
 	// 	// console.log("vol : " + vol);
-	// 	var time2 = audio.currentTime;
+	// 	var time2 = audioSong.currentTime;
 	// 		// clickButton();
 
 	// 	if ((time2 - time1) > 0.07) {
@@ -26,7 +26,7 @@ function draw(argument) {
 	// 		clickButton();
 			
 	// 	}
-	// 	time1 = audio.currentTime;
+	// 	time1 = audioSong.currentTime;
 		// console.log("time1 : " + time1);
 	// }
 }

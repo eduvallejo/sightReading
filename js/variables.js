@@ -40,10 +40,10 @@ var song = 'ravelB.abc';
 var song = 'escalaDo.abc';
 var song = 'himnoalegria.abc';
 var song = 'arabesque120.abc';
-var song = '000.abc';
 var song = 'wild.abc';
+var song = '000.abc';
 var song = 'arabesque120Compases1-38.abc';
-// var song = 'arabesque110Compases38-70.abc';
+var song = 'arabesque110Compases38-70.abc';
 var songResponse;
 
 //colorear 
@@ -81,7 +81,6 @@ var contadorUsuario = 0;
 // var bpm = 100;
 // var audio = new Audio('pulseLargo120.wav');
 // var bpm = 110;
-var audio = new Audio('wav/silence.wav');
 // var audio = new Audio('mp3/silence.mp3');
 // var bpm = 60;
 // var bpm = 60;
@@ -92,11 +91,11 @@ var audio = new Audio('wav/silence.wav');
 // var audioSong = new Audio('escalaDo.wav');
 // var audioSong = new Audio('wav/himnoalegria.wav');
 var audioSong = new Audio('wav/arabesque120Compases1-38.wav');
-// var audioSong = new Audio('wav/arabesque110Compases38-70.wav');
+var audioSong = new Audio('wav/arabesque110Compases38-70.wav');
 // var audioSong = new Audio('mp3/arabesque100Compases38-70.mp3');
 // var audioSong = new Audio('mp3/arabesque120.mp3');
 // var audioSong = new Audio('wav/goinghome-nointro110.wav');
-var bpm = 120;
+var bpm = 110;
 
 var key; //para aplicar sostenidos o bemoles
 

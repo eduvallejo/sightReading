@@ -14,7 +14,7 @@ function init(argument) {
 		}else if(e.keyCode == 27){
 	  		// console.clear();
 			if (rest == false ) {
-	  			timestampUp = audio.currentTime;
+	  			timestampUp = audioSong.currentTime;
 	  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
 	  			// console.log("posX : " + posX);
 	  			// console.log("interval : " + interval);  
@@ -34,7 +34,7 @@ function init(argument) {
 	// 	}else if(e.keyCode == 27){//lo de abajo era para cuando hacia Esc para silencios
 	//   		// console.clear();
 	// 		if (rest == false ) {
-	//   			timestampUp = audio.currentTime;
+	//   			timestampUp = audioSong.currentTime;
 	//   			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
 	//   			// console.log("posX : " + posX);
 	//   			// console.log("interval : " + interval);  
@@ -63,8 +63,8 @@ function clickButton(argument) {
 	if (clickPressed == false) {
 		// console.log("audioSong: " + audioSong.paused);
 
-		timestamp = audio.currentTime;
-		console.log("audio.currentTime : " + audio.currentTime);
+		timestamp = audioSong.currentTime;
+		console.log("audioSong.currentTime : " + audioSong.currentTime);
 
 		//sound webaudio
 		// oscillator.stop(time );
@@ -83,14 +83,17 @@ function clickButton(argument) {
 			audioSong.volume = 0.5;
 			audioSong.play(timestamp);
 		}
+		//play audio and oscillator
+		audioSong.play();
 		oscillator.start(timestamp);
 		//no se si poner la animacion
 		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
+		
 		notes[contadorColor].setAttribute("fill", "green");
 		// console.log("clickPressed : " + clickPressed);  
 		clickPressed = true;		
 	}else if(clickPressed == true){
-		timestampUp = audio.currentTime;
+		timestampUp = audioSong.currentTime;
 		// console.log("timestamp : " + timestamp);
 		var interval = (timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
 		// console.log("interval : " + interval.toFixed(3));
@@ -101,7 +104,7 @@ function clickButton(argument) {
 
 		//
 		// this._time = timestamp;	
-		timestamp = audio.currentTime;
+		timestamp = audioSong.currentTime;
 		//sound webaudio
 		oscillator.stop(timestamp );
 		oscillator = context.createOscillator();
@@ -156,14 +159,14 @@ function reinitiate(argument) {
 }
 
 function reloadMetronomo(argument) {
-	audio.load();
+	audioSong.load();
 }
 function comenzarMetronomo(argument) {
 
-	console.log("audio.play : " );
-	console.log("audio.currentTime : " + audio.currentTime);
-	audio.volume = 0;
-	audio.play();
+	console.log("audioSong.play : " );
+	console.log("audioSong.currentTime : " + audioSong.currentTime);
+	audioSong.volume = volumen;
+	// audioSong.play();
 	
 	// p5
 	setup();
