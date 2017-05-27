@@ -62,7 +62,9 @@ function init(argument) {
 function clickButton(argument) {
 	if (clickPressed == false) {
 		// console.log("audioSong: " + audioSong.paused);
-
+		if (oscillator) {
+			oscillator.stop();
+		}
 		timestamp = audioSong.currentTime;
 		console.log("audioSong.currentTime : " + audioSong.currentTime);
 

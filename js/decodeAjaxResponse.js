@@ -16,7 +16,13 @@ function resetearAjax(argument) {
 	tupleType = 0; //3 para tresillos etc
 	dotApply = [];
 	corcheasL = false;
-	// tiemposRepetir = 0;
+
+	noteLetter = [];
+	audioSong.pause();
+	console.log("song : " + song);
+	audioSong = new Audio('wav/' + song.replace('.abc', '.wav'));
+	console.log("song.replace('.abc', 'wav') : " + song.replace('.abc', '.wav'));
+		// tiemposRepetir = 0;
 	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
 	// console.log("reset");
 	// console.log("corcheasL : " + corcheasL);
@@ -41,6 +47,7 @@ function decodeAjaxResponse(song) {
 
 	var musicLines = false;
 	while(musicLines == false){
+		// Q:1/4=100
 			// console.log("header song[" + pointer + "]: " + song[pointer]);
 		// console.log("pointer : " + pointer);
 		if ((isNaN(song[pointer]) && (song[pointer + 1] == ":")) || (song[pointer] == "%" ) || (song[pointer] == "\n")) {
@@ -62,6 +69,23 @@ function decodeAjaxResponse(song) {
 				}
 				key = key.replace("\n", "");
 				console.log("key : " + key);
+			}else if(song[pointer] == "Q"){
+				pointer++;
+				pointer++;
+				pointer++;
+				pointer++;
+				pointer++;
+				var bpmTemp = 0;
+				while(song[pointer] != "\n"){
+					// console.log("song[pointer]: " + song[pointer]);
+					pointer++;
+					bpmTemp = parseInt(bpmTemp + song[pointer]);
+				}
+				// bpm = bpmTemp.replace("\n", "");
+				bpm = bpmTemp;
+				msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
+
+				console.log("bpm : " + bpm);
 			}
 			while(song[pointer] != "\n"){
 				pointer++

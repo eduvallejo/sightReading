@@ -95,7 +95,7 @@ var audioSong = new Audio('wav/arabesque110Compases38-70.wav');
 // var audioSong = new Audio('mp3/arabesque100Compases38-70.mp3');
 // var audioSong = new Audio('mp3/arabesque120.mp3');
 // var audioSong = new Audio('wav/goinghome-nointro110.wav');
-var bpm = 110;
+var bpm ;//ahora se coje del decodeAjaxResponse
 
 var key; //para aplicar sostenidos o bemoles
 
@@ -115,7 +115,8 @@ var mediaError = 0;
 var errorPorcentual = 0;
 var errorPorcentualAcumulado = 0;
 //cambiar tempo
-var msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
+// var msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
+var msPerBeat;
 // parseFloat(mediaError).toFixed(2);
 var velocidadDoblada = false;
 
