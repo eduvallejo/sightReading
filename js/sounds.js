@@ -47,7 +47,22 @@ function getAlteraciones() {
       indiceNota["c'"]++;
       console.log("indiceNota[C] : " + indiceNota["C"]);
       break;
-     case "Emaj":
+    case "Amaj":
+      indiceNota["F"]++;
+      indiceNota["f"]++;
+      indiceNota["F,"]++;
+      indiceNota["f'"]++;
+      indiceNota["C"]++;
+      indiceNota["c"]++;
+      indiceNota["C,"]++;
+      indiceNota["c'"]++;
+      indiceNota["G"]++;
+      indiceNota["G,"]++;
+      indiceNota["g"]++;
+      indiceNota["g'"]++;
+      console.log("indiceNota[C] : " + indiceNota["C"]);
+      break;
+    case "Emaj":
       indiceNota["F"]++;
       indiceNota["f"]++;
       indiceNota["F,"]++;

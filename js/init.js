@@ -85,7 +85,7 @@ function clickButton(argument) {
 		}
 		oscillator.start(timestamp);
 		//no se si poner la animacion
-		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
+		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
 		notes[contadorColor].setAttribute("fill", "green");
 		// console.log("clickPressed : " + clickPressed);  
 		clickPressed = true;		

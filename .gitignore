@@ -1,6 +1,6 @@
-*.mp3
 *.py
-*.wav
 *.midi
 *.mid
 *.xml
+*.wav
+*.mp3

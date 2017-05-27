@@ -35,7 +35,7 @@ function pushTiempoUsuario(argument) {
 		contadorUsuario = 0;
 		tiemposUsuario = [];
 		//no se si poner la animacion
-		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
+		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
 	}
 }
 

@@ -126,3 +126,13 @@ restod e armaduras, aparte de RE y Fa
 alteraciones accidentales
 
 en vez de hacer sonar melodia ghost, podria poner un acompañamiento y de paso enlazar con la app para aprender contrapunto!
+
+hacer rama quitando el audio y sacando los tiempos del audioSong(tab podría poner negras en la pista de acompañamento para hacer mtronomo)
+
+
+poner dos osciladores para evitar el glitch
+alteraciones accidentales
+
+hacer los 6/8 9/8 etc
+
+q se lean los bpm automaticamente , en general no tener q cambiar tantas veces las variables manualmente
