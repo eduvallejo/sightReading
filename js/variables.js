@@ -34,17 +34,33 @@ var song = '0_tresillo_corcheas.abc';
 var song = 'aranjuez1a.abc';
 var song = '0_semicorcheas.abc';
 var song = 'albinoni.abc';
-var song = 'ravelA.abc';
 var song = 'goinghome';
-var song = 'ravelB.abc';
 var song = 'escalaDo.abc';
 var song = 'himnoalegria.abc';
 var song = 'arabesque120.abc';
-var song = 'wild.abc';
-var song = '000.abc';
 var song = 'arabesque120Compases1-38.abc';
 var song = 'arabesque110Compases38-70.abc';
+var song = 'wild.abc';
+var song = 'ravelB.abc';
+var song = 'ravelA.abc';
+var song = '000.abc';
+var song = 'bach_badinerie.abc';
 var songResponse;
+
+// var audioSong = new Audio('wav/himnoalegria.wav');
+// var audioSong = new Audio('wav/arabesque120Compases1-38.wav');
+// var audioSong = new Audio('wav/arabesque110Compases38-70.wav');
+// var audioSong = new Audio('mp3/arabesque100Compases38-70.mp3');
+// var audioSong = new Audio('mp3/arabesque120.mp3');
+// var audioSong = new Audio('wav/goinghome-nointro110.wav');
+// var audioSong = new Audio('wav/wild.wav');
+// var audioSong = new Audio('wav/ravelA.mp3');
+// var audioSong = new Audio('wav/ravelA.wav');
+// var audioSong = new Audio('wav/bach_badinerie.mp3');
+var audioSong = new Audio('wav/bach_badinerie.wav');
+var bpm ;//ahora se coje del decodeAjaxResponse
+
+var key; //para aplicar sostenidos o bemoles
 
 //colorear 
 var notes = [];
@@ -71,33 +87,7 @@ var tiemposUsuario = [];//las respuetas q pulsamos
 var margenesCorrectosSuperior = [];
 var margenesCorrectosInferior = [];
 var contadorUsuario = 0;
-// var audio = new Audio('pulseLargo40.wav');
-// var bpm = 40;
-// var audio = new Audio('pulseLargo60.wav');
-// var bpm = 60;
-// var audio = new Audio('pulseLargo80.wav');
-// var bpm = 80;
-// var audio = new Audio('pulseLargo100.wav');
-// var bpm = 100;
-// var audio = new Audio('pulseLargo120.wav');
-// var bpm = 110;
-// var audio = new Audio('mp3/silence.mp3');
-// var bpm = 60;
-// var bpm = 60;
 
-// var audioSong = new Audio('ravelA60.wav');
-// var audioSong = new Audio('wild100.wav');
-// var audioSong = new Audio('ravelB60.wav');
-// var audioSong = new Audio('escalaDo.wav');
-// var audioSong = new Audio('wav/himnoalegria.wav');
-var audioSong = new Audio('wav/arabesque120Compases1-38.wav');
-var audioSong = new Audio('wav/arabesque110Compases38-70.wav');
-// var audioSong = new Audio('mp3/arabesque100Compases38-70.mp3');
-// var audioSong = new Audio('mp3/arabesque120.mp3');
-// var audioSong = new Audio('wav/goinghome-nointro110.wav');
-var bpm ;//ahora se coje del decodeAjaxResponse
-
-var key; //para aplicar sostenidos o bemoles
 
 
 var corcheasL = false; //cuando L:1/8 hay bug que una negra vale 2000 aunque sea compas 4/4

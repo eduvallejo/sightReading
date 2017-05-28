@@ -20,30 +20,24 @@ function resetearAjax(argument) {
 	noteLetter = [];
 	audioSong.pause();
 	console.log("song : " + song);
-	audioSong = new Audio('wav/' + song.replace('.abc', '.wav'));
+	// mp3/
+	// audioSong = new Audio('wav/' + song.replace('.abc', '.mp3')); //mp3
+	// console.log("song.replace('.abc', 'mp3') : " + song.replace('.abc', '.mp3'));
+	//wav
+	audioSong = new Audio('wav/' + song.replace('.abc', '.wav')); //wavs
 	console.log("song.replace('.abc', 'wav') : " + song.replace('.abc', '.wav'));
+
 		// tiemposRepetir = 0;
 	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
 	// console.log("reset");
 	// console.log("corcheasL : " + corcheasL);
+	console.clear();
 }
 
 function decodeAjaxResponse(song) {
 	resetearAjax();
 	// song = song.replace("<", "&lt");// "<" needs to be "&lt" in pre
-
 	song = song.replace(/".*?"/g, ""); //elimino las quotes de los acordes, asi descode mmas facil
-	//lo mismo q el decodeAbc pero quitamos los headers
-	// console.log(JSON.stringify(song));
-	// console.log("song : " + song);
-	// song = song + "]";//para evitar el bug del :| final
-	// console.log("song : " + song);
-	// pointer = 0;
-	// tiemposCorrectos = [];
-	// tiemposUsuario = [];
-	// contadorUsuario = 0;
-	// fallos = 0;
-	// numErrores = 0;
 
 	var musicLines = false;
 	while(musicLines == false){
@@ -112,7 +106,9 @@ function decodeAjaxResponse(song) {
 	// song = song.replace(/".*?"/g, ""); //elimino las quotes de los acordes, asi descode mmas facil
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 	// console.log("song : " + song);
+	//NOTAS MUSICALES
 	while(song[pointer] != undefined){
+		console.log("song[" + pointer + "] : " + song[pointer]);
 		//repeticiones
 		if (song[pointer] == '|' && song[pointer + 1] == ":") {
 			repeticion = true;
@@ -201,12 +197,6 @@ function decodeAjaxResponse(song) {
 	
 		saltarCaracter(pointer); //posicion original de la funcion salyar
 
-		//parsear los caracteres significativos para el tiempo
-		// a 60bpm 1 tiempo es un segundo=msPerBeatms
-		//letras
-		// console.log("contadorTc : " + contadorTc);
-		// console.log("song[" + pointer + "] : " + song[pointer]);
-
 		// (3^AcA 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
@@ -217,7 +207,8 @@ function decodeAjaxResponse(song) {
 			}else{
 				noteLetter.push(song[pointer]);
 			}
-			// console.log("noteLetter : " + noteLetter);
+
+			console.log("noteLetter.length : " + noteLetter.length);
 			tiemposCorrectos[contadorTc]  = msPerBeat;//letra a secas 
 		}
 

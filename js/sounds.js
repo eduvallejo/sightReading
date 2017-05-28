@@ -23,19 +23,19 @@ var indiceNota = {
   "C": 1, "D": 3, "E": 5, "F" : 6, "G": 8, "A": 10, "B": 12, 
   "c": 13, "d": 15, "e": 17, "f": 18, "g": 20, "a": 22, "b": 24, 
 	"c'": 25, "d'": 27, "e'": 29, "f'": 30, "g'": 32, "a'": 34, "b'": 36, 
-	"z": 100
+	"z": -100
 };
 
 console.log("frecuenciaNota(-6, 4) : " + frecuenciaNota(-6, 4));
 
 function getAlteraciones() {
   indiceNota = {
-  "C,": -11, "D,": -9, "E,": -7, "F," : -6, "G,": -4, "A,": -2, "B,": 0,
-  "C": 1, "D": 3, "E": 5, "F" : 6, "G": 8, "A": 10, "B": 12, 
-  "c": 13, "d": 15, "e": 17, "f": 18, "g": 20, "a": 22, "b": 24, 
-  "c'": 25, "d'": 27, "e'": 29, "f'": 30, "g'": 32, "a'": 34, "b'": 36, 
-  "z": 1000
-};
+    "C,": -11, "D,": -9, "E,": -7, "F," : -6, "G,": -4, "A,": -2, "B,": 0,
+    "C": 1, "D": 3, "E": 5, "F" : 6, "G": 8, "A": 10, "B": 12, 
+    "c": 13, "d": 15, "e": 17, "f": 18, "g": 20, "a": 22, "b": 24, 
+    "c'": 25, "d'": 27, "e'": 29, "f'": 30, "g'": 32, "a'": 34, "b'": 36, 
+    "z": -100
+  };
   console.log("Alteracioneskey:" + key);
   switch(key) {
     case "Gmaj":
@@ -96,6 +96,23 @@ function getAlteraciones() {
       indiceNota["b"]--;
       indiceNota["b'"]--;
       console.log("indiceNota['B'] : " + indiceNota['B']);
+      break;
+    case "Ebmaj":
+      console.log("ANTES---indiceNota['A'] : " + indiceNota['A']);
+      indiceNota["B,"]--;
+      indiceNota["B"]--;
+      indiceNota["b"]--;
+      indiceNota["b'"]--;
+      indiceNota["E,"]--;
+      indiceNota["E"]--;
+      indiceNota["e"]--;
+      indiceNota["e'"]--;
+      indiceNota["A,"]--;
+      indiceNota["A"]--;
+      indiceNota["a"]--;
+      indiceNota["a'"]--;
+
+      console.log("DESPUES---indiceNota['A'] : " + indiceNota['A']);
       break;    
     break;
     // default:
