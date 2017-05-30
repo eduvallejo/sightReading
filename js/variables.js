@@ -4,7 +4,6 @@ var interval;
 var notasLigadas = [];
 // var ligarNota = false;
 var notSkipCharacters = /[a-gA-GzZ0-9/:<>]/;
-var compensation = 0.00;
 var timestamp;
 var timestampUp;
 var keyPressed = false; //para q al apreter una tecla se acabe la tecla anterior
@@ -35,16 +34,18 @@ var song = 'aranjuez1a.abc';
 var song = '0_semicorcheas.abc';
 var song = 'albinoni.abc';
 var song = 'goinghome';
-var song = 'escalaDo.abc';
 var song = 'himnoalegria.abc';
 var song = 'arabesque120.abc';
-var song = 'arabesque120Compases1-38.abc';
 var song = 'arabesque110Compases38-70.abc';
 var song = 'wild.abc';
-var song = 'ravelB.abc';
 var song = 'ravelA.abc';
+var song = 'ravelB.abc';
+var song = 'escalaDo.abc';
+var song = 'bach_Suite1CelloPrelude.abc';
+var song = 'arabesque120Compases1-38.abc';
 var song = '000.abc';
 var song = 'bach_badinerie.abc';
+// var song = 'bach_badinerieLento.abc';
 var songResponse;
 
 // var audioSong = new Audio('wav/himnoalegria.wav');
@@ -57,7 +58,8 @@ var songResponse;
 // var audioSong = new Audio('wav/ravelA.mp3');
 // var audioSong = new Audio('wav/ravelA.wav');
 // var audioSong = new Audio('wav/bach_badinerie.mp3');
-var audioSong = new Audio('wav/bach_badinerie.wav');
+// var audioSong = new Audio('wav/bach_badinerie.wav');
+var audioSong = new Audio('wav/silence.wav');
 var bpm ;//ahora se coje del decodeAjaxResponse
 
 var key; //para aplicar sostenidos o bemoles
@@ -95,12 +97,17 @@ var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunqu
 
 //dificultad, margen para aceptar acierto
 var numErrores = 0;
-var dificultad = 20; //20=20% de margen
-// var dificultad = 20; //20=20% de margen
+
+//calculo cuando queremos error porcentual de cada nota
+var dificultad = 10; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
-// console.log("limiteSuperior : " + limiteSuperior);
-// console.log("limiteInferior : " + limiteInferior);
+var compensation = 25; //EN MILISEGUNDOS: para hacer q las notas cortas se compensen en comparacion con las largas  en el % de error
+console.log("limiteSuperior : " + limiteSuperior);
+
+//calculo para error igual para todas las notas
+// var dificultad = 40; //en milisegundos
+
 var mediaError = 0;
 var errorPorcentual = 0;
 var errorPorcentualAcumulado = 0;
@@ -113,3 +120,21 @@ var velocidadDoblada = false;
 // console.log("msPerBeat(valor negra) : " + msPerBeat + "ms");
 
 var defaultColor;
+
+//alteraciones
+var mismoCompas = true; //para saber si aun se aplican las alteraciones
+var sostenidoAccidental = { "C,": false, "D,": false, "E,": false, "F," : false, "G,": false, "A,": false, "B,": 0,
+      "C":false, "D":false, "E":false, "F" :false, "G":false, "A":false, "B":false, 
+      "c":false, "d":false, "e":false, "f":false, "g":false, "a":false, "b":false, 
+      "c'":false, "d'":false, "e'":false, "f'":false, "g'":false, "a'":false, "b'":false
+};
+var bemolAccidental = { "C,": false, "D,": false, "E,": false, "F," : false, "G,": false, "A,": false, "B,": 0,
+      "C":false, "D":false, "E":false, "F" :false, "G":false, "A":false, "B":false, 
+      "c":false, "d":false, "e":false, "f":false, "g":false, "a":false, "b":false, 
+      "c'":false, "d'":false, "e'":false, "f'":false, "g'":false, "a'":false, "b'":false
+};
+var becuadroAccidental = { "C,": false, "D,": false, "E,": false, "F," : false, "G,": false, "A,": false, "B,": 0,
+      "C":false, "D":false, "E":false, "F" :false, "G":false, "A":false, "B":false, 
+      "c":false, "d":false, "e":false, "f":false, "g":false, "a":false, "b":false, 
+      "c'":false, "d'":false, "e'":false, "f'":false, "g'":false, "a'":false, "b'":false 
+};

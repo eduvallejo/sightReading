@@ -57,6 +57,7 @@ function init(argument) {
 	// console.log("freq : " + freq);
 	var noteLetter = [];
 	var gainNode = context.createGainNode();
+	var frecuenciaNota = [];
 
 	
 function clickButton(argument) {
@@ -72,7 +73,8 @@ function clickButton(argument) {
 		// oscillator.stop(time );
 		// oscillator = context.createOscillator();
 		oscillator = context.createOscillator();
-		oscillator.frequency.value = frecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
+		// oscillator.frequency.value = obtenerFrecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
+		oscillator.frequency.value = frecuenciaNota[contadorColor];
 		// oscillator.connect(context.destination);    
 		// oscillator.connect(context.destination);    
 		// Connect the source to the gain node.
@@ -85,6 +87,9 @@ function clickButton(argument) {
 			audioSong.volume = 0.5;
 			audioSong.play(timestamp);
 		}
+		// if (song = "bach_badinerieLento.abc") {
+		// 	audioSong.playbackRate = 0.5;
+		// }
 		//play audio and oscillator
 		audioSong.play();
 		oscillator.start(timestamp);
@@ -111,7 +116,8 @@ function clickButton(argument) {
 		oscillator.stop(timestamp );
 		oscillator = context.createOscillator();
 		// console.log("frecuenciaNota("+ indiceNota[noteLetter[contadorColor]] + ",4) : " + frecuenciaNota(indiceNota[noteLetter[contadorColor]],4));
-		oscillator.frequency.value = frecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
+		// oscillator.frequency.value = obtenerFrecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//previo a la version precompilada de las freq
+		oscillator.frequency.value = frecuenciaNota[contadorColor];
 		// oscillator.connect(context.destination);    
 		// oscillator.connect(context.destination);    
 		// Connect the source to the gain node.

@@ -24,14 +24,17 @@ function resetearAjax(argument) {
 	// audioSong = new Audio('wav/' + song.replace('.abc', '.mp3')); //mp3
 	// console.log("song.replace('.abc', 'mp3') : " + song.replace('.abc', '.mp3'));
 	//wav
+	// audioSong = new Audio('wav/silence.wav'); //wav SILENCIO
 	audioSong = new Audio('wav/' + song.replace('.abc', '.wav')); //wavs
+	//console
 	console.log("song.replace('.abc', 'wav') : " + song.replace('.abc', '.wav'));
 
 		// tiemposRepetir = 0;
 	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
 	// console.log("reset");
 	// console.log("corcheasL : " + corcheasL);
-	console.clear();
+	// console.clear();
+	
 }
 
 function decodeAjaxResponse(song) {
@@ -93,11 +96,6 @@ function decodeAjaxResponse(song) {
 			pointer++;
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 	}
-	//reemplazamos letra/ por letra/2 para evitar errores
-	// console.log("song.match() : " + song.match(/\D\/(?!\d)/g));
-	// song = song.replace(/\D\/(?!\d)/g, "$&2");//cambio / por /2
-	// song = song.replace("\\\l\n", ""); //quito los salto de carro
-
 
 	// console.log("song : " + song);
 	// console.log("body song[" + pointer + "]: " + song[pointer]);
@@ -106,9 +104,14 @@ function decodeAjaxResponse(song) {
 	// song = song.replace(/".*?"/g, ""); //elimino las quotes de los acordes, asi descode mmas facil
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 	// console.log("song : " + song);
+
 	//NOTAS MUSICALES
 	while(song[pointer] != undefined){
-		console.log("song[" + pointer + "] : " + song[pointer]);
+		// console.log("song[" + pointer + "] : " + song[pointer]);
+		if (song[pointer] == '|') {
+			// console.log("song[" + pointer + "] : " + song[pointer]);
+			resetearAlteracionesAccidentales();
+		}
 		//repeticiones
 		if (song[pointer] == '|' && song[pointer + 1] == ":") {
 			repeticion = true;
@@ -136,15 +139,6 @@ function decodeAjaxResponse(song) {
 				repeticion = false;
 			}else if(repeticion == false){//repetir desde principio si no hay |:
 				tiemposRepetir = contadorTc - 0;
-				// console.log("contadorTc : " + contadorTc);
-				// console.log("tiemposRepetir : " + tiemposRepetir);
-				// for (var i = 0; i < tiemposRepetir; i++) {
-				// 	tiemposCorrectos[contadorTc] = tiemposCorrectos[i];
-				// 	console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
-				// 	contadorTc++;
-				// 	// console.log("contadorTc : " + contadorTc);
-				// 	// console.log("song[" + pointer + "] : " + song[pointer]);
-				// }
 			}
 			pointer++;
 		// console.log("song[" + pointer + "] : " + song[pointer]);
@@ -207,9 +201,56 @@ function decodeAjaxResponse(song) {
 			}else{
 				noteLetter.push(song[pointer]);
 			}
-
-			console.log("noteLetter.length : " + noteLetter.length);
+			// ^CC | C | D|
+			// console.log("noteLetter.length : " + noteLetter.length);
 			tiemposCorrectos[contadorTc]  = msPerBeat;//letra a secas 
+			if (song[pointer - 1] == "^") {
+				getAlteraciones(noteLetter.length, 1);
+				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
+				sostenidoAccidental[noteLetter[noteLetter.length - 1] ] = true;
+				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
+			}else if (song[pointer - 1] == "=") {
+				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
+				// getAlteraciones(noteLetter.length, 16.4821369405355);
+				if (key[1] == "b") { // por ejempo Eb , Bb, Ab...
+					getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
+				}else{
+					getAlteraciones(noteLetter.length, -1); //apaño ,momentaneo
+				}
+				becuadroAccidental[noteLetter[noteLetter.length - 1] ] = true;
+				console.log("becuadroAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + becuadroAccidental[noteLetter[noteLetter.length - 1]]);
+			}else if (song[pointer - 1] == "_") {
+				console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
+				getAlteraciones(noteLetter.length, -1);
+				bemolAccidental[noteLetter[noteLetter.length - 1]] = true;
+				console.log("bemolAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + bemolAccidental[noteLetter[noteLetter.length - 1]]);
+			}else if (sostenidoAccidental[noteLetter[noteLetter.length - 1]] == true ) {
+				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
+				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
+				getAlteraciones(noteLetter.length, 1);
+			}else if (bemolAccidental[noteLetter[noteLetter.length - 1]] == true) {
+				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
+				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
+				getAlteraciones(noteLetter.length, -1);
+			}else if (becuadroAccidental[noteLetter[noteLetter.length - 1]] == true) {
+					console.log("235");
+				if (sostenidoAccidental[noteLetter[noteLetter.length - 1]] == true) {
+					getAlteraciones(noteLetter.length, 0); //apaño ,momentaneo
+					console.log("237");
+				}else if (bemolAccidental[noteLetter[noteLetter.length - 1]] == true) {
+					getAlteraciones(noteLetter.length, 0); //apaño ,momentaneo
+					console.log("240");
+				}else if (key[1] == "b") { // por ejempo Eb , Bb, Ab...
+					getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
+					console.log("243");
+				}else{
+					getAlteraciones(noteLetter.length, -1); //apaño ,momentaneo
+					console.log("246");
+				}
+			}else{//nota sin alteracion accidental
+				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
+				getAlteraciones(noteLetter.length, 0);
+			}
 		}
 
 		//mirar si hay division
@@ -348,15 +389,18 @@ function decodeAjaxResponse(song) {
 
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
 	console.log("noteLetter: " + noteLetter );
-	getAlteraciones();//ponemos los bemoles y sostrenidos esegun la armadura
+	// getAlteraciones();//ponemos los bemoles y sostrenidos esegun la armadura
 
 	// clickButton();
 
 	//determinar margenes
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
-		margenesCorrectosSuperior[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i] * (dificultad / 100));
+		margenesCorrectosSuperior[i] = parseInt(tiemposCorrectos[i]) + parseInt(tiemposCorrectos[i] * (dificultad / 100)) + compensation;//error relativo a la duracion
+		// margenesCorrectosSuperior[i] = parseInt(tiemposCorrectos[i]) + dificultad;//margen error igual para todos (25ms)
 		// console.log("margenesCorrectosSuperior[" + i + "] : " + margenesCorrectosSuperior[i]);
-		margenesCorrectosInferior[i] = parseInt(tiemposCorrectos[i]) - parseInt(tiemposCorrectos[i] * (dificultad / 100));
+
+		margenesCorrectosInferior[i] = parseInt(tiemposCorrectos[i]) - parseInt(tiemposCorrectos[i] * (dificultad / 100)) - compensation;//error relativo a la duracion
+		// margenesCorrectosInferior[i] = parseInt(tiemposCorrectos[i]) - dificultad;//margen error igual para todos
 		// console.log("margenesCorrectosInferior[" + i + "] : " + margenesCorrectosInferior[i]);
 	}
 

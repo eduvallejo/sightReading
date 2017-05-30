@@ -9,6 +9,7 @@ function pushTiempoUsuario(argument) {
 	// console.log("limiteInferior : " + tiemposCorrectos[contadorUsuario] * limiteInferior);
 
 	// if (tiemposUsuario[contadorUsuario] >= (tiemposCorrectos[contadorUsuario] * limiteInferior) && tiemposUsuario[contadorUsuario] <= (tiemposCorrectos[contadorUsuario] * limiteSuperior)) {
+	// if ((tiemposUsuario[contadorUsuario] >= (margenesCorrectosInferior[contadorUsuario]))  && (tiemposUsuario[contadorUsuario] <= margenesCorrectosSuperior[contadorUsuario])) {
 	if ((tiemposUsuario[contadorUsuario] >= (margenesCorrectosInferior[contadorUsuario]))  && (tiemposUsuario[contadorUsuario] <= margenesCorrectosSuperior[contadorUsuario])) {
 		pintarAcierto();
 	}else{
