@@ -140,3 +140,17 @@ SE PUEDE hacer el audio mas lento a la mitad con audiosong.playbackRate = 0.5 pe
 arreglar los becuadros
 
 decay notas evitar click segun favortos en mobil zte
+
+meter las notas en el array dorectamente como ^C, etc... en vez de C, a secas
+
+poner el vaw correspondiente en el head del archivo abc
+
+puente viejo
+
+poner las frecuencias para las notas de la octava 2 porejemplo: C,, o c''
+
+!!seguir usando el abc para mostrar la paritura, pero sacar los tiempos del xml!!
+
+quizas adelantar un poco la animacion haria mas facil acertar los tiempos..
+
+usar la clase m0, m1, m2, m3 etc de los paths para hacer scroll hacia abajo. para eso habria q poner siempre el mismo numero de compases en cada linea

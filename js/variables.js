@@ -39,12 +39,13 @@ var song = 'arabesque120.abc';
 var song = 'arabesque110Compases38-70.abc';
 var song = 'wild.abc';
 var song = 'ravelA.abc';
-var song = 'ravelB.abc';
 var song = 'escalaDo.abc';
-var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'arabesque120Compases1-38.abc';
-var song = '000.abc';
+var song = 'ravelB.abc';
+var song = 'puenteViejo.abc';
+var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'bach_badinerie.abc';
+var song = '000.abc';
 // var song = 'bach_badinerieLento.abc';
 var songResponse;
 
@@ -99,7 +100,7 @@ var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunqu
 var numErrores = 0;
 
 //calculo cuando queremos error porcentual de cada nota
-var dificultad = 10; //20=20% de margen
+var dificultad = 20; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
 var compensation = 25; //EN MILISEGUNDOS: para hacer q las notas cortas se compensen en comparacion con las largas  en el % de error

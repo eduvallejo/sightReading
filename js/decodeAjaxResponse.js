@@ -25,9 +25,12 @@ function resetearAjax(argument) {
 	// console.log("song.replace('.abc', 'mp3') : " + song.replace('.abc', '.mp3'));
 	//wav
 	// audioSong = new Audio('wav/silence.wav'); //wav SILENCIO
-	audioSong = new Audio('wav/' + song.replace('.abc', '.wav')); //wavs
-	//console
-	console.log("song.replace('.abc', 'wav') : " + song.replace('.abc', '.wav'));
+	// audioSong = new Audio('wav/' + song.replace('.abc', '.wav')); //wavs
+	// audioSong = new Audio('mp3/' + song.replace('.abc', '.mp3')); //mp3
+	// audioSong = new Audio('mp3/' + song.replace('.abc', '.ogg')); //ogg
+	console.log("audioSong : " + audioSong);
+	//conºle
+	// console.log("song.replace('.abc', 'wav') : " + song.replace('.abc', '.wav'));
 
 		// tiemposRepetir = 0;
 	document.getElementById('fallos').innerHTML = 'Fallos: ' + numErrores;
@@ -104,6 +107,7 @@ function decodeAjaxResponse(song) {
 	// song = song.replace(/".*?"/g, ""); //elimino las quotes de los acordes, asi descode mmas facil
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 	// console.log("song : " + song);
+		// console.clear();
 
 	//NOTAS MUSICALES
 	while(song[pointer] != undefined){
@@ -190,7 +194,6 @@ function decodeAjaxResponse(song) {
 		}
 	
 		saltarCaracter(pointer); //posicion original de la funcion salyar
-
 		// (3^AcA 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
@@ -208,23 +211,35 @@ function decodeAjaxResponse(song) {
 				getAlteraciones(noteLetter.length, 1);
 				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
 				sostenidoAccidental[noteLetter[noteLetter.length - 1] ] = true;
-				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
+				// for (var i = 0; i < sostenidoAccidental.length; i++) {
+				// 	console.log("sostenidoAccidental[" + noteLetter.length - 1 + "] : " + sostenidoAccidental[noteLetter.length - 1]);
+				// }
+				console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
 			}else if (song[pointer - 1] == "=") {
 				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
 				// getAlteraciones(noteLetter.length, 16.4821369405355);
-				if (key[1] == "b") { // por ejempo Eb , Bb, Ab...
+				if (key[1] == "b" || (key[0] == "F" && key[1] == "m")) { // o Fmaj o por ejempo Eb , Bb, Ab...
 					getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
 				}else{
 					getAlteraciones(noteLetter.length, -1); //apaño ,momentaneo
 				}
 				becuadroAccidental[noteLetter[noteLetter.length - 1] ] = true;
-				console.log("becuadroAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + becuadroAccidental[noteLetter[noteLetter.length - 1]]);
+				//anulamos las alteraciones q coincidan con el becuadro
+				if (sostenidoAccidental[noteLetter[noteLetter.length - 1] ] == true) {
+					sostenidoAccidental[noteLetter[noteLetter.length - 1] ] = false;
+					getAlteraciones(noteLetter.length, 0);
+				}
+				if (bemolAccidental[noteLetter[noteLetter.length - 1] ] == true) {
+					bemolAccidental[noteLetter[noteLetter.length - 1] ] = false;
+					getAlteraciones(noteLetter.length, 0);
+				}
+				// console.log("becuadroAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + becuadroAccidental[noteLetter[noteLetter.length - 1]]);
 			}else if (song[pointer - 1] == "_") {
-				console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
+				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
 				getAlteraciones(noteLetter.length, -1);
 				bemolAccidental[noteLetter[noteLetter.length - 1]] = true;
-				console.log("bemolAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + bemolAccidental[noteLetter[noteLetter.length - 1]]);
-			}else if (sostenidoAccidental[noteLetter[noteLetter.length - 1]] == true ) {
+				// console.log("bemolAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + bemolAccidental[noteLetter[noteLetter.length - 1]]);
+			}else if (sostenidoAccidental[noteLetter[noteLetter.length - 1]] == true) {
 				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
 				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
 				getAlteraciones(noteLetter.length, 1);
@@ -233,19 +248,19 @@ function decodeAjaxResponse(song) {
 				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
 				getAlteraciones(noteLetter.length, -1);
 			}else if (becuadroAccidental[noteLetter[noteLetter.length - 1]] == true) {
-					console.log("235");
+					// console.log("235");
 				if (sostenidoAccidental[noteLetter[noteLetter.length - 1]] == true) {
 					getAlteraciones(noteLetter.length, 0); //apaño ,momentaneo
-					console.log("237");
+					// console.log("237");
 				}else if (bemolAccidental[noteLetter[noteLetter.length - 1]] == true) {
 					getAlteraciones(noteLetter.length, 0); //apaño ,momentaneo
-					console.log("240");
+					// console.log("240");
 				}else if (key[1] == "b") { // por ejempo Eb , Bb, Ab...
 					getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
-					console.log("243");
+					// console.log("243");
 				}else{
 					getAlteraciones(noteLetter.length, -1); //apaño ,momentaneo
-					console.log("246");
+					// console.log("246");
 				}
 			}else{//nota sin alteracion accidental
 				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
@@ -391,7 +406,6 @@ function decodeAjaxResponse(song) {
 	console.log("noteLetter: " + noteLetter );
 	// getAlteraciones();//ponemos los bemoles y sostrenidos esegun la armadura
 
-	// clickButton();
 
 	//determinar margenes
 	for (var i = 0; i < tiemposCorrectos.length; i++) {

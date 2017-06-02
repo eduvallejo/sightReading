@@ -38,10 +38,10 @@ var indiceNota = {
   "z": -100
 };
 
-console.log("indiceNota['C'] : deberia ser(1) : " + indiceNota["C"]);
-console.log("indiceNota['^C'] : deberia ser(2) : " + indiceNota["^C"]);
-console.log("indiceNota[b'] : deberia ser(36) : " + indiceNota["b'"]);
-console.log("indiceNota[f] : deberia ser(18) : " + indiceNota["f"]);
+// console.log("indiceNota['C'] : deberia ser(1) : " + indiceNota["C"]);
+// console.log("indiceNota['^C'] : deberia ser(2) : " + indiceNota["^C"]);
+// console.log("indiceNota[b'] : deberia ser(36) : " + indiceNota["b'"]);
+// console.log("indiceNota[f] : deberia ser(18) : " + indiceNota["f"]);
 
 function getAlteraciones(posicionNota, cantitadAlteracion) {
   // console.log("noteLetter.length : " + noteLetter.length);
@@ -73,7 +73,7 @@ function getAlteraciones(posicionNota, cantitadAlteracion) {
       indiceNota["c"]++;
       indiceNota["C,"]++;
       indiceNota["c'"]++;
-      console.log("indiceNota[C] : " + indiceNota["C"]);
+      // console.log("indiceNota[C] : " + indiceNota["C"]);
       break;
     case "Amaj":
       indiceNota["F"]++;
@@ -88,7 +88,7 @@ function getAlteraciones(posicionNota, cantitadAlteracion) {
       indiceNota["G,"]++;
       indiceNota["g"]++;
       indiceNota["g'"]++;
-      console.log("indiceNota[C] : " + indiceNota["C"]);
+      // console.log("indiceNota[C] : " + indiceNota["C"]);
       break;
     case "Emaj":
       indiceNota["F"]++;
@@ -107,15 +107,15 @@ function getAlteraciones(posicionNota, cantitadAlteracion) {
       indiceNota["D,"]++;
       indiceNota["d"]++;
       indiceNota["d'"]++;
-      console.log("indiceNota[C] : " + indiceNota["C"]);
+      // console.log("indiceNota[C] : " + indiceNota["C"]);
       break;
     case "Fmaj":
-      console.log("indiceNota['B'] : " + indiceNota['B']);
+      // console.log("indiceNota['B'] : " + indiceNota['B']);
       indiceNota["B,"]--;
       indiceNota["B"]--;
       indiceNota["b"]--;
       indiceNota["b'"]--;
-      console.log("indiceNota['B'] : " + indiceNota['B']);
+      // console.log("indiceNota['B'] : " + indiceNota['B']);
       break;
     case "Ebmaj":
       // console.log("ANTES---indiceNota['A'] : " + indiceNota['A']);
@@ -139,7 +139,7 @@ function getAlteraciones(posicionNota, cantitadAlteracion) {
   } 
 
   frecuenciaNota[posicionNota - 1] = obtenerFrecuenciaNota((indiceNota[noteLetter[posicionNota - 1]] + cantitadAlteracion), 4);
-    // console.log("frecuenciaNota[" + (posicionNota - 1) + "] : " + frecuenciaNota[posicionNota - 1]);
+    console.log("frecuenciaNota[" + (posicionNota - 1) + "] : " + frecuenciaNota[posicionNota - 1]);
 
 //la diferencia de un semitono es 16.4821369405355
 }
