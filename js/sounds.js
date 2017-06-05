@@ -1,4 +1,4 @@
-var volumen = 0.2;
+var volumen = 0.4; //volumen del sinte
 function playSound(argument) {
 	audio.play();
 	// console.log("play any??");
@@ -28,6 +28,7 @@ function obtenerFrecuenciaNota(nota, octava) {
 
 // var indiceNota = {"C": 1, Do#=2, Re=3, Re#=4, Mi=5, Fa=6, Fa#=7, Sol=8, Sol#=9, La=10, La#=11, Si=12.}
 var indiceNota = {
+  "_C,,": -12 - 12,"C,,": -11 - 12,"^C,,": -10 - 12,"_D,,": -10 - 12,"D,,": -9 - 12,"^D,,": -8 - 12,"_E,,": -8 - 12,"E,,": -7 - 12,"_F,,": -7 - 12,"^E,,": -6 - 12, "F,," : -6 - 12,"^F,," : -5 - 12,"_G,," : -5 - 12,"G,,": -4 - 12,"^G,,": -3 - 12,"_A,,": -3 - 12,"A,,": -2 - 12,"^A,,": -1 - 12,"_B,,": -1 - 12,"B,,": -12,
   "_C,": -12, "C,": -11, "^C,": -10, "_D,": -10, "D,": -9, "^D,": -8, "_E,": -8, "E,": -7, "_F,": -7, "^E,": -6,  "F," : -6, "^F," : -5, "_G," : -5, "G,": -4, "^G,": -3, "_A,": -3, "A,": -2, "^A,": -1, "_B,": -1, "B,": 0,
   "_C": -12 + 12, "C": -11 + 12, "^C": -10 + 12, "_D": -10 + 12, "D": -9 + 12, "^D": -8 + 12, "_E": -8 + 12, "E": -7 + 12, "_F": -7 + 12, "^E": -6 + 12,  "F" : -6 + 12, "^F" : -5 + 12, "_G" : -5 + 12, "G": -4 + 12, "^G": -3 + 12, "_A": -3 + 12, "A": -2 + 12, "^A": -1 + 12, "_B": -1 + 12, "B": 0 + 12,
   // "C": 1, "D": 3, "E": 5, "F" : 6, "G": 8, "A": 10, "B": 12, 
@@ -35,9 +36,11 @@ var indiceNota = {
   // "c": 13, "d": 15, "e": 17, "f": 18, "g": 20, "a": 22, "b": 24, 
   "_c'": -12 + 36 ,"c'": -11 + 36, "^c'": -10 + 36, "_d'": -10 + 36, "d'": -9 + 36, "^d'": -8 + 36, "_e'": -8 + 36, "e'": -7 + 36, "^e'": -6 + 36, "_f'": -7 + 36,  "f'" : -6 + 36, "^f'" : -5 + 36, "_g'" : -5 + 36, "g'": -4 + 36, "^g'": -3 + 36, "_a'": -3 + 36, "a'": -2 + 36, "^a'": -1 + 36, "_b'": -1 + 36, "b'": 0 + 36,
   // "c'": 25, "d'": 27, "e'": 29, "f'": 30, "g'": 32, "a'": 34, "b'": 36, 
+  "_c''": -12 + 48 ,"c''": -11 + 48, "^c''": -10 + 48, "_d''": -10 + 48, "d''": -9 + 48, "^d''": -8 + 48, "_e''": -8 + 48, "e''": -7 + 48, "^e''": -6 + 48, "_f''": -7 + 48,  "f''" : -6 + 48, "^f''" : -5 + 48, "_g''" : -5 + 48, "g''": -4 + 48, "^g''": -3 + 48, "_a''": -3 + 48, "a''": -2 + 48, "^a''": -1 + 48, "_b''": -1 + 48, "b''": 0 + 48,
   "z": -100
 };
 
+console.log("indiceNota['A,,'] : deberia ser(-14) : " + indiceNota["A,,"]);
 // console.log("indiceNota['C'] : deberia ser(1) : " + indiceNota["C"]);
 // console.log("indiceNota['^C'] : deberia ser(2) : " + indiceNota["^C"]);
 // console.log("indiceNota[b'] : deberia ser(36) : " + indiceNota["b'"]);
@@ -47,6 +50,7 @@ function getAlteraciones(posicionNota, cantitadAlteracion) {
   // console.log("noteLetter.length : " + noteLetter.length);
   // console.log("posicionNota : " + posicionNota);
     indiceNota = {
+      "_C,,": -12 - 12,"C,,": -11 - 12,"^C,,": -10 - 12,"_D,,": -10 - 12,"D,,": -9 - 12,"^D,,": -8 - 12,"_E,,": -8 - 12,"E,,": -7 - 12,"_F,,": -7 - 12,"^E,,": -6 - 12, "F,," : -6 - 12,"^F,," : -5 - 12,"_G,," : -5 - 12,"G,,": -4 - 12,"^G,,": -3 - 12,"_A,,": -3 - 12,"A,,": -2 - 12,"^A,,": -1 - 12,"_B,,": -1 - 12,"B,,": -12,
       "_C,": -12, "C,": -11, "^C,": -10, "_D,": -10, "D,": -9, "^D,": -8, "_E,": -8, "E,": -7, "_F,": -7, "^E,": -6,  "F," : -6, "^F," : -5, "_G," : -5, "G,": -4, "^G,": -3, "_A,": -3, "A,": -2, "^A,": -1, "_B,": -1, "B,": 0,
         "_C": -12 + 12, "C": -11 + 12, "^C": -10 + 12, "_D": -10 + 12, "D": -9 + 12, "^D": -8 + 12, "_E": -8 + 12, "E": -7 + 12, "_F": -7 + 12, "^E": -6 + 12,  "F" : -6 + 12, "^F" : -5 + 12, "_G" : -5 + 12, "G": -4 + 12, "^G": -3 + 12, "_A": -3 + 12, "A": -2 + 12, "^A": -1 + 12, "_B": -1 + 12, "B": 0 + 12,
         // "C": 1, "D": 3, "E": 5, "F" : 6, "G": 8, "A": 10, "B": 12, 
@@ -54,6 +58,7 @@ function getAlteraciones(posicionNota, cantitadAlteracion) {
         // "c": 13, "d": 15, "e": 17, "f": 18, "g": 20, "a": 22, "b": 24, 
         "_c'": -12 + 36 ,"c'": -11 + 36, "^c'": -10 + 36, "_d'": -10 + 36, "d'": -9 + 36, "^d'": -8 + 36, "_e'": -8 + 36, "e'": -7 + 36, "^e'": -6 + 36, "_f'": -7 + 36,  "f'" : -6 + 36, "^f'" : -5 + 36, "_g'" : -5 + 36, "g'": -4 + 36, "^g'": -3 + 36, "_a'": -3 + 36, "a'": -2 + 36, "^a'": -1 + 36, "_b'": -1 + 36, "b'": 0 + 36,
         // "c'": 25, "d'": 27, "e'": 29, "f'": 30, "g'": 32, "a'": 34, "b'": 36, 
+          "_c''": -12 + 48 ,"c''": -11 + 48, "^c''": -10 + 48, "_d''": -10 + 48, "d''": -9 + 48, "^d''": -8 + 48, "_e''": -8 + 48, "e''": -7 + 48, "^e''": -6 + 48, "_f''": -7 + 48,  "f''" : -6 + 48, "^f''" : -5 + 48, "_g''" : -5 + 48, "g''": -4 + 48, "^g''": -3 + 48, "_a''": -3 + 48, "a''": -2 + 48, "^a''": -1 + 48, "_b''": -1 + 48, "b''": 0 + 48,
         "z": -100
     };
   // console.log("Alteracioneskey:" + key);
@@ -127,10 +132,41 @@ function getAlteraciones(posicionNota, cantitadAlteracion) {
       indiceNota["E"]--;
       indiceNota["e"]--;
       indiceNota["e'"]--;
+      indiceNota["A,,"]--;
       indiceNota["A,"]--;
       indiceNota["A"]--;
       indiceNota["a"]--;
       indiceNota["a'"]--;
+      indiceNota["a''"]--;
+
+      // console.log("DESPUES---indiceNota['A'] : " + indiceNota['A']);
+      break;    
+    case "Abmaj":
+      // console.log("ANTES---indiceNota['A'] : " + indiceNota['A']);
+      indiceNota["B,,"]--;
+      indiceNota["B,"]--;
+      indiceNota["B"]--;
+      indiceNota["b"]--;
+      indiceNota["b'"]--;
+      indiceNota["b''"]--;
+      indiceNota["E,,"]--;
+      indiceNota["E,"]--;
+      indiceNota["E"]--;
+      indiceNota["e"]--;
+      indiceNota["e'"]--;
+      indiceNota["e''"]--;
+      indiceNota["A,,"]--;
+      indiceNota["A,"]--;
+      indiceNota["A"]--;
+      indiceNota["a"]--;
+      indiceNota["a'"]--;
+      indiceNota["a''"]--;
+      indiceNota["D,,"]--;
+      indiceNota["D,"]--;
+      indiceNota["D"]--;
+      indiceNota["d"]--;
+      indiceNota["d'"]--;
+      indiceNota["d''"]--;
 
       // console.log("DESPUES---indiceNota['A'] : " + indiceNota['A']);
       break;    
@@ -139,7 +175,7 @@ function getAlteraciones(posicionNota, cantitadAlteracion) {
   } 
 
   frecuenciaNota[posicionNota - 1] = obtenerFrecuenciaNota((indiceNota[noteLetter[posicionNota - 1]] + cantitadAlteracion), 4);
-    console.log("frecuenciaNota[" + (posicionNota - 1) + "] : " + frecuenciaNota[posicionNota - 1]);
+  console.log("frecuenciaNota[" + (posicionNota - 1) + "] : " + frecuenciaNota[posicionNota - 1]);
 
 //la diferencia de un semitono es 16.4821369405355
 }

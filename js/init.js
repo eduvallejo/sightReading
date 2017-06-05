@@ -1,29 +1,37 @@
+// var offset ;
 function init(argument) {
 	comenzarMetronomo();
 	notes = document.getElementsByClassName('note');
 	// console.log("notes.length : " + notes.length);
 	// console.clear();
+	// var elementoCursor = document.getElementsByClassName('cursor');
+
+	// var x_pos = offset.left;
+	// var y_pos = offset.top;
 	
 
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
-		if (e.keyCode != 27){
+		if (e.keyCode != 13){
 			// console.log("keyCode : " + e.keyCode);
 			clickButton();
-		}else if(e.keyCode == 27){
+		}else if(e.keyCode == 13){ //ctrl key
+			// console.log("keyCode : " + e.keyCode);
 	  		// console.clear();
-			if (rest == false ) {
-	  			timestampUp = audioSong.currentTime;
-	  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-	  			// console.log("posX : " + posX);
-	  			// console.log("interval : " + interval);  
-	  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
-				pushTiempoUsuario(interval*1000);
+		// 	if (rest == false ) {
+		 //  			timestampUp = audioSong.currentTime;
+		 //  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+		 //  			// console.log("posX : " + posX);
+		 //  			// console.log("interval : " + interval);  
+		 //  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
+			// 		pushTiempoUsuario(interval*1000);
 
-	  			rest = true;
-	  		}
-	  		clickPressed = false;
+		 //  			rest = true;
+		 //  		}
+		 //  		clickPressed = false;
+		// 
+			scrollDown(); //ahora uso la tecla para scroll 
 		}
 	}
 
@@ -56,11 +64,13 @@ function init(argument) {
 	freq = 100;
 	// console.log("freq : " + freq);
 	var noteLetter = [];
-	var gainNode = context.createGainNode();
 	var frecuenciaNota = [];
-
+	var gainNode;
+	var decayRate = 0.4; //cuan to mas PEQUEÑO, mas RAPIDO DECAE
+	var decayTarget = 0; //si es 0 se acxaba apagando la nota depues de decaer
 	
 function clickButton(argument) {
+	gainNode = context.createGainNode();
 	if (clickPressed == false) {
 		// console.log("audioSong: " + audioSong.paused);
 		if (oscillator) {
@@ -83,6 +93,7 @@ function clickButton(argument) {
 		gainNode.connect(context.destination);
 		// Reduce the gainNode.
 		gainNode.gain.value = volumen;		
+		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRate);
 		if (audioSong.paused == true) {
 			audioSong.volume = 0.5;
 			audioSong.play(timestamp);
@@ -126,6 +137,7 @@ function clickButton(argument) {
 		gainNode.connect(context.destination);
 		// Reduce the gainNode.
 		gainNode.gain.value = volumen;
+		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRate);
 		oscillator.start(timestamp);
 
 	}
@@ -211,5 +223,12 @@ function resetearColores(argument) {
 	// console.log("notes.length : " + notes.length);
 }
 
-
+function scrollDown(argument) {
+	// offset = $('.cursor').offset();
+	window.scrollBy(0, 500);
+	// console.log("offset.left : " + offset.left);
+	// console.log("offset.top : " + offset.top);
+	// if (offset.top > 200) {
+	// }
+}
 

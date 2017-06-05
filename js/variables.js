@@ -36,16 +36,21 @@ var song = 'albinoni.abc';
 var song = 'goinghome';
 var song = 'himnoalegria.abc';
 var song = 'arabesque120.abc';
-var song = 'arabesque110Compases38-70.abc';
 var song = 'wild.abc';
 var song = 'ravelA.abc';
 var song = 'escalaDo.abc';
-var song = 'arabesque120Compases1-38.abc';
 var song = 'ravelB.abc';
 var song = 'puenteViejo.abc';
 var song = 'bach_Suite1CelloPrelude.abc';
+var song = 'arabesque110Compases38-70.abc';
+var song = 'mahler_adagietto.abc';
+var song = 'arabesque120Compases1-38.abc';
 var song = 'bach_badinerie.abc';
+var song = 'bach_BWV1056_II.abc';
 var song = '000.abc';
+var song = 'escala5octavas.abc';
+var song = 'escalaCromaticaSostenidos.abc';
+
 // var song = 'bach_badinerieLento.abc';
 var songResponse;
 

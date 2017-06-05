@@ -27,7 +27,7 @@ function resetearAjax(argument) {
 	// audioSong = new Audio('wav/silence.wav'); //wav SILENCIO
 	// audioSong = new Audio('wav/' + song.replace('.abc', '.wav')); //wavs
 	// audioSong = new Audio('mp3/' + song.replace('.abc', '.mp3')); //mp3
-	// audioSong = new Audio('mp3/' + song.replace('.abc', '.ogg')); //ogg
+	// audioSong = new Audio('ogg/' + song.replace('.abc', '.ogg')); //ogg
 	console.log("audioSong : " + audioSong);
 	//conºle
 	// console.log("song.replace('.abc', 'wav') : " + song.replace('.abc', '.wav'));
@@ -197,8 +197,13 @@ function decodeAjaxResponse(song) {
 		// (3^AcA 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
-			if (song[pointer + 1] == ",") {
+			if (song[pointer + 1] == "," && song[pointer + 2] == ",") {
+				noteLetter.push(song[pointer] + ",,");
+			}
+			else if (song[pointer + 1] == ",") {
 				noteLetter.push(song[pointer] + ",");
+			}else if(song[pointer + 1] == "'" && song[pointer + 2] == "'"){
+				noteLetter.push(song[pointer] + "''");
 			}else if(song[pointer + 1] == "'"){
 				noteLetter.push(song[pointer] + "'");
 			}else{
@@ -214,7 +219,7 @@ function decodeAjaxResponse(song) {
 				// for (var i = 0; i < sostenidoAccidental.length; i++) {
 				// 	console.log("sostenidoAccidental[" + noteLetter.length - 1 + "] : " + sostenidoAccidental[noteLetter.length - 1]);
 				// }
-				console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
+				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
 			}else if (song[pointer - 1] == "=") {
 				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
 				// getAlteraciones(noteLetter.length, 16.4821369405355);

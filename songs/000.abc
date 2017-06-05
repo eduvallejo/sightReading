@@ -1,10 +1,8 @@
 X:1
-T: El secreto del Puente Viejo
-C:Alex Conrado
+T:el fallo esta en el _d q suena como __d
+C:J.S.Bach
 L:1/4
-M:1/4
-Q:1/4=70
-K:Cmaj
-D _D D =D| D _D D =D|D _D D =D|D _D D =D|
-D _D D =D| D _D D =D|D _D D =D|D _D D =D|
-
+M:4/4
+Q:1/4=62
+K:Abmaj
+d=d_d| 
