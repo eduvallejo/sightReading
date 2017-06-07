@@ -7,7 +7,7 @@ K:Gmaj
 Q:1/4=72
 V:1 treble nm="Violoncello" snm="Vlc."
  G,DBA BDBD G,DBA BDBD | G,EcB cEcE G,EcB cEcE | G,FcB cFcF G,FcB cFcF | G,GBA BGBG G,GBA BGBF | 
- G,EBA BGFG EGFG B,DCB, | _DGAG AGAG DGAG AGAG | FAdc dAGA FAGA DFED | 
+ G,EBA BGFG EGFG B,D^CB, | _DGAG AGAG DGAG AGAG | FAdc dAGA FAGA DFED | 
  E,B,GF GB,GB, E,B,GF GB,GB, | E,_D=DE D_DB,A, GFEd _dBAG | FEDd AdFA DEFA GFED | 
  _AD=FE FDAD BDFE FDAD | CEAB cAED CEAB cAFE | _EFEF AFAF EFEF AFAF | GFEG FGAF GFED CB,A,G, | 
  F,CDC DCDC F,CDC DCDC | G,B,FE FB,FB, G,B,FE FG,FG, | G,CED ECEC G,CED ECEC | 
@@ -18,4 +18,4 @@ V:1 treble nm="Violoncello" snm="Vlc."
  CBAG FEDC B,AGF EDCB, | A,GFE FADA EAFA GAEA | FADA GAEA FADA GAEA | FADA EAFA GAAA BADA | 
  AABA cADA BAcA dABA | cABA cAAA BAAA BAGA | AAGA AAFA GAFA GAEA | 
  FADE =FD^FD GD_AD =AD_BD | BDcD _dD=dD _eD=eD =fD^fD | gBDB gBgB gBDB gBgB | 
- gADA gAgA gADA gAgA | fcDc fcfc fcDc fcfc | G,8  B,8 |] 
+ gADA gAgA gADA gAgA | fcDc fcfc fcDc fcfc | G,8  B,8 | 

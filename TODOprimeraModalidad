@@ -171,7 +171,17 @@ dividir el div del movil en dos para q no se haga zoom
 ADAGGIETO, turkey in the straw version MSX
 
 ARREGLAR LOS BECUADROS DEl 000 =d
-
-no hace falta hacer los calculos cada vez, se pueden guardar los tiempos y notas de cada cancion en un archivo(objeto?)
-
 buscar en google como leer los tiempos de un musicxml con php
+
+
+dobles puntillos
+
+hacer los silencios como notas ligadas
+
+agreagr tambien a los arrays, la intensidad
+
+no hace falta hacer los calculos cada vez, se pueden guardar los tiempos y notas de cada cancion en un archivo(objeto?) y asi de paso no cal arreglar todos los bugs del decoder,m se ponen las frecuencias manuealmente cuando fallen
+
+spinner ajax
+
+poner melodia tb en la base pero a volumen bajo, para saber como es la melodia real cuando nos equivocamos!!!

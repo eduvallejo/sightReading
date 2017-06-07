@@ -2,13 +2,15 @@
 function ajax(fileName) {
 	console.log("fileName : " + fileName);
 	// document.getElementById("preId").innerHTML = '';		
+	audioSong.pause();
+	audioSong = new Audio('ogg/' + fileName.replace('.abc', '.ogg')); //wavs
 	
 	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);
 	// console.log("AJAXfileNameencoded : " + encodeURIComponent(fileName));
 
 	//ajax
 	var http = new XMLHttpRequest();
-  	// document.getElementById("loading").innerHTML = '<img src="js/ajax/spinner.gif" />'; // Set here the image before sending request
+  	document.getElementById("loading").innerHTML = '<img src="js/ajax/spinner.gif" />'; // Set here the image before sending request
 	http.open("GET", url, true);
 	http.send();
 
@@ -22,6 +24,8 @@ function ajax(fileName) {
 	        // response = response.replace(/\n([^\n]*)$/, ']'); //bug5 NO funciona
 	        // console.log("response : " + response);
 		    appendSong(response);
+      		document.getElementById("loading").innerHTML = ''; // Hide the image after the response from the server
+		 	
       		// document.getElementById("loading").innerHTML = ''; // Hide the image after the response from the server
       		// document.getElementById("preId").innerHTML += response; // Hide the image after the response from the server
 	    	}

@@ -84,6 +84,7 @@ function clickButton(argument) {
 		// oscillator = context.createOscillator();
 		oscillator = context.createOscillator();
 		// oscillator.frequency.value = obtenerFrecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
+		console.log("contadorColor : " + contadorColor);
 		oscillator.frequency.value = frecuenciaNota[contadorColor];
 		// oscillator.connect(context.destination);    
 		// oscillator.connect(context.destination);    

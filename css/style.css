@@ -42,3 +42,16 @@ pre{
 	/*background-color: #ffffc0;*/
 	/*background-color: green;*/
 }
+
+/*spinner*/
+#loading{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  z-index:2;
+  overflow: auto;
+
+  margin-left: -16px;
+  margin-right: -16px;
+}
