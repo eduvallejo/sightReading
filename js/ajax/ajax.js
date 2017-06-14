@@ -1,9 +1,20 @@
 //ajax.js
 function ajax(fileName) {
-	console.log("fileName : " + fileName);
+	// console.log("fileName : " + fileName);
 	// document.getElementById("preId").innerHTML = '';		
-	audioSong.pause();
-	audioSong = new Audio('ogg/' + fileName.replace('.abc', '.ogg')); //wavs
+	try {//CON ESTE TRY CATCH EL PROGRAMA NO SE VA A LA MIERDA
+    // Fix up for prefixing
+		audioSong.pause();
+	  }
+	  catch(e) {
+	    console.log('no audioSong playing');
+	  }
+	//debug
+	// audioSong = new Audio('ogg/silence.ogg'); //wavs
+	//NORMAL
+	audioSong = new Audio('ogg/' + fileName.replace('.abc', '.ogg')); //oggs ssin melodia
+	//CON MELODIAS
+	// audioSong = new Audio('melodiasOgg/' + fileName.replace('.abc', '.ogg')); //ogg con melodia
 	
 	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);
 	// console.log("AJAXfileNameencoded : " + encodeURIComponent(fileName));

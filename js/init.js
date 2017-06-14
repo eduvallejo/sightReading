@@ -106,7 +106,7 @@ function clickButton(argument) {
 		audioSong.play();
 		oscillator.start(timestamp);
 		//no se si poner la animacion
-		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
+		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm,});
 		
 		notes[contadorColor].setAttribute("fill", "green");
 		// console.log("clickPressed : " + clickPressed);  
@@ -184,8 +184,8 @@ function reloadMetronomo(argument) {
 }
 function comenzarMetronomo(argument) {
 
-	console.log("audioSong.play : " );
-	console.log("audioSong.currentTime : " + audioSong.currentTime);
+	// console.log("audioSong.play : " );
+	// console.log("audioSong.currentTime : " + audioSong.currentTime);
 	audioSong.volume = volumen;
 	// audioSong.play();
 	
@@ -202,10 +202,10 @@ function colorear(argument) {
 		contadorColor++;
 		notes[contadorColor].setAttribute("fill", argument);
 	}
-	if (notasLigadas[contadorColor] == true) {
-		contadorColor++;
-		notes[contadorColor].setAttribute("fill", argument);
-	}
+	// if (notasLigadas[contadorColor] == true) {
+	// 	contadorColor++;
+	// 	notes[contadorColor].setAttribute("fill", argument);
+	// }
 	
 }
 

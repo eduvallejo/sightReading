@@ -185,3 +185,13 @@ no hace falta hacer los calculos cada vez, se pueden guardar los tiempos y notas
 spinner ajax
 
 poner melodia tb en la base pero a volumen bajo, para saber como es la melodia real cuando nos equivocamos!!!
+
+PONER TA,BIEN INTEnsidades cuando se guarden las notas en los archivos cuando ya no las analicemos cada vez
+
+
+gymnopedie, el compas 24 no me suena bien del todo
+
+usar media queries para poner el boton cuando este en moviles, 
+
+buscar scroll o borrar la linea cuando se llega al final
+	class="staff-extra es lo primero q hay en cada linea, es la clave de sol, fa..., probar de borrar buscando esa clase

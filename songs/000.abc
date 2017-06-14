@@ -1,9 +1,9 @@
 X:1
-T:Suite no. 1 for cello, Prelude
-C:J.S. Bach
-L:1/16
+T:Giant Steps - Trio Piano Arrangement
+C:John Coltrane 
+L:1/8
+Q:1/4=225
 M:4/4
-K:Gmaj
-Q:1/4=72
-V:1 treble nm="Violoncello" snm="Vlc."
-B,D^CB, | 
+K:Cmaj
+C8|
+C8|

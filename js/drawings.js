@@ -23,7 +23,7 @@ function pushTiempoUsuario(argument) {
 
 	if (tiemposUsuario.length == tiemposCorrectos.length) {
 		// console.clear();
-		console.log("FIN");
+		// console.log("FIN");
 		//checkeamos reslutados
 		mediaError = errorPorcentualAcumulado / tiemposCorrectos.length;
 		resetearColores();
@@ -31,12 +31,12 @@ function pushTiempoUsuario(argument) {
 		audioSong.load();
 		// audioSong.pause();
 		// audioSong.load();
-		console.log("audioSong.paused : " + audioSong.paused);//paramos la cancion ghost
+		// console.log("audioSong.paused : " + audioSong.paused);//paramos la cancion ghost
 		checkResultados();
 		contadorUsuario = 0;
 		tiemposUsuario = [];
 		//no se si poner la animacion
-		console.log("scrollTOP?");
+		// console.log("scrollTOP?");
 		window.scrollTo(0, 200);
 
 		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
@@ -47,7 +47,7 @@ function pushTiempoUsuario(argument) {
 function checkResultados(argument) {
 	console.log("numErrores : " + numErrores);
 	if (audioSong.paused == true) {
-		console.log("audioSong.paused : " + audioSong.paused);//paramos la cancion ghost
+		// console.log("audioSong.paused : " + audioSong.paused);//paramos la cancion ghost
 		audioSong.play();
 	}
 	// console.log("mediaError : " + mediaError + "%");

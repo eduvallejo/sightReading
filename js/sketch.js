@@ -1,15 +1,15 @@
 var time1 = audioSong.currentTime;
-console.log("time1 : " + time1);
+// console.log("time1 : " + time1);
 var mic;
 function setup(argument) {
-	console.log("SETUP");
+	// console.log("SETUP");
 	// //time1 = audioSong.currentTime;
 	// console.log("SKETCH time1 : " + this.currentTime);
 	// mic = new p5.AudioIn();
 	// console.log("mic : " + mic);
 	// mic.start();
 }
-console.log("SKETCH!!");
+// console.log("SKETCH!!");
 
 function draw(argument) {
 	// console.log("DRAW");

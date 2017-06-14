@@ -40,7 +40,7 @@ var indiceNota = {
   "z": -100
 };
 
-console.log("indiceNota['A,,'] : deberia ser(-14) : " + indiceNota["A,,"]);
+// console.log("indiceNota['A,,'] : deberia ser(-14) : " + indiceNota["A,,"]);
 // console.log("indiceNota['C'] : deberia ser(1) : " + indiceNota["C"]);
 // console.log("indiceNota['^C'] : deberia ser(2) : " + indiceNota["^C"]);
 // console.log("indiceNota[b'] : deberia ser(36) : " + indiceNota["b'"]);
@@ -293,22 +293,22 @@ for (var i = 0; i < 13; i++) {
 
 var  bemolesTonalidades = { 
   "Fmaj": {
-        "B" :true,"b" :true
+        "B" :true,"b" :true, "E" :false, "e" :false, "A" :false, "a" :false, "D" :false, "d" :false, "G" :false, "g" :false, "C" :false, "c" :false, "F" :false, "f" :false
   },
   "Bbmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true
+        "B" :true,"b" :true, "E" :true, "e" :true, "A" :false, "a" :false, "D" :false, "d" :false, "G" :false, "g" :false, "C" :false, "c" :false, "F" :false, "f" :false
   },
   "Ebmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true
+        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true ,  "D,," :false, "D," :false, "D" :false, "d" :false, "d'" :false, "d''" :false, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
   },
   "Abmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, 
+        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true ,  "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true, "d''" :true, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
   },
   "Dbmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true 
+        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :false, "c" :false, "F" :false, "f" :false
   },
    "Gbmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true 
+        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true, "F" :false, "f" :false
   },
    "Cbmaj": {
         "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true, "F" :true, "f" :true
