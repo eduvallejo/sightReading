@@ -194,4 +194,5 @@ gymnopedie, el compas 24 no me suena bien del todo
 usar media queries para poner el boton cuando este en moviles, 
 
 buscar scroll o borrar la linea cuando se llega al final
-	class="staff-extra es lo primero q hay en cada linea, es la clave de sol, fa..., probar de borrar buscando esa clase
+	class="staff-extra es lo primero q hay en cada linea, es la clave de sol, fa..., probar de borrar buscando esa clase Y HACER SCROLL hacia abajo, 
+	quizas si previamente contamos las notas q hay en una linea...

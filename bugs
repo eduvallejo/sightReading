@@ -30,3 +30,5 @@ bug9
 
 bug10
 	cuando hay 4 notas ligadas, de momento solo chuta hasta 3 notas ligadas
+bug11
+	hacer q la pantalla haga scroll vertical , contaremos las notas de cada linea y haremos scroll cuando se llegue a ese numero. creo un array donde cada elemento sera el numero de notas de cada linea

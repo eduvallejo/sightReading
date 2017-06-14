@@ -202,10 +202,10 @@ function colorear(argument) {
 		contadorColor++;
 		notes[contadorColor].setAttribute("fill", argument);
 	}
-	// if (notasLigadas[contadorColor] == true) {
-	// 	contadorColor++;
-	// 	notes[contadorColor].setAttribute("fill", argument);
-	// }
+	if (notasLigadas[contadorColor] == true) {
+		contadorColor++;
+		notes[contadorColor].setAttribute("fill", argument);
+	}
 	
 }
 

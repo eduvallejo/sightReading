@@ -47,9 +47,9 @@ var song = 'escalaCromaticaSostenidos.abc';
 var song = 'escala5octavas.abc';
 var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'bach_badinerie.abc';
-var song = 'bach_BWV1056_II.abc';
 var song = 'arabesque120Compases1-38.abc';
 var song = 'giant_steps_solo1.abc';
+var song = 'bach_BWV1056_II.abc';
 var song = 'bach_BWV1056_I.abc';
 var song = '000.abc';
 
