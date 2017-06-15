@@ -14,7 +14,7 @@ function ajax(fileName) {
 	//NORMAL
 	audioSong = new Audio('ogg/' + fileName.replace('.abc', '.ogg')); //oggs ssin melodia
 	//CON MELODIAS
-	// audioSong = new Audio('melodiasOgg/' + fileName.replace('.abc', '.ogg')); //ogg con melodia
+	//audioSong = new Audio('melodiasOgg/' + fileName.replace('.abc', '.ogg')); //ogg con melodia
 	
 	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);
 	// console.log("AJAXfileNameencoded : " + encodeURIComponent(fileName));

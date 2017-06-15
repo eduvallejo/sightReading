@@ -37,7 +37,7 @@ function pushTiempoUsuario(argument) {
 		tiemposUsuario = [];
 		//no se si poner la animacion
 		// console.log("scrollTOP?");
-		window.scrollTo(0, 200);
+		window.scrollTo(0, 93);
 
 		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
 	}

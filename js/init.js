@@ -13,26 +13,26 @@ function init(argument) {
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
-		if (e.keyCode != 13){
+		// if (e.keyCode != 13){
 			// console.log("keyCode : " + e.keyCode);
 			clickButton();
-		}else if(e.keyCode == 13){ //ctrl key
-			// console.log("keyCode : " + e.keyCode);
-	  		// console.clear();
-		// 	if (rest == false ) {
-		 //  			timestampUp = audioSong.currentTime;
-		 //  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-		 //  			// console.log("posX : " + posX);
-		 //  			// console.log("interval : " + interval);  
-		 //  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
-			// 		pushTiempoUsuario(interval*1000);
+		// }else if(e.keyCode == 13){ //ctrl key
+		// 	// console.log("keyCode : " + e.keyCode);
+	 //  		// console.clear();
+		// // 	if (rest == false ) {
+		//  //  			timestampUp = audioSong.currentTime;
+		//  //  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
+		//  //  			// console.log("posX : " + posX);
+		//  //  			// console.log("interval : " + interval);  
+		//  //  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
+		// 	// 		pushTiempoUsuario(interval*1000);
 
-		 //  			rest = true;
-		 //  		}
-		 //  		clickPressed = false;
-		// 
-			scrollDown(); //ahora uso la tecla para scroll 
-		}
+		//  //  			rest = true;
+		//  //  		}
+		//  //  		clickPressed = false;
+		// // 
+		// 	scrollDown(); //ahora uso la tecla para scroll 
+		// }
 	}
 
 	// window.onkeyup = function(e){
@@ -72,6 +72,8 @@ function init(argument) {
 function clickButton(argument) {
 	gainNode = context.createGainNode();
 	if (clickPressed == false) {
+		//bug11 scroll down
+		contadorLinea = 0;
 		// console.log("audioSong: " + audioSong.paused);
 		if (oscillator) {
 			oscillator.stop();
@@ -142,7 +144,16 @@ function clickButton(argument) {
 		oscillator.start(timestamp);
 
 	}
-	rest = false;	
+	rest = false;	//esto sirve de algo???
+	//contador notas para scroll
+	notasPorLineaUsuario++;
+	// console.log("contadorLinea: " + contadorLinea);
+	// console.log("notasPorLineaUsuario : " + notasPorLineaUsuario);
+	if (notasPorLineaUsuario >= notasPorLinea[contadorLinea]) {
+		scrollDown();
+		notasPorLineaUsuario = 0;
+		contadorLinea++;
+	}
 }	
 
 //vaciar los resultados y eliminar el objeto tiempo
@@ -219,17 +230,30 @@ function resetearColores(argument) {
 	// notes[contadorColor].setAttribute("fill", "grey");
 	}
 	contadorColor = 0;
-	notes = document.getElementsByClassName('note');
+	notes = document.getElementsByClassName('note');//con esto se rellena el array  notes con todos los elementos de class="note"
 	// ABCJS.stopAnimation();
 	// console.log("notes.length : " + notes.length);
+	cantidadScroll = 0;
+	notasPorLineaUsuario = 0;
+	contadorLinea = 0;
+
 }
 
 function scrollDown(argument) {
+	// console.log("scrolldown?")
 	// offset = $('.cursor').offset();
-	window.scrollBy(0, 500);
 	// console.log("offset.left : " + offset.left);
 	// console.log("offset.top : " + offset.top);
 	// if (offset.top > 200) {
 	// }
+
+	// window.scrollBy(0, 85); //scrollBy(x, y)
+	cantidadScroll = cantidadScroll + 93;
+	window.scroll({
+	  top: cantidadScroll, 
+	  left: 0, 
+	  behavior: 'smooth' 
+	});
+
 }
 

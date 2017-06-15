@@ -196,3 +196,8 @@ usar media queries para poner el boton cuando este en moviles,
 buscar scroll o borrar la linea cuando se llega al final
 	class="staff-extra es lo primero q hay en cada linea, es la clave de sol, fa..., probar de borrar buscando esa clase Y HACER SCROLL hacia abajo, 
 	quizas si previamente contamos las notas q hay en una linea...
+	el \n se codifica como %0A en javascript
+	AHORA solo queda poner la altura del scroll adecuada, sacandola por css? y arreglar las notas ligadas para q no se cuenten en el contadornotaslinea
+	y si pongo todos los compases en una misma linea? y voy haciendo scroll horizontal?
+
+mmirar algun mouse o algo q me permita hacer click a la vez q simula el ataque de la pua

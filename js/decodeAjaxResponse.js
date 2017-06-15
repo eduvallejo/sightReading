@@ -111,6 +111,10 @@ function decodeAjaxResponse(song) {
 
 	//NOTAS MUSICALES
 	while(song[pointer] != undefined){
+		// console.log("song[" + pointer + "]: " + escape(song[pointer]));
+		//vertical scrolling
+		bug11(song[pointer]);
+		// console.log(encodeURI(song[pointer]));
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 		if (song[pointer] == '|') {
 			// console.log("song[" + pointer + "] : " + song[pointer]);
@@ -194,9 +198,13 @@ function decodeAjaxResponse(song) {
 		}
 	
 		saltarCaracter(pointer); //posicion original de la funcion salyar
-		// (3^AcA 
+
+		// LETRAS 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
+			//sumamos una nota para el bug 11
+			notasPorLinea[contadorLinea]++;
+			// console.log("notasPorLinea[" + contadorLinea + "] : " + notasPorLinea[contadorLinea]);
 			if (song[pointer + 1] == "," && song[pointer + 2] == ",") {
 				noteLetter.push(song[pointer] + ",,");
 			}

@@ -50,8 +50,9 @@ var song = 'bach_badinerie.abc';
 var song = 'arabesque120Compases1-38.abc';
 var song = 'giant_steps_solo1.abc';
 var song = 'bach_BWV1056_II.abc';
-var song = 'bach_BWV1056_I.abc';
 var song = '000.abc';
+var song = 'bach_BWV1056_I.abc';
+var song = 'vivaldi_RV93_II.abc';
 
 // var song = 'bach_badinerieLento.abc';
 var songResponse;
@@ -148,3 +149,11 @@ var becuadroAccidental = { "C,": false, "D,": false, "E,": false, "F," : false, 
       "c":false, "d":false, "e":false, "f":false, "g":false, "a":false, "b":false, 
       "c'":false, "d'":false, "e'":false, "f'":false, "g'":false, "a'":false, "b'":false 
 };
+
+
+//bug11 conseguir scroll hacia abajo
+var contadorLinea = 0;
+var notasPorLinea = [];
+notasPorLinea[0] = 0; //para no tener NAN
+var notasPorLineaUsuario = 0;
+var cantidadScroll = 0;
