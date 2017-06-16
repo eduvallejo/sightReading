@@ -45,14 +45,15 @@ var song = 'arabesque110Compases38-70.abc';
 var song = 'mahler_adagietto.abc';
 var song = 'escalaCromaticaSostenidos.abc';
 var song = 'escala5octavas.abc';
-var song = 'bach_Suite1CelloPrelude.abc';
-var song = 'bach_badinerie.abc';
-var song = 'arabesque120Compases1-38.abc';
 var song = 'giant_steps_solo1.abc';
-var song = 'bach_BWV1056_II.abc';
-var song = '000.abc';
 var song = 'bach_BWV1056_I.abc';
 var song = 'vivaldi_RV93_II.abc';
+var song = 'bach_Suite1CelloPrelude.abc';
+var song = '000.abc';
+var song = 'arabesque120Compases1-38.abc';
+var song = 'bach_BWV1056_II.abc';
+var song = 'bach_badinerie.abc';
+// var song = 'z000.abc';
 
 // var song = 'bach_badinerieLento.abc';
 var songResponse;
@@ -157,3 +158,8 @@ var notasPorLinea = [];
 notasPorLinea[0] = 0; //para no tener NAN
 var notasPorLineaUsuario = 0;
 var cantidadScroll = 0;
+
+// bug12 scroll horizontal
+var cantidadScrollHorizontal = 0;
+var notesWidth = [];
+var scale = 1;

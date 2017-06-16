@@ -112,8 +112,8 @@ function decodeAjaxResponse(song) {
 	//NOTAS MUSICALES
 	while(song[pointer] != undefined){
 		// console.log("song[" + pointer + "]: " + escape(song[pointer]));
-		//vertical scrolling
-		bug11(song[pointer]);
+		// //vertical scrolling
+		// bug11(song[pointer]);
 		// console.log(encodeURI(song[pointer]));
 		// console.log("song[" + pointer + "] : " + song[pointer]);
 		if (song[pointer] == '|') {
@@ -484,6 +484,9 @@ function decodeAjaxResponse(song) {
 		// margenesCorrectosInferior[i] = parseInt(tiemposCorrectos[i]) - dificultad;//margen error igual para todos
 		// console.log("margenesCorrectosInferior[" + i + "] : " + margenesCorrectosInferior[i]);
 	}
+
+	//hacemos un array con la anchura de cada nota para poder hacer scroll horiz
+	getNotesWidth();
 
 }
 

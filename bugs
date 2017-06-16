@@ -37,3 +37,14 @@ bug11
 
 	creo el verticalscroll.js y la funcion bug11();
 	se tienen q elimanr las notas ligadas del conteo de notas por linea, ademas parece que cuando hay una ligadura falla el conteo de notas pero falla por la parte de delante? no es por las ligaduras sino por el 2 en A2
+		mas o menos arreglado , aunq cal descontar las notas ligadas de manera que el scroll se haga justo al final de la linea y no en plan chapucero en funcion de si hay mas o menos notas ligadas(funciona ok si no hay ligaduras)
+
+bug12-scroll horizontal
+	meter toda la partirturra en una sola linea e ir haciendo scroll horizontal cuando la suma de las notas sea igual (60/bpm)*beatsXcompas 
+	ej: para un 1x4 bpm=120--> cada compas duraría 60/120 = 0.5s
+		crear una variable q vaya sumando las duraciones de las notas hasta q supere la duracion del compas y luego se ponga a 0 despues de hacer el scroll
+
+		mejor pillar los pixels de cada nota, antes de empezar a tocar
+
+mirar lo del audiobuffer, quizas crear el audio antes de empezar a tocar, mirar como conseguir la width de los measures.
+cambiar los instrumentos del audiosong a sonido new age para q conucerde mejor con el webaudio

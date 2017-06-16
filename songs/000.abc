@@ -1,15 +1,9 @@
 X:1
-T: Concerto Fminor n5
-C:J.S.Bach
+T:Suite no. 1 for cello, Prelude
+C:J.S. Bach
 L:1/16
-Q:1/4=66
-M:2/4
-K:Abmaj
-AA
-AA
-AA
-AA
-AA
-AA
-AA
-AA
+M:4/4
+K:Gmaj
+Q:1/4=72
+V:1 treble nm="Violoncello" snm="Vlc."
+ G,DBA BDBD G,DBA BDBD | G,EcB cEcE G,EcB cEcE | G

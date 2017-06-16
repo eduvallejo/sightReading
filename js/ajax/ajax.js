@@ -7,14 +7,21 @@ function ajax(fileName) {
 		audioSong.pause();
 	  }
 	  catch(e) {
-	    console.log('no audioSong playing');
+	    console.log('no audioSong playing still');
 	  }
-	//debug
-	// audioSong = new Audio('ogg/silence.ogg'); //wavs
-	//NORMAL
+
+	//Sin melodia
 	audioSong = new Audio('ogg/' + fileName.replace('.abc', '.ogg')); //oggs ssin melodia
 	//CON MELODIAS
-	//audioSong = new Audio('melodiasOgg/' + fileName.replace('.abc', '.ogg')); //ogg con melodia
+	// audioSong = new Audio('melodiasOgg/' + fileName.replace('.abc', '.ogg')); //ogg con melodia
+	
+	console.log("audioDuration : " + (audioSong.duration));
+	for (properties in audioSong){
+		// console.log("properties : " + properties.value);
+	}
+	
+
+
 	
 	var url = "js/ajax/echo.php?name=" + encodeURIComponent(fileName);
 	// console.log("AJAXfileNameencoded : " + encodeURIComponent(fileName));
