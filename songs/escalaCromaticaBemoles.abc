@@ -5,6 +5,15 @@ Q:1/4=72
 M:3/4
 K:Cmaj
 V:1 
+C,,, _C,,, D,,, _D,,, E,,, F,,, _F,,, G,,, _G,,, A,,, _A,,, B,,, |
+C,, _C,, D,, _D,, E,, F,, _F,, G,, _G,, A,, _A,, B,, |
+C, _C, D, _D, E, F, _F, G, _G, A, _A, B, |
+C, _C, D, _D, E, F, _F, G, _G, A, _A, B, |
+C, _C, D, _D, E, F, _F, G, _G, A, _A, B, |
+c' _c' d' _d' e' f' _f' g' _g' a' _a' b' |
+c' _c' d' _d' e' f' _f' g' _g' a' _a' b' |
+c' _c' d' _d' e' f' _f' g' _g' a' _a' b' |
+c' _c' d' _d' e' f' _f' g' _g' a' _a' b' |
 c' _c' d' _d' e' f' _f' g' _g' a' _a' b' |
 c _c d _d e f _f g _g a _a b |
 C, _C, D, _D, E, F, _F, G, _G, A, _A, B, |

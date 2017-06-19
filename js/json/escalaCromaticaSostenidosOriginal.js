@@ -1,0 +1,79 @@
+
+//escalaCromaticaSostenidos
+
+frecuenciaNota[0] : 65.40639132514966  
+frecuenciaNota[1] : 69.29565774421803  
+frecuenciaNota[2] : 73.41619197935188  
+frecuenciaNota[3] : 77.78174593052022  
+frecuenciaNota[4] : 82.4068892282175  
+frecuenciaNota[5] : 87.30705785825097  
+frecuenciaNota[6] : 92.49860567790861  
+frecuenciaNota[7] : 97.99885899543735  
+frecuenciaNota[8] : 103.82617439498628  
+frecuenciaNota[9] : 110  
+frecuenciaNota[10] : 116.54094037952248  
+frecuenciaNota[11] : 123.47082531403103  
+frecuenciaNota[12] : 130.81278265029934  
+frecuenciaNota[13] : 138.59131548843604  
+frecuenciaNota[14] : 146.83238395870382  
+frecuenciaNota[15] : 155.56349186104046  
+frecuenciaNota[16] : 164.81377845643496  
+frecuenciaNota[17] : 174.61411571650194  
+frecuenciaNota[18] : 184.99721135581723  
+frecuenciaNota[19] : 195.99771799087463  
+frecuenciaNota[20] : 207.65234878997256  
+frecuenciaNota[21] : 220  
+frecuenciaNota[22] : 233.08188075904496  
+frecuenciaNota[23] : 246.94165062806206  
+frecuenciaNota[24] : 261.6255653005986  
+frecuenciaNota[25] : 277.1826309768721  
+frecuenciaNota[26] : 293.6647679174076  
+frecuenciaNota[27] : 311.12698372208087  
+frecuenciaNota[28] : 329.6275569128699  
+frecuenciaNota[29] : 349.2282314330039  
+frecuenciaNota[30] : 369.99442271163446  
+frecuenciaNota[31] : 391.99543598174927  
+frecuenciaNota[32] : 415.3046975799451  
+frecuenciaNota[33] : 440  
+frecuenciaNota[34] : 466.1637615180899  
+frecuenciaNota[35] : 493.8833012561241  
+frecuenciaNota[36] : 523.2511306011972  
+frecuenciaNota[37] : 554.3652619537442  
+frecuenciaNota[38] : 587.3295358348151  
+frecuenciaNota[39] : 622.2539674441617  
+frecuenciaNota[40] : 659.2551138257398  
+frecuenciaNota[41] : 698.4564628660078  
+frecuenciaNota[42] : 739.9888454232688  
+frecuenciaNota[43] : 783.9908719634985  
+frecuenciaNota[44] : 830.6093951598903  
+frecuenciaNota[45] : 880  
+frecuenciaNota[46] : 932.3275230361796  
+frecuenciaNota[47] : 987.7666025122483  
+frecuenciaNota[48] : 1046.5022612023945  
+frecuenciaNota[49] : 1108.7305239074883  
+frecuenciaNota[50] : 1174.6590716696303  
+frecuenciaNota[51] : 1244.5079348883235  
+frecuenciaNota[52] : 1318.5102276514795  
+frecuenciaNota[53] : 1396.9129257320155  
+frecuenciaNota[54] : 1479.9776908465376  
+frecuenciaNota[55] : 1567.9817439269968  
+frecuenciaNota[56] : 1661.2187903197805  
+frecuenciaNota[57] : 1760  
+frecuenciaNota[58] : 1864.6550460723597  
+frecuenciaNota[59] : 1975.533205024496  
+frecuenciaNota[60] : 2093.004522404789  
+frecuenciaNota[61] : 2217.461047814977  
+frecuenciaNota[62] : 2349.31814333926  
+frecuenciaNota[63] : 2489.015869776647  
+frecuenciaNota[64] : 2637.02045530296  
+frecuenciaNota[65] : 2793.825851464031  
+frecuenciaNota[66] : 2959.9553816930757  
+frecuenciaNota[67] : 3135.963487853994  
+frecuenciaNota[68] : 3322.43758063956  
+frecuenciaNota[69] : 3519.999999999999  
+frecuenciaNota[70] : 3729.3100921447194  
+frecuenciaNota[71] : 3951.0664100489917  
+
+
+// tiemposCorrectos : 833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833,833  decodeAjaxResponse.js:410:2
+// noteLetter: C,,,C,,,D,,,D,,,E,,,F,,,F,,,G,,,G,,,A,,,A,,,B,,,C,,C,,D,,D,,E,,F,,F,,G,,G,,A,,A,,B,,C,C,D,D,E,F,F,G,G,A,A,B,c,c,d,d,e,f,f,g,g,a,a,b,c',c',d',d',e',f',f',g',g',a',a',b',c'',c'',d'',d'',e'',f'',f'',g'',g'',a'',a'',b''  decodeAjaxResponse.js:411:2

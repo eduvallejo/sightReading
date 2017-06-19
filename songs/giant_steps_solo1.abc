@@ -1,0 +1,66 @@
+X:1
+T:Giant Steps
+C:John Coltrane 
+L:1/8
+Q:1/4=225
+M:4/4
+K:Cmaj
+"C^m7" ^ce^gb"F^7" ^a3 g |"Bmaj7" ^f^d B2"D7" =defa |"Gmaj7" gd B2"A^7" ^B^G=G^E | 
+"D^maj7" ^D^EG^G ^A^Bd^e |"Am7" e^BAG"D7" ^F^d=dB |"Gmaj7" Bdgb"A^7" d^e^g^b | 
+"D^maj7" ^d^eg^a"F^7" =e^ga^c' |"Bmaj7" ^a2 ^g^f- f2 z2 |"E^m7" ^a=a^g=g"A^7" ^e^d=d^B | 
+"D^maj7" B^g=gd ^e^d=de |"Am7" e^BAE"D7" GE^Fe |"Gmaj7" d^B=BA GABd |"C^m7" ^d=dB^A"F^7" z ^F^GA | 
+"Bmaj7" B^c^d^f ^a=a^g=g |"E^m7" ^e2 z2"A^7" g^fed |"D^maj7" ^d^eg^a ^d'a z2 | 
+"C^m7" z2 b^a-"F^7" a3 ^f |"Bmaj7""D7" d'6- (3d'^c'^b |"Gmaj7" bdgb"A^7" ^a=a^g^b | 
+"D^maj7" ^ag^e^d gd z2 |"Am7" d'3 ^a"D7" z ^f d2 |"Gmaj7" z dgb"A^7" d^e^g^b | 
+"D^maj7" ^d^eg^a"F^7" =e^f^ga |"Bmaj7" ^f3 ^d ^c^B=BG |"E^m7" ^Bd^dB"A^7" g^e=dB | 
+"D^maj7" ^A2 z ^g =g^d z2 |"Am7" z A^Be"D7" ba^fe |"Gmaj7" de^fa gab^a- |"C^m7" a2"F^7" b6 | 
+"Bmaj7" ^a^f^ga f^d^cB |"E^m7" ^Bd^dB"A^7" g^e=dB |"D^maj7" ^A3 g- g4 | 
+"C^m7" z ^c (3e^gb"F^7" ^fg^a^c' |"Bmaj7" B^c^d^f"D7" =defa |"Gmaj7" gdBG"A^7" ^B^G=G^E | 
+"D^maj7" ^D^EG^G ^A^Bd^e |"Am7" eg z2"D7" ^ade^f |"Gmaj7" gabd'"A^7" ^g^b^ag | 
+"D^maj7" g^d^eg"F^7" =e^f^g^a |"Bmaj7" ^c'2 ^a^g ^f^d z2 | 
+"E^m7" z2 z (3b/^b/^c'/"A^7" d'2- (3d'c'b |"D^maj7" ^a^g=g^e ^dega |"Am7""D7" d'6- (3d'^c'^b | 
+"Gmaj7" b^faf gdBG |"C^m7" ^dB^A^F"F^7" ^GFGA |"Bmaj7" B^c^d^f ^afdB | 
+"E^m7" a2- (3ag^f"A^7" ^e^d=d^B |"D^maj7" ^A^G=G^E ^DEGA |"C^m7" ^d2 z2"F^7" z4 | 
+"Bmaj7" z ^FB^d"D7" =de^fa |"Gmaj7" gdBG"A^7" ^B^G=G^E |"D^maj7" ^D^EG^G ^A^Bd^e | 
+"Am7" eg z2"D7" b2 z a |"Gmaj7" gab^b"A^7" d^e^gb |"D^maj7" ^d^e g2"F^7" z4 | 
+"Bmaj7" ^f2 ^d^c Bcdf |"E^m7" ^a=a^g=g"A^7" ^e^d=d^B |"D^maj7" ^A^g=gd ^e^d=de | 
+"Am7" e^BAE"D7" G3 ^F |"Gmaj7" d2 z d b2 z2 |"C^m7" z ^c (3e^gb"F^7" ^a2 ^c'2 | 
+"Bmaj7" ^c'3 ^a ^f^d- d2 |"E^m7" d'2- (3d'^c'^b"A^7" ^a^g=g^e |"D^maj7" ^d^eg^a ^d'2 z2 | 
+"C^m7" z ^d'^c'b"F^7" ^a3 ^f |"Bmaj7""D7" d'6- (3d'^c'^b |"Gmaj7" bdgb"A^7" ^a=a^g^b | 
+"D^maj7" ^ag^e^d g a2 ^d'- |"Am7" d'2 z b"D7" a2 z2 |"Gmaj7" z dgb"A^7" d^e^g^b | 
+"D^maj7" ^d^eg^a"F^7" ^d'2 ^c'b |"Bmaj7" ^a^g^fe ^d^cBG |"E^m7" ^Bd^d^e"A^7" ge=dB | 
+"D^maj7" ^A^g=gd ^e^d=d^B |"Am7" ag^fg"D7" b2 gb- |"Gmaj7" b3 g bd' z2 | 
+"C^m7" z ^c (3e^gb"F^7" ^a^c' c'2- |"Bmaj7" c'2 ^a^g ^f^d B2 | 
+"E^m7" d'2- (3d'^c'^b"A^7" ^a^g=g^e |"D^maj7" ^d^eg^a ^d'2 z2 |"C^m7" z ^c'-"F^7" c'4 c'^a | 
+"Bmaj7" ^g^f^dB"D7" =defa |"Gmaj7" gdBG"A^7" ^B^d=dB |"D^maj7" ^A^Bd^e ^deg^a | 
+"Am7" bag^f-"D7" f2 z2 |"Gmaj7" z dgb"A^7" d^e^g^b |"D^maj7" ^d^eg^a"F^7" =e^ga^c' | 
+"Bmaj7" ^a=a^g^d ^a=ag=g |"E^m7" ^e^d=d^B"A^7" ^A^G=G^E |"D^maj7" (3^D^EG (3^G^A^B d/^d/g/a/ ^a2 | 
+"Am7" z2 (3B^Bd"D7" e/^f/g/a/ b2- |"Gmaj7" b3 ^f ag- g2 |"C^m7" z ^c (3e^gb"F^7" ^a^d'- d'2 | 
+"Bmaj7" ^c'3 ^a ^f^d z2 |"E^m7" z d'- (3d'^c'^b"A^7" ^a^g=g^e |"D^maj7" ^d=d^ed ^deg^a | 
+"C^m7" ^dB^GE"F^7" ^A2 z2 |"Bmaj7" B^c^d^f"D7" =defa |"Gmaj7" gdBG"A^7" ^B^d=dB | 
+"D^maj7" ^Ag z2 z2 z g- |"Am7" g3 e"D7" ^fgab |"Gmaj7" g2- (3gbd'"A^7" ^g^b^ag | 
+"D^maj7" g^d^eg"F^7" =e^f^g^a |"Bmaj7" ^c'2 ^a^g ^f^dB^G |"E^m7" ^Bd^d^e"A^7" ge=dB | 
+"D^maj7" ^A^g=gd ^e^d=de |"Am7" e^BAE"D7" d3 B |"Gmaj7" Bde^f- f2 z2 | 
+"C^m7" z ^c (3e^gb"F^7" ^a2 ^f2 |"Bmaj7" ^f3 ^d ^c2 B2 |"E^m7" ^Bd^dB"A^7" g^e=dB | 
+"D^maj7" ^A^d^eg- gg ^a2 |"C^m7" z4"F^7" z ^a- a2- |"Bmaj7" a3 g"D7" d'^b z =a | 
+"Gmaj7" z ^b=bd"A^7" gb^a=a |"D^maj7" ^g^b^a=g ^e^dga |"Am7" e2 z2"D7" ba^fe | 
+"Gmaj7" de^fa"A^7" d^e^g^b |"D^maj7" ^d^eg^a"F^7" =e^f^ga |"Bmaj7" ^c'2 ^a^g ^f^d B2 | 
+"E^m7" g^g (3=g^e^d"A^7" =d^B^A^G |"D^maj7" G^A^Bd ^e^dgg |"Am7" z3 g-"D7" gd^fa | 
+"Gmaj7" gdBG d2 z2 |"C^m7" ^d2 B^F"F^7" ^A3 F |"Bmaj7" B^c^d^f ^a=a^g=g | 
+"E^m7" ^eg^ge"A^7" ^agd^A |"D^maj7" g^d=d^e ^d2 z2 |"C^m7" z3 ^f-"F^7" f4 | 
+"Bmaj7" B^c^d^f"D7" =defa |"Gmaj7" d2- (3dgb"A^7" ^g2- g2 |"D^maj7" ^a3 g ^e^d z2 | 
+"Am7" z B (3^Beg"D7" b2 d2 |"Gmaj7" ga b^b/=b/"A^7" ^a=a a^b/=b/ |"D^maj7" ^ag^e^d"F^7" =e^f^ga | 
+"Bmaj7" ^c'^a^g^f ^d^c B2 |"E^m7" ^Bd^dg"A^7" ^e2 z2 |"D^maj7" z ^g=gd ^e^d=d^B | 
+"Am7" e^fge"D7" bafe |"Gmaj7" de^fa gdBG |"C^m7" e2 z2"F^7" ^d3 .^A- |"Bmaj7" A3 ^E B^c^d^f | 
+"E^m7" ^a=a^g=g"A^7" ^e^d=d^B |"D^maj7" ^A^g=gd ^e^d=d^B |"C^m7" ^dB^GE"F^7" ^A3 ^F | 
+"Bmaj7" B^c^d^e"D7" =d=e^fa |"Gmaj7" g2 z ^a-"A^7" (3ab^b (3d'.^c'b |"D^maj7" ^a^g=g^e ^dega | 
+"Am7" ^d'2 z =d'-"D7" d'2- (3d'^c'^b |"Gmaj7" bdgb"A^7" ^g^b^ag |"D^maj7" g2 z2"F^7" e^f^g^a | 
+"Bmaj7" ^c'^a^g^f ^d2 z2 |"E^m7" ^d^eg^g"A^7" ^a^f=dB |"D^maj7" ^Agd^e ^dega | 
+"Am7" bag^f-"D7" fed^B |"Gmaj7" Bdga b2 ab |"C^m7" ^a2 z2"F^7" ^c'4 |"Bmaj7" ^a3 ^c' a^f ^d2 | 
+"E^m7" ^Bd^d^e"A^7" ge=dB |"D^maj7" ^A^dg^a ^d'2- d'a |"C^m7" ^b2 ^a2"F^7" z4 | 
+"Bmaj7" z2 ^c'2"D7" d'4 |"Gmaj7" b^b=bg"A^7" a^b ^a2 |"D^maj7" z4 d'2- (3d'.^c'^b | 
+"Am7" ^ag ^d2"D7" d'2- (3d'^c'^b |"Gmaj7" bdgb"A^7" d^e^g^b |"D^maj7" ^d^eg^a"F^7" ^d'4- | 
+"Bmaj7" d'2 ^c'b ^a^f^dB |"E^m7" d'2- (3d'^c'^b"A^7" ^a=a^g=g |"D^maj7" ^e^d=d^B ^ABde | 
+"Am7" eg z2"D7" d'2- (3d'^c'^b |"Gmaj7" bd^fa z a g2 |"C^m7" z4"F^7" ^a2- a^f | 
+"Bmaj7" ^g^a^f^d z d B2 |"E^m7" ^Bd^dB"A^7" g^e=dB |"D^maj7" ^A^Bd^e ^deg^a | 
+"C^m7" ^dB^GE"F^7" ^A3 ^F |"Bmaj7" B^c^d^f"D7" =d^BA^F | dB z2 z4 | 

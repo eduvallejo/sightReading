@@ -41,18 +41,18 @@ var song = 'ravelA.abc';
 var song = 'escalaDo.abc';
 var song = 'ravelB.abc';
 var song = 'puenteViejo.abc';
-var song = 'arabesque110Compases38-70.abc';
-var song = 'mahler_adagietto.abc';
-var song = 'escalaCromaticaSostenidos.abc';
 var song = 'escala5octavas.abc';
 var song = 'giant_steps_solo1.abc';
-var song = 'bach_BWV1056_I.abc';
-var song = 'vivaldi_RV93_II.abc';
 var song = 'bach_Suite1CelloPrelude.abc';
-var song = '000.abc';
 var song = 'arabesque120Compases1-38.abc';
-var song = 'bach_BWV1056_II.abc';
 var song = 'bach_badinerie.abc';
+var song = 'bach_BWV1056_I.abc';
+var song = 'bach_BWV1056_II.abc';
+var song = 'escalaCromaticaSostenidos.abc';
+var song = 'mahler_adagietto.abc';
+var song = 'vivaldi_RV93_II.abc';
+var song = '000.abc';
+var song = 'arabesque110Compases38-70.abc';
 // var song = 'z000.abc';
 
 // var song = 'bach_badinerieLento.abc';
@@ -66,6 +66,7 @@ var songResponse;
 // audioSong = new Audio('wav/' + song.replace('.abc', '.wav')); //wavs
 // audioSong = new Audio('mp3/' + song.replace('.abc', '.mp3')); //mp3
 // audioSong = new Audio('ogg/' + song.replace('.abc', '.ogg')); //ogg
+// audioSong = new Audio('ogg/arabesque120Compases1-38.abc.ogg'); //ogg
 //conºle
 // console.log("song.replace('.abc', 'wav') : " + song.replace('.abc', '.wav'));
 // CON MELODIAS

@@ -91,13 +91,14 @@ function decodeAjaxResponse(song) {
 				pointer++
 			}
 		}else {
+		console.log("music lines");
+		console.log("song[" + pointer + "] : " + song[pointer]);
 			// console.log("header song[" + pointer + "]: " + song[pointer]);
 			musicLines = true;
 			pointer--;//para q no se salte la primera nota al decode
 			// console.log("header song[" + pointer + "]: " + song[pointer]);
 		}
 			pointer++;
-		// console.log("song[" + pointer + "] : " + song[pointer]);
 	}
 
 	// console.log("song : " + song);
@@ -115,7 +116,8 @@ function decodeAjaxResponse(song) {
 		// //vertical scrolling
 		// bug11(song[pointer]);
 		// console.log(encodeURI(song[pointer]));
-		// console.log("song[" + pointer + "] : " + song[pointer]);
+		// console.log("song[" + (pointer - 1) + "] : " + song[pointer - 1]);
+		// console.log("song[" + pointer + "  ] : " + song[pointer]);
 		if (song[pointer] == '|') {
 			// console.log("song[" + pointer + "] : " + song[pointer]);
 			resetearAlteracionesAccidentales();
@@ -251,14 +253,16 @@ function decodeAjaxResponse(song) {
 					// console.log("243");
 					// console.log("song[pointer] : " + song[pointer]);
 					// console.log("key : " + key);
-					// console.log("noteLetter[noteLetter.length - 1] : " + noteLetter[noteLetter.length - 1]);
 					// console.log("bemolesTonalidades[" + key + "][" + noteLetter[noteLetter.length - 1] + "] : " + bemolesTonalidades[key][noteLetter[noteLetter.length - 1]]);
 					// getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
 					if (bemolesTonalidades[key][noteLetter[noteLetter.length - 1]] == false) {
 						// console.log("247");
+						console.log("EOO!!");
 						getAlteraciones(noteLetter.length, 0); //apaño ,momentaneo
-					}else if (bemolesTonalidades[key][noteLetter[noteLetter.length - 1]] == true){
+					// bugnoteletter abajo , añado [0]
+					}else if (bemolesTonalidades[key][noteLetter[noteLetter.length - 1][0]] == true){
 					// console.log("250");
+					console.log("noteLetter[noteLetter.length - 1] : " + noteLetter[noteLetter.length - 1][0]);
 						getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
 					}
 					//ha de ser alter 0 si no tienen bemoles naturalkes
@@ -389,8 +393,15 @@ function decodeAjaxResponse(song) {
 		// 	tiemposCorrectos[contadorTc - 1] = 3*tiemposCorrectos[contadorTc - 1]/2 ;
 		// 	pointer++;
 		// }
+		//solo calculamos los tiempos de la primera voz
+		if (song[pointer] == "V" && song[pointer + 2] != 1) {
+			// || (song[pointer  + 1] == "V") && song[pointer + 3] != "1"
+			console.log("sp : " + song[pointer]);
+			console.log("sp+2 : " + song[pointer + 2]);
+			break;		}
 	}//end While
-
+	console.log("sp end of while V : " + song[pointer]);
+	console.log("sp end of while 2 : " + song[pointer + 2]);
 	//aply tuples aun por implementar
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (tupleApply[i] != " " && tupleApply[i] != undefined) {
@@ -469,6 +480,8 @@ function decodeAjaxResponse(song) {
 		tiemposCorrectos.splice(i + tiemposRepetir, 0, tiemposCorrectos[i]);
 	}
 
+	console.log("noteLetter : " + noteLetter);
+
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
 	console.log("noteLetter: " + noteLetter );
 	// getAlteraciones();//ponemos los bemoles y sostrenidos esegun la armadura
@@ -494,7 +507,7 @@ function decodeAjaxResponse(song) {
 
 function saltarCaracter(pointer) {
 	// console.log("funSaltar song[" + pointer + "] : " + song[pointer]);
-	// console.log("pointer : " + pointer);
+	// console.log("song[ " + pointer+ "] : " + song[pointer]);
 	if (pointer <  song.length - 1) {
 		// console.log("pointer : " + pointer);
 		// console.log("song.length : " + song.length);

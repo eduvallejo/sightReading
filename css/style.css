@@ -8,7 +8,7 @@ body{
 	position: fixed;
 	top :1%;
 	right: 10%;
-	font-size: 40px;
+	/*font-size: 40px;*/
 }
 #mediaError{
 	border: 1px solid #000;
@@ -16,8 +16,13 @@ body{
 	position: fixed;
 	top :10%;
 	right: 10%;
-	font-size: 40px;
+	/*font-size: 40px;*/
 }
+
+#primeraLinea{
+	width: 50%;
+}
+
 button{
 	/*pointer-events: none;*/
 }
@@ -54,4 +59,47 @@ pre{
 
   margin-left: -16px;
   margin-right: -16px;
+}
+
+
+/*phone buttons*/
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  #my-content { display: block; }  /* show it on small screens */
+  /*div left mobile devices*/
+  .left {
+  	background-color: green;
+  	border: 1px solid #000;
+  	float: left;
+  	width: 40%;
+  	/*text-align: right;*/
+  	text-align: center;
+  	/*margin : 2px 20% 2px 10%;*/
+  	display: inline;
+  	position: fixed;
+  	right:10px;
+  	height: 20%;
+  	padding-top: 10%;
+  	
+  }
+
+  /*div right mobile devices*/
+  .right {
+  	background-color: green;
+  	border: 1px solid #000;
+  	float: left;
+  	width: 40%;
+  	text-align: center;
+  	/*margin: 2px 10px 2px 10%;*/
+  	display: inline;
+  	position: fixed;
+  	left:10px;
+  	height: 20%;
+  	padding-top: 10%;
+
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+  .left{ display: none; }   /* hide it elsewhere */
+  .right{ display: none; }   /* hide it elsewhere */
 }

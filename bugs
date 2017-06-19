@@ -48,3 +48,6 @@ bug12-scroll horizontal
 
 mirar lo del audiobuffer, quizas crear el audio antes de empezar a tocar, mirar como conseguir la width de los measures.
 cambiar los instrumentos del audiosong a sonido new age para q conucerde mejor con el webaudio
+
+bugnoteLetter,
+	en el decode , se pushean noteLetter con la letra y las comas, y luego en los becuadors se pregunt si el noteletter es simplemente la letra, de momento lo he arreglado  en el bugnoteLetter en el decode,. quizas haya q añadir el [0] en otras lineas

@@ -128,7 +128,7 @@ function clickButton(argument) {
 		//no se si poner la animacion
 		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm ,});
 		
-		notes[contadorColor].setAttribute("fill", "green");
+		notes[contadorColor].setAttribute("fill", "blue");
 		// console.log("clickPressed : " + clickPressed);  
 		clickPressed = true;		
 	}else if(clickPressed == true){
@@ -139,7 +139,7 @@ function clickButton(argument) {
 		// getNearestTime(interval);
 		// colorear("green");
 		pushTiempoUsuario(interval*1000);
-		notes[contadorColor].setAttribute("fill", "green");
+		notes[contadorColor].setAttribute("fill", "blue");
 
 		//
 		// this._time = timestamp;	

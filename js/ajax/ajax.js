@@ -19,6 +19,7 @@ function ajax(fileName) {
 	for (properties in audioSong){
 		// console.log("properties : " + properties.value);
 	}
+	// audioSong = new Audio('ogg/arabesque120Compases1-38.ogg'); //ogg
 	
 
 
