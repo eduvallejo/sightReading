@@ -1,74 +1,74 @@
-	var ligaduraHackActual = false;
-	var ligaduraHack = false;
+	// var ligaduraHackActual = false;
+	// var ligaduraHack = false;
+	var contadorLigadas = 0;
+	var posicionSilenciosColorear = [];
+
+
 function pintarNotaActual(argument) {
 	// console.log("pintarNotaActual");
-		// console.log("contadorSilenciosNotaActual : " + contadorSilenciosNotaActual);
-		// console.log("posicionSilencios[" + contadorSilenciosNotaActual + "] : " + posicionSilencios[contadorSilenciosNotaActual]);
-	while(posicionSilencios[contadorSilenciosNotaActual] == true){
-		// notes[contadorSilenciosNotaActual].setAttribute("fill", argument);
-		contadorSilenciosNotaActual++;
-		contadorSilenciosNotaActual++;
-		if (ligaduraHackActual == true) {
-			contadorSilenciosNotaActual++;
-			ligaduraHackActual = false;
+		// console.log("contadorSilencios : " + contadorSilencios);
+		// console.log("posicionSilencios[" + contadorSilencios + "] : " + posicionSilencios[contadorSilencios]);
+	if(posicionSilenciosColorear[contadorLigadasActual] == true){
+		// notes[contadorLigadasActual].setAttribute("fill", "blue");
+			// console.log("EO");
+		contadorLigadasActual++;
+		if (posicionSilenciosColorear[contadorLigadasActual] == true) {
+			// console.log("EOEO");
+			// console.log("posicionSilenciosColorear[contadorLigadasActual + 1] : " + posicionSilenciosColorear[contadorLigadasActual + 1]);
+			contadorLigadasActual++;
+			// contadorLigadasActual++;
 		}
-		// console.log("contadorSilenciosNotaActual : " + contadorSilenciosNotaActual);
+		// console.log("contadorLigadasActual : " + contadorLigadasActual);
+		// console.log("posicionSilenciosColorear[" + contadorLigadasActual + "] : " + posicionSilenciosColorear[contadorLigadasActual]);
 	}
-	// if(posicionSilencios[contadorSilenciosNotaActual] == true){
-	// 	notes[contadorSilenciosNotaActual - 1].setAttribute("fill", argument);
-	// 	contadorSilenciosNotaActual++;
-	// }
-	// notes[contadorSilenciosNotaActual].setAttribute("fill", argument);
-		// notes[contadorColor].setAttribute("fill", "blue");
+
 	try {
-		// console.log("TRY contadorSilenciosNotaActual : " + contadorSilenciosNotaActual);
-		// notes[contadorSilenciosNotaActual].setAttribute("fill", "blue");
-		contadorSilenciosNotaActual++;
+		notes[contadorLigadasActual].setAttribute("fill", "blue");
+		contadorLigadasActual++;
+		// console.log("TRY contadorLigadasActual : " + contadorLigadasActual);
 		// console.log("colorear");
-		// console.log("notasLigadas[contadorSilenciosNotaActual - 1] : " + notasLigadas[contadorSilenciosNotaActual - 1]);
+		// console.log("notasLigadas[contadorLigadasActual - 1] : " + notasLigadas[contadorLigadasActual - 1]);
 		// bug8
-		if (notasLigadas[contadorSilenciosNotaActual - 1] == true) {
-			// notes[contadorSilenciosNotaActual].setAttribute("fill", "blue");
-			contadorSilenciosNotaActual++;
-			// console.log("1-IFcontadorSilenciosNotaActual : " + contadorSilenciosNotaActual);
+		if (notasLigadas[contadorLigadasActual - 1] == true) {
+			notes[contadorLigadasActual].setAttribute("fill", "blue");
+			contadorLigadasActual++;
+			// console.log("1-IFcontadorLigadasActualNotaActual : " + contadorLigadasActual);
 			// contadorColor++;
-			if (notasLigadas[contadorSilenciosNotaActual - 1] == true) {
-				// notes[contadorSilenciosNotaActual].setAttribute("fill", "blue");
-				contadorSilenciosNotaActual--;
-				ligaduraHackActual = true;
-				// contadorSilenciosNotaActual--;
-				// console.log("2-IFcontadorSilenciosNotaActual : " + contadorSilenciosNotaActual);
+			if (notasLigadas[contadorLigadasActual - 1] == true) {
+				notes[contadorLigadasActual].setAttribute("fill", "blue");
+				contadorLigadasActual++;
+				// ligaduraHack = true;
+				// contadorLigadasActual--;
+				// console.log("2-IFcontadorLigadasActualNotaActual : " + contadorLigadasActual);
 				// contadorColor++;
 			}else{
-				contadorSilenciosNotaActual--;
+				// contadorLigadasActual--;
 			}
 		}
 		
 	} catch (e) {  }
-	
+
+	contadorSilenciosNotaActual++;
 }
-
-	// console.log("noteLetter[" + contadorColor + "] : " + noteLetter[contadorColor]);
-	
-
-	
-	// if(posicionSilencios[contadorSilencios] == true){
-	// 	notes[contadorSilencios - 1].setAttribute("fill", argument);
-	// 	contadorSilencios++;
-	// }
 function colorear(argument) {
 	// console.log("pintarNotaActual");
-		console.log("contadorSilencios : " + contadorSilencios);
-		console.log("posicionSilencios[" + contadorSilencios + "] : " + posicionSilencios[contadorSilencios]);
-	while(posicionSilencios[contadorSilencios] == true){
-		// notes[contadorSilencios].setAttribute("fill", argument);
-		contadorSilencios++;
-		contadorSilencios++;
-		if (ligaduraHack == true) {
-			contadorSilencios++;
-			ligaduraHack = false;
+		// console.log("contadorSilencios : " + contadorSilencios);
+		// console.log("posicionSilencios[" + contadorSilencios + "] : " + posicionSilencios[contadorSilencios]);
+	if(posicionSilenciosColorear[contadorLigadas] == true){
+		// notes[contadorLigadas].setAttribute("fill", argument);
+			// console.log("EO");
+		contadorLigadas++;
+		if (posicionSilenciosColorear[contadorLigadas] == true) {
+			// console.log("EOEO");
+			// console.log("posicionSilenciosColorear[contadorLigadas + 1] : " + posicionSilenciosColorear[contadorLigadas + 1]);
+			contadorLigadas++;
+			// contadorLigadas++;
 		}
-		console.log("contadorSilencios : " + contadorSilencios);
+		// console.log("contadorLigadas : " + contadorLigadas);
+		// console.log("posicionSilenciosColorear[" + contadorLigadas + "] : " + posicionSilenciosColorear[contadorLigadas]);
+	}else{
+		// console.log("posicionSilenciosColorear[" + contadorLigadas + "] : " + posicionSilenciosColorear[contadorLigadas]);
+		
 	}
 	// if(posicionSilencios[contadorSilencios] == true){
 	// 	notes[contadorSilencios - 1].setAttribute("fill", argument);
@@ -77,40 +77,42 @@ function colorear(argument) {
 	// notes[contadorSilencios].setAttribute("fill", argument);
 		// notes[contadorColor].setAttribute("fill", "blue");
 	try {
-		notes[contadorSilencios].setAttribute("fill", argument);
-		contadorSilencios++;
-		console.log("TRY contadorSilencios : " + contadorSilencios);
+		notes[contadorLigadas].setAttribute("fill", argument);
+		contadorLigadas++;
+		// console.log("TRY contadorLigadas : " + contadorLigadas);
 		// console.log("colorear");
-		// console.log("notasLigadas[contadorSilencios - 1] : " + notasLigadas[contadorSilencios - 1]);
+		// console.log("notasLigadas[contadorLigadas - 1] : " + notasLigadas[contadorLigadas - 1]);
 		// bug8
-		if (notasLigadas[contadorSilencios - 1] == true) {
-			notes[contadorSilencios].setAttribute("fill", argument);
-			contadorSilencios++;
-			console.log("1-IFcontadorSilenciosNotaActual : " + contadorSilencios);
+		if (notasLigadas[contadorLigadas - 1] == true) {
+			notes[contadorLigadas].setAttribute("fill", argument);
+			contadorLigadas++;
+			// console.log("1-IFcontadorLigadasNotaActual : " + contadorLigadas);
 			// contadorColor++;
-			if (notasLigadas[contadorSilencios - 1] == true) {
-				notes[contadorSilencios].setAttribute("fill", argument);
-				contadorSilencios--;
-				ligaduraHack = true;
-				// contadorSilencios--;
-				console.log("2-IFcontadorSilenciosNotaActual : " + contadorSilencios);
+			if (notasLigadas[contadorLigadas - 1] == true) {
+				notes[contadorLigadas].setAttribute("fill", argument);
+				contadorLigadas++;
+				// ligaduraHack = true;
+				// contadorLigadas--;
+				// console.log("2-IFcontadorLigadasNotaActual : " + contadorLigadas);
 				// contadorColor++;
 			}else{
-				// contadorSilencios--;
+				// contadorLigadas--;
 			}
 		}
 		
 	} catch (e) {  }
-	
+
+	contadorSilencios++;
 }
 
 
 function resetearColores(argument) {
-	console.clear();
-	console.log("noteLetter : " + noteLetter);
-	console.log("tiemposCorrectos : " + tiemposCorrectos);
-	console.log("posicionSilencios : " + posicionSilencios);
-	console.log("notasLigadas : " + notasLigadas);
+	// console.clear();
+	// console.log("noteLetter : " + noteLetter);
+	// console.log("tiemposCorrectos : " + tiemposCorrectos);
+	// console.log("posicionSilencios : " + posicionSilencios);
+	// console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
+	// console.log("notasLigadas : " + notasLigadas);
 	// console.log("notes : " + notes);
 	//colores
 	// console.log("resetearColores");
@@ -130,5 +132,8 @@ function resetearColores(argument) {
 	cantidadScrollHorizontal = 0;
 	contadorSilencios = 0;
 	contadorSilenciosNotaActual = 0;
+	contadorLigadas = 0;
+	contadorLigadasActual = 0;
+
 
 }

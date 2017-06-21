@@ -43,7 +43,7 @@ pre{
 */
 .cursor { 
 	opacity: 0.5;
-	border: 3px solid green !important; 
+	border: 3px solid blue !important; 
 	/*background-color: #ffffc0;*/
 	/*background-color: green;*/
 }

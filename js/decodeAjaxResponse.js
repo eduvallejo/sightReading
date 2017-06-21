@@ -438,6 +438,22 @@ function decodeAjaxResponse(song) {
 		}
 		temp = 0;
 	}
+
+	//guardamos la posicion silencios en un array sin Pop , para coloreaar mas facilemente
+	
+	for (var i = 0; i < noteLetter.length; i++) {
+		// console.log("i : " + i);
+		if (noteLetter[i] == "z") {
+			console.log("noteLetter[i] : " + noteLetter[i]);
+			posicionSilenciosColorear[i] = true;
+		}else{
+			posicionSilenciosColorear[i] = false;
+
+		}
+	}
+	// console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
+
+
 	//expulsar(pop) las notas ligadas
 	var contadorPop = 0;
 	// console.log("tiemposCorrectosAntesPOP : " + tiemposCorrectos);
@@ -494,6 +510,9 @@ function decodeAjaxResponse(song) {
 	var contadorSilencios = 0; //este cuenta la posicion de los silencions en el svg -> no tiene q haber pop
 	// console.log("tiemposCorrectosANTESsplit : " + tiemposCorrectos);
 	// console.log("noteLetterANTESsplit : " + noteLetter);
+
+
+
 	//sumamos los silencios a la nota anterior
 	for (var i = 0; i < noteLetterLength; i++) {
 		// console.log("noteLetter[i] : " + noteLetter[i]);
@@ -522,9 +541,9 @@ function decodeAjaxResponse(song) {
 			i--;
 		}
 	}
-	console.log("noteLetter : " + noteLetter);
-	console.log("frecuenciaNotaDESPUESCEROS : " + frecuenciaNota);
-	console.log("posicionSilencios : " + posicionSilencios);
+	// console.log("noteLetter : " + noteLetter);
+	// console.log("frecuenciaNotaDESPUESCEROS : " + frecuenciaNota);
+	// console.log("posicionSilencios : " + posicionSilencios);
 	// for (var i = 0; i < frecuenciaNotaLength; i++) {
 	// 	if(notasLigadas[i] == true){
 	// 		frecuenciaNota.splice([i+1], 1);
