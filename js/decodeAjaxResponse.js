@@ -440,7 +440,6 @@ function decodeAjaxResponse(song) {
 	}
 
 	//guardamos la posicion silencios en un array sin Pop , para coloreaar mas facilemente
-	
 	for (var i = 0; i < noteLetter.length; i++) {
 		// console.log("i : " + i);
 		if (noteLetter[i] == "z") {

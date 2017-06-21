@@ -6,20 +6,20 @@
 
 function pintarNotaActual(argument) {
 	// console.log("pintarNotaActual");
-		// console.log("contadorSilencios : " + contadorSilencios);
-		// console.log("posicionSilencios[" + contadorSilencios + "] : " + posicionSilencios[contadorSilencios]);
-	if(posicionSilenciosColorear[contadorLigadasActual] == true){
-		// notes[contadorLigadasActual].setAttribute("fill", "blue");
-			// console.log("EO");
-		contadorLigadasActual++;
-		if (posicionSilenciosColorear[contadorLigadasActual] == true) {
-			// console.log("EOEO");
-			// console.log("posicionSilenciosColorear[contadorLigadasActual + 1] : " + posicionSilenciosColorear[contadorLigadasActual + 1]);
-			contadorLigadasActual++;
-			// contadorLigadasActual++;
-		}
-		// console.log("contadorLigadasActual : " + contadorLigadasActual);
-		// console.log("posicionSilenciosColorear[" + contadorLigadasActual + "] : " + posicionSilenciosColorear[contadorLigadasActual]);
+	// if(posicionSilenciosColorear[contadorLigadasActual] == true){
+	// 	// notes[contadorLigadasActual].setAttribute("fill", "blue");
+	// 		// console.log("EO");
+	// 	contadorLigadasActual++;
+	// 	if (posicionSilenciosColorear[contadorLigadasActual] == true) {
+	// 		// console.log("EOEO");
+	// 		// console.log("posicionSilenciosColorear[contadorLigadasActual + 1] : " + posicionSilenciosColorear[contadorLigadasActual + 1]);
+	// 		contadorLigadasActual++;
+	// 		// contadorLigadasActual++;
+	// 	}
+	// }
+
+	while(posicionSilenciosColorear[contadorLigadasActual] == true){
+		contadorLigadasActual++;	
 	}
 
 	try {
@@ -50,32 +50,28 @@ function pintarNotaActual(argument) {
 
 	contadorSilenciosNotaActual++;
 }
+
 function colorear(argument) {
-	// console.log("pintarNotaActual");
-		// console.log("contadorSilencios : " + contadorSilencios);
-		// console.log("posicionSilencios[" + contadorSilencios + "] : " + posicionSilencios[contadorSilencios]);
-	if(posicionSilenciosColorear[contadorLigadas] == true){
-		// notes[contadorLigadas].setAttribute("fill", argument);
-			// console.log("EO");
-		contadorLigadas++;
-		if (posicionSilenciosColorear[contadorLigadas] == true) {
-			// console.log("EOEO");
-			// console.log("posicionSilenciosColorear[contadorLigadas + 1] : " + posicionSilenciosColorear[contadorLigadas + 1]);
-			contadorLigadas++;
-			// contadorLigadas++;
-		}
-		// console.log("contadorLigadas : " + contadorLigadas);
-		// console.log("posicionSilenciosColorear[" + contadorLigadas + "] : " + posicionSilenciosColorear[contadorLigadas]);
-	}else{
-		// console.log("posicionSilenciosColorear[" + contadorLigadas + "] : " + posicionSilenciosColorear[contadorLigadas]);
-		
-	}
-	// if(posicionSilencios[contadorSilencios] == true){
-	// 	notes[contadorSilencios - 1].setAttribute("fill", argument);
-	// 	contadorSilencios++;
+	// console.log("colorear");
+	// if(posicionSilenciosColorear[contadorLigadas] == true){
+	// 	// notes[contadorLigadas].setAttribute("fill", argument);
+	// 		// console.log("EO");
+	// 	contadorLigadas++;
+	// 	if (posicionSilenciosColorear[contadorLigadas] == true) {
+	// 		// console.log("EOEO");
+	// 		// console.log("posicionSilenciosColorear[contadorLigadas + 1] : " + posicionSilenciosColorear[contadorLigadas + 1]);
+	// 		contadorLigadas++;
+	// 		// contadorLigadas++;
+	// 	}
+	// 	// console.log("contadorLigadas : " + contadorLigadas);
+	// 	// console.log("posicionSilenciosColorear[" + contadorLigadas + "] : " + posicionSilenciosColorear[contadorLigadas]);
 	// }
-	// notes[contadorSilencios].setAttribute("fill", argument);
-		// notes[contadorColor].setAttribute("fill", "blue");
+
+	while(posicionSilenciosColorear[contadorLigadas] == true){
+		contadorLigadas++;	
+	}
+
+
 	try {
 		notes[contadorLigadas].setAttribute("fill", argument);
 		contadorLigadas++;
@@ -108,12 +104,13 @@ function colorear(argument) {
 
 function resetearColores(argument) {
 	// console.clear();
-	// console.log("noteLetter : " + noteLetter);
-	// console.log("tiemposCorrectos : " + tiemposCorrectos);
+	console.log("noteLetter : " + noteLetter);
+	console.log("tiemposCorrectos : " + tiemposCorrectos);
 	// console.log("posicionSilencios : " + posicionSilencios);
-	// console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
+	console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
 	// console.log("notasLigadas : " + notasLigadas);
 	// console.log("notes : " + notes);
+	console.log("frecuenciaNota : " + frecuenciaNota);
 	//colores
 	// console.log("resetearColores");
 	for (var i = 0; i < notes.length; i++) {

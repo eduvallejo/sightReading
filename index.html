@@ -113,7 +113,7 @@
 		//aqui abajo se renderiza el svg
 		// tuneObjectArray = ABCJS.renderAbc(output, tunebookString, parserParams, engraverParams, renderParams)
 		// tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { staffwidth: 1300, add_classes: true }, {});//scroll vertical
-		tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : scale, add_classes: true , paddingright : screenWidth, paddingleft : screenWidth}, {viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
+		tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : scale, add_classes: true , paddingright : screenWidth, paddingleft : 0}, {viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
 		// console.log("tuneObjectArray : " + Object.keys(tuneObjectArray[0]));
 		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
 
