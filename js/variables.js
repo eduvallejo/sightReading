@@ -32,27 +32,27 @@ var song = '0_semicorcheas.abc';
 var song = '0_tresillo_corcheas.abc';
 var song = 'aranjuez1a.abc';
 var song = '0_semicorcheas.abc';
-var song = 'albinoni.abc';
 var song = 'goinghome';
 var song = 'himnoalegria.abc';
 var song = 'arabesque120.abc';
 var song = 'wild.abc';
-var song = 'ravelA.abc';
 var song = 'escalaDo.abc';
-var song = 'ravelB.abc';
 var song = 'puenteViejo.abc';
 var song = 'escala5octavas.abc';
 var song = 'giant_steps_solo1.abc';
 var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'arabesque120Compases1-38.abc';
-var song = 'bach_badinerie.abc';
-var song = 'bach_BWV1056_I.abc';
-var song = 'bach_BWV1056_II.abc';
 var song = 'escalaCromaticaSostenidos.abc';
 var song = 'mahler_adagietto.abc';
 var song = 'vivaldi_RV93_II.abc';
-var song = '000.abc';
 var song = 'arabesque110Compases38-70.abc';
+var song = 'bach_BWV1056_II.abc';
+var song = 'ravelB.abc';
+var song = 'ravelA.abc';
+var song = 'bach_badinerie.abc';
+var song = 'albinoni.abc';
+var song = 'bach_BWV1056_I.abc';
+var song = '000.abc';
 // var song = 'z000.abc';
 
 // var song = 'bach_badinerieLento.abc';
@@ -80,6 +80,8 @@ var key; //para aplicar sostenidos o bemoles
 //colorear 
 var notes = [];
 var contadorColor = 0;
+var contadorSilenciosNotaActual = 0;
+
 
 // console.log("song : " + song);
 // var song = ' :G2 Ac | :E2 FE| :D2 FB, | :C2 EF| :G2 Ac | :E2 FE| :D2 FB | :C2 :G2 | :C4 | :e2 ed | :c2 GG | :A2 BA | :G2 :E2| :E2 ED | :E2 GE| :D2 FB | :C4|';
@@ -164,3 +166,10 @@ var cantidadScroll = 0;
 var cantidadScrollHorizontal = 0;
 var notesWidth = [];
 var scale = 1;
+
+//oscillator
+var decayRate = 0.4; //cuan to mas PEQUEÑO, mas RAPIDO DECAE
+var decayTarget = 0; //si es 0 se acxaba apagando la nota depues de decaer
+
+//noSilencios
+var posicionSilencios = [];

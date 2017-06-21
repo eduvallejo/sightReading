@@ -7,7 +7,7 @@ function ajax(fileName) {
 		audioSong.pause();
 	  }
 	  catch(e) {
-	    console.log('no audioSong playing still');
+	    // console.log('no audioSong playing still');
 	  }
 
 	//Sin melodia
@@ -15,7 +15,7 @@ function ajax(fileName) {
 	//CON MELODIAS
 	// audioSong = new Audio('melodiasOgg/' + fileName.replace('.abc', '.ogg')); //ogg con melodia
 	
-	console.log("audioDuration : " + (audioSong.duration));
+	// console.log("audioDuration : " + (audioSong.duration));
 	for (properties in audioSong){
 		// console.log("properties : " + properties.value);
 	}

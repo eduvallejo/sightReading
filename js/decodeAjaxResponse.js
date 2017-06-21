@@ -91,8 +91,8 @@ function decodeAjaxResponse(song) {
 				pointer++
 			}
 		}else {
-		console.log("music lines");
-		console.log("song[" + pointer + "] : " + song[pointer]);
+		// console.log("music lines");
+		// console.log("song[" + pointer + "] : " + song[pointer]);
 			// console.log("header song[" + pointer + "]: " + song[pointer]);
 			musicLines = true;
 			pointer--;//para q no se salte la primera nota al decode
@@ -140,7 +140,7 @@ function decodeAjaxResponse(song) {
 				// console.log("tiemposRepetir : " + tiemposRepetir);
 				// for (var i = 0; i < tiemposRepetir; i++) {
 				// 	tiemposCorrectos[contadorTc] = tiemposCorrectos[contadorRepeticion + i];
-				// 	console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
+					console.log("tiemposCorrectos[" + contadorTc + "] : " + tiemposCorrectos[contadorTc]);
 				// 	contadorTc++;
 				// 	// console.log("contadorTc : " + contadorTc);
 				// 	// console.log("song[" + pointer + "] : " + song[pointer]);
@@ -228,7 +228,7 @@ function decodeAjaxResponse(song) {
 				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
 				sostenidoAccidental[noteLetter[noteLetter.length - 1] ] = true;
 				// for (var i = 0; i < sostenidoAccidental.length; i++) {
-				// 	console.log("sostenidoAccidental[" + noteLetter.length - 1 + "] : " + sostenidoAccidental[noteLetter.length - 1]);
+					console.log("sostenidoAccidental[" + noteLetter.length - 1 + "] : " + sostenidoAccidental[noteLetter.length - 1]);
 				// }
 				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
 			}else if (song[pointer - 1] == "^"  && becuadroAccidental[noteLetter[noteLetter.length - 1]] == true) {
@@ -257,12 +257,12 @@ function decodeAjaxResponse(song) {
 					// getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
 					if (bemolesTonalidades[key][noteLetter[noteLetter.length - 1]] == false) {
 						// console.log("247");
-						console.log("EOO!!");
+						// console.log("EOO!!");
 						getAlteraciones(noteLetter.length, 0); //apaño ,momentaneo
 					// bugnoteletter abajo , añado [0]
 					}else if (bemolesTonalidades[key][noteLetter[noteLetter.length - 1][0]] == true){
 					// console.log("250");
-					console.log("noteLetter[noteLetter.length - 1] : " + noteLetter[noteLetter.length - 1][0]);
+					// console.log("noteLetter[noteLetter.length - 1] : " + noteLetter[noteLetter.length - 1][0]);
 						getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
 					}
 					//ha de ser alter 0 si no tienen bemoles naturalkes
@@ -375,7 +375,7 @@ function decodeAjaxResponse(song) {
 				contadorTc++;
 			}
 		}
-		if(song[pointer].match(notSkipCharacters)){
+		if(song[pointer].match(notSkipCharacters)){ ///[a-gA-GzZ0-9/:<>]/
 			// console.log("song[" + pointer + "] : " + song[pointer]);
 			contadorTc++;
 			// console.log("contadorTc : " + contadorTc);
@@ -393,15 +393,17 @@ function decodeAjaxResponse(song) {
 		// 	tiemposCorrectos[contadorTc - 1] = 3*tiemposCorrectos[contadorTc - 1]/2 ;
 		// 	pointer++;
 		// }
-		//solo calculamos los tiempos de la primera voz
+
+		//solo calculamos los tiempos de la primera voz  //desde commit fa913e2dcad44cf2d9664425d398a4feb87c656b rama scrollhorizontal
 		if (song[pointer] == "V" && song[pointer + 2] != 1) {
 			// || (song[pointer  + 1] == "V") && song[pointer + 3] != "1"
-			console.log("sp : " + song[pointer]);
-			console.log("sp+2 : " + song[pointer + 2]);
+			// console.log("sp : " + song[pointer]);
+			// console.log("sp+2 : " + song[pointer + 2]);
 			break;		}
 	}//end While
-	console.log("sp end of while V : " + song[pointer]);
-	console.log("sp end of while 2 : " + song[pointer + 2]);
+	// console.log("sp end of while V : " + song[pointer]);
+	// console.log("sp end of while 2 : " + song[pointer + 2]);
+
 	//aply tuples aun por implementar
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (tupleApply[i] != " " && tupleApply[i] != undefined) {
@@ -434,16 +436,19 @@ function decodeAjaxResponse(song) {
 			// tiemposCorrectos.splice([i+1], 1);
 			// delete tiemposCorrectos[i+1];
 		}
-		// console.log("LIGtiemposCorrectos : " + tiemposCorrectos);
 		temp = 0;
 	}
 	//expulsar(pop) las notas ligadas
 	var contadorPop = 0;
+	// console.log("tiemposCorrectosAntesPOP : " + tiemposCorrectos);
 	var tiemposCorrectosLenghtAntesDelPop = tiemposCorrectos.length; //para evitar el bug de las notas ligadas cuando hay muchas
 	for (var i = 0; i <= tiemposCorrectosLenghtAntesDelPop ; i++) {
 		if (notasLigadas[i] == true){
 			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			tiemposCorrectos.splice([i + 1 - contadorPop], 1);
+			noteLetter.splice([i + 1 - contadorPop], 1);
+			frecuenciaNota.splice([i + 1 - contadorPop], 1);
+
 			// console.log("tiemposCorrectos.length : " + tiemposCorrectos.length);
 			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			// console.log(i + " + 1 - " + contadorPop +": " + (i + 1 - contadorPop));
@@ -480,12 +485,54 @@ function decodeAjaxResponse(song) {
 		tiemposCorrectos.splice(i + tiemposRepetir, 0, tiemposCorrectos[i]);
 	}
 
-	console.log("noteLetter : " + noteLetter);
-
-	console.log("tiemposCorrectos : " + tiemposCorrectos);
-	console.log("noteLetter: " + noteLetter );
+	// console.log("noteLetter.lenght: " + noteLetter.length );
 	// getAlteraciones();//ponemos los bemoles y sostrenidos esegun la armadura
 
+	//rama noSilencios
+	var tiemposCorrectosSinSilencios = [];
+	var noteLetterLength = noteLetter.length; 
+	var contadorSilencios = 0; //este cuenta la posicion de los silencions en el svg -> no tiene q haber pop
+	// console.log("tiemposCorrectosANTESsplit : " + tiemposCorrectos);
+	// console.log("noteLetterANTESsplit : " + noteLetter);
+	//sumamos los silencios a la nota anterior
+	for (var i = 0; i < noteLetterLength; i++) {
+		// console.log("noteLetter[i] : " + noteLetter[i]);
+		if (noteLetter[i] == "z") {
+			tiemposCorrectos[i - 1]  = parseFloat(tiemposCorrectos[i - 1]) + parseFloat(tiemposCorrectos[i]);
+			tiemposCorrectos.splice([i], 1);
+			// console.log("noteLetter[" + i + "] : " + noteLetter[i]);
+			noteLetter.splice([i], 1);
+			// console.log("frecuenciaNota[i] : " + frecuenciaNota[i]);
+			// frecuenciaNota.splice([i + 1], 1);
+			posicionSilencios[contadorSilencios] = true;
+			i--;
+		}else if(contadorSilencios < noteLetterLength){
+			posicionSilencios[contadorSilencios] = false;
+		}
+		contadorSilencios++;
+	}
+	// console.log("tiemposCorrectosDespuesSplit : " + tiemposCorrectos);
+	// console.log("posicionSilencios : " + posicionSilencios);
+	// console.log("frecuenciaNota : " + frecuenciaNota);
+		
+	var frecuenciaNotaLength = frecuenciaNota.length; 
+	for (var i = 0; i < frecuenciaNotaLength; i++) {
+		if (frecuenciaNota[i] < 1) {
+			frecuenciaNota.splice([i], 1);
+			i--;
+		}
+	}
+	console.log("noteLetter : " + noteLetter);
+	console.log("frecuenciaNotaDESPUESCEROS : " + frecuenciaNota);
+	console.log("posicionSilencios : " + posicionSilencios);
+	// for (var i = 0; i < frecuenciaNotaLength; i++) {
+	// 	if(notasLigadas[i] == true){
+	// 		frecuenciaNota.splice([i+1], 1);
+	// 	}
+	// }
+	// console.log("frecuenciaNotaDespuesLigadas : " + frecuenciaNota);
+	// console.log("notasLigadas : " + notasLigadas);
+	//fin rama noSilencios
 
 	//determinar margenes
 	for (var i = 0; i < tiemposCorrectos.length; i++) {

@@ -3,8 +3,10 @@ function init(argument) {
 	window.scrollTo(0, 93);
 	comenzarMetronomo();
 	notes = document.getElementsByClassName('note');
+	// console.log("notes.length : " + notes.length);
+	contadorSilencios = 0; //para saltarse los silencios cuando colereamos
 	getNotesWidth(); //para el scroll horiz
-
+	// console.clear();
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
@@ -30,44 +32,28 @@ function init(argument) {
 		// }
 	}
 
-	// window.onkeyup = function(e){
-	// 	if (e.keyCode != 27){
-	// 		// console.log("keyCode : " + e.keyCode);
-	// 		clickButton();
-	// 	}else if(e.keyCode == 27){//lo de abajo era para cuando hacia Esc para silencios
-	//   		// console.clear();
-	// 		if (rest == false ) {
-	//   			timestampUp = audioSong.currentTime;
-	//   			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-	//   			// console.log("posX : " + posX);
-	//   			// console.log("interval : " + interval);  
-	//   			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
-	// 			pushTiempoUsuario(interval*1000);
-
-	//   			rest = true;
-	//   		}
-	//   		clickPressed = false;
-	// 	}
-	// }
+	window.onkeyup = function(e){
+		if (e.keyCode == 27){
+			// console.log("keyCode : " + e.keyCode);
+			reinitiate();
+		}
+	}
 
 }
 
-    var freq = 25;
-    var time = 0;
-	var context, oscillator;
-	context = new AudioContext;
-	freq = 100;
-	// console.log("freq : " + freq);
-	var noteLetter = [];
-	var frecuenciaNota = [];
-	var gainNode;
-	var decayRate = 0.4; //cuan to mas PEQUEÑO, mas RAPIDO DECAE
-	var decayTarget = 0; //si es 0 se acxaba apagando la nota depues de decaer
-
+var freq = 25;
+var time = 0;
+var context, oscillator;
+context = new AudioContext;
+freq = 100;
+// console.log("freq : " + freq);
+var noteLetter = [];
+var frecuenciaNota = [];
+var gainNode;
 // get position of cursor using jquery
 // $( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
 var screenWidth = window.innerWidth / 2;
-console.log("screenWidth : " + screenWidth);
+// console.log("screenWidth : " + screenWidth);
 function autoScroll(argument) {
 	try {
 		p = $(".cursor").offset().left;
@@ -89,7 +75,7 @@ function clickButton(argument) {
 	gainNode = context.createGainNode();
 	if (clickPressed == false) {
 		// setInterval(autoScroll, 2 * (60 / bpm)); //2 por estar debugeando con 2x4 compas 
-		setInterval(autoScroll, 4 * (60 / bpm) * 10); //2 por estar debugeando con 2x4 compas  (setinterval es en miliseconds asi q *1000 )
+// setInterval(autoScroll, 4 * (60 / bpm) * 10); //2 por estar debugeando con 2x4 compas  (setinterval es en miliseconds asi q *1000 )
 		// //bug11 scroll down
 		// contadorLinea = 0;
 		// console.log("audioSong: " + audioSong.paused);
@@ -97,15 +83,17 @@ function clickButton(argument) {
 			oscillator.stop();
 		}
 		timestamp = audioSong.currentTime;
-		console.log("audioSong.currentTime : " + audioSong.currentTime);
+		// console.log("audioSong.currentTime : " + audioSong.currentTime);
 
 		//sound webaudio
 		// oscillator.stop(time );
 		// oscillator = context.createOscillator();
 		oscillator = context.createOscillator();
 		// oscillator.frequency.value = obtenerFrecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//200hz
-		console.log("contadorColor : " + contadorColor);
+		// console.log("contadorColor : " + contadorColor);
 		oscillator.frequency.value = frecuenciaNota[contadorColor];
+		// console.log("frecuenciaNota[" + contadorColor + "] : " + frecuenciaNota[contadorColor]);
+
 		// oscillator.connect(context.destination);    
 		// oscillator.connect(context.destination);    
 		// Connect the source to the gain node.
@@ -128,9 +116,10 @@ function clickButton(argument) {
 		//no se si poner la animacion
 		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm ,});
 		
-		notes[contadorColor].setAttribute("fill", "blue");
 		// console.log("clickPressed : " + clickPressed);  
 		clickPressed = true;		
+		pintarNotaActual();
+
 	}else if(clickPressed == true){
 		timestampUp = audioSong.currentTime;
 		// console.log("timestamp : " + timestamp);
@@ -139,7 +128,7 @@ function clickButton(argument) {
 		// getNearestTime(interval);
 		// colorear("green");
 		pushTiempoUsuario(interval*1000);
-		notes[contadorColor].setAttribute("fill", "blue");
+		// console.log("interval*1000 : " + interval*1000);
 
 		//
 		// this._time = timestamp;	
@@ -149,6 +138,7 @@ function clickButton(argument) {
 		oscillator = context.createOscillator();
 		// console.log("frecuenciaNota("+ indiceNota[noteLetter[contadorColor]] + ",4) : " + frecuenciaNota(indiceNota[noteLetter[contadorColor]],4));
 		// oscillator.frequency.value = obtenerFrecuenciaNota(indiceNota[noteLetter[contadorColor]],4);//previo a la version precompilada de las freq
+		// console.log("frecuenciaNota[" + contadorColor + "] : " + frecuenciaNota[contadorColor]);
 		oscillator.frequency.value = frecuenciaNota[contadorColor];
 		// oscillator.connect(context.destination);    
 		// oscillator.connect(context.destination);    
@@ -160,7 +150,7 @@ function clickButton(argument) {
 		gainNode.gain.value = volumen;
 		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRate);
 		oscillator.start(timestamp);
-
+		pintarNotaActual();
 	}
 	rest = false;	//esto sirve de algo???
 	
@@ -225,48 +215,9 @@ function comenzarMetronomo(argument) {
 	draw();
 }
 
-function colorear(argument) {
-	// console.log("colorear");
-	// bug8
-	notes[contadorColor].setAttribute("fill", argument);
-	if (notasLigadas[contadorColor] == true) {
-		contadorColor++;
-		notes[contadorColor].setAttribute("fill", argument);
-	}
-	if (notasLigadas[contadorColor] == true) {
-		contadorColor++;
-		notes[contadorColor].setAttribute("fill", argument);
-	}
-	// console.log("notes[" + contadorColor + "] : " + notes[contadorColor].nextSibling.outerHTML);
-	// console.log("notes[" + contadorColor + "] : " + notes[contadorColor].nextSibling.getAttribute("width"));
-	// var siguienteHermano = notes[contadorColor].nextSibling;
-	// for(var propertyName in siguienteHermano) {
- //   	// propertyName is what you want
- //   	// you can myObject[propertyName]
- //   		console.log("siguienteHermano[" + propertyName + "] : " + siguienteHermano[propertyName]);
-	// }
-}
 
-function resetearColores(argument) {
-	// console.clear();
-	//colores
-	// console.log("resetearColores");
-	for (var i = 0; i < notes.length; i++) {
-		notes[i].setAttribute("fill", "black");
-	// 			notes[contadorColor].setAttribute("class", "note note_selected");
-	// notes[contadorColor].setAttribute("fill", "grey");
-	}
-	contadorColor = 0;
-	//necesario lo de abajo? ya lo hicimos al principio del init.js
-	// notes = document.getElementsByClassName('note');//con esto se rellena el array  notes con todos los elementos de class="note"
-	// ABCJS.stopAnimation();
-	console.log("notes.length : " + notes.length);
-	cantidadScroll = 0;
-	notasPorLineaUsuario = 0;
-	contadorLinea = 0;
-	cantidadScrollHorizontal = 0;
 
-}
+
 
 function scrollDown(argument) {
 	// console.log("scrolldown?")

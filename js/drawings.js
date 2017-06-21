@@ -45,7 +45,7 @@ function pushTiempoUsuario(argument) {
 
 
 function checkResultados(argument) {
-	console.log("numErrores : " + numErrores);
+	// console.log("numErrores : " + numErrores);
 	if (audioSong.paused == true) {
 		// console.log("audioSong.paused : " + audioSong.paused);//paramos la cancion ghost
 		audioSong.play();
