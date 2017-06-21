@@ -1,3 +1,1 @@
-arreglo bug que solo acepta hasta dos silencios seguidos
-
-decido que no sale a cuenta permitir el silencio inicial así que , por ejemplo en ravelA o ravelB pondré una blanca o cualquier cosa
+sigo con el objetivo de hacer un json con cada cancion, lo unico q me falta es crear una propiedad de cada nota q especifique su duracion(algo relacionado con decayRate). tendria q ser algo antes de pegar los silencios a su nota anterior.(lo q no quiero es q una negra con un silencio de negra suene durante dos tiempos, sino solo uno)

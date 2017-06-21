@@ -104,13 +104,13 @@ function colorear(argument) {
 
 function resetearColores(argument) {
 	// console.clear();
-	console.log("noteLetter : " + noteLetter);
+	// console.log("noteLetter : " + noteLetter);
 	console.log("tiemposCorrectos : " + tiemposCorrectos);
-	// console.log("posicionSilencios : " + posicionSilencios);
+	// // console.log("posicionSilencios : " + posicionSilencios);
 	console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
-	// console.log("notasLigadas : " + notasLigadas);
-	// console.log("notes : " + notes);
-	console.log("frecuenciaNota : " + frecuenciaNota);
+	// // console.log("notasLigadas : " + notasLigadas);
+	// // console.log("notes : " + notes);
+	// console.log("frecuenciaNota : " + frecuenciaNota);
 	//colores
 	// console.log("resetearColores");
 	for (var i = 0; i < notes.length; i++) {

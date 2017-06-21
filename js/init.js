@@ -75,7 +75,7 @@ function clickButton(argument) {
 	gainNode = context.createGainNode();
 	if (clickPressed == false) {
 		// setInterval(autoScroll, 2 * (60 / bpm)); //2 por estar debugeando con 2x4 compas 
-// setInterval(autoScroll, 4 * (60 / bpm) * 10); //2 por estar debugeando con 2x4 compas  (setinterval es en miliseconds asi q *1000 )
+setInterval(autoScroll, 4 * (60 / bpm) * 10); //2 por estar debugeando con 2x4 compas  (setinterval es en miliseconds asi q *1000 )
 		// //bug11 scroll down
 		// contadorLinea = 0;
 		// console.log("audioSong: " + audioSong.paused);
@@ -102,7 +102,8 @@ function clickButton(argument) {
 		gainNode.connect(context.destination);
 		// Reduce the gainNode.
 		gainNode.gain.value = volumen;		
-		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRate);
+		// gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRate);
+		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRateNota[contadorColor]);
 		if (audioSong.paused == true) {
 			audioSong.volume = 0.5;
 			audioSong.play(timestamp);
@@ -148,7 +149,8 @@ function clickButton(argument) {
 		gainNode.connect(context.destination);
 		// Reduce the gainNode.
 		gainNode.gain.value = volumen;
-		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRate);
+		// gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRate);
+		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRateNota[contadorColor]);
 		oscillator.start(timestamp);
 		pintarNotaActual();
 	}

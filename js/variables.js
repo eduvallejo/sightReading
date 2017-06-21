@@ -44,15 +44,15 @@ var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'escalaCromaticaSostenidos.abc';
 var song = 'mahler_adagietto.abc';
 var song = 'vivaldi_RV93_II.abc';
-var song = 'arabesque110Compases38-70.abc';
-var song = 'bach_BWV1056_II.abc';
-var song = 'ravelB.abc';
-var song = 'ravelA.abc';
 var song = 'bach_badinerie.abc';
 var song = 'albinoni.abc';
-var song = 'bach_BWV1056_I.abc';
 var song = 'arabesque120Compases1-38.abc';
+var song = 'ravelA.abc';
+var song = 'ravelB.abc';
+var song = 'bach_BWV1056_I.abc';
+var song = 'bach_BWV1056_II.abc';
 var song = '000.abc';
+var song = 'arabesque110Compases38-70.abc';
 // var song = 'z000.abc';
 
 // var song = 'bach_badinerieLento.abc';
@@ -174,3 +174,6 @@ var decayTarget = 0; //si es 0 se acxaba apagando la nota depues de decaer
 
 //noSilencios
 var posicionSilencios = [];
+
+//json  decayNota
+decayRateNota = [];

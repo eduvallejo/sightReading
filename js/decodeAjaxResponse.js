@@ -443,7 +443,7 @@ function decodeAjaxResponse(song) {
 	for (var i = 0; i < noteLetter.length; i++) {
 		// console.log("i : " + i);
 		if (noteLetter[i] == "z") {
-			console.log("noteLetter[i] : " + noteLetter[i]);
+			// console.log("noteLetter[i] : " + noteLetter[i]);
 			posicionSilenciosColorear[i] = true;
 		}else{
 			posicionSilenciosColorear[i] = false;
@@ -526,9 +526,12 @@ function decodeAjaxResponse(song) {
 			i--;
 		}else if(contadorSilencios < noteLetterLength){
 			posicionSilencios[contadorSilencios] = false;
+			decayRateNota[i] = parseFloat((tiemposCorrectos[i] * 60) / (5500 * bpm) + parseFloat(0.25)).toFixed(3);
+			// decayRateNota[i] = parseFloat(tiemposCorrectos[i]/1000).toFixed(3);
 		}
 		contadorSilencios++;
 	}
+	console.log("decayRateNota : " + decayRateNota);
 	// console.log("tiemposCorrectosDespuesSplit : " + tiemposCorrectos);
 	// console.log("posicionSilencios : " + posicionSilencios);
 	// console.log("frecuenciaNota : " + frecuenciaNota);
