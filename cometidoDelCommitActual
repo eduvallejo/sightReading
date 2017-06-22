@@ -1,1 +1,4 @@
-intentare completar el decode para q pille los cambios de tempo y cambios de clave
+el startAnimation corre con el bpm , hay un bug ya q el bpm va cambiando y la animacion cmienza justo con el ultimo tempo
+tambien habria q hacer un stop set interval cuando haya cambio de tempo para q el scroll
+
+quizas crear una funcion changeTempo que cuando haya un cambio de tempo pare la animacion y comience una nueva con el nuevo tempo. tambien que pare el setInterval y lo comience con otro nuevo 

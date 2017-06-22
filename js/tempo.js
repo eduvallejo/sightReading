@@ -1,3 +1,12 @@
+function cambiarBpm(newTempo) {
+	console.log("newTempo : " + newTempo);
+	// ABCJS.stopAnimation();
+	// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : newTempo ,});
+
+}
+
+
+
 function doblarTempo(argument) {
 	console.log("doblarTempo");
 	if (velocidadDoblada == false) {	
@@ -35,24 +44,24 @@ function cambiarMargenes(argument) {
 	}
 }
 
-function cambiarBpm(argument) {
-	audio.pause();
-	audio = new Audio('pulseLargo' + argument + '.wav');
-	// for (var i = 0; i < tiemposCorrectos.length; i++) {
-	// 	tiemposCorrectos[i] = (tiemposCorrectos[i] * argument)/ bpm; 
-	// } 
-	bpm = argument;
-	msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
-	console.log("songResponse : " + songResponse);
-	console.log("song : " + song);
-	ajax(song);
+// function cambiarBpm(argument) {
+// 	audio.pause();
+// 	audio = new Audio('pulseLargo' + argument + '.wav');
+// 	// for (var i = 0; i < tiemposCorrectos.length; i++) {
+// 	// 	tiemposCorrectos[i] = (tiemposCorrectos[i] * argument)/ bpm; 
+// 	// } 
+// 	bpm = argument;
+// 	msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
+// 	console.log("songResponse : " + songResponse);
+// 	console.log("song : " + song);
+// 	ajax(song);
 	
-	console.log("cghangeBpm : " + bpm);	
-	console.log("audio : " + audio);	
-	// console.log("tiemposCorrectos: " + tiemposCorrectos);
-	document.getElementById('tempo').innerHTML = bpm;
-	console.log("song : " + song);
+// 	console.log("cghangeBpm : " + bpm);	
+// 	console.log("audio : " + audio);	
+// 	// console.log("tiemposCorrectos: " + tiemposCorrectos);
+// 	document.getElementById('tempo').innerHTML = bpm;
+// 	console.log("song : " + song);
 
-	reinitiate();
-	init();
-}
+// 	reinitiate();
+// 	init();
+// }
