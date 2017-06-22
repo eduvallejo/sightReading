@@ -1,0 +1,78 @@
+X:1
+T:Toccata y fuga en re menor BWV 565
+C:Jch
+L:1/8
+Q:1/4=120
+M:4/4
+K:Fmaj
+V:1 treble nm="Pipe Organ" snm="OrgL:1/16
+V:2 treble 
+V:1
+ aga2- a8 gfed | ^c4 d4 z8 | aga2- a4 z2 e2f2^c2- | c2d2- d4 z8 | AGA2- A4 z4 GFED | ^C4 D6 z6 | 
+ D,,2^C,2E,2G,2 B,8 | ^C8 D8- | D8 z4 z2[Q:1/4=250] ^C2 | D2E2^C2D2 E2C2D2E2 | 
+ ^C2D2E2F2 G2E2F2G2 | E2F2G2E2 F2G2A2B2 | G2A2B2G2 A2B2G2A2- | A2 z2 z4[Q:1/4=250] ^c2d2e2c2 | 
+ d2e2^c2d2 e2c2d2e2 | f2g2e2f2 g2e2f2g2 | e2f2g2a2 b2g2a2b2 | g2a2b2g2 a4 z4 | 
+ z2 a2g2b2 e2g2b2e2 | f2a2d2f2 a2d2e2g2 | c2e2g2c2 d2f2B2d2 | f2B2c2e2 A2c2e2A2 | 
+ B2d2G2B2 d2G2A2c2 | F2A2c2F2 G2B2E2G2 | B2E2F2A2 D2F2A2D2 | E2G2^C2E2 G2C2 A4- | A8 B8- | 
+ B4- B[Q:1/4=100]AGF ED^C=B, CA,CE | G2>G2 F2E2 F4 z2 z[Q:1/4=150] A | 
+ z A z A z A z A z A z A z A z A | z A z A z A z A z A z A z A z A | 
+ z A z A z A z A z A z A z A z A | z A z A z A z A z A z A z A z A | 
+ z A z A z A z A z A z A z A z A | z A z A z A z A z A z A z A z A | 
+ z A z A z A z A z A z A z A z A | z4 DFBF CEAE B,DGD | A,4 z2 F2 z2 E2 z2 D2 | 
+ E4 DFBF CEAE B,DGD | A,^CEA z2 B2 z2 A2 z2 G2 | A4- AGFE D2^C2 =B,2CA, | 
+ =B,^CDE FGAG FEFD FA^c2 | d2A=B ^cdef ga b6 | z2 b2 z2 a2 z2 g2 a4 | DFBF CEAE B,DGD A,^CEA | 
+ z2 B2 z2 A2 z2 G2 A4 | =B4 ^c2-c2 B2A2c2e2 | g2b2- b4 agfe fed^c | dcBA GFED ^c8- | 
+ c2[Q:1/4=300]e2^c2B2 c2B2c2e2 | ^c2B2c2B2 c2e2c2B2 | ^c2B2c2e2 c2B2c2B2 | G2B2G2E2 G2E2G2B2 | 
+ G2E2G2E2 G2B2G2E2 | G2E2G2B2 G2E2G2E2 | ^C2E2C2B,2 C2B,2C2E2 | ^C2B,2C2B,2 C2E2C2B,2 | 
+ ^C2B,2C2E2 C2B,2C2B,2 | ^C2E2C2E2 G2E2C2E2 | ^C2E2G2E2 C2E2C2E2 | G2E2^C2E2 C2E2G2E2 | 
+ G2B2G2B2 G2B2G2B2 | G2B2G2B2 ^c2B2c2e2 | ^c2e2c2e2 c2e2c2e2 |[Q:1/4=100] a8 a8 | g12 g4- | 
+ g8 z4 z2 ^c2 | d4 A4 E4 E4 | D16 | z AGA FAEA DA^CA DAEA | FAA,A =B,A^CA DACA DAEA | 
+ Fdcd BdAd Gd^Fd GdAd | BdDd Ed^Fd GdFd GdAd | B2d2B2d2 _e2G2e2G2 | c2A2c2A2 d2F2d2F2 | 
+ B2G2B2G2 ^c2E2c2E2 | A2F2A2F2 G2^C2G2C2 | F2D2F2D2 E2B,2E2B,2 | z aga faea da^ca daea | 
+ faAa =Ba^ca daca daea | faea daca Baca daBa | egdg cgBg AgBg cgAg | dfcf BfAf GfAf BfGf | 
+ ^ceBe AeGe FeGe AeFe | EeEe FdFd B^cBc AdFd | EeEe FdFd Ed^cd =BdcB | ^cAGA EGFE Fdcd fdc=B | 
+ ^cAGA eGFE F2d2E2c2 | c2A2B2G2 A4 ^F4 | G4 _E4 ^F2D2F2_e2 | d2BA B2g2 A2^f2g2c2 | 
+ B2A2B2^F2 G2F2G2A2 | B2A2B2^F2 Ggfg efde | caga fgef dbab gafg | ec'bc' abga f_edc dcBA | 
+ BdBA GBGF EFGA BdcB | A4 c2B2 A2G2A2B2 | c2E2F2G2 A2G2A2B2 | cBAG F_EDC dcBA GF=ED | 
+ edcB AGFE fedc BAGF | gfed cBAG afef cfef | afef cfef gede cede | gede cede afef cfef | 
+ afef cfef gede cede | gede cede fgfe dc=BA | =BGBd fafd BGBd fafd | BGBc egec BGBc egec | 
+ AFAc egec AFAc dfdB | GEGB ^cecB GEGB cecB | Aaga faea da^ca daea | fa^ca daea faea fAcA | 
+ d^FcF B2A2 BAG=F ED^C=B, | z4 G,B,G, z z4 G,B,G, z | z z z z A,DA, z z z z z A,DA, z | 
+ z4 G,B,G, z z4 G,B,G, z | z4 A,DA, z z4 A,DA, z | z4 B,^CB,G, z4 B,CB,G, | z4 DFDA, z4 DFDA, | 
+ z4 B,^CB,G, z4 B,CB,G, | z4 DFDA, z4 DFDA, | z4 ^CDCB, z4 CDCB, | z4 DFDA, B,DB,G, z4 | 
+ z4 z4 z4 z4 |[M:5/4] z4 z4 z4 z4 z4 |[M:4/4] z4 z4 z ed^c d2_eB | cBAG ^F_EDC B,2=B,2C2G2 | 
+ _e2d2e2=B2 c2B2c2d2 | _e2d2e2f2 gGFG _EGDG | CG=B,G CGDG _EGG,G A,GB,G | 
+ CG=B,G CGDG _Egfg _efde | cf_ef decd Bede cdBc | Adcd BcAB GBAB cBAG | ^F2A2 dGcF BGdA BGAF | 
+ Gd^Fd GdAd BGdA BGcA | dcBA BABG ABcd _edcd | BcAB G2=B2 c_efg _agfg | _efde c2B2 A2B2-B2A2 | 
+ A2G2-G2^F2 =F2_E2- E2DB | ABAG ^F_edc Bag^f g2>=f2 | _efde ^cBAG A4 ^F4 | GF_ED ^C2=E2 F2G2A2d2 | 
+ d4 ^c4 d4 F2f2 | g2d2^c2d2 e2d2c2d2 | e2d2^c2d2 e2g2f2d2 | B2e2d2d2 ^c4 d2e2 | 
+ f2e2f2^c2 d2c2d2e2 | f2e2f2g2 abga fgef | dA^cA dAeA fAeA fAgA | aAeA fAgA a4 z4 | z16 | 
+ z8 z ed^c d2>f2 | efga baga f2e2 def_e | dcBA GABc A6 c2 | c2 B4 g2 _efde cBAG | 
+ D4[K:bass] A,DA,^F, D4 A,DA,F, | D4 B,DB,A, D4 B,DB,A, |[K:treble] D4 C_ECB, D4 CECB, | 
+ D4 GBGD D4 GBGD | D4 ^FAF_E D4 FAFE | D2 z2 d2c2 B4 c2d2 | _e4 f2g2 a4 f2e2 | 
+ d_edc BcBA GcBA GAG^F | GFED ^C2E2 FGA=B ^cdef | g2fe d2^c2 d2e2f2g2 | a2^c2d2e2 f2e2f2g2 | 
+ e2d2d2^c2 d2f2e2=c2 | d8 z[Q:1/4=150] fga bABc | dcd_e fFGA BABc dAGF | _EGAB dGFE DFGA B z z2 | 
+ z CD_E F z z z z A,B,C D z z z | z B,CD _E z z z z CD=E ^F_EDC | 
+ B,^FGA BcdG[Q:1/4=80][Q:1/4=110][Q:1/4=70] e8- | e4 d4 d8 | z8 z4 z2 d2 | 
+ c4[Q:1/4=70] G2F2 c8 | z[Q:1/4=150][Q:1/4=160] GFG EEDE CAGA FFEF | D=BAB GGFG EcBc Adcd | 
+ =Bede cfef dgfg ecBc | Adcd =B^G^FG EcBc A=FEF | D=B^AB C=AGA =B,^G^FG ECB,A, | 
+ A,DC=B, A,EDC _B,FED CGFE | DAGF EGA=B[Q:1/4=90] c2G2 ^c4 | 
+[Q:1/4=160] A,^CEA[Q:1/4=110] ^c2c2 d4[Q:1/4=160] A,DFA | 
+[Q:1/4=120] d2d2 =B4[Q:1/4=160][Q:1/4=160] G,=B,DG[Q:1/4=100] B2B2 | 
+ c4[Q:1/4=160][Q:1/4=160] G,CEG[Q:1/4=100] c2c2 A4 | 
+[Q:1/4=160] F,A,CF[Q:1/4=100] A2A2 B4[Q:1/4=160] F,B,DF | 
+[Q:1/4=100] B2B2 B4[Q:1/4=160] E,G,B,^C[Q:1/4=100] B2B2 | A4[Q:1/4=160] D,A,D^F[Q:1/4=100] A4 A4 | 
+[Q:1/4=95] D4[Q:1/4=90] G4 E4[Q:1/4=85] F4 | E4[Q:1/4=80] C4[Q:1/4=70] D8 | D8-D8 |] 
+V:2
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | defd efge | fgaf gabg | afge fde^c | 
+ dABG AFGE | FDE^C FDEC | DA,B,G, A,F,G,E, | F,D,G,E, F,D,E,^C, | x8 | x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |[M:5/4] x10 |[M:4/4] x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x2[K:bass] x6 | x8 |[K:treble] x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | 
+ x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 | x8 |] 

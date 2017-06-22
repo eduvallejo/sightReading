@@ -201,6 +201,45 @@ function decodeAjaxResponse(song) {
 	
 		saltarCaracter(pointer); //posicion original de la funcion salyar
 
+		// checkearCambioArmadura(); cambioTempo [Q:1/4=160]
+		if (song[pointer] = "[" && song[pointer + 1] == "K" && (song[pointer + 3] != "t" || song[pointer + 3] != "b")) { //treble or bass key
+			var armadura = "";
+			console.log("cambiode Armadura : " );
+			pointer++;pointer++;pointer++;
+			while(song[pointer] != "]"){
+				console.log("song[pointer] : " + song[pointer]);
+				armadura = armadura + song[pointer];
+				pointer++;
+			}
+			// console.log("armadura :" + armadura);
+			key = armadura;
+		}else if(song[pointer] = "[" && song[pointer + 1] == "K" && (song[pointer + 3] == "t" || song[pointer + 3] == "b")) {
+			while(song[pointer] != "]"){
+				pointer++;
+			}
+		}else if(song[pointer] = "[" && song[pointer + 1] == "M" ) {
+			while(song[pointer] != "]"){
+				pointer++;
+			}
+		}else if(song[pointer] = "[" && song[pointer + 1] == "Q"){
+			var tempoChange = 0;
+			console.log("cambiode tempo : " );
+			while(song[pointer] != "="){
+				pointer++;
+			}
+			pointer++;
+			while(song[pointer] != "]"){
+				// console.log("song[pointer] : " + song[pointer]);
+				tempoChange = tempoChange + song[pointer];
+				pointer++;
+			}
+			tempoChange = parseInt(tempoChange);
+			console.log("tempoChange :" + tempoChange);
+			bpm = tempoChange;
+			console.log("tiemposCorrectos : " + tiemposCorrectos);
+			msPerBeat = parseFloat(60000 / bpm).toFixed(0);
+		}
+
 		// LETRAS 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
@@ -228,7 +267,7 @@ function decodeAjaxResponse(song) {
 				// console.log("sp[" + (pointer - 1 ) + "]: " + song[pointer - 1]);
 				sostenidoAccidental[noteLetter[noteLetter.length - 1] ] = true;
 				// for (var i = 0; i < sostenidoAccidental.length; i++) {
-					console.log("sostenidoAccidental[" + noteLetter.length - 1 + "] : " + sostenidoAccidental[noteLetter.length - 1]);
+					// console.log("sostenidoAccidental[" + noteLetter.length - 1 + "] : " + sostenidoAccidental[noteLetter.length - 1]);
 				// }
 				// console.log("sostenidoAccidental[" + noteLetter[noteLetter.length - 1] + "] : " + sostenidoAccidental[noteLetter[noteLetter.length - 1]]);
 			}else if (song[pointer - 1] == "^"  && becuadroAccidental[noteLetter[noteLetter.length - 1]] == true) {

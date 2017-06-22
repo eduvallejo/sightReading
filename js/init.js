@@ -1,4 +1,4 @@
-// var offset ;
+var offset ;
 function init(argument) {
 	window.scrollTo(0, 93);
 	comenzarMetronomo();
