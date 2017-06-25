@@ -25,6 +25,7 @@ function pushTiempoUsuario(argument) {
 		// console.clear();
 		// console.log("FIN");
 		//checkeamos reslutados
+		// mediaError = errorPorcentualAstartcumulado / tiemposCorrectos.length;
 		mediaError = errorPorcentualAcumulado / tiemposCorrectos.length;
 		resetearColores();
 		audioSong.pause();
@@ -39,7 +40,7 @@ function pushTiempoUsuario(argument) {
 		// console.log("scrollTOP?");
 		window.scrollTo(0, 93);
 
-		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
+		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm});
 	}
 }
 

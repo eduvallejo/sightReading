@@ -103,3 +103,12 @@ pre{
   .left{ display: none; }   /* hide it elsewhere */
   .right{ display: none; }   /* hide it elsewhere */
 }
+
+#flecha{
+  height:120px; 
+  width:0px; 
+  position:fixed;
+  left: 00px; 
+  border-left:1px solid gray;
+}
+

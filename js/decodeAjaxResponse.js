@@ -58,6 +58,17 @@ function decodeAjaxResponse(song) {
 			}else if (song[pointer] == "L" && song[pointer + 5] == "6") {//1/16
 				semiCorcheasL = true;
 				// console.log("corcheasL : " + corcheasL);
+			}else if(song[pointer] == "M"){
+				pointer++;
+				pointer++;
+				compas = song[pointer];
+				pointer++;
+				while(song[pointer] != "\n"){
+					// console.log("song[pointer]: " + song[pointer]);
+					compas = compas + song[pointer];
+					pointer++;
+				}
+				console.log("compas : " + compas);
 			}else if(song[pointer] == "K"){
 				pointer++;
 				pointer++;
@@ -85,7 +96,7 @@ function decodeAjaxResponse(song) {
 				bpm = bpmTemp;
 				msPerBeat = parseFloat(60000 / bpm).toFixed(0);//0 decimales de milisengundos
 
-				// console.log("bpm : " + bpm);
+				console.log("bpm : " + bpm);
 			}
 			while(song[pointer] != "\n"){
 				pointer++
@@ -100,6 +111,7 @@ function decodeAjaxResponse(song) {
 		}
 			pointer++;
 	}
+	console.log("compas[0] * (60 / bpm) * 1000 : " + (compas[0] * (60 / bpm) * 1000));
 
 	// console.log("song : " + song);
 	// console.log("body song[" + pointer + "]: " + song[pointer]);

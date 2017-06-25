@@ -1,35 +1,59 @@
 var offset ;
+var bars  = []; //array con cada uno de los elementos con class bar
+var measureLengths = [];
+var cantidadScrollHorizontal; 
+//recorrer array con modulus
+// for (var i = 0; i < 10; i++) {
+// 	console.log(i + " % 3 : " + (i % 3));
+// }
+var screenWidth = window.innerWidth / 2;
 function init(argument) {
 	window.scrollTo(0, 93);
 	comenzarMetronomo();
+	console.clear();
+	//quitamos la screenwidth del array de los bars
+	//hacemos array con las notas del dom(para pintarlas) y tb con las bars(medir distancia)
 	notes = document.getElementsByClassName('note');
-	// console.log("notes.length : " + notes.length);
+	bars = document.getElementsByClassName('bar');
+	//la longitud de cada compas sera restando el margin izquierdo y tambien lo acumulado de margenes anteriores
+	var measureLengthsTemp = [];
+	console.log("screenWidth : " + screenWidth);
+
+	for (var i = 0; i < bars.length; i++) {
+		// console.log("bars[i].nextSibling[x] : " + bars[i].nextSibling["x"]);
+		// console.log(" bars[i].nextSibling.getAttribute('x') : " +  bars[i].nextSibling.getAttribute("x"));
+		measureLengthsTemp[i] = parseInt(bars[i].nextSibling.getAttribute("x"));
+		// console.log("measureLengths[" + i + "] : " + measureLengths[i]); 
+		// measureLengthsTemp[i] = measureLengthsTemp[i] - screenWidth;
+		// measureLengthsTemp[i] = measureLengthsTemp[i];
+		// measureLengths[i] = measureLengthsTemp[i];
+		// measureLengthsTemp[i]  = measureLengths[i];
+		// console.log("measureLengths[" + i + "] : " + measureLengths[i]); 
+		// if (i > 0) {
+		// 	measureLengths[i] = measureLengths[i] - measureLengths[i - 1];
+		// 	console.log("measureLengths[" + i + "] : " + measureLengths[i]); 			
+		// }
+	}
+	// console.log("measureLengthsTemp : " + measureLengthsTemp);
+	cantidadScrollHorizontal = measureLengths[0] ; 
+	for (var i = 0; i < bars.length; i++) {
+		if (i > 0) {
+			measureLengths[i] = measureLengthsTemp[i] - measureLengthsTemp[i -1];
+		}else if(i == 0){
+			measureLengths[i] = measureLengthsTemp[i] - screenWidth;
+		} 
+	}
+	console.log("measureLengths : " + measureLengths);
+	cantidadScrollHorizontal = measureLengths[0];
+	console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
+	
 	contadorSilencios = 0; //para saltarse los silencios cuando colereamos
 	getNotesWidth(); //para el scroll horiz
 	// console.clear();
 	//key down
 	// window.onkeydown = function(e){
 	window.onkeydown = function(e){
-		// if (e.keyCode != 13){
-			// console.log("keyCode : " + e.keyCode);
 		clickButton();
-		// }else if(e.keyCode == 13){ //ctrl key
-		// 	// console.log("keyCode : " + e.keyCode);
-	 //  		// console.clear();
-		// // 	if (rest == false ) {
-		//  //  			timestampUp = audioSong.currentTime;
-		//  //  			var interval = (compensation + timestampUp - timestamp).toFixed(3);//75ms añadidos para compensar lo q se tarda en volver a apretar la tecla
-		//  //  			// console.log("posX : " + posX);
-		//  //  			// console.log("interval : " + interval);  
-		//  //  			// getNearestTime(interval);//version previa alos intervalos superio e inferior de dificultad
-		// 	// 		pushTiempoUsuario(interval*1000);
-
-		//  //  			rest = true;
-		//  //  		}
-		//  //  		clickPressed = false;
-		// // 
-		// 	scrollDown(); //ahora uso la tecla para scroll 
-		// }
 	}
 
 	window.onkeyup = function(e){
@@ -38,6 +62,8 @@ function init(argument) {
 			reinitiate();
 		}
 	}
+	//debug
+	// clickButton();
 
 }
 
@@ -50,32 +76,45 @@ freq = 100;
 var noteLetter = [];
 var frecuenciaNota = [];
 var gainNode;
-// get position of cursor using jquery
-// $( "p:last" ).text( "left: " + position.left + ", top: " + position.top );
-var screenWidth = window.innerWidth / 2;
+
+var contadorCompases = 0;
+
 // console.log("screenWidth : " + screenWidth);
 function autoScroll(argument) {
-	try {
-		p = $(".cursor").offset().left;
-	} catch (e) {  }
-	// console.log("autoscroll?");
-	// var position = p.position();
-	// console.log("position.left : " + p);
-	// cantidadScrollHorizontal = cantidadScrollHorizontal + 2; 
-	cantidadScrollHorizontal = p - screenWidth; 
 	window.scroll({
 	  top: 93, 
+	  // left: cantidadScrollHorizontal, 
 	  left: cantidadScrollHorizontal, 
 	  behavior: 'smooth' 
 	});
+	contadorCompases++;
+	// if (contadorCompases % 10 == 0) {
+	// 	cantidadScrollHorizontal = measureLengths[contadorCompases] * intervalosPorCompas; 
+	// 	console.log("contadorCompases : " + contadorCompases);
+	// }else{
+		cantidadScrollHorizontal = cantidadScrollHorizontal + measureLengths[parseInt(contadorCompases * intervalosPorCompas)] * intervalosPorCompas; 
+		// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
+		// console.log("parseInt(contadorCompases / intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
+	// }
+	// contadorCompases = parseInt(contadorCompases / 10);
 
+	// console.log("contadorCompases : " + parseInt(contadorCompases / 1-0));
 }
-	
+var intervalosPorCompas = 1 / 25; //
+console.log("intervalosPorCompas : " + intervalosPorCompas); 
 function clickButton(argument) {
+
+	// console.log("bpmArray[0] : " + bpmArray[0]);
 	gainNode = context.createGainNode();
 	if (clickPressed == false) {
+	 	// cantidadScrollHorizontal = measureLengths[0] ; 
+
 		// setInterval(autoScroll, 2 * (60 / bpm)); //2 por estar debugeando con 2x4 compas 
-setInterval(autoScroll, 4 * (60 / bpm) * 10); //2 por estar debugeando con 2x4 compas  (setinterval es en miliseconds asi q *1000 )
+setInterval(autoScroll, compas[0] * (60 / bpm) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
+														//enviaremos un scroll 5 veces por compas , por eso dicidimos por 5
+
+		// console.log("compas[0] * (60 / bpm) * 100): " + compas[0] * (60 / bpm) * 1000);
+		// console.clear();
 		// //bug11 scroll down
 		// contadorLinea = 0;
 		// console.log("audioSong: " + audioSong.paused);
@@ -115,7 +154,7 @@ setInterval(autoScroll, 4 * (60 / bpm) * 10); //2 por estar debugeando con 2x4 c
 		audioSong.play();
 		oscillator.start(timestamp);
 		//no se si poner la animacion
-		ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm ,});
+		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpm ,});
 		
 		// console.log("clickPressed : " + clickPressed);  
 		clickPressed = true;		

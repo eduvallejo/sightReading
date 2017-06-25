@@ -39,23 +39,23 @@ var song = 'wild.abc';
 var song = 'escalaDo.abc';
 var song = 'puenteViejo.abc';
 var song = 'escala5octavas.abc';
-var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'escalaCromaticaSostenidos.abc';
-var song = 'bach_badinerie.abc';
 var song = 'albinoni.abc';
-var song = 'ravelA.abc';
 var song = 'ravelB.abc';
-var song = 'bach_BWV1056_I.abc';
-var song = 'bach_BWV1056_II.abc';
 var song = 'mahler_adagietto.abc';
-var song = 'arabesque110Compases38-70.abc';
-var song = 'vivaldi_RV93_II.abc';
 var song = 'giant_steps_solo1.abc';
 var song = 'bach_prelude_1.abc';
 var song = 'bach_Toccata_And_Fugue_in_D_Minor1voz.abc';
-var song = 'arabesque120Compases1-38.abc';
-var song = 'arabesque1-70.abc';
+var song = 'vivaldi_RV93_II.abc';
+var song = 'ravelA.abc';
 var song = '000.abc';
+var song = 'arabesque120Compases1-38.abc';
+var song = 'bach_badinerie.abc';
+var song = 'bach_BWV1056_I.abc';
+var song = 'bach_BWV1056_II.abc';
+var song = 'arabesque1-70.abc';
+var song = 'arabesque110Compases38-70.abc';
+var song = 'bach_Suite1CelloPrelude.abc';
 // var song = 'z000.abc';
 
 // var song = 'bach_badinerieLento.abc';
@@ -167,7 +167,7 @@ var notasPorLineaUsuario = 0;
 var cantidadScroll = 0;
 
 // bug12 scroll horizontal
-var cantidadScrollHorizontal = 0;
+// var cantidadScrollHorizontal = 0;
 var notesWidth = [];
 var scale = 1;
 
@@ -183,3 +183,5 @@ decayRateNota = [];
 
 //cambiarTempo
 var bpmArray = [];
+
+var compas ;

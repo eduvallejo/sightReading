@@ -6,17 +6,6 @@
 
 function pintarNotaActual(argument) {
 	// console.log("pintarNotaActual");
-	// if(posicionSilenciosColorear[contadorLigadasActual] == true){
-	// 	// notes[contadorLigadasActual].setAttribute("fill", "blue");
-	// 		// console.log("EO");
-	// 	contadorLigadasActual++;
-	// 	if (posicionSilenciosColorear[contadorLigadasActual] == true) {
-	// 		// console.log("EOEO");
-	// 		// console.log("posicionSilenciosColorear[contadorLigadasActual + 1] : " + posicionSilenciosColorear[contadorLigadasActual + 1]);
-	// 		contadorLigadasActual++;
-	// 		// contadorLigadasActual++;
-	// 	}
-	// }
 
 	while(posicionSilenciosColorear[contadorLigadasActual] == true){
 		contadorLigadasActual++;	
@@ -103,11 +92,36 @@ function colorear(argument) {
 
 
 function resetearColores(argument) {
-	// console.clear();
 	// console.log("noteLetter : " + noteLetter);
-	console.log("tiemposCorrectos : " + tiemposCorrectos);
-	// // console.log("posicionSilencios : " + posicionSilencios);
-	console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
+	// console.log("tiemposCorrectos : " + tiemposCorrectos);
+	// // // console.log("posicionSilencios : " + posicionSilencios);
+	// console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
+	// console.clear();
+	// posicionNota1  = parseInt(notes[0].nextSibling.getAttribute("x"));
+	var posicionNota1= 0;
+	// var posicionCursorStaffIncluida = document.getElementsByClassName("staff-extra")[0].getAttribute("d");
+	var staffExtraArray = document.getElementsByClassName("staff-extra");
+	console.log("staffExtraArray.length : " + staffExtraArray.length);
+	// for (var i = 0; i < staffExtraArray.length; i++) {
+	// 	console.log("staffExtraArray[" + i + "].nextSibling.[width] : " + staffExtraArray[i].nextSibling.getAttribute("width"));
+	// 	posicionNota1 = parseInt(posicionNota1) +  parseInt(staffExtraArray[i].nextSibling.getAttribute("width")); 
+	// }
+	//tenemos en cuenta la cantidad de sotsenidos para colocar la linea de posicion, aunq a veces no hay y se tieene q catcheaar
+	try{
+		posicionNota1 = parseInt(posicionNota1) +  parseInt(staffExtraArray[1].nextSibling.getAttribute("width")); 
+		document.getElementById("flecha").style.left = parseInt(screenWidth + posicionNota1 - 15) + "px";
+	}catch(e){
+		document.getElementById("flecha").style.left = parseInt(screenWidth + 25) + "px"; //25 a ojo
+		// document.getElementById("flecha").style.left = parseInt(staffExtraArray[0].nextSibling.getAttribute("width") + "px"; //25 a ojo
+	}
+
+	console.log("posicionNota1 : " + posicionNota1);
+	// console.log(" document.getElementById(flecha).style.left: " + document.getElementById("flecha").style.left);
+	// console.log("compas[0] : " + compas[0]);
+
+
+	// console.log("posicionMarcadorPosicion : " + posicionMarcadorPosicion);	
+
 	// // console.log("notasLigadas : " + notasLigadas);
 	// // console.log("notes : " + notes);
 	// console.log("frecuenciaNota : " + frecuenciaNota);
@@ -131,6 +145,7 @@ function resetearColores(argument) {
 	contadorSilenciosNotaActual = 0;
 	contadorLigadas = 0;
 	contadorLigadasActual = 0;
+	contadorCompases = 0;
 
 
 }
