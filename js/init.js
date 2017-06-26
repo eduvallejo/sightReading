@@ -10,7 +10,7 @@ var screenWidth = window.innerWidth / 2;
 function init(argument) {
 	window.scrollTo(0, 93);
 	comenzarMetronomo();
-	console.clear();
+	// console.clear();
 	//quitamos la screenwidth del array de los bars
 	//hacemos array con las notas del dom(para pintarlas) y tb con las bars(medir distancia)
 	notes = document.getElementsByClassName('note');
@@ -81,6 +81,7 @@ var contadorCompases = 0;
 
 // console.log("screenWidth : " + screenWidth);
 function autoScroll(argument) {
+	// console.log("autoScroll : ");
 	window.scroll({
 	  top: 93, 
 	  // left: cantidadScrollHorizontal, 
@@ -90,7 +91,7 @@ function autoScroll(argument) {
 	contadorCompases++;
 	// if (contadorCompases % 10 == 0) {
 	// 	cantidadScrollHorizontal = measureLengths[contadorCompases] * intervalosPorCompas; 
-	// 	console.log("contadorCompases : " + contadorCompases);
+		// console.log("contadorCompases : " + parseInt(contadorCompases * intervalosPorCompas));
 	// }else{
 		cantidadScrollHorizontal = cantidadScrollHorizontal + measureLengths[parseInt(contadorCompases * intervalosPorCompas)] * intervalosPorCompas; 
 		// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
@@ -101,6 +102,7 @@ function autoScroll(argument) {
 	// console.log("contadorCompases : " + parseInt(contadorCompases / 1-0));
 }
 var intervalosPorCompas = 1 / 25; //
+var intervalSet;
 console.log("intervalosPorCompas : " + intervalosPorCompas); 
 function clickButton(argument) {
 
@@ -110,7 +112,7 @@ function clickButton(argument) {
 	 	// cantidadScrollHorizontal = measureLengths[0] ; 
 
 		// setInterval(autoScroll, 2 * (60 / bpm)); //2 por estar debugeando con 2x4 compas 
-setInterval(autoScroll, compas[0] * (60 / bpm) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
+intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[0]) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
 														//enviaremos un scroll 5 veces por compas , por eso dicidimos por 5
 
 		// console.log("compas[0] * (60 / bpm) * 100): " + compas[0] * (60 / bpm) * 1000);
@@ -191,6 +193,14 @@ setInterval(autoScroll, compas[0] * (60 / bpm) * 1000 * intervalosPorCompas); //
 		// gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRate);
 		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRateNota[contadorColor]);
 		oscillator.start(timestamp);
+
+		//rama changeTempo
+		if (changeTempoInThisNote[contadorColor] == true) {
+
+			console.log("cambiarBpm");
+			stopSetInterval();
+			cambiarBpm();
+		}
 		pintarNotaActual();
 	}
 	rest = false;	//esto sirve de algo???

@@ -1,7 +1,5 @@
-	// var ligaduraHackActual = false;
-	// var ligaduraHack = false;
-	var contadorLigadas = 0;
-	var posicionSilenciosColorear = [];
+	// var contadorLigadas = 0;
+	// var posicionSilenciosColorear = [];
 
 
 function pintarNotaActual(argument) {
@@ -92,11 +90,14 @@ function colorear(argument) {
 
 
 function resetearColores(argument) {
+	// stopSetInterval();
+	// intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[0]) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
+
+	// cambiarBpm();
 	// console.log("noteLetter : " + noteLetter);
-	// console.log("tiemposCorrectos : " + tiemposCorrectos);
 	// // // console.log("posicionSilencios : " + posicionSilencios);
 	// console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
-	// console.clear();
+	console.clear();
 	// posicionNota1  = parseInt(notes[0].nextSibling.getAttribute("x"));
 	var posicionNota1= 0;
 	// var posicionCursorStaffIncluida = document.getElementsByClassName("staff-extra")[0].getAttribute("d");
@@ -109,15 +110,19 @@ function resetearColores(argument) {
 	//tenemos en cuenta la cantidad de sotsenidos para colocar la linea de posicion, aunq a veces no hay y se tieene q catcheaar
 	try{
 		posicionNota1 = parseInt(posicionNota1) +  parseInt(staffExtraArray[1].nextSibling.getAttribute("width")); 
-		document.getElementById("flecha").style.left = parseInt(screenWidth + posicionNota1 - 15) + "px";
+		document.getElementById("flecha").style.left = parseInt(screenWidth + posicionNota1 - 5 ) + "px";
 	}catch(e){
 		document.getElementById("flecha").style.left = parseInt(screenWidth + 25) + "px"; //25 a ojo
 		// document.getElementById("flecha").style.left = parseInt(staffExtraArray[0].nextSibling.getAttribute("width") + "px"; //25 a ojo
 	}
 
 	console.log("posicionNota1 : " + posicionNota1);
-	// console.log(" document.getElementById(flecha).style.left: " + document.getElementById("flecha").style.left);
+	console.log("bpmArray : " + bpmArray);
+	console.log("bpmArray.length : " + bpmArray.length);
+	console.log("tiemposCorrectos : " + tiemposCorrectos);
 	// console.log("compas[0] : " + compas[0]);
+	console.log("changeTempoInThisNote : " + changeTempoInThisNote);
+	console.log("numeroCompases(bars.length) : " + bars.length);
 
 
 	// console.log("posicionMarcadorPosicion : " + posicionMarcadorPosicion);	
@@ -146,6 +151,7 @@ function resetearColores(argument) {
 	contadorLigadas = 0;
 	contadorLigadasActual = 0;
 	contadorCompases = 0;
+	contadorBpmArray = 0;
 
 
 }

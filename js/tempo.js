@@ -1,39 +1,34 @@
-function cambiarBpm(newTempo) {
-	console.log("newTempo : " + newTempo);
+// var contadorBpmArray = 0;
+function cambiarBpm() {
+	// console.log("newTempo : " + newTempo);
+	contadorBpmArray++;
+	console.log("bpmArray.length : " + bpmArray.length);
+	console.log("bpmArray[" + contadorBpmArray + "] : " + bpmArray[contadorBpmArray]);
 	// ABCJS.stopAnimation();
-	// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : newTempo ,});
+	// tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : scale, add_classes: true , paddingright : screenWidth, paddingleft : screenWidth }, {startingTune: 1,viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
+
+	// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpmArray[contadorBpmArray], });
+	// ABCJS.pauseAnimation(true);
+	// ABCJS.pauseAnimation(false);
+
+	intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[contadorBpmArray]) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
+
 
 }
 
-
-
-function doblarTempo(argument) {
-	console.log("doblarTempo");
-	if (velocidadDoblada == false) {	
-		for (var i = 0; i < tiemposCorrectos.length; i++) {
-			tiemposCorrectos[i] = tiemposCorrectos[i] / 2; 
-			// tiemposCorrectosAbsolutos[i] = tiemposCorrectosAbsolutos[i] / 2; 
-		}
-		velocidadDoblada = true;
-		cambiarMargenes(0.5);
-		// document.getElementById('tempoDoble').style.backgroundColor = 'green';
-		// defaultColor = document.getElementById('tempoDoble').style.backgroundColor;
-		console.log("defaultColor: " + defaultColor);
-		document.getElementById('tempo').innerHTML = bpm * 2;
-
-	}else if(velocidadDoblada == true){
-		for (var i = 0; i < tiemposCorrectos.length; i++) {
-			tiemposCorrectos[i] = tiemposCorrectos[i] * 2; 
-			// tiemposCorrectosAbsolutos[i] = tiemposCorrectosAbsolutos[i] * 2; 
-		}
-		velocidadDoblada = false;
-		cambiarMargenes(2);
-		document.getElementById('tempoDoble').style.backgroundColor = "";
-		document.getElementById('tempo').innerHTML = bpm ;
-	}
-	console.log("tiemposCorrectos : " + tiemposCorrectos);
-	reinitiate();
+function stopSetInterval(argument) {
+	// intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[0]) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
+	clearTimeout(intervalSet);
+	
 }
+
+// function myFunction() {
+//     myVar = setTimeout(function(){ alert("Hello"); }, 3000);
+// }
+
+// function myStopFunction() {
+//     clearTimeout(myVar);
+// }
 
 function cambiarMargenes(argument) {
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
