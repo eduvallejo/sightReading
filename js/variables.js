@@ -39,11 +39,9 @@ var song = 'wild.abc';
 var song = 'escalaDo.abc';
 var song = 'puenteViejo.abc';
 var song = 'escala5octavas.abc';
-var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'escalaCromaticaSostenidos.abc';
 var song = 'ravelB.abc';
 var song = 'arabesque110Compases38-70.abc';
-var song = 'giant_steps_solo1.abc';
 var song = 'bach_prelude_1.abc';
 var song = 'bach_Toccata_And_Fugue_in_D_Minor1voz.abc';
 var song = 'ravelA.abc';
@@ -53,11 +51,13 @@ var song = 'vivaldi_RV93_II.abc';
 var song = 'bach_BWV1056_I.abc';
 var song = 'mahler_adagietto.abc';
 var song = 'albinoni.abc';
-var song = 'bach_badinerie.abc';
 // var song = 'arabesque1-70.abc';
 var song = 'arabesque70-.abc';
-var song = '000.abc';
+var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'arabesqueN1.abc';
+var song = '000.abc';
+var song = 'giant_steps_solo1.abc';
+var song = 'bach_badinerie.abc';
 // var song = 'z000.abc';
 
 // var song = 'bach_badinerieLento.abc';
@@ -191,5 +191,7 @@ var contadorBpmArray = 0;
 var contadorLigadas = 0;
 var posicionSilenciosColorear = [];
 
-var compas ;
+var compas ; //es una string del stilo 4/4, 3/4, etc...
 var changeTempoInThisNote = [];
+var changeTempoInThisNoteTimes = []; //para q los cambios de tempo los haga el scroll y no haya los desajustes
+//de tener q lanzarse por el usuario al llegar a la nota

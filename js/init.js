@@ -77,10 +77,38 @@ var noteLetter = [];
 var frecuenciaNota = [];
 var gainNode;
 
-var contadorCompases = 0;
+// var contador = 0;//
+// var contadorCompases = 0;//cambio tempo lanzado por usuario
+var contadorChangeTempoInThisNoteTimes = 0;//cambio tempo lanzado por setInterval
 
-// console.log("screenWidth : " + screenWidth);
-function autoScroll(argument) {
+// function autoScroll(argument) { //autoScroll lanzado por el usuario
+// 	// console.log("autoScroll : ");
+// 	window.scroll({
+// 	  top: 93, 
+// 	  // left: cantidadScrollHorizontal, 
+// 	  left: cantidadScrollHorizontal, 
+// 	  behavior: 'smooth' 
+// 	});
+// 	contadorCompases++;
+// 	if (parseInt(contadorCompases * intervalosPorCompas) < bars.length) {
+// 		// console.log("parseInt(contadorCompases * intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
+// 		cantidadScrollHorizontal = cantidadScrollHorizontal + measureLengths[parseInt(contadorCompases * intervalosPorCompas)] * intervalosPorCompas; 
+// 		// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
+// 	}else{
+// 		stopSetInterval();
+// 		// console.log("parseInt(contadorCompases / intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
+// 	}
+// }
+
+function autoScroll(argument) { //autoScroll lanzado por el setInterval
+	// console.log("audioSong.currentTime : " + audioSong.currentTime);
+	// changeTempoInThisNoteTimes
+	if (audioSong.currentTime * 1000 >= changeTempoInThisNoteTimes[contadorChangeTempoInThisNoteTimes]) {
+		contadorChangeTempoInThisNoteTimes++;
+		console.log("cambiarBpm");
+		stopSetInterval();
+		cambiarBpm();
+	}
 	// console.log("autoScroll : ");
 	window.scroll({
 	  top: 93, 
@@ -89,19 +117,17 @@ function autoScroll(argument) {
 	  behavior: 'smooth' 
 	});
 	contadorCompases++;
-	// if (contadorCompases % 10 == 0) {
-	// 	cantidadScrollHorizontal = measureLengths[contadorCompases] * intervalosPorCompas; 
-		// console.log("contadorCompases : " + parseInt(contadorCompases * intervalosPorCompas));
-	// }else{
+	if (parseInt(contadorCompases * intervalosPorCompas) < bars.length) {
+		// console.log("parseInt(contadorCompases * intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
 		cantidadScrollHorizontal = cantidadScrollHorizontal + measureLengths[parseInt(contadorCompases * intervalosPorCompas)] * intervalosPorCompas; 
 		// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
+	}else{
+		stopSetInterval();
 		// console.log("parseInt(contadorCompases / intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
-	// }
-	// contadorCompases = parseInt(contadorCompases / 10);
-
-	// console.log("contadorCompases : " + parseInt(contadorCompases / 1-0));
+	}
 }
-var intervalosPorCompas = 1 / 25; //
+
+var intervalosPorCompas = 1 / 25; // el denominador indica el numero de scrolls en 1 compas
 var intervalSet;
 console.log("intervalosPorCompas : " + intervalosPorCompas); 
 function clickButton(argument) {
@@ -194,13 +220,12 @@ intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[0]) * 1000 * in
 		gainNode.gain.setTargetAtTime(decayTarget, timestamp , decayRateNota[contadorColor]);
 		oscillator.start(timestamp);
 
-		//rama changeTempo
-		if (changeTempoInThisNote[contadorColor] == true) {
-
-			console.log("cambiarBpm");
-			stopSetInterval();
-			cambiarBpm();
-		}
+		//rama changeTempo -->el cambio de tempo lo lanza el usuario
+		// if (changeTempoInThisNote[contadorColor] == true) {
+		// 	console.log("cambiarBpm");
+		// 	stopSetInterval();
+		// 	cambiarBpm();
+		// }
 		pintarNotaActual();
 	}
 	rest = false;	//esto sirve de algo???

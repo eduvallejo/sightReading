@@ -89,6 +89,7 @@ function colorear(argument) {
 }
 
 
+
 function resetearColores(argument) {
 	// stopSetInterval();
 	// intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[0]) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
@@ -98,11 +99,18 @@ function resetearColores(argument) {
 	// // // console.log("posicionSilencios : " + posicionSilencios);
 	// console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
 	console.clear();
+	console.log("tiemposCorrectos : " + tiemposCorrectos);
+	console.log("changeTempoInThisNoteTimes : " + changeTempoInThisNoteTimes);
+	// console.log("changeTempoInThisNoteTimes : " + changeTempoInThisNoteTimes);
+	
+	
+	// scrollTimeChanging();
+
 	// posicionNota1  = parseInt(notes[0].nextSibling.getAttribute("x"));
 	var posicionNota1= 0;
 	// var posicionCursorStaffIncluida = document.getElementsByClassName("staff-extra")[0].getAttribute("d");
 	var staffExtraArray = document.getElementsByClassName("staff-extra");
-	console.log("staffExtraArray.length : " + staffExtraArray.length);
+	// console.log("staffExtraArray.length : " + staffExtraArray.length);
 	// for (var i = 0; i < staffExtraArray.length; i++) {
 	// 	console.log("staffExtraArray[" + i + "].nextSibling.[width] : " + staffExtraArray[i].nextSibling.getAttribute("width"));
 	// 	posicionNota1 = parseInt(posicionNota1) +  parseInt(staffExtraArray[i].nextSibling.getAttribute("width")); 
@@ -116,10 +124,9 @@ function resetearColores(argument) {
 		// document.getElementById("flecha").style.left = parseInt(staffExtraArray[0].nextSibling.getAttribute("width") + "px"; //25 a ojo
 	}
 
-	console.log("posicionNota1 : " + posicionNota1);
-	console.log("bpmArray : " + bpmArray);
-	console.log("bpmArray.length : " + bpmArray.length);
-	console.log("tiemposCorrectos : " + tiemposCorrectos);
+	// console.log("posicionNota1 : " + posicionNota1);
+	// console.log("bpmArray : " + bpmArray);
+	// console.log("bpmArray.length : " + bpmArray.length);
 	// console.log("compas[0] : " + compas[0]);
 	console.log("changeTempoInThisNote : " + changeTempoInThisNote);
 	console.log("numeroCompases(bars.length) : " + bars.length);

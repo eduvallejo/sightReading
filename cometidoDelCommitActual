@@ -1,9 +1,13 @@
-arreglar q,cuando se reinicia la cancion, esté bien puesto el bpm, ahora tiene el ultimo bpm. de momento lo he intenado pero lo q falla ahora es q entnces la cancion empieza directamente cuando se carga la pagina
-	
-	lo arreglo simplemente poniendo [Q:1/4=bpmArray[0]] directamente en el código Abc, de modo q esa primera nota sea notaCambiodeTempo = true;
+los cambios de tempo los lanza el scroll y no el usuario
+	el bpm cambia cuando se pulsa la nota q lanza el noteChangeBpm, pero no seria mejor q lo lanzara el scroll? 
+		crear array con los tiempos sumados de las notas hasta llegar a una q sea true en changeBpm?
+		si hay fallos al volver a tocar la cancion, mirar el hack del scrollTimeChanging
+siguiente commit
+	q el scroll no vuelva al principio cuando recorre el ultimom compas, tiene q volver cuando justo el toque posterior al de la ultima nota(igual lq hace la melodia)
+
 
 siguiente commit:
-	q el scroll no vuelva al principio cuando recorre el ultimom compas, tiene q volver cuando justo el toque posterior al de la ultima nota(igual lq hace la melodia)
+	objetivo : crear jsons con cada cancion , para q no se necesite el php y se lea mas rapido las canciones
 	q la cancion no sea un bucle
 	meter mas rate a lsa notas pero tab quitarles  a las q tienen silencio detras 
 	acabar de ajustar la posicion del marcadorPosicion y darle nueva apariencia

@@ -629,6 +629,9 @@ function decodeAjaxResponse(song) {
 	// console.log("posicionSilencios : " + posicionSilencios);
 	// console.log("frecuenciaNota : " + frecuenciaNota);
 		
+	//para q los cambios de tempo no los lance el usuario sino el scroll
+	scrollTimeChanging();
+
 	var frecuenciaNotaLength = frecuenciaNota.length; 
 	for (var i = 0; i < frecuenciaNotaLength; i++) {
 		if (frecuenciaNota[i] < 1) {
@@ -657,18 +660,6 @@ function decodeAjaxResponse(song) {
 		}
 		// console.log("tiemposCorrectos[" + i + "] : " + tiemposCorrectos[i]);
 	}
-
-	// console.log("noteLetter : " + noteLetter);
-	// console.log("frecuenciaNotaDESPUESCEROS : " + frecuenciaNota);
-	// console.log("posicionSilencios : " + posicionSilencios);
-	// for (var i = 0; i < frecuenciaNotaLength; i++) {
-	// 	if(notasLigadas[i] == true){
-	// 		frecuenciaNota.splice([i+1], 1);
-	// 	}
-	// }
-	// console.log("frecuenciaNotaDespuesLigadas : " + frecuenciaNota);
-	// console.log("notasLigadas : " + notasLigadas);
-	//fin rama noSilencios
 
 	//determinar margenes
 	for (var i = 0; i < tiemposCorrectos.length; i++) {

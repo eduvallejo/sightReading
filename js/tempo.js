@@ -1,6 +1,6 @@
 // var contadorBpmArray = 0;
 function cambiarBpm() {
-	// console.log("newTempo : " + newTempo);
+	console.log("cambiarBpm : ");
 	contadorBpmArray++;
 	console.log("bpmArray.length : " + bpmArray.length);
 	console.log("bpmArray[" + contadorBpmArray + "] : " + bpmArray[contadorBpmArray]);
@@ -21,6 +21,34 @@ function stopSetInterval(argument) {
 	clearTimeout(intervalSet);
 	
 }
+
+function scrollTimeChanging(argument) {
+	var temp = 0;
+	var temp2 = 0;
+	for (var i = 0; i < changeTempoInThisNote.length; i++) {
+		if (changeTempoInThisNote[i] == true) {
+			// console.log("temp : " + temp);
+			changeTempoInThisNoteTimes[temp] = 0;
+			temp++;
+		}
+	}
+	changeTempoInThisNoteTimes.push(0);//hack para q no haya un NAN en el else if siguiente
+	// console.log("changeTempoInThisNoteTimes : " + changeTempoInThisNoteTimes);
+	temp = 0;
+	for (var i = 0; i < tiemposCorrectos.length; i++) {
+		if (changeTempoInThisNote[i] == false) {
+			changeTempoInThisNoteTimes[temp] = changeTempoInThisNoteTimes[temp] + tiemposCorrectos[i];
+			// console.log("temp : " + temp);
+		}else if (changeTempoInThisNote[i] == true) {
+			changeTempoInThisNoteTimes[temp2] = changeTempoInThisNoteTimes[temp];
+			temp++;
+			changeTempoInThisNoteTimes[temp] = changeTempoInThisNoteTimes[temp2] + tiemposCorrectos[i];
+			temp2++;
+			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
+		}
+	}
+}
+//1000, 1500, 3500
 
 // function myFunction() {
 //     myVar = setTimeout(function(){ alert("Hello"); }, 3000);
