@@ -98,14 +98,14 @@ function resetearColores(argument) {
 	// console.log("noteLetter : " + noteLetter);
 	// // // console.log("posicionSilencios : " + posicionSilencios);
 	// console.log("posicionSilenciosColorear : " + posicionSilenciosColorear);
-	console.clear();
-	console.log("tiemposCorrectos : " + tiemposCorrectos);
-	console.log("changeTempoInThisNoteTimes : " + changeTempoInThisNoteTimes);
+	// console.clear();
+	// console.log("tiemposCorrectos : " + tiemposCorrectos);
 	// console.log("changeTempoInThisNoteTimes : " + changeTempoInThisNoteTimes);
-	
-	
-	// scrollTimeChanging();
-
+	// console.log("changeTempoInThisNoteTimes : " + changeTempoInThisNoteTimes);
+	console.log("measureLengths : " + measureLengths);
+	// console.log("timeSignatures[" + timeSignaturesCounter + "] : " + timeSignatures[timeSignaturesCounter]);
+	console.log("timeSignatures: " + timeSignatures);
+	console.log("measureNumberTimeSignatures : " + measureNumberTimeSignatures);
 	// posicionNota1  = parseInt(notes[0].nextSibling.getAttribute("x"));
 	var posicionNota1= 0;
 	// var posicionCursorStaffIncluida = document.getElementsByClassName("staff-extra")[0].getAttribute("d");
@@ -159,6 +159,6 @@ function resetearColores(argument) {
 	contadorLigadasActual = 0;
 	contadorCompases = 0;
 	contadorBpmArray = 0;
-
+	timeSignaturesCounter = 0;
 
 }

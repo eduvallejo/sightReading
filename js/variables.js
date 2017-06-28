@@ -52,12 +52,12 @@ var song = 'bach_BWV1056_I.abc';
 var song = 'mahler_adagietto.abc';
 var song = 'albinoni.abc';
 // var song = 'arabesque1-70.abc';
-var song = 'arabesque70-.abc';
 var song = 'bach_Suite1CelloPrelude.abc';
-var song = 'arabesqueN1.abc';
-var song = '000.abc';
 var song = 'giant_steps_solo1.abc';
 var song = 'bach_badinerie.abc';
+var song = 'arabesque70-.abc';
+var song = 'arabesqueN1.abc';
+var song = '000.abc';
 // var song = 'z000.abc';
 
 // var song = 'bach_badinerieLento.abc';
@@ -191,7 +191,16 @@ var contadorBpmArray = 0;
 var contadorLigadas = 0;
 var posicionSilenciosColorear = [];
 
-var compas ; //es una string del stilo 4/4, 3/4, etc...
+var scrollsPorBeatDenominador = 20  ;
+var scrollsPorBeat = 1 / scrollsPorBeatDenominador; // el denominador indica el numero de scrolls en 1 beat
+var intervalSet;
+// var contador = 0;//
+// var contadorCompases = 0;//cambio tempo lanzado por usuario
+var contadorChangeTempoInThisNoteTimes = 0;//cambio tempo lanzado por setInterval
 var changeTempoInThisNote = [];
 var changeTempoInThisNoteTimes = []; //para q los cambios de tempo los haga el scroll y no haya los desajustes
+var timeSignatures = [] ; //es un array de string del stilo 4/4, 3/4, etc...
+var timeSignaturesCounter = 0 ; 
+var measureNumberTimeSignaturesCounter = 0;
+var measureNumberTimeSignatures = []; //cada elemento representa un compas y si contiene cambio de signature
 //de tener q lanzarse por el usuario al llegar a la nota

@@ -72,15 +72,15 @@ function decodeAjaxResponse(song) {
 			}else if(song[pointer] == "M"){
 				pointer++;
 				pointer++;
-				compas = song[pointer];
+				timeSignatures[timeSignaturesCounter] = song[pointer];
 				// console.log("song[pointer]: " + song[pointer]);
 				// compas = song[pointer];
-				while(song[pointer] != "\n"){
+				for (var i = 0; i < 2; i++) {
 					pointer++;
-					compas = compas + song[pointer];
+					timeSignatures[timeSignaturesCounter] = timeSignatures[timeSignaturesCounter] + song[pointer];
 					// console.log("song[pointer]: " + song[pointer]);
 				}
-				// console.log("compas : " + compas);
+				// console.log("timeSignatures : " + timeSignatures);
 			}else if(song[pointer] == "Q"){
 				pointer++;
 				pointer++;
@@ -210,7 +210,13 @@ function decodeAjaxResponse(song) {
 		}else{//hack para colorear ligaduras bug8
 			notasLigadas[contadorTc] = false;
 		}
-	
+		
+		//contar measures
+		if (song[pointer] == "|") {
+			measureNumberTimeSignatures.push(false);
+			// console.log("measureNumberTimeSignatures : " + measureNumberTimeSignatures);
+		}
+
 		saltarCaracter(pointer); //posicion original de la funcion salyar
 
 		//mirar si hay una nueva Tune y saltar todo su head
@@ -249,10 +255,20 @@ function decodeAjaxResponse(song) {
 			while(song[pointer] != "]"){
 				pointer++;
 			}
-		}else if(song[pointer] = "[" && song[pointer + 1] == "M" ) {
-			while(song[pointer] != "]"){
-				pointer++;
-			}
+		}else if(song[pointer] = "[" && song[pointer + 1] == "M" ){
+			measureNumberTimeSignatures.pop();//ya que cuando encontramos un | le ponemos como false
+			measureNumberTimeSignatures.push(true);//asi q lo popeamos y le ponemos true
+			timeSignaturesCounter++;
+			pointer++;
+			pointer++;
+			pointer++;
+			timeSignatures[timeSignaturesCounter] = song[pointer];
+			pointer++;
+			timeSignatures[timeSignaturesCounter] = timeSignatures[timeSignaturesCounter] + song[pointer];
+			pointer++;
+			timeSignatures[timeSignaturesCounter] = timeSignatures[timeSignaturesCounter] + song[pointer];
+				// console.log("song[pointer]: " + song[pointer]);
+			// console.log("compas : " + compas);
 		}else if(song[pointer] = "[" && song[pointer + 1] == "Q"){ //changeTempoInThisNote
 			var tempoChange = 0;
 			while(song[pointer] != "="){
@@ -274,6 +290,7 @@ function decodeAjaxResponse(song) {
 			// console.log("tiemposCorrectos : " + tiemposCorrectos);
 			msPerBeat = parseFloat(60000 / bpm).toFixed(0);
 		}
+
 		// LETRAS 
 		var lettersTime = /[a-gA-GzZ]/;//letters involved in time
 		if (song[pointer].match(lettersTime) ) {
@@ -674,7 +691,6 @@ function decodeAjaxResponse(song) {
 
 	//hacemos un array con la anchura de cada nota para poder hacer scroll horiz
 	getNotesWidth();
-
 }
 
 // var song = 'B/2A/2|"G"G/2F/2G/2A/2 GB,/2C/2|"G"D/2E/2D/2B,/2 DG/2A/2| "G"BB "Em"B/2A/2G/2A/2|"Am"BA "D7"AB/2A/2| "G"G/2F/2G/2A/2 GB,/2C/2|"G"D/2E/2D/2B,/2 DG/2A/2|"G"B/2de/2 "Em"d/2B/2G/2A/2| "D7"BA "G"G:|'; 

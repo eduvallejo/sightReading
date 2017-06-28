@@ -1,7 +1,6 @@
-los cambios de tempo los lanza el scroll y no el usuario
-	el bpm cambia cuando se pulsa la nota q lanza el noteChangeBpm, pero no seria mejor q lo lanzara el scroll? 
-		crear array con los tiempos sumados de las notas hasta llegar a una q sea true en changeBpm?
-		si hay fallos al volver a tocar la cancion, mirar el hack del scrollTimeChanging
+arreglao el scroll cuando hay un cambio de compas(posible fallo cuando es compasillo?)
+	
+	si hay fallos al volver a tocar la cancion, mirar el hack del scrollTimeChanging
 siguiente commit
 	q el scroll no vuelva al principio cuando recorre el ultimom compas, tiene q volver cuando justo el toque posterior al de la ultima nota(igual lq hace la melodia)
 

@@ -45,7 +45,7 @@ function init(argument) {
 	}
 	console.log("measureLengths : " + measureLengths);
 	cantidadScrollHorizontal = measureLengths[0];
-	console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
+	console.log("cantidadScrollHorizontalMeasureLen[0] : " + cantidadScrollHorizontal);
 	
 	contadorSilencios = 0; //para saltarse los silencios cuando colereamos
 	getNotesWidth(); //para el scroll horiz
@@ -77,59 +77,7 @@ var noteLetter = [];
 var frecuenciaNota = [];
 var gainNode;
 
-// var contador = 0;//
-// var contadorCompases = 0;//cambio tempo lanzado por usuario
-var contadorChangeTempoInThisNoteTimes = 0;//cambio tempo lanzado por setInterval
 
-// function autoScroll(argument) { //autoScroll lanzado por el usuario
-// 	// console.log("autoScroll : ");
-// 	window.scroll({
-// 	  top: 93, 
-// 	  // left: cantidadScrollHorizontal, 
-// 	  left: cantidadScrollHorizontal, 
-// 	  behavior: 'smooth' 
-// 	});
-// 	contadorCompases++;
-// 	if (parseInt(contadorCompases * intervalosPorCompas) < bars.length) {
-// 		// console.log("parseInt(contadorCompases * intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
-// 		cantidadScrollHorizontal = cantidadScrollHorizontal + measureLengths[parseInt(contadorCompases * intervalosPorCompas)] * intervalosPorCompas; 
-// 		// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
-// 	}else{
-// 		stopSetInterval();
-// 		// console.log("parseInt(contadorCompases / intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
-// 	}
-// }
-
-function autoScroll(argument) { //autoScroll lanzado por el setInterval
-	// console.log("audioSong.currentTime : " + audioSong.currentTime);
-	// changeTempoInThisNoteTimes
-	if (audioSong.currentTime * 1000 >= changeTempoInThisNoteTimes[contadorChangeTempoInThisNoteTimes]) {
-		contadorChangeTempoInThisNoteTimes++;
-		console.log("cambiarBpm");
-		stopSetInterval();
-		cambiarBpm();
-	}
-	// console.log("autoScroll : ");
-	window.scroll({
-	  top: 93, 
-	  // left: cantidadScrollHorizontal, 
-	  left: cantidadScrollHorizontal, 
-	  behavior: 'smooth' 
-	});
-	contadorCompases++;
-	if (parseInt(contadorCompases * intervalosPorCompas) < bars.length) {
-		// console.log("parseInt(contadorCompases * intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
-		cantidadScrollHorizontal = cantidadScrollHorizontal + measureLengths[parseInt(contadorCompases * intervalosPorCompas)] * intervalosPorCompas; 
-		// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
-	}else{
-		stopSetInterval();
-		// console.log("parseInt(contadorCompases / intervalosPorCompas) : " + parseInt(contadorCompases * intervalosPorCompas));
-	}
-}
-
-var intervalosPorCompas = 1 / 25; // el denominador indica el numero de scrolls en 1 compas
-var intervalSet;
-console.log("intervalosPorCompas : " + intervalosPorCompas); 
 function clickButton(argument) {
 
 	// console.log("bpmArray[0] : " + bpmArray[0]);
@@ -137,9 +85,10 @@ function clickButton(argument) {
 	if (clickPressed == false) {
 	 	// cantidadScrollHorizontal = measureLengths[0] ; 
 
-		// setInterval(autoScroll, 2 * (60 / bpm)); //2 por estar debugeando con 2x4 compas 
-intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[0]) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
-														//enviaremos un scroll 5 veces por compas , por eso dicidimos por 5
+		// setInterval(autoScroll, 2 * (60 / bpm)); //2 por estar debugeando con 2x4 compas
+		// console.log("timeSignatures[" + timeSignaturesCounter + "][0]INIT : " + timeSignatures[timeSignaturesCounter][0]); 
+intervalSet = setInterval(autoScroll, timeSignatures[timeSignaturesCounter][0] * (60 / bpmArray[0]) * 1000 * scrollsPorBeat); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
+														
 
 		// console.log("compas[0] * (60 / bpm) * 100): " + compas[0] * (60 / bpm) * 1000);
 		// console.clear();

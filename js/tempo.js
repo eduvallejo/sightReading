@@ -2,7 +2,7 @@
 function cambiarBpm() {
 	console.log("cambiarBpm : ");
 	contadorBpmArray++;
-	console.log("bpmArray.length : " + bpmArray.length);
+	// console.log("bpmArray.length : " + bpmArray.length);
 	console.log("bpmArray[" + contadorBpmArray + "] : " + bpmArray[contadorBpmArray]);
 	// ABCJS.stopAnimation();
 	// tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : scale, add_classes: true , paddingright : screenWidth, paddingleft : screenWidth }, {startingTune: 1,viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
@@ -10,10 +10,23 @@ function cambiarBpm() {
 	// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpmArray[contadorBpmArray], });
 	// ABCJS.pauseAnimation(true);
 	// ABCJS.pauseAnimation(false);
+	console.log("timeSignatures[" + timeSignaturesCounter + "] : " + timeSignatures[timeSignaturesCounter]);
+	intervalSet = setInterval(autoScroll, timeSignatures[timeSignaturesCounter][0] * (60 / bpmArray[contadorBpmArray]) * 1000 * scrollsPorBeat); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
+}
 
-	intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[contadorBpmArray]) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
+function cambiarTimeSignature() {
+	console.log("cambiarTimeSignature : ");
+	timeSignaturesCounter++;
+	// console.log("bpmArray.length : " + bpmArray.length);
+	console.log("bpmArray[" + contadorBpmArray + "] : " + bpmArray[contadorBpmArray]);
+	// ABCJS.stopAnimation();
+	// tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : scale, add_classes: true , paddingright : screenWidth, paddingleft : screenWidth }, {startingTune: 1,viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
 
-
+	// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : bpmArray[contadorBpmArray], });
+	// ABCJS.pauseAnimation(true);
+	// ABCJS.pauseAnimation(false);
+	console.log("timeSignatures[" + timeSignaturesCounter + "] : " + timeSignatures[timeSignaturesCounter]);
+	intervalSet = setInterval(autoScroll, timeSignatures[timeSignaturesCounter][0] * (60 / bpmArray[contadorBpmArray]) * 1000 * scrollsPorBeat); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
 }
 
 function stopSetInterval(argument) {
@@ -37,12 +50,12 @@ function scrollTimeChanging(argument) {
 	temp = 0;
 	for (var i = 0; i < tiemposCorrectos.length; i++) {
 		if (changeTempoInThisNote[i] == false) {
-			changeTempoInThisNoteTimes[temp] = changeTempoInThisNoteTimes[temp] + tiemposCorrectos[i];
+			changeTempoInThisNoteTimes[temp] = parseFloat(changeTempoInThisNoteTimes[temp]) + parseFloat(tiemposCorrectos[i]);
 			// console.log("temp : " + temp);
 		}else if (changeTempoInThisNote[i] == true) {
 			changeTempoInThisNoteTimes[temp2] = changeTempoInThisNoteTimes[temp];
 			temp++;
-			changeTempoInThisNoteTimes[temp] = changeTempoInThisNoteTimes[temp2] + tiemposCorrectos[i];
+			changeTempoInThisNoteTimes[temp] = parseFloat(changeTempoInThisNoteTimes[temp2]) + parseFloat(tiemposCorrectos[i]);
 			temp2++;
 			// console.log("tiemposCorrectos[i] : " + tiemposCorrectos[i]);
 		}
