@@ -1,8 +1,4 @@
-arreglar las anacrusas, como por ejemplo en badinerie
-	lo arreglo simplemente poniendo una timeSignature de 1/4 solo para ese compas
-
-siguiente commit 
-	añadir un sostenidosTonalidad en el sounds, q sea equivalente al ya existente bemoles tonalidad para evitar fallos en las notas	
+	añadir un sostenidosTonalidad en el sounds, q sea equivalente al ya existente bemoles tonalidad para evitar fallos en las notas	(como en scherezade sailor boat)
 siguiente commit
 	q el scroll no vuelva al principio cuando recorre el ultimom compas, tiene q volver cuando justo el toque posterior al de la ultima nota(igual lq hace la melodia)
 

@@ -257,53 +257,60 @@ function resetearAlteracionesAccidentales(argument) {
 
 var  bemolesTonalidades = { //hay q añadir las notas bajas  y altas (ej: C,, c'')
   "Fmaj": {
-        "B" :true,"b" :true, "E" :false, "e" :false, "A" :false, "a" :false, "D" :false, "d" :false, "G" :false, "g" :false, "C" :false, "c" :false, "F" :false, "f" :false
+        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :false, "E," :false, "E" :false, "e" :false, "e'" :false,"e''" :false,"A,," :false ,"A," :false ,"A" :false , "a" :false , "a'" :false , "a''" :false ,  "D,," :false, "D," :false, "D" :false, "d" :false, "d'" :false, "d''" :false, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
   },
   "Bbmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true, "A" :false, "a" :false, "D" :false, "d" :false, "G" :false, "g" :false, "C" :false, "c" :false, "F" :false, "f" :false
+        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :false ,"A," :false ,"A" :false , "a" :false , "a'" :false , "a''" :false ,  "D,," :false, "D," :false, "D" :false, "d" :false, "d'" :false, "d''" :false, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
   },
   "Ebmaj": {
         "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true ,  "D,," :false, "D," :false, "D" :false, "d" :false, "d'" :false, "d''" :false, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
   },
   "Abmaj": {
-        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true ,  "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true, "d''" :true, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
+        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true , 
+          "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true, "d''" :true, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
   },
   "Dbmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :false, "c" :false, "F" :false, "f" :false
+        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true , 
+          "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true, "d''" :true, "G,," :true, "G," :true,"G" :true, "g" :true, "g'" :true, "g''" :true, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
+        // "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :false, "c" :false, "F" :false, "f" :false
   },
    "Gbmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true, "F" :false, "f" :false
+        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true , 
+          "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true, "d''" :true, "G,," :true, "G," :true,"G" :true, "g" :true, "g'" :true, "g''" :true, "C,," :true, "C," :true, "C" :true, "c" :true, "c'" :true, "c''" :true, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
+        // "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true, "F" :false, "f" :false
   },
    "Cbmaj": {
-        "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true, "F" :true, "f" :true
+        "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true , 
+          "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true, "d''" :true, "G,," :true, "G," :true,"G" :true, "g" :true, "g'" :true, "g''" :true, "C,," :true, "C," :true, "C" :true, "c" :true, "c'" :true, "c''" :true, "F,," :true, "F," :true, "F" :true, "f" :true, "f'" :true, "f''" :true
+        // "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true, "F" :true, "f" :true
   },
-  "Cmaj" : {}, "Gmaj" : {}, "Dmaj" : {}, "Amaj" : {}, "Emaj" : {},  "B" : {}, "F#maj" : {}, "C#maj" : {},
+  "Cmaj" : {}, "Gmaj" : {}, "Dmaj" : {}, "Amaj" : {}, "Emaj" : {},  "Bmaj" : {}, "F#maj" : {}, "C#maj" : {},
 };
 
-// var  sostenidosTonalidades = { //hay q añadir las notas bajas  y altas (ej: C,, c'')
-//   "Fmaj": {
-//         "B" :true,"b" :true, "E" :false, "e" :false, "A" :false, "a" :false, "D" :false, "d" :false, "G" :false, "g" :false, "C" :false, "c" :false, "F" :false, "f" :false
-//   },
-//   "Bbmaj": {
-//         "B" :true,"b" :true, "E" :true, "e" :true, "A" :false, "a" :false, "D" :false, "d" :false, "G" :false, "g" :false, "C" :false, "c" :false, "F" :false, "f" :false
-//   },
-//   "Ebmaj": {
-//         "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true ,  "D,," :false, "D," :false, "D" :false, "d" :false, "d'" :false, "d''" :false, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
-//   },
-//   "Abmaj": {
-//         "B,," :true, "B," :true, "B" :true, "b" :true, "b'" :true,"b''" :true, "E,," :true, "E," :true, "E" :true, "e" :true, "e'" :true,"e''" :true,"A,," :true ,"A," :true ,"A" :true , "a" :true , "a'" :true , "a''" :true ,  "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true, "d''" :true, "G,," :false, "G," :false,"G" :false, "g" :false, "g'" :false, "g''" :false, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "F,," :false, "F," :false, "F" :false, "f" :false, "f'" :false, "f''" :false
-//   },
-//   "Dbmaj": {
-//         "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :false, "c" :false, "F" :false, "f" :false
-//   },
-//    "Gbmaj": {
-//         "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true, "F" :false, "f" :false
-//   },
-//    "Cbmaj": {
-//         "B" :true,"b" :true, "E" :true, "e" :true, "A" :true, "a" :true, "D" :true, "d" :true, "G" :true, "g" :true, "C" :true, "c" :true, "F" :true, "f" :true
-//   },
-//   "Cmaj" : {}, "Gmaj" : {}, "Dmaj" : {}, "Amaj" : {}, "Emaj" : {},  "B" : {}, "F#maj" : {}, "C#maj" : {},
-// };
+var  sostenidosTonalidades = { //hay q añadir las notas bajas  y altas (ej: C,, c'')
+  "Gmaj": {
+        "F,," :true, "F," :true, "F" :true,"f" :true, "f'" :true, "f''" :true, "C,," :false, "C," :false, "C" :false, "c" :false, "c'" :false, "c''" :false, "G,," :false, "G," :false, "G" :false, "g" :false, "g'" :false, "g''" :false, "D,," :false, "D," :false, "D" :false, "d" :false, "d'" :false,"d''" :false,"A,," :false, "A," :false, "A" :false, "a" :false, "a'" :false, "a''" :false,"E,," :false, "E," :false,"E" :false, "e" :false, "e'" :false,"e''" :false, "B,," :false, "B," :false,"B" :false, "b" :false, "b'" :false, "b''" :false
+  }, 
+  "Dmaj": {
+        "F,," :true, "F," :true, "F" :true,"f" :true, "f'" :true, "f''" :true, "C,," :true, "C," :true, "C" :true, "c" :true, "c'" :true, "c''" :true, "G,," :false, "G," :false, "G" :false, "g" :false, "g'" :false, "g''" :false, "D,," :false, "D," :false, "D" :false, "d" :false, "d'" :false,"d''" :false,"A,," :false, "A," :false, "A" :false, "a" :false, "a'" :false, "a''" :false,"E,," :false, "E," :false,"E" :false, "e" :false, "e'" :false,"e''" :false, "B,," :false, "B," :false,"B" :false, "b" :false, "b'" :false, "b''" :false
+  }, 
+  "Amaj": {
+        "F,," :true, "F," :true, "F" :true,"f" :true, "f'" :true, "f''" :true, "C,," :true, "C," :true, "C" :true, "c" :true, "c'" :true, "c''" :true, "G,," :true, "G," :true, "G" :true, "g" :true, "g'" :true, "g''" :true, "D,," :false, "D," :false, "D" :false, "d" :false, "d'" :false,"d''" :false,"A,," :false, "A," :false, "A" :false, "a" :false, "a'" :false, "a''" :false,"E,," :false, "E," :false,"E" :false, "e" :false, "e'" :false,"e''" :false, "B,," :false, "B," :false,"B" :false, "b" :false, "b'" :false, "b''" :false
+  }, 
+  "Emaj": {
+        "F,," :true, "F," :true, "F" :true,"f" :true, "f'" :true, "f''" :true, "C,," :true, "C," :true, "C" :true, "c" :true, "c'" :true, "c''" :true, "G,," :true, "G," :true, "G" :true, "g" :true, "g'" :true, "g''" :true, "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true,"d''" :true,"A,," :false, "A," :false, "A" :false, "a" :false, "a'" :false, "a''" :false,"E,," :false, "E," :false,"E" :false, "e" :false, "e'" :false,"e''" :false, "B,," :false, "B," :false,"B" :false, "b" :false, "b'" :false, "b''" :false
+  }, 
+  "Bmaj": {
+        "F,," :true, "F," :true, "F" :true,"f" :true, "f'" :true, "f''" :true, "C,," :true, "C," :true, "C" :true, "c" :true, "c'" :true, "c''" :true, "G,," :true, "G," :true, "G" :true, "g" :true, "g'" :true, "g''" :true, "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true,"d''" :true,"A,," :true, "A," :true, "A" :true, "a" :true, "a'" :true, "a''" :true,"E,," :false, "E," :false,"E" :false, "e" :false, "e'" :false,"e''" :false, "B,," :false, "B," :false,"B" :false, "b" :false, "b'" :false, "b''" :false
+  },
+  "F#maj": {
+        "F,," :true, "F," :true, "F" :true,"f" :true, "f'" :true, "f''" :true, "C,," :true, "C," :true, "C" :true, "c" :true, "c'" :true, "c''" :true, "G,," :true, "G," :true, "G" :true, "g" :true, "g'" :true, "g''" :true, "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true,"d''" :true,"A,," :true, "A," :true, "A" :true, "a" :true, "a'" :true, "a''" :true,"E,," :true, "E," :true,"E" :true, "e" :true, "e'" :true,"e''" :true, "B,," :false, "B," :false,"B" :false, "b" :false, "b'" :false, "b''" :false
+  },
+  "C#maj": {
+        "F,," :true, "F," :true, "F" :true,"f" :true, "f'" :true, "f''" :true, "C,," :true, "C," :true, "C" :true, "c" :true, "c'" :true, "c''" :true, "G,," :true, "G," :true, "G" :true, "g" :true, "g'" :true, "g''" :true, "D,," :true, "D," :true, "D" :true, "d" :true, "d'" :true,"d''" :true,"A,," :true, "A," :true, "A" :true, "a" :true, "a'" :true, "a''" :true,"E,," :true, "E," :true,"E" :true, "e" :true, "e'" :true,"e''" :true, "B,," :true, "B," :true,"B" :true, "b" :true, "b'" :true, "b''" :true
+  },
+  "Cmaj" : {}, "Fmaj" : {}, "Bbmaj" : {}, "Ebmaj" : {}, "Abmaj" : {},  "Db" : {}, "Gbmaj" : {}, "Cbmaj" : {},
+};
 
 // key = "Abmaj";
 // console.log("bemolesTonalidades[" + key + "]['A'] : " + bemolesTonalidades[key]["A"]);
