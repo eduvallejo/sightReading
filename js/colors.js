@@ -102,10 +102,10 @@ function resetearColores(argument) {
 	// console.log("tiemposCorrectos : " + tiemposCorrectos);
 	// console.log("changeTempoInThisNoteTimes : " + changeTempoInThisNoteTimes);
 	// console.log("changeTempoInThisNoteTimes : " + changeTempoInThisNoteTimes);
-	console.log("measureLengths : " + measureLengths);
+	// console.log("measureLengths : " + measureLengths);
 	// console.log("timeSignatures[" + timeSignaturesCounter + "] : " + timeSignatures[timeSignaturesCounter]);
-	console.log("timeSignatures: " + timeSignatures);
-	console.log("measureNumberTimeSignatures : " + measureNumberTimeSignatures);
+	// console.log("timeSignatures: " + timeSignatures);
+	// console.log("measureNumberTimeSignatures : " + measureNumberTimeSignatures);
 	// posicionNota1  = parseInt(notes[0].nextSibling.getAttribute("x"));
 	var posicionNota1= 0;
 	// var posicionCursorStaffIncluida = document.getElementsByClassName("staff-extra")[0].getAttribute("d");
@@ -118,7 +118,7 @@ function resetearColores(argument) {
 	//tenemos en cuenta la cantidad de sotsenidos para colocar la linea de posicion, aunq a veces no hay y se tieene q catcheaar
 	try{
 		posicionNota1 = parseInt(posicionNota1) +  parseInt(staffExtraArray[1].nextSibling.getAttribute("width")); 
-		document.getElementById("flecha").style.left = parseInt(screenWidth + posicionNota1 - 5 ) + "px";
+		document.getElementById("flecha").style.left = parseInt(screenWidth + posicionNota1 - 7 ) + "px";
 	}catch(e){
 		document.getElementById("flecha").style.left = parseInt(screenWidth + 25) + "px"; //25 a ojo
 		// document.getElementById("flecha").style.left = parseInt(staffExtraArray[0].nextSibling.getAttribute("width") + "px"; //25 a ojo
@@ -128,9 +128,9 @@ function resetearColores(argument) {
 	// console.log("bpmArray : " + bpmArray);
 	// console.log("bpmArray.length : " + bpmArray.length);
 	// console.log("compas[0] : " + compas[0]);
-	console.log("changeTempoInThisNote : " + changeTempoInThisNote);
-	console.log("numeroCompases(bars.length) : " + bars.length);
-
+	// console.log("changeTempoInThisNote : " + changeTempoInThisNote);
+	// console.log("numeroCompases(bars.length) : " + bars.length);
+	// console.clear();
 
 	// console.log("posicionMarcadorPosicion : " + posicionMarcadorPosicion);	
 
@@ -160,5 +160,4 @@ function resetearColores(argument) {
 	contadorCompases = 0;
 	contadorBpmArray = 0;
 	timeSignaturesCounter = 0;
-
 }

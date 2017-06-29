@@ -9,6 +9,7 @@ function autoScroll(argument) { //autoScroll lanzado por el setInterval
 		stopSetInterval();
 		cambiarBpm();
 	}
+	// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
 	//el 1er cantidadScrollHorizotal = measureLengths[0]
 	window.scroll({
 	  top: 93, 
@@ -19,9 +20,10 @@ function autoScroll(argument) { //autoScroll lanzado por el setInterval
 	contadorCompases++;
 	if (contadorCompases % scrollsPorBeatDenominador == 0) {
 		// console.log("measureNumberTimeSignatures : " + measureNumberTimeSignatures);
+		// console.log("parseInt(contadorCompases * scrollsPorBeat=> Numero de measure: " + parseInt(contadorCompases * scrollsPorBeat));
 		if (measureNumberTimeSignatures[measureNumberTimeSignaturesCounter] == true ) {
 			// console.log("contadorCompases : " + contadorCompases);
-			console.log("measureNumberTimeSignatures[" + measureNumberTimeSignaturesCounter + "] : " + measureNumberTimeSignatures[measureNumberTimeSignaturesCounter]);
+			// console.log("measureNumberTimeSignatures[" + measureNumberTimeSignaturesCounter + "] : " + measureNumberTimeSignatures[measureNumberTimeSignaturesCounter]);
 			// timeSignaturesCounter++;
 			stopSetInterval();
 			cambiarTimeSignature();
@@ -29,7 +31,6 @@ function autoScroll(argument) { //autoScroll lanzado por el setInterval
 		measureNumberTimeSignaturesCounter++;
 	}
 	if (parseInt(contadorCompases * scrollsPorBeat) < bars.length) {
-		// console.log("parseInt(contadorCompases * scrollsPorBeat) : " + parseInt(contadorCompases * scrollsPorBeat));
 		cantidadScrollHorizontal = cantidadScrollHorizontal + measureLengths[parseInt(contadorCompases * scrollsPorBeat)] * scrollsPorBeat; 
 		// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
 	}else if(parseInt(contadorCompases * scrollsPorBeat) >= bars.length){

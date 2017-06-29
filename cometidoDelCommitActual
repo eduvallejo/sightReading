@@ -1,6 +1,8 @@
-arreglao el scroll cuando hay un cambio de compas(posible fallo cuando es compasillo?)
-	
-	si hay fallos al volver a tocar la cancion, mirar el hack del scrollTimeChanging
+arreglar las anacrusas, como por ejemplo en badinerie
+	lo arreglo simplemente poniendo una timeSignature de 1/4 solo para ese compas
+
+siguiente commit 
+	añadir un sostenidosTonalidad en el sounds, q sea equivalente al ya existente bemoles tonalidad para evitar fallos en las notas	
 siguiente commit
 	q el scroll no vuelva al principio cuando recorre el ultimom compas, tiene q volver cuando justo el toque posterior al de la ultima nota(igual lq hace la melodia)
 

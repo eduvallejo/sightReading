@@ -249,7 +249,7 @@ function decodeAjaxResponse(song) {
 				armadura = armadura + song[pointer];
 				pointer++;
 			}
-			// console.log("armadura :" + armadura);
+			console.log("armadura :" + armadura);
 			key = armadura;
 		}else if(song[pointer] = "[" && song[pointer + 1] == "K" && (song[pointer + 3] == "t" || song[pointer + 3] == "b")) {
 			while(song[pointer] != "]"){
@@ -331,6 +331,8 @@ function decodeAjaxResponse(song) {
 			}else if (song[pointer - 1] == "^"  && becuadroAccidental[noteLetter[noteLetter.length - 1]] == true) {
 				if (bemolesTonalidades[key][noteLetter[noteLetter.length - 1]] != true) {
 					// getAlteraciones(noteLetter.length, 0); //apaño ,momentaneo
+					console.log("song[pointer - 1] : " + song[pointer - 1]);
+					console.log("song[pointer] : " + song[pointer]);
 					getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
 				}else{
 					getAlteraciones(noteLetter.length, 0);
@@ -668,11 +670,11 @@ function decodeAjaxResponse(song) {
 		if (changeTempoInThisNote[i] == true){
 			contadorRates++;
 			// console.log("bpmArray[" + contadorRates + "] : " + bpmArray[contadorRates]);
-			decayRateNota[i] = parseFloat((Math.pow(tiemposCorrectos[i], 1.25) * 60) / (5500 * bpmArray[contadorRates]*2) + parseFloat(0.2)).toFixed(3);	
+			decayRateNota[i] = parseFloat((Math.pow(tiemposCorrectos[i], 1.15) * 60) / (5500 * bpmArray[contadorRates]*2) + parseFloat(0.2)).toFixed(3);	
 			// console.log("decayRateNota["+ i + "] : " + decayRateNota[i]);
 		}
 		else{
-			decayRateNota[i] = parseFloat((Math.pow(tiemposCorrectos[i], 1.25) * 60) / (5500 * bpmArray[contadorRates]*2) + parseFloat(0.2)).toFixed(3);		
+			decayRateNota[i] = parseFloat((Math.pow(tiemposCorrectos[i], 1.15) * 60) / (5500 * bpmArray[contadorRates]*2) + parseFloat(0.2)).toFixed(3);		
 			// console.log("decayRateNota["+ i + "] : " + decayRateNota[i]);
 		}
 		// console.log("tiemposCorrectos[" + i + "] : " + tiemposCorrectos[i]);

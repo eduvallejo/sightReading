@@ -17,7 +17,7 @@ function init(argument) {
 	bars = document.getElementsByClassName('bar');
 	//la longitud de cada compas sera restando el margin izquierdo y tambien lo acumulado de margenes anteriores
 	var measureLengthsTemp = [];
-	console.log("screenWidth : " + screenWidth);
+	// console.log("screenWidth : " + screenWidth);
 
 	for (var i = 0; i < bars.length; i++) {
 		// console.log("bars[i].nextSibling[x] : " + bars[i].nextSibling["x"]);
@@ -43,9 +43,9 @@ function init(argument) {
 			measureLengths[i] = measureLengthsTemp[i] - screenWidth;
 		} 
 	}
-	console.log("measureLengths : " + measureLengths);
+	// console.log("measureLengths : " + measureLengths);
 	cantidadScrollHorizontal = measureLengths[0];
-	console.log("cantidadScrollHorizontalMeasureLen[0] : " + cantidadScrollHorizontal);
+	// console.log("cantidadScrollHorizontalMeasureLen[0] : " + cantidadScrollHorizontal);
 	
 	contadorSilencios = 0; //para saltarse los silencios cuando colereamos
 	getNotesWidth(); //para el scroll horiz

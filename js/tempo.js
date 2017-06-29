@@ -30,6 +30,7 @@ function cambiarTimeSignature() {
 }
 
 function stopSetInterval(argument) {
+	console.log("stopSetInterval : ");
 	// intervalSet = setInterval(autoScroll, compas[0] * (60 / bpmArray[0]) * 1000 * intervalosPorCompas); //4 por estar debugeando con 4x4 compas  (setinterval es en miliseconds asi q *1000 ) = duracion en ms de un compas
 	clearTimeout(intervalSet);
 	
