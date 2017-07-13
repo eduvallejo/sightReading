@@ -115,3 +115,7 @@
 	width: 30px;
 	padding-left: 2px;
 }
+
+.bar{
+	margin-left: 25px !important;
+}

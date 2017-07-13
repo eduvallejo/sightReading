@@ -22,8 +22,16 @@ function init(argument) {
 	for (var i = 0; i < bars.length; i++) {
 		// console.log("bars[i].nextSibling[x] : " + bars[i].nextSibling["x"]);
 		// console.log(" bars[i].nextSibling.getAttribute('x') : " +  bars[i].nextSibling.getAttribute("x"));
-		measureLengthsTemp[i] = parseInt(bars[i].nextSibling.getAttribute("x"));
-		// console.log("measureLengths[" + i + "] : " + measureLengths[i]); 
+		measureLengthsTemp[i] = parseInt(bars[i].nextSibling.getAttribute("x") * escala); //sumo 1px porq es lo q mide la bar en si
+		// console.log("measureLengthsTemp[" + i + "] : " + measureLengthsTemp[i]); 
+
+		// measureLengthsTemp[i] = measureLengthsTemp[i] + parseInt(1); //sumo 1px porq es lo q mide la bar en si misma	
+		
+		// console.log("measureLengthsTemp[" + i + "] : " + measureLengthsTemp[i]); 
+		// if (i == 0) {
+		// 	console.log("measureLengths[" + i + "] : " + measureLengthsTemp[i]);
+		// 	console.log("measureLengths[" + i + "] : " + measureLengthsTemp[i]);
+		// }
 		// measureLengthsTemp[i] = measureLengthsTemp[i] - screenWidth;
 		// measureLengthsTemp[i] = measureLengthsTemp[i];
 		// measureLengths[i] = measureLengthsTemp[i];

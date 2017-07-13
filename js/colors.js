@@ -110,18 +110,26 @@ function resetearColores(argument) {
 	var posicionNota1= 0;
 	// var posicionCursorStaffIncluida = document.getElementsByClassName("staff-extra")[0].getAttribute("d");
 	var staffExtraArray = document.getElementsByClassName("staff-extra");
-	// console.log("staffExtraArray.length : " + staffExtraArray.length);
+	console.log("staffExtraArray.length : " + staffExtraArray.length);
 	// for (var i = 0; i < staffExtraArray.length; i++) {
 	// 	console.log("staffExtraArray[" + i + "].nextSibling.[width] : " + staffExtraArray[i].nextSibling.getAttribute("width"));
 	// 	posicionNota1 = parseInt(posicionNota1) +  parseInt(staffExtraArray[i].nextSibling.getAttribute("width")); 
 	// }
 	//tenemos en cuenta la cantidad de sotsenidos para colocar la linea de posicion, aunq a veces no hay y se tieene q catcheaar
+	console.log("key : " + key);
 	try{
-		posicionNota1 = parseInt(posicionNota1) +  parseInt(staffExtraArray[1].nextSibling.getAttribute("width")); 
-		document.getElementById("flecha").style.left = parseInt(screenWidth + posicionNota1 - 7 ) + "px";
-	}catch(e){
-		document.getElementById("flecha").style.left = parseInt(screenWidth + 25) + "px"; //25 a ojo
-		// document.getElementById("flecha").style.left = parseInt(staffExtraArray[0].nextSibling.getAttribute("width") + "px"; //25 a ojo
+		if (key != "Cmaj") {
+			posicionNota1 = parseInt(posicionNota1) +  parseInt(staffExtraArray[1].nextSibling.getAttribute("width")); 
+			document.getElementById("flecha").style.left = parseInt(screenWidth + posicionNota1 - 3 ) + "px";
+			// console.log("posicionNota1 : " + parseInt(staffExtraArray[1].nextSibling.getAttribute('width')));
+		}else if(key == "Cmaj"){
+			document.getElementById("flecha").style.left = parseInt(screenWidth + 60) + "px"; //25 a ojo
+			console.log("else Cmaj : ");
+		}
+	}catch(e){//para la tonalidad de C no esta el elemento staff
+		document.getElementById("flecha").style.left = parseInt(screenWidth + 60) + "px"; //25 a ojo
+		// console.log(" document.getElementById(flecha).getAttribute(left): " + document.getElementById("flecha").getAttribute("left")); //25 a ojo
+		console.log("e : ");
 	}
 
 	// console.log("posicionNota1 : " + posicionNota1);

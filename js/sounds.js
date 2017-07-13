@@ -1,5 +1,6 @@
 var volumen = 0.4; //volumen del sinte normal
-var volumen = 0.25; //volumen arabesque
+  var volumen = 0.05; //volumen arabesque
+var volumen = 0.15; //volumen arabesque
 // var volumen = 0.2; //volumen del sinte
 function playSound(argument) {
 	audio.play();

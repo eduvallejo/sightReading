@@ -17,6 +17,7 @@ function autoScroll(argument) { //autoScroll lanzado por el setInterval
 	  left: cantidadScrollHorizontal, 
 	  behavior: 'smooth' 
 	});
+	
 	contadorCompases++;
 	if (contadorCompases % scrollsPorBeatDenominador == 0) {
 		// console.log("measureNumberTimeSignatures : " + measureNumberTimeSignatures);
@@ -32,6 +33,7 @@ function autoScroll(argument) { //autoScroll lanzado por el setInterval
 	}
 	if (parseInt(contadorCompases * scrollsPorBeat) < bars.length) {
 		cantidadScrollHorizontal = cantidadScrollHorizontal + measureLengths[parseInt(contadorCompases * scrollsPorBeat)] * scrollsPorBeat; 
+		// cantidadScrollHorizontal = cantidadScrollHorizontal - 0.05; //intento corregir el desafse de q tiende a adelantarse el scroll(quizas por la barra en si de 1px)
 		// console.log("cantidadScrollHorizontal : " + cantidadScrollHorizontal);
 	}else if(parseInt(contadorCompases * scrollsPorBeat) >= bars.length){
 		stopSetInterval();
@@ -77,7 +79,7 @@ function getNotesWidth(argument) {
 	for (var i = 0; i < notes.length; i++) {
 		// console.log("notes[i].getAttribute : " + notes[i].getAttribute);
 		if (i > 0) {
-			notesWidth[i] = (parseFloat(notesWidth[i - 1]) + parseFloat(notes[i].nextSibling.getAttribute("width")) * scale + parseFloat(2))  ; //EL 2 es a ojo
+			notesWidth[i] = (parseFloat(notesWidth[i - 1]) + parseFloat(notes[i].nextSibling.getAttribute("width")) * escala + parseFloat(2))  ; //EL 2 es a ojo
 		}else if( i == 0){
 			notesWidth[i] = notes[i].nextSibling.getAttribute("width")  ;
 		}
@@ -85,7 +87,7 @@ function getNotesWidth(argument) {
 		try {
 			if (notes[i].nextSibling.nextSibling.classList.contains("slur")) {
 				// console.log("slur");
-				notesWidth[i] = parseFloat(parseFloat(notesWidth[i]) + parseFloat(1.5 * scale)); 
+				notesWidth[i] = parseFloat(parseFloat(notesWidth[i]) + parseFloat(1.5 * escala)); 
 			}			
 		} catch (e) {  }
 		// console.log("notesWidth[" + i + "] : " + notesWidth[i]);

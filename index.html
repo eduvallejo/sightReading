@@ -25,10 +25,12 @@
 	<script src="js/ajax/ajax.js" type="text/javascript"></script>
 	<script src="js/tempo.js" type="text/javascript"></script>
 	<script src="js/cambioArmadura.js" type="text/javascript"></script>
+
 	<!--  p5 libraries -->
-	<!-- <script type="text/javascript" src="libraries/p5.js"></script>
+	<script type="text/javascript" src="libraries/p5.js"></script>
 	<script src="libraries/p5.dom.js"></script>
-	<script src="libraries/p5.sound.js"></script> -->
+	<script src="libraries/p5.sound.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style>
 		.abcjs-inline-midi {
@@ -48,7 +50,7 @@
 <div id="fallos">Fallos:</div>
 <div id="mediaError">Err(%):</div>
 <div id="primeraLinea">
-    <button id="populateSelect">select song--</button>
+    <!-- <button id="populateSelect">select song--</button> -->
     <select id="mySelect" onchange="drawOption()">
         <option value="" ></option>
         <!-- <option value="barbershop">barbershop</option> -->
@@ -65,7 +67,7 @@
         <option value="120" >120</option>
     </select>-->
 </div>
-<button id="buttonReinitiate" onclick='reinitiate();' style="display: inline-block;width:15%; height:40px; left:50%; position: relative; padding-left: 0px;text-align: left;">reinit</button>
+<!-- <button id="buttonReinitiate" onclick='reinitiate();' style="display: inline-block;width:15%; height:40px; left:50%; position: relative; padding-left: 0px;text-align: left;">reinit</button> -->
 <hr />
 <div id="flecha"></div>
 <div id="notation"></div>
@@ -115,8 +117,8 @@
 		//aqui abajo se renderiza el svg
 		// tuneObjectArray = ABCJS.renderAbc(output, tunebookString, parserParams, engraverParams, renderParams)
 		// tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { staffwidth: 1300, add_classes: true }, {});//scroll vertical
-		// tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : scale, add_classes: true , paddingright : screenWidth, paddingleft : screenWidth}, {viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
-		tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : scale, add_classes: true , paddingright : screenWidth, paddingleft : screenWidth}, {viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
+		// tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : escala, add_classes: true , paddingright : screenWidth, paddingleft : screenWidth}, {viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
+		tuneObjectArray = ABCJS.renderAbc('notation', tunebookString,{}, { scale : escala, add_classes: true , paddingright : screenWidth, paddingleft : screenWidth}, {viewportHorizontal : true, scrollHorizontal : false});//scroll horizontal
 		// console.log("tuneObjectArray : " + Object.keys(tuneObjectArray[0]));
 		// ABCJS.startAnimation(outputElement, tuneObjectArray[0], {showCursor : true, bpm : 60});
 			

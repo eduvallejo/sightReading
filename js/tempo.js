@@ -2,6 +2,8 @@
 function cambiarBpm() {
 	console.log("cambiarBpm : ");
 	contadorBpmArray++;
+	// contadorBpmArray = (contadorBpmArray  + 1 ) % bpmArray.length;
+	console.log("contadorBpmArray : " + contadorBpmArray);
 	// console.log("bpmArray.length : " + bpmArray.length);
 	console.log("bpmArray[" + contadorBpmArray + "] : " + bpmArray[contadorBpmArray]);
 	// ABCJS.stopAnimation();

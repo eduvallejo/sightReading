@@ -48,19 +48,20 @@ var song = 'ravelA.abc';
 var song = 'arabesque120Compases1-38.abc';
 var song = 'albinoni.abc';
 // var song = 'arabesque1-70.abc';
-var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'arabesque70-.abc';
-var song = 'bach_badinerie.abc';
 var song = 'mahler_adagietto.abc';
-var song = 'rimsky_bumble_bee.abc';
-var song = 'rimsky_bumble_bee75.abc';
+var song = 'bach_Suite1CelloPrelude.abc';
 var song = 'giant_steps_solo1.abc';
-var song = 'vivaldi_RV93_II.abc';
-var song = 'bach_BWV1056_II.abc';
-var song = 'bach_BWV1056_I.abc';
-var song = '000.abc';
-var song = 'arabesqueN1.abc';
+var song = 'rimsky_bumble_bee.abc';
 var song = 'rimsky_from_The_Sea_and_Sinbads_Ship_Scheherazade.abc';
+var song = 'rimsky_bumble_bee75.abc';
+var song = '000.abc';   
+var song = 'bach_badinerie.abc';
+var song = 'arabesqueN1.abc';
+var song = 'mozart_turkish.abc';
+var song = 'bach_BWV1056_I.abc';
+var song = 'bach_BWV1056_II.abc';
+var song = 'vivaldi_RV93_II.abc';
 // var song = 'z000.abc';
 
 // var song = 'bach_badinerieLento.abc';
@@ -123,7 +124,7 @@ var semiCorcheasL = false; //cuando L:1/16 hay bug que una negra vale 4000 aunqu
 var numErrores = 0;
 
 //calculo cuando queremos error porcentual de cada nota
-var dificultad = 20; //20=20% de margen
+var dificultad = 15; //20=20% de margen
 var limiteSuperior = 1 + (dificultad/100); //1.5 = 50%limite superior de margen
 var limiteInferior = 1 - (dificultad/100); //0.5 = 50%limite inferior de margen
 var compensation = 25; //EN MILISEGUNDOS: para hacer q las notas cortas se compensen en comparacion con las largas  en el % de error
@@ -174,7 +175,8 @@ var cantidadScroll = 0;
 // bug12 scroll horizontal
 // var cantidadScrollHorizontal = 0;
 var notesWidth = [];
-var scale = 1;
+// var scale = 1.5;
+var escala = 2;
 
 //oscillator
 var decayRate = 0.4; //cuan to mas PEQUEÑO, mas RAPIDO DECAE

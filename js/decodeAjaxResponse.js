@@ -338,8 +338,8 @@ function decodeAjaxResponse(song) {
 			}else if (song[pointer - 1] == "^"  && becuadroAccidental[noteLetter[noteLetter.length - 1]] == true) {
 				if ((bemolesTonalidades[key][noteLetter[noteLetter.length - 1]] != true) && (sostenidosTonalidades[key][noteLetter[noteLetter.length - 1]] != true)) {
 					// getAlteraciones(noteLetter.length, 0); //apaño ,momentaneo
-					console.log("song[pointer - 1] : " + song[pointer - 1]);
-					console.log("song[pointer] : " + song[pointer]);
+					// console.log("song[pointer - 1] : " + song[pointer - 1]);
+					// console.log("song[pointer] : " + song[pointer]);
 					getAlteraciones(noteLetter.length, 1); //apaño ,momentaneo
 				}else{
 					getAlteraciones(noteLetter.length, 0);

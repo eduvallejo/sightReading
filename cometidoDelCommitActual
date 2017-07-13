@@ -1,4 +1,19 @@
-	añadir un sostenidosTonalidad en el sounds, q sea equivalente al ya existente bemoles tonalidad para evitar fallos en las notas	(como en scherezade sailor boat)
+	el scroll tiende a adelantarse , es decir q esta mas a la izqquierda de lo q deberia, pero solo enn algunas como la marcha turca el o el 1056I, quizas hay cambios de tempo q no aparecen
+	tab pasa q cuanto mas lento es el bpm menos scrolls se hacen y a veces se nota mucho(como en el de vivaldi(bpm=30))m quizas hay q hacer ago para q cuanto mas lento sea el bpm mas scrolls se realicen y al reves con los bpm altos
+
+igualar los volumenes de los ogg, cam,biando quizas el volumen del audio
+
+q se pueda ralentizar las canciomnes
+
+arregçlar lo del decay rate , o algo para q se corten las notas ccon silencios
+
+hacer el curso de https://www.coursera.org/learn/classical-composition
+
+podria ser util mover el scroll una vez por beat? o dos por beat? la cuestion es que el scroll sirva para mantener el tiempo, para dar una pista , q sea mas facil seguir la cancion
+
+sifguiente commit
+	calcular previamente las cantidades de cada uno de los scrolls , de modo q no se tenga qhacer la division
+
 siguiente commit
 	q el scroll no vuelva al principio cuando recorre el ultimom compas, tiene q volver cuando justo el toque posterior al de la ultima nota(igual lq hace la melodia)
 
